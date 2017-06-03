@@ -2,7 +2,7 @@ swagger: '2.0'
 info:
   description: |
     RobusTest Hub Api
-    [http://mobile.robustest.com:8085
+    [http://enterprice.robustest.com:8085
   version: "1.0.0"
   title: RobusTest Hub
 tags:
