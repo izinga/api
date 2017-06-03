@@ -18,7 +18,7 @@ import java.util.Objects;
 /**
  * HubDevices
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-06-03T08:33:49.206+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-06-03T08:51:35.255+05:30")
 public class HubDevices {
 
   @Override
