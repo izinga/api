@@ -4,17 +4,17 @@ All URIs are relative to *http://mobile.robustest.com:8085*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**DeviceCommandPost**](HubApi.md#DeviceCommandPost) | **Post** /device/command | run adb  command
-[**DeviceDelete**](HubApi.md#DeviceDelete) | **Delete** /device | free device
-[**DevicePut**](HubApi.md#DevicePut) | **Put** /device | get free device based on given parameters
-[**DeviceReverseDelete**](HubApi.md#DeviceReverseDelete) | **Delete** /device/reverse | unrevrse the device
-[**DeviceReversePut**](HubApi.md#DeviceReversePut) | **Put** /device/reverse | reverse a device
-[**DeviceShellPost**](HubApi.md#DeviceShellPost) | **Post** /device/shell | run adb shell command
-[**Devices**](HubApi.md#Devices) | **Get** /devices | list all attached devices to RobusTest
+[**AdbCommand**](HubApi.md#AdbCommand) | **Post** /device/command | run adb  command
+[**DeviceShell**](HubApi.md#DeviceShell) | **Post** /device/shell | run adb shell command
+[**DevicesList**](HubApi.md#DevicesList) | **Get** /devices | list all attached devices to RobusTest
+[**FreeDevice**](HubApi.md#FreeDevice) | **Delete** /device | free device
+[**GetFreeDevice**](HubApi.md#GetFreeDevice) | **Put** /device | get free device based on given parameters
+[**ReverseDevice**](HubApi.md#ReverseDevice) | **Put** /device/reverse | reverse a device
+[**UnreverseDevice**](HubApi.md#UnreverseDevice) | **Delete** /device/reverse | unrevrse the device
 
 
-# **DeviceCommandPost**
-> InlineResponse2001 DeviceCommandPost($device)
+# **AdbCommand**
+> InlineResponse2001 AdbCommand($device)
 
 run adb  command
 
@@ -40,116 +40,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **DeviceDelete**
-> Device DeviceDelete($device)
-
-free device
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **device** | [**Device1**](Device1.md)|  | [optional] 
-
-### Return type
-
-[**Device**](Device.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **DevicePut**
-> Device DevicePut($device)
-
-get free device based on given parameters
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **device** | [**Device**](Device.md)|  | [optional] 
-
-### Return type
-
-[**Device**](Device.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **DeviceReverseDelete**
-> Device DeviceReverseDelete($device)
-
-unrevrse the device
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **device** | [**Device3**](Device3.md)|  | [optional] 
-
-### Return type
-
-[**Device**](Device.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **DeviceReversePut**
-> Device DeviceReversePut($device)
-
-reverse a device
-
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **device** | [**Device2**](Device2.md)|  | [optional] 
-
-### Return type
-
-[**Device**](Device.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
-
-# **DeviceShellPost**
-> InlineResponse200 DeviceShellPost($device)
+# **DeviceShell**
+> InlineResponse200 DeviceShell($device)
 
 run adb shell command
 
@@ -175,8 +67,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **Devices**
-> HubDevices Devices()
+# **DevicesList**
+> HubDevices DevicesList()
 
 list all attached devices to RobusTest
 
@@ -187,6 +79,114 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**HubDevices**](HubDevices.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **FreeDevice**
+> Device FreeDevice($device)
+
+free device
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **device** | [**Device1**](Device1.md)|  | [optional] 
+
+### Return type
+
+[**Device**](Device.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **GetFreeDevice**
+> Device GetFreeDevice($device)
+
+get free device based on given parameters
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **device** | [**Device**](Device.md)|  | [optional] 
+
+### Return type
+
+[**Device**](Device.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **ReverseDevice**
+> Device ReverseDevice($device)
+
+reverse a device
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **device** | [**Device2**](Device2.md)|  | [optional] 
+
+### Return type
+
+[**Device**](Device.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **UnreverseDevice**
+> Device UnreverseDevice($device)
+
+unrevrse the device
+
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **device** | [**Device3**](Device3.md)|  | [optional] 
+
+### Return type
+
+[**Device**](Device.md)
 
 ### Authorization
 

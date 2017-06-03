@@ -88,7 +88,7 @@ class HubApi
     }
 
     /**
-     * Operation deviceCommandPost
+     * Operation adbCommand
      *
      * run adb  command
      *
@@ -96,14 +96,14 @@ class HubApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\InlineResponse2001
      */
-    public function deviceCommandPost($device = null)
+    public function adbCommand($device = null)
     {
-        list($response) = $this->deviceCommandPostWithHttpInfo($device);
+        list($response) = $this->adbCommandWithHttpInfo($device);
         return $response;
     }
 
     /**
-     * Operation deviceCommandPostWithHttpInfo
+     * Operation adbCommandWithHttpInfo
      *
      * run adb  command
      *
@@ -111,7 +111,7 @@ class HubApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\InlineResponse2001, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deviceCommandPostWithHttpInfo($device = null)
+    public function adbCommandWithHttpInfo($device = null)
     {
         // parse inputs
         $resourcePath = "/device/command";
@@ -170,335 +170,7 @@ class HubApi
     }
 
     /**
-     * Operation deviceDelete
-     *
-     * free device
-     *
-     * @param \Swagger\Client\Model\Device1 $device  (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Device
-     */
-    public function deviceDelete($device = null)
-    {
-        list($response) = $this->deviceDeleteWithHttpInfo($device);
-        return $response;
-    }
-
-    /**
-     * Operation deviceDeleteWithHttpInfo
-     *
-     * free device
-     *
-     * @param \Swagger\Client\Model\Device1 $device  (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Device, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function deviceDeleteWithHttpInfo($device = null)
-    {
-        // parse inputs
-        $resourcePath = "/device";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
-
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        // body params
-        $_tempBody = null;
-        if (isset($device)) {
-            $_tempBody = $device;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'DELETE',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\Device',
-                '/device'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Device', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Device', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 0:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation devicePut
-     *
-     * get free device based on given parameters
-     *
-     * @param \Swagger\Client\Model\Device $device  (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Device
-     */
-    public function devicePut($device = null)
-    {
-        list($response) = $this->devicePutWithHttpInfo($device);
-        return $response;
-    }
-
-    /**
-     * Operation devicePutWithHttpInfo
-     *
-     * get free device based on given parameters
-     *
-     * @param \Swagger\Client\Model\Device $device  (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Device, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function devicePutWithHttpInfo($device = null)
-    {
-        // parse inputs
-        $resourcePath = "/device";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
-
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        // body params
-        $_tempBody = null;
-        if (isset($device)) {
-            $_tempBody = $device;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'PUT',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\Device',
-                '/device'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Device', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Device', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 0:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation deviceReverseDelete
-     *
-     * unrevrse the device
-     *
-     * @param \Swagger\Client\Model\Device3 $device  (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Device
-     */
-    public function deviceReverseDelete($device = null)
-    {
-        list($response) = $this->deviceReverseDeleteWithHttpInfo($device);
-        return $response;
-    }
-
-    /**
-     * Operation deviceReverseDeleteWithHttpInfo
-     *
-     * unrevrse the device
-     *
-     * @param \Swagger\Client\Model\Device3 $device  (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Device, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function deviceReverseDeleteWithHttpInfo($device = null)
-    {
-        // parse inputs
-        $resourcePath = "/device/reverse";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
-
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        // body params
-        $_tempBody = null;
-        if (isset($device)) {
-            $_tempBody = $device;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'DELETE',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\Device',
-                '/device/reverse'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Device', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Device', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 0:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation deviceReversePut
-     *
-     * reverse a device
-     *
-     * @param \Swagger\Client\Model\Device2 $device  (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Device
-     */
-    public function deviceReversePut($device = null)
-    {
-        list($response) = $this->deviceReversePutWithHttpInfo($device);
-        return $response;
-    }
-
-    /**
-     * Operation deviceReversePutWithHttpInfo
-     *
-     * reverse a device
-     *
-     * @param \Swagger\Client\Model\Device2 $device  (optional)
-     * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Device, HTTP status code, HTTP response headers (array of strings)
-     */
-    public function deviceReversePutWithHttpInfo($device = null)
-    {
-        // parse inputs
-        $resourcePath = "/device/reverse";
-        $httpBody = '';
-        $queryParams = [];
-        $headerParams = [];
-        $formParams = [];
-        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
-        if (!is_null($_header_accept)) {
-            $headerParams['Accept'] = $_header_accept;
-        }
-        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
-
-        // default format to json
-        $resourcePath = str_replace("{format}", "json", $resourcePath);
-
-        // body params
-        $_tempBody = null;
-        if (isset($device)) {
-            $_tempBody = $device;
-        }
-
-        // for model (json/xml)
-        if (isset($_tempBody)) {
-            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
-        } elseif (count($formParams) > 0) {
-            $httpBody = $formParams; // for HTTP post (form)
-        }
-        // make the API Call
-        try {
-            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
-                $resourcePath,
-                'PUT',
-                $queryParams,
-                $httpBody,
-                $headerParams,
-                '\Swagger\Client\Model\Device',
-                '/device/reverse'
-            );
-
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Device', $httpHeader), $statusCode, $httpHeader];
-        } catch (ApiException $e) {
-            switch ($e->getCode()) {
-                case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Device', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-                case 0:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
-                    $e->setResponseObject($data);
-                    break;
-            }
-
-            throw $e;
-        }
-    }
-
-    /**
-     * Operation deviceShellPost
+     * Operation deviceShell
      *
      * run adb shell command
      *
@@ -506,14 +178,14 @@ class HubApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\InlineResponse200
      */
-    public function deviceShellPost($device = null)
+    public function deviceShell($device = null)
     {
-        list($response) = $this->deviceShellPostWithHttpInfo($device);
+        list($response) = $this->deviceShellWithHttpInfo($device);
         return $response;
     }
 
     /**
-     * Operation deviceShellPostWithHttpInfo
+     * Operation deviceShellWithHttpInfo
      *
      * run adb shell command
      *
@@ -521,7 +193,7 @@ class HubApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\InlineResponse200, HTTP status code, HTTP response headers (array of strings)
      */
-    public function deviceShellPostWithHttpInfo($device = null)
+    public function deviceShellWithHttpInfo($device = null)
     {
         // parse inputs
         $resourcePath = "/device/shell";
@@ -580,28 +252,28 @@ class HubApi
     }
 
     /**
-     * Operation devices
+     * Operation devicesList
      *
      * list all attached devices to RobusTest
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\HubDevices
      */
-    public function devices()
+    public function devicesList()
     {
-        list($response) = $this->devicesWithHttpInfo();
+        list($response) = $this->devicesListWithHttpInfo();
         return $response;
     }
 
     /**
-     * Operation devicesWithHttpInfo
+     * Operation devicesListWithHttpInfo
      *
      * list all attached devices to RobusTest
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\HubDevices, HTTP status code, HTTP response headers (array of strings)
      */
-    public function devicesWithHttpInfo()
+    public function devicesListWithHttpInfo()
     {
         // parse inputs
         $resourcePath = "/devices";
@@ -642,6 +314,334 @@ class HubApi
             switch ($e->getCode()) {
                 case 200:
                     $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\HubDevices', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation freeDevice
+     *
+     * free device
+     *
+     * @param \Swagger\Client\Model\Device1 $device  (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\Device
+     */
+    public function freeDevice($device = null)
+    {
+        list($response) = $this->freeDeviceWithHttpInfo($device);
+        return $response;
+    }
+
+    /**
+     * Operation freeDeviceWithHttpInfo
+     *
+     * free device
+     *
+     * @param \Swagger\Client\Model\Device1 $device  (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\Device, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function freeDeviceWithHttpInfo($device = null)
+    {
+        // parse inputs
+        $resourcePath = "/device";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        // body params
+        $_tempBody = null;
+        if (isset($device)) {
+            $_tempBody = $device;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\Device',
+                '/device'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Device', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Device', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 0:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation getFreeDevice
+     *
+     * get free device based on given parameters
+     *
+     * @param \Swagger\Client\Model\Device $device  (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\Device
+     */
+    public function getFreeDevice($device = null)
+    {
+        list($response) = $this->getFreeDeviceWithHttpInfo($device);
+        return $response;
+    }
+
+    /**
+     * Operation getFreeDeviceWithHttpInfo
+     *
+     * get free device based on given parameters
+     *
+     * @param \Swagger\Client\Model\Device $device  (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\Device, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function getFreeDeviceWithHttpInfo($device = null)
+    {
+        // parse inputs
+        $resourcePath = "/device";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        // body params
+        $_tempBody = null;
+        if (isset($device)) {
+            $_tempBody = $device;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PUT',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\Device',
+                '/device'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Device', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Device', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 0:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation reverseDevice
+     *
+     * reverse a device
+     *
+     * @param \Swagger\Client\Model\Device2 $device  (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\Device
+     */
+    public function reverseDevice($device = null)
+    {
+        list($response) = $this->reverseDeviceWithHttpInfo($device);
+        return $response;
+    }
+
+    /**
+     * Operation reverseDeviceWithHttpInfo
+     *
+     * reverse a device
+     *
+     * @param \Swagger\Client\Model\Device2 $device  (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\Device, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function reverseDeviceWithHttpInfo($device = null)
+    {
+        // parse inputs
+        $resourcePath = "/device/reverse";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        // body params
+        $_tempBody = null;
+        if (isset($device)) {
+            $_tempBody = $device;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'PUT',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\Device',
+                '/device/reverse'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Device', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Device', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 0:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+            }
+
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation unreverseDevice
+     *
+     * unrevrse the device
+     *
+     * @param \Swagger\Client\Model\Device3 $device  (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return \Swagger\Client\Model\Device
+     */
+    public function unreverseDevice($device = null)
+    {
+        list($response) = $this->unreverseDeviceWithHttpInfo($device);
+        return $response;
+    }
+
+    /**
+     * Operation unreverseDeviceWithHttpInfo
+     *
+     * unrevrse the device
+     *
+     * @param \Swagger\Client\Model\Device3 $device  (optional)
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @return array of \Swagger\Client\Model\Device, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function unreverseDeviceWithHttpInfo($device = null)
+    {
+        // parse inputs
+        $resourcePath = "/device/reverse";
+        $httpBody = '';
+        $queryParams = [];
+        $headerParams = [];
+        $formParams = [];
+        $_header_accept = $this->apiClient->selectHeaderAccept(['application/json']);
+        if (!is_null($_header_accept)) {
+            $headerParams['Accept'] = $_header_accept;
+        }
+        $headerParams['Content-Type'] = $this->apiClient->selectHeaderContentType(['application/json']);
+
+        // default format to json
+        $resourcePath = str_replace("{format}", "json", $resourcePath);
+
+        // body params
+        $_tempBody = null;
+        if (isset($device)) {
+            $_tempBody = $device;
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            $httpBody = $_tempBody; // $_tempBody is the method argument, if present
+        } elseif (count($formParams) > 0) {
+            $httpBody = $formParams; // for HTTP post (form)
+        }
+        // make the API Call
+        try {
+            list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
+                $resourcePath,
+                'DELETE',
+                $queryParams,
+                $httpBody,
+                $headerParams,
+                '\Swagger\Client\Model\Device',
+                '/device/reverse'
+            );
+
+            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Device', $httpHeader), $statusCode, $httpHeader];
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+                case 200:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Device', $e->getResponseHeaders());
+                    $e->setResponseObject($data);
+                    break;
+                case 0:
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Error', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
             }

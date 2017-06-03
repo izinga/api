@@ -21,13 +21,13 @@ All URIs are relative to *http://mobile.robustest.com:8085*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*HubApi* | [**DeviceCommandPost**](docs/HubApi.md#devicecommandpost) | **Post** /device/command | run adb  command
-*HubApi* | [**DeviceDelete**](docs/HubApi.md#devicedelete) | **Delete** /device | free device
-*HubApi* | [**DevicePut**](docs/HubApi.md#deviceput) | **Put** /device | get free device based on given parameters
-*HubApi* | [**DeviceReverseDelete**](docs/HubApi.md#devicereversedelete) | **Delete** /device/reverse | unrevrse the device
-*HubApi* | [**DeviceReversePut**](docs/HubApi.md#devicereverseput) | **Put** /device/reverse | reverse a device
-*HubApi* | [**DeviceShellPost**](docs/HubApi.md#deviceshellpost) | **Post** /device/shell | run adb shell command
-*HubApi* | [**Devices**](docs/HubApi.md#devices) | **Get** /devices | list all attached devices to RobusTest
+*HubApi* | [**AdbCommand**](docs/HubApi.md#adbcommand) | **Post** /device/command | run adb  command
+*HubApi* | [**DeviceShell**](docs/HubApi.md#deviceshell) | **Post** /device/shell | run adb shell command
+*HubApi* | [**DevicesList**](docs/HubApi.md#deviceslist) | **Get** /devices | list all attached devices to RobusTest
+*HubApi* | [**FreeDevice**](docs/HubApi.md#freedevice) | **Delete** /device | free device
+*HubApi* | [**GetFreeDevice**](docs/HubApi.md#getfreedevice) | **Put** /device | get free device based on given parameters
+*HubApi* | [**ReverseDevice**](docs/HubApi.md#reversedevice) | **Put** /device/reverse | reverse a device
+*HubApi* | [**UnreverseDevice**](docs/HubApi.md#unreversedevice) | **Delete** /device/reverse | unrevrse the device
 
 
 ## Documentation For Models

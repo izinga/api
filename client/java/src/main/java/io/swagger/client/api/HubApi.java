@@ -63,8 +63,8 @@ public class HubApi {
         this.apiClient = apiClient;
     }
 
-    /* Build call for deviceCommandPost */
-    private com.squareup.okhttp.Call deviceCommandPostCall(Device5 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /* Build call for adbCommand */
+    private com.squareup.okhttp.Call adbCommandCall(Device5 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = device;
         
         // create path and map variables
@@ -105,10 +105,10 @@ public class HubApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deviceCommandPostValidateBeforeCall(Device5 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call adbCommandValidateBeforeCall(Device5 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         
-        com.squareup.okhttp.Call call = deviceCommandPostCall(device, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = adbCommandCall(device, progressListener, progressRequestListener);
         return call;
 
         
@@ -124,8 +124,8 @@ public class HubApi {
      * @return InlineResponse2001
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse2001 deviceCommandPost(Device5 device) throws ApiException {
-        ApiResponse<InlineResponse2001> resp = deviceCommandPostWithHttpInfo(device);
+    public InlineResponse2001 adbCommand(Device5 device) throws ApiException {
+        ApiResponse<InlineResponse2001> resp = adbCommandWithHttpInfo(device);
         return resp.getData();
     }
 
@@ -136,8 +136,8 @@ public class HubApi {
      * @return ApiResponse&lt;InlineResponse2001&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse2001> deviceCommandPostWithHttpInfo(Device5 device) throws ApiException {
-        com.squareup.okhttp.Call call = deviceCommandPostValidateBeforeCall(device, null, null);
+    public ApiResponse<InlineResponse2001> adbCommandWithHttpInfo(Device5 device) throws ApiException {
+        com.squareup.okhttp.Call call = adbCommandValidateBeforeCall(device, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -150,7 +150,7 @@ public class HubApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deviceCommandPostAsync(Device5 device, final ApiCallback<InlineResponse2001> callback) throws ApiException {
+    public com.squareup.okhttp.Call adbCommandAsync(Device5 device, final ApiCallback<InlineResponse2001> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -171,465 +171,13 @@ public class HubApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deviceCommandPostValidateBeforeCall(device, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = adbCommandValidateBeforeCall(device, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<InlineResponse2001>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
-    /* Build call for deviceDelete */
-    private com.squareup.okhttp.Call deviceDeleteCall(Device1 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = device;
-        
-        // create path and map variables
-        String localVarPath = "/device".replaceAll("\\{format\\}","json");
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deviceDeleteValidateBeforeCall(Device1 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        
-        com.squareup.okhttp.Call call = deviceDeleteCall(device, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * free device
-     * 
-     * @param device  (optional)
-     * @return Device
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public Device deviceDelete(Device1 device) throws ApiException {
-        ApiResponse<Device> resp = deviceDeleteWithHttpInfo(device);
-        return resp.getData();
-    }
-
-    /**
-     * free device
-     * 
-     * @param device  (optional)
-     * @return ApiResponse&lt;Device&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<Device> deviceDeleteWithHttpInfo(Device1 device) throws ApiException {
-        com.squareup.okhttp.Call call = deviceDeleteValidateBeforeCall(device, null, null);
-        Type localVarReturnType = new TypeToken<Device>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * free device (asynchronously)
-     * 
-     * @param device  (optional)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call deviceDeleteAsync(Device1 device, final ApiCallback<Device> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = deviceDeleteValidateBeforeCall(device, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Device>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /* Build call for devicePut */
-    private com.squareup.okhttp.Call devicePutCall(Device device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = device;
-        
-        // create path and map variables
-        String localVarPath = "/device".replaceAll("\\{format\\}","json");
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call devicePutValidateBeforeCall(Device device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        
-        com.squareup.okhttp.Call call = devicePutCall(device, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * get free device based on given parameters
-     * 
-     * @param device  (optional)
-     * @return Device
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public Device devicePut(Device device) throws ApiException {
-        ApiResponse<Device> resp = devicePutWithHttpInfo(device);
-        return resp.getData();
-    }
-
-    /**
-     * get free device based on given parameters
-     * 
-     * @param device  (optional)
-     * @return ApiResponse&lt;Device&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<Device> devicePutWithHttpInfo(Device device) throws ApiException {
-        com.squareup.okhttp.Call call = devicePutValidateBeforeCall(device, null, null);
-        Type localVarReturnType = new TypeToken<Device>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * get free device based on given parameters (asynchronously)
-     * 
-     * @param device  (optional)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call devicePutAsync(Device device, final ApiCallback<Device> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = devicePutValidateBeforeCall(device, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Device>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /* Build call for deviceReverseDelete */
-    private com.squareup.okhttp.Call deviceReverseDeleteCall(Device3 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = device;
-        
-        // create path and map variables
-        String localVarPath = "/device/reverse".replaceAll("\\{format\\}","json");
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deviceReverseDeleteValidateBeforeCall(Device3 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        
-        com.squareup.okhttp.Call call = deviceReverseDeleteCall(device, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * unrevrse the device
-     * 
-     * @param device  (optional)
-     * @return Device
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public Device deviceReverseDelete(Device3 device) throws ApiException {
-        ApiResponse<Device> resp = deviceReverseDeleteWithHttpInfo(device);
-        return resp.getData();
-    }
-
-    /**
-     * unrevrse the device
-     * 
-     * @param device  (optional)
-     * @return ApiResponse&lt;Device&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<Device> deviceReverseDeleteWithHttpInfo(Device3 device) throws ApiException {
-        com.squareup.okhttp.Call call = deviceReverseDeleteValidateBeforeCall(device, null, null);
-        Type localVarReturnType = new TypeToken<Device>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * unrevrse the device (asynchronously)
-     * 
-     * @param device  (optional)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call deviceReverseDeleteAsync(Device3 device, final ApiCallback<Device> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = deviceReverseDeleteValidateBeforeCall(device, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Device>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /* Build call for deviceReversePut */
-    private com.squareup.okhttp.Call deviceReversePutCall(Device2 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        Object localVarPostBody = device;
-        
-        // create path and map variables
-        String localVarPath = "/device/reverse".replaceAll("\\{format\\}","json");
-
-        List<Pair> localVarQueryParams = new ArrayList<Pair>();
-
-        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
-
-        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
-
-        final String[] localVarAccepts = {
-            "application/json"
-        };
-        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
-        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
-
-        final String[] localVarContentTypes = {
-            "application/json"
-        };
-        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
-        localVarHeaderParams.put("Content-Type", localVarContentType);
-
-        if(progressListener != null) {
-            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
-                @Override
-                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
-                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
-                    return originalResponse.newBuilder()
-                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
-                    .build();
-                }
-            });
-        }
-
-        String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
-    }
-    
-    @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deviceReversePutValidateBeforeCall(Device2 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
-        
-        
-        com.squareup.okhttp.Call call = deviceReversePutCall(device, progressListener, progressRequestListener);
-        return call;
-
-        
-        
-        
-        
-    }
-
-    /**
-     * reverse a device
-     * 
-     * @param device  (optional)
-     * @return Device
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public Device deviceReversePut(Device2 device) throws ApiException {
-        ApiResponse<Device> resp = deviceReversePutWithHttpInfo(device);
-        return resp.getData();
-    }
-
-    /**
-     * reverse a device
-     * 
-     * @param device  (optional)
-     * @return ApiResponse&lt;Device&gt;
-     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
-     */
-    public ApiResponse<Device> deviceReversePutWithHttpInfo(Device2 device) throws ApiException {
-        com.squareup.okhttp.Call call = deviceReversePutValidateBeforeCall(device, null, null);
-        Type localVarReturnType = new TypeToken<Device>(){}.getType();
-        return apiClient.execute(call, localVarReturnType);
-    }
-
-    /**
-     * reverse a device (asynchronously)
-     * 
-     * @param device  (optional)
-     * @param callback The callback to be executed when the API call finishes
-     * @return The request call
-     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
-     */
-    public com.squareup.okhttp.Call deviceReversePutAsync(Device2 device, final ApiCallback<Device> callback) throws ApiException {
-
-        ProgressResponseBody.ProgressListener progressListener = null;
-        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
-
-        if (callback != null) {
-            progressListener = new ProgressResponseBody.ProgressListener() {
-                @Override
-                public void update(long bytesRead, long contentLength, boolean done) {
-                    callback.onDownloadProgress(bytesRead, contentLength, done);
-                }
-            };
-
-            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
-                @Override
-                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
-                    callback.onUploadProgress(bytesWritten, contentLength, done);
-                }
-            };
-        }
-
-        com.squareup.okhttp.Call call = deviceReversePutValidateBeforeCall(device, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Device>(){}.getType();
-        apiClient.executeAsync(call, localVarReturnType, callback);
-        return call;
-    }
-    /* Build call for deviceShellPost */
-    private com.squareup.okhttp.Call deviceShellPostCall(Device4 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /* Build call for deviceShell */
+    private com.squareup.okhttp.Call deviceShellCall(Device4 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = device;
         
         // create path and map variables
@@ -670,10 +218,10 @@ public class HubApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call deviceShellPostValidateBeforeCall(Device4 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call deviceShellValidateBeforeCall(Device4 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         
-        com.squareup.okhttp.Call call = deviceShellPostCall(device, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deviceShellCall(device, progressListener, progressRequestListener);
         return call;
 
         
@@ -689,8 +237,8 @@ public class HubApi {
      * @return InlineResponse200
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public InlineResponse200 deviceShellPost(Device4 device) throws ApiException {
-        ApiResponse<InlineResponse200> resp = deviceShellPostWithHttpInfo(device);
+    public InlineResponse200 deviceShell(Device4 device) throws ApiException {
+        ApiResponse<InlineResponse200> resp = deviceShellWithHttpInfo(device);
         return resp.getData();
     }
 
@@ -701,8 +249,8 @@ public class HubApi {
      * @return ApiResponse&lt;InlineResponse200&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<InlineResponse200> deviceShellPostWithHttpInfo(Device4 device) throws ApiException {
-        com.squareup.okhttp.Call call = deviceShellPostValidateBeforeCall(device, null, null);
+    public ApiResponse<InlineResponse200> deviceShellWithHttpInfo(Device4 device) throws ApiException {
+        com.squareup.okhttp.Call call = deviceShellValidateBeforeCall(device, null, null);
         Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -715,7 +263,7 @@ public class HubApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call deviceShellPostAsync(Device4 device, final ApiCallback<InlineResponse200> callback) throws ApiException {
+    public com.squareup.okhttp.Call deviceShellAsync(Device4 device, final ApiCallback<InlineResponse200> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -736,13 +284,13 @@ public class HubApi {
             };
         }
 
-        com.squareup.okhttp.Call call = deviceShellPostValidateBeforeCall(device, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = deviceShellValidateBeforeCall(device, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<InlineResponse200>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
-    /* Build call for devices */
-    private com.squareup.okhttp.Call devicesCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /* Build call for devicesList */
+    private com.squareup.okhttp.Call devicesListCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = null;
         
         // create path and map variables
@@ -783,10 +331,10 @@ public class HubApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call devicesValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call devicesListValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         
-        com.squareup.okhttp.Call call = devicesCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = devicesListCall(progressListener, progressRequestListener);
         return call;
 
         
@@ -801,8 +349,8 @@ public class HubApi {
      * @return HubDevices
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public HubDevices devices() throws ApiException {
-        ApiResponse<HubDevices> resp = devicesWithHttpInfo();
+    public HubDevices devicesList() throws ApiException {
+        ApiResponse<HubDevices> resp = devicesListWithHttpInfo();
         return resp.getData();
     }
 
@@ -812,8 +360,8 @@ public class HubApi {
      * @return ApiResponse&lt;HubDevices&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<HubDevices> devicesWithHttpInfo() throws ApiException {
-        com.squareup.okhttp.Call call = devicesValidateBeforeCall(null, null);
+    public ApiResponse<HubDevices> devicesListWithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = devicesListValidateBeforeCall(null, null);
         Type localVarReturnType = new TypeToken<HubDevices>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -825,7 +373,7 @@ public class HubApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call devicesAsync(final ApiCallback<HubDevices> callback) throws ApiException {
+    public com.squareup.okhttp.Call devicesListAsync(final ApiCallback<HubDevices> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -846,8 +394,460 @@ public class HubApi {
             };
         }
 
-        com.squareup.okhttp.Call call = devicesValidateBeforeCall(progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = devicesListValidateBeforeCall(progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<HubDevices>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /* Build call for freeDevice */
+    private com.squareup.okhttp.Call freeDeviceCall(Device1 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = device;
+        
+        // create path and map variables
+        String localVarPath = "/device".replaceAll("\\{format\\}","json");
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call freeDeviceValidateBeforeCall(Device1 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        
+        com.squareup.okhttp.Call call = freeDeviceCall(device, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * free device
+     * 
+     * @param device  (optional)
+     * @return Device
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public Device freeDevice(Device1 device) throws ApiException {
+        ApiResponse<Device> resp = freeDeviceWithHttpInfo(device);
+        return resp.getData();
+    }
+
+    /**
+     * free device
+     * 
+     * @param device  (optional)
+     * @return ApiResponse&lt;Device&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Device> freeDeviceWithHttpInfo(Device1 device) throws ApiException {
+        com.squareup.okhttp.Call call = freeDeviceValidateBeforeCall(device, null, null);
+        Type localVarReturnType = new TypeToken<Device>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * free device (asynchronously)
+     * 
+     * @param device  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call freeDeviceAsync(Device1 device, final ApiCallback<Device> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = freeDeviceValidateBeforeCall(device, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Device>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /* Build call for getFreeDevice */
+    private com.squareup.okhttp.Call getFreeDeviceCall(Device device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = device;
+        
+        // create path and map variables
+        String localVarPath = "/device".replaceAll("\\{format\\}","json");
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call getFreeDeviceValidateBeforeCall(Device device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        
+        com.squareup.okhttp.Call call = getFreeDeviceCall(device, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * get free device based on given parameters
+     * 
+     * @param device  (optional)
+     * @return Device
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public Device getFreeDevice(Device device) throws ApiException {
+        ApiResponse<Device> resp = getFreeDeviceWithHttpInfo(device);
+        return resp.getData();
+    }
+
+    /**
+     * get free device based on given parameters
+     * 
+     * @param device  (optional)
+     * @return ApiResponse&lt;Device&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Device> getFreeDeviceWithHttpInfo(Device device) throws ApiException {
+        com.squareup.okhttp.Call call = getFreeDeviceValidateBeforeCall(device, null, null);
+        Type localVarReturnType = new TypeToken<Device>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * get free device based on given parameters (asynchronously)
+     * 
+     * @param device  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call getFreeDeviceAsync(Device device, final ApiCallback<Device> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = getFreeDeviceValidateBeforeCall(device, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Device>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /* Build call for reverseDevice */
+    private com.squareup.okhttp.Call reverseDeviceCall(Device2 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = device;
+        
+        // create path and map variables
+        String localVarPath = "/device/reverse".replaceAll("\\{format\\}","json");
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "PUT", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call reverseDeviceValidateBeforeCall(Device2 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        
+        com.squareup.okhttp.Call call = reverseDeviceCall(device, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * reverse a device
+     * 
+     * @param device  (optional)
+     * @return Device
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public Device reverseDevice(Device2 device) throws ApiException {
+        ApiResponse<Device> resp = reverseDeviceWithHttpInfo(device);
+        return resp.getData();
+    }
+
+    /**
+     * reverse a device
+     * 
+     * @param device  (optional)
+     * @return ApiResponse&lt;Device&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Device> reverseDeviceWithHttpInfo(Device2 device) throws ApiException {
+        com.squareup.okhttp.Call call = reverseDeviceValidateBeforeCall(device, null, null);
+        Type localVarReturnType = new TypeToken<Device>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * reverse a device (asynchronously)
+     * 
+     * @param device  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call reverseDeviceAsync(Device2 device, final ApiCallback<Device> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = reverseDeviceValidateBeforeCall(device, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Device>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /* Build call for unreverseDevice */
+    private com.squareup.okhttp.Call unreverseDeviceCall(Device3 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = device;
+        
+        // create path and map variables
+        String localVarPath = "/device/reverse".replaceAll("\\{format\\}","json");
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+    
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call unreverseDeviceValidateBeforeCall(Device3 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+        
+        com.squareup.okhttp.Call call = unreverseDeviceCall(device, progressListener, progressRequestListener);
+        return call;
+
+        
+        
+        
+        
+    }
+
+    /**
+     * unrevrse the device
+     * 
+     * @param device  (optional)
+     * @return Device
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public Device unreverseDevice(Device3 device) throws ApiException {
+        ApiResponse<Device> resp = unreverseDeviceWithHttpInfo(device);
+        return resp.getData();
+    }
+
+    /**
+     * unrevrse the device
+     * 
+     * @param device  (optional)
+     * @return ApiResponse&lt;Device&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<Device> unreverseDeviceWithHttpInfo(Device3 device) throws ApiException {
+        com.squareup.okhttp.Call call = unreverseDeviceValidateBeforeCall(device, null, null);
+        Type localVarReturnType = new TypeToken<Device>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * unrevrse the device (asynchronously)
+     * 
+     * @param device  (optional)
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call unreverseDeviceAsync(Device3 device, final ApiCallback<Device> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = unreverseDeviceValidateBeforeCall(device, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<Device>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }

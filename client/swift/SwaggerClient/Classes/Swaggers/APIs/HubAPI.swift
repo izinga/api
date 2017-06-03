@@ -16,8 +16,8 @@ public class HubAPI: APIBase {
      - parameter device: (body)  (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func deviceCommandPost(device device: Device5? = nil, completion: ((data: InlineResponse2001?, error: ErrorType?) -> Void)) {
-        deviceCommandPostWithRequestBuilder(device: device).execute { (response, error) -> Void in
+    public class func adbCommand(device device: Device5? = nil, completion: ((data: InlineResponse2001?, error: ErrorType?) -> Void)) {
+        adbCommandWithRequestBuilder(device: device).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
     }
@@ -35,7 +35,7 @@ public class HubAPI: APIBase {
 
      - returns: RequestBuilder<InlineResponse2001> 
      */
-    public class func deviceCommandPostWithRequestBuilder(device device: Device5? = nil) -> RequestBuilder<InlineResponse2001> {
+    public class func adbCommandWithRequestBuilder(device device: Device5? = nil) -> RequestBuilder<InlineResponse2001> {
         let path = "/device/command"
         let URLString = SwaggerClientAPI.basePath + path
         let parameters = device?.encodeToJSON() as? [String:AnyObject]
@@ -48,13 +48,84 @@ public class HubAPI: APIBase {
     }
 
     /**
+     run adb shell command
+     
+     - parameter device: (body)  (optional)
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    public class func deviceShell(device device: Device4? = nil, completion: ((data: InlineResponse200?, error: ErrorType?) -> Void)) {
+        deviceShellWithRequestBuilder(device: device).execute { (response, error) -> Void in
+            completion(data: response?.body, error: error);
+        }
+    }
+
+
+    /**
+     run adb shell command
+     - POST /device/shell
+     - examples: [{contentType=application/json, example={
+  "msg" : "aeiou",
+  "status" : true
+}}]
+     
+     - parameter device: (body)  (optional)
+
+     - returns: RequestBuilder<InlineResponse200> 
+     */
+    public class func deviceShellWithRequestBuilder(device device: Device4? = nil) -> RequestBuilder<InlineResponse200> {
+        let path = "/device/shell"
+        let URLString = SwaggerClientAPI.basePath + path
+        let parameters = device?.encodeToJSON() as? [String:AnyObject]
+ 
+        let convertedParameters = APIHelper.convertBoolToString(parameters)
+ 
+        let requestBuilder: RequestBuilder<InlineResponse200>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "POST", URLString: URLString, parameters: convertedParameters, isBody: true)
+    }
+
+    /**
+     list all attached devices to RobusTest
+     
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    public class func devicesList(completion: ((data: HubDevices?, error: ErrorType?) -> Void)) {
+        devicesListWithRequestBuilder().execute { (response, error) -> Void in
+            completion(data: response?.body, error: error);
+        }
+    }
+
+
+    /**
+     list all attached devices to RobusTest
+     - GET /devices
+     - examples: [{contentType=application/json, example={ }}]
+
+     - returns: RequestBuilder<HubDevices> 
+     */
+    public class func devicesListWithRequestBuilder() -> RequestBuilder<HubDevices> {
+        let path = "/devices"
+        let URLString = SwaggerClientAPI.basePath + path
+
+        let nillableParameters: [String:AnyObject?] = [:]
+ 
+        let parameters = APIHelper.rejectNil(nillableParameters)
+ 
+        let convertedParameters = APIHelper.convertBoolToString(parameters)
+ 
+        let requestBuilder: RequestBuilder<HubDevices>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: URLString, parameters: convertedParameters, isBody: true)
+    }
+
+    /**
      free device
      
      - parameter device: (body)  (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func deviceDelete(device device: Device1? = nil, completion: ((data: Device?, error: ErrorType?) -> Void)) {
-        deviceDeleteWithRequestBuilder(device: device).execute { (response, error) -> Void in
+    public class func freeDevice(device device: Device1? = nil, completion: ((data: Device?, error: ErrorType?) -> Void)) {
+        freeDeviceWithRequestBuilder(device: device).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
     }
@@ -77,7 +148,7 @@ public class HubAPI: APIBase {
 
      - returns: RequestBuilder<Device> 
      */
-    public class func deviceDeleteWithRequestBuilder(device device: Device1? = nil) -> RequestBuilder<Device> {
+    public class func freeDeviceWithRequestBuilder(device device: Device1? = nil) -> RequestBuilder<Device> {
         let path = "/device"
         let URLString = SwaggerClientAPI.basePath + path
         let parameters = device?.encodeToJSON() as? [String:AnyObject]
@@ -95,8 +166,8 @@ public class HubAPI: APIBase {
      - parameter device: (body)  (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func devicePut(device device: Device? = nil, completion: ((data: Device?, error: ErrorType?) -> Void)) {
-        devicePutWithRequestBuilder(device: device).execute { (response, error) -> Void in
+    public class func getFreeDevice(device device: Device? = nil, completion: ((data: Device?, error: ErrorType?) -> Void)) {
+        getFreeDeviceWithRequestBuilder(device: device).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
     }
@@ -119,7 +190,7 @@ public class HubAPI: APIBase {
 
      - returns: RequestBuilder<Device> 
      */
-    public class func devicePutWithRequestBuilder(device device: Device? = nil) -> RequestBuilder<Device> {
+    public class func getFreeDeviceWithRequestBuilder(device device: Device? = nil) -> RequestBuilder<Device> {
         let path = "/device"
         let URLString = SwaggerClientAPI.basePath + path
         let parameters = device?.encodeToJSON() as? [String:AnyObject]
@@ -132,55 +203,13 @@ public class HubAPI: APIBase {
     }
 
     /**
-     unrevrse the device
-     
-     - parameter device: (body)  (optional)
-     - parameter completion: completion handler to receive the data and the error objects
-     */
-    public class func deviceReverseDelete(device device: Device3? = nil, completion: ((data: Device?, error: ErrorType?) -> Void)) {
-        deviceReverseDeleteWithRequestBuilder(device: device).execute { (response, error) -> Void in
-            completion(data: response?.body, error: error);
-        }
-    }
-
-
-    /**
-     unrevrse the device
-     - DELETE /device/reverse
-     - examples: [{contentType=application/json, example={
-  "os" : "aeiou",
-  "serial" : "aeiou",
-  "session" : "aeiou",
-  "name" : "aeiou",
-  "_id" : "aeiou",
-  "version" : "aeiou",
-  "reverseKey" : "aeiou"
-}}]
-     
-     - parameter device: (body)  (optional)
-
-     - returns: RequestBuilder<Device> 
-     */
-    public class func deviceReverseDeleteWithRequestBuilder(device device: Device3? = nil) -> RequestBuilder<Device> {
-        let path = "/device/reverse"
-        let URLString = SwaggerClientAPI.basePath + path
-        let parameters = device?.encodeToJSON() as? [String:AnyObject]
- 
-        let convertedParameters = APIHelper.convertBoolToString(parameters)
- 
-        let requestBuilder: RequestBuilder<Device>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
-
-        return requestBuilder.init(method: "DELETE", URLString: URLString, parameters: convertedParameters, isBody: true)
-    }
-
-    /**
      reverse a device
      
      - parameter device: (body)  (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func deviceReversePut(device device: Device2? = nil, completion: ((data: Device?, error: ErrorType?) -> Void)) {
-        deviceReversePutWithRequestBuilder(device: device).execute { (response, error) -> Void in
+    public class func reverseDevice(device device: Device2? = nil, completion: ((data: Device?, error: ErrorType?) -> Void)) {
+        reverseDeviceWithRequestBuilder(device: device).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
     }
@@ -203,7 +232,7 @@ public class HubAPI: APIBase {
 
      - returns: RequestBuilder<Device> 
      */
-    public class func deviceReversePutWithRequestBuilder(device device: Device2? = nil) -> RequestBuilder<Device> {
+    public class func reverseDeviceWithRequestBuilder(device device: Device2? = nil) -> RequestBuilder<Device> {
         let path = "/device/reverse"
         let URLString = SwaggerClientAPI.basePath + path
         let parameters = device?.encodeToJSON() as? [String:AnyObject]
@@ -216,74 +245,45 @@ public class HubAPI: APIBase {
     }
 
     /**
-     run adb shell command
+     unrevrse the device
      
      - parameter device: (body)  (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func deviceShellPost(device device: Device4? = nil, completion: ((data: InlineResponse200?, error: ErrorType?) -> Void)) {
-        deviceShellPostWithRequestBuilder(device: device).execute { (response, error) -> Void in
+    public class func unreverseDevice(device device: Device3? = nil, completion: ((data: Device?, error: ErrorType?) -> Void)) {
+        unreverseDeviceWithRequestBuilder(device: device).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
     }
 
 
     /**
-     run adb shell command
-     - POST /device/shell
+     unrevrse the device
+     - DELETE /device/reverse
      - examples: [{contentType=application/json, example={
-  "msg" : "aeiou",
-  "status" : true
+  "os" : "aeiou",
+  "serial" : "aeiou",
+  "session" : "aeiou",
+  "name" : "aeiou",
+  "_id" : "aeiou",
+  "version" : "aeiou",
+  "reverseKey" : "aeiou"
 }}]
      
      - parameter device: (body)  (optional)
 
-     - returns: RequestBuilder<InlineResponse200> 
+     - returns: RequestBuilder<Device> 
      */
-    public class func deviceShellPostWithRequestBuilder(device device: Device4? = nil) -> RequestBuilder<InlineResponse200> {
-        let path = "/device/shell"
+    public class func unreverseDeviceWithRequestBuilder(device device: Device3? = nil) -> RequestBuilder<Device> {
+        let path = "/device/reverse"
         let URLString = SwaggerClientAPI.basePath + path
         let parameters = device?.encodeToJSON() as? [String:AnyObject]
  
         let convertedParameters = APIHelper.convertBoolToString(parameters)
  
-        let requestBuilder: RequestBuilder<InlineResponse200>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<Device>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
-        return requestBuilder.init(method: "POST", URLString: URLString, parameters: convertedParameters, isBody: true)
-    }
-
-    /**
-     list all attached devices to RobusTest
-     
-     - parameter completion: completion handler to receive the data and the error objects
-     */
-    public class func devices(completion: ((data: HubDevices?, error: ErrorType?) -> Void)) {
-        devicesWithRequestBuilder().execute { (response, error) -> Void in
-            completion(data: response?.body, error: error);
-        }
-    }
-
-
-    /**
-     list all attached devices to RobusTest
-     - GET /devices
-     - examples: [{contentType=application/json, example={ }}]
-
-     - returns: RequestBuilder<HubDevices> 
-     */
-    public class func devicesWithRequestBuilder() -> RequestBuilder<HubDevices> {
-        let path = "/devices"
-        let URLString = SwaggerClientAPI.basePath + path
-
-        let nillableParameters: [String:AnyObject?] = [:]
- 
-        let parameters = APIHelper.rejectNil(nillableParameters)
- 
-        let convertedParameters = APIHelper.convertBoolToString(parameters)
- 
-        let requestBuilder: RequestBuilder<HubDevices>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
-
-        return requestBuilder.init(method: "GET", URLString: URLString, parameters: convertedParameters, isBody: true)
+        return requestBuilder.init(method: "DELETE", URLString: URLString, parameters: convertedParameters, isBody: true)
     }
 
 }

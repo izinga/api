@@ -24,8 +24,8 @@ module SwaggerClient
     # @param [Hash] opts the optional parameters
     # @option opts [Device5] :device 
     # @return [InlineResponse2001]
-    def device_command_post(opts = {})
-      data, _status_code, _headers = device_command_post_with_http_info(opts)
+    def adb_command(opts = {})
+      data, _status_code, _headers = adb_command_with_http_info(opts)
       return data
     end
 
@@ -34,9 +34,9 @@ module SwaggerClient
     # @param [Hash] opts the optional parameters
     # @option opts [Device5] :device 
     # @return [Array<(InlineResponse2001, Fixnum, Hash)>] InlineResponse2001 data, response status code and response headers
-    def device_command_post_with_http_info(opts = {})
+    def adb_command_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: HubApi.device_command_post ..."
+        @api_client.config.logger.debug "Calling API: HubApi.adb_command ..."
       end
       # resource path
       local_var_path = "/device/command".sub('{format}','json')
@@ -65,211 +65,7 @@ module SwaggerClient
         :auth_names => auth_names,
         :return_type => 'InlineResponse2001')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: HubApi#device_command_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # free device
-    # 
-    # @param [Hash] opts the optional parameters
-    # @option opts [Device1] :device 
-    # @return [Device]
-    def device_delete(opts = {})
-      data, _status_code, _headers = device_delete_with_http_info(opts)
-      return data
-    end
-
-    # free device
-    # 
-    # @param [Hash] opts the optional parameters
-    # @option opts [Device1] :device 
-    # @return [Array<(Device, Fixnum, Hash)>] Device data, response status code and response headers
-    def device_delete_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: HubApi.device_delete ..."
-      end
-      # resource path
-      local_var_path = "/device".sub('{format}','json')
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(opts[:'device'])
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'Device')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: HubApi#device_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # get free device based on given parameters
-    # 
-    # @param [Hash] opts the optional parameters
-    # @option opts [Device] :device 
-    # @return [Device]
-    def device_put(opts = {})
-      data, _status_code, _headers = device_put_with_http_info(opts)
-      return data
-    end
-
-    # get free device based on given parameters
-    # 
-    # @param [Hash] opts the optional parameters
-    # @option opts [Device] :device 
-    # @return [Array<(Device, Fixnum, Hash)>] Device data, response status code and response headers
-    def device_put_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: HubApi.device_put ..."
-      end
-      # resource path
-      local_var_path = "/device".sub('{format}','json')
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(opts[:'device'])
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'Device')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: HubApi#device_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # unrevrse the device
-    # 
-    # @param [Hash] opts the optional parameters
-    # @option opts [Device3] :device 
-    # @return [Device]
-    def device_reverse_delete(opts = {})
-      data, _status_code, _headers = device_reverse_delete_with_http_info(opts)
-      return data
-    end
-
-    # unrevrse the device
-    # 
-    # @param [Hash] opts the optional parameters
-    # @option opts [Device3] :device 
-    # @return [Array<(Device, Fixnum, Hash)>] Device data, response status code and response headers
-    def device_reverse_delete_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: HubApi.device_reverse_delete ..."
-      end
-      # resource path
-      local_var_path = "/device/reverse".sub('{format}','json')
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(opts[:'device'])
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'Device')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: HubApi#device_reverse_delete\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
-      end
-      return data, status_code, headers
-    end
-
-    # reverse a device
-    # 
-    # @param [Hash] opts the optional parameters
-    # @option opts [Device2] :device 
-    # @return [Device]
-    def device_reverse_put(opts = {})
-      data, _status_code, _headers = device_reverse_put_with_http_info(opts)
-      return data
-    end
-
-    # reverse a device
-    # 
-    # @param [Hash] opts the optional parameters
-    # @option opts [Device2] :device 
-    # @return [Array<(Device, Fixnum, Hash)>] Device data, response status code and response headers
-    def device_reverse_put_with_http_info(opts = {})
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: HubApi.device_reverse_put ..."
-      end
-      # resource path
-      local_var_path = "/device/reverse".sub('{format}','json')
-
-      # query parameters
-      query_params = {}
-
-      # header parameters
-      header_params = {}
-      # HTTP header 'Accept' (if needed)
-      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
-      # HTTP header 'Content-Type'
-      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
-
-      # form parameters
-      form_params = {}
-
-      # http body (model)
-      post_body = @api_client.object_to_http_body(opts[:'device'])
-      auth_names = []
-      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
-        :header_params => header_params,
-        :query_params => query_params,
-        :form_params => form_params,
-        :body => post_body,
-        :auth_names => auth_names,
-        :return_type => 'Device')
-      if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: HubApi#device_reverse_put\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: HubApi#adb_command\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -279,8 +75,8 @@ module SwaggerClient
     # @param [Hash] opts the optional parameters
     # @option opts [Device4] :device 
     # @return [InlineResponse200]
-    def device_shell_post(opts = {})
-      data, _status_code, _headers = device_shell_post_with_http_info(opts)
+    def device_shell(opts = {})
+      data, _status_code, _headers = device_shell_with_http_info(opts)
       return data
     end
 
@@ -289,9 +85,9 @@ module SwaggerClient
     # @param [Hash] opts the optional parameters
     # @option opts [Device4] :device 
     # @return [Array<(InlineResponse200, Fixnum, Hash)>] InlineResponse200 data, response status code and response headers
-    def device_shell_post_with_http_info(opts = {})
+    def device_shell_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: HubApi.device_shell_post ..."
+        @api_client.config.logger.debug "Calling API: HubApi.device_shell ..."
       end
       # resource path
       local_var_path = "/device/shell".sub('{format}','json')
@@ -320,7 +116,7 @@ module SwaggerClient
         :auth_names => auth_names,
         :return_type => 'InlineResponse200')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: HubApi#device_shell_post\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: HubApi#device_shell\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -329,8 +125,8 @@ module SwaggerClient
     # 
     # @param [Hash] opts the optional parameters
     # @return [HubDevices]
-    def devices(opts = {})
-      data, _status_code, _headers = devices_with_http_info(opts)
+    def devices_list(opts = {})
+      data, _status_code, _headers = devices_list_with_http_info(opts)
       return data
     end
 
@@ -338,9 +134,9 @@ module SwaggerClient
     # 
     # @param [Hash] opts the optional parameters
     # @return [Array<(HubDevices, Fixnum, Hash)>] HubDevices data, response status code and response headers
-    def devices_with_http_info(opts = {})
+    def devices_list_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: HubApi.devices ..."
+        @api_client.config.logger.debug "Calling API: HubApi.devices_list ..."
       end
       # resource path
       local_var_path = "/devices".sub('{format}','json')
@@ -369,7 +165,211 @@ module SwaggerClient
         :auth_names => auth_names,
         :return_type => 'HubDevices')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: HubApi#devices\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: HubApi#devices_list\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # free device
+    # 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Device1] :device 
+    # @return [Device]
+    def free_device(opts = {})
+      data, _status_code, _headers = free_device_with_http_info(opts)
+      return data
+    end
+
+    # free device
+    # 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Device1] :device 
+    # @return [Array<(Device, Fixnum, Hash)>] Device data, response status code and response headers
+    def free_device_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: HubApi.free_device ..."
+      end
+      # resource path
+      local_var_path = "/device".sub('{format}','json')
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'device'])
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Device')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: HubApi#free_device\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # get free device based on given parameters
+    # 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Device] :device 
+    # @return [Device]
+    def get_free_device(opts = {})
+      data, _status_code, _headers = get_free_device_with_http_info(opts)
+      return data
+    end
+
+    # get free device based on given parameters
+    # 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Device] :device 
+    # @return [Array<(Device, Fixnum, Hash)>] Device data, response status code and response headers
+    def get_free_device_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: HubApi.get_free_device ..."
+      end
+      # resource path
+      local_var_path = "/device".sub('{format}','json')
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'device'])
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Device')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: HubApi#get_free_device\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # reverse a device
+    # 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Device2] :device 
+    # @return [Device]
+    def reverse_device(opts = {})
+      data, _status_code, _headers = reverse_device_with_http_info(opts)
+      return data
+    end
+
+    # reverse a device
+    # 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Device2] :device 
+    # @return [Array<(Device, Fixnum, Hash)>] Device data, response status code and response headers
+    def reverse_device_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: HubApi.reverse_device ..."
+      end
+      # resource path
+      local_var_path = "/device/reverse".sub('{format}','json')
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'device'])
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:PUT, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Device')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: HubApi#reverse_device\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # unrevrse the device
+    # 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Device3] :device 
+    # @return [Device]
+    def unreverse_device(opts = {})
+      data, _status_code, _headers = unreverse_device_with_http_info(opts)
+      return data
+    end
+
+    # unrevrse the device
+    # 
+    # @param [Hash] opts the optional parameters
+    # @option opts [Device3] :device 
+    # @return [Array<(Device, Fixnum, Hash)>] Device data, response status code and response headers
+    def unreverse_device_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: HubApi.unreverse_device ..."
+      end
+      # resource path
+      local_var_path = "/device/reverse".sub('{format}','json')
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = @api_client.object_to_http_body(opts[:'device'])
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'Device')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: HubApi#unreverse_device\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

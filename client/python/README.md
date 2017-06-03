@@ -56,10 +56,10 @@ device = swagger_client.Device5() # Device5 |  (optional)
 
 try:
     # run adb  command
-    api_response = api_instance.device_command_post(device=device)
+    api_response = api_instance.adb_command(device=device)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling HubApi->device_command_post: %s\n" % e)
+    print("Exception when calling HubApi->adb_command: %s\n" % e)
 
 ```
 
@@ -69,13 +69,13 @@ All URIs are relative to *http://mobile.robustest.com:8085*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*HubApi* | [**device_command_post**](docs/HubApi.md#device_command_post) | **POST** /device/command | run adb  command
-*HubApi* | [**device_delete**](docs/HubApi.md#device_delete) | **DELETE** /device | free device
-*HubApi* | [**device_put**](docs/HubApi.md#device_put) | **PUT** /device | get free device based on given parameters
-*HubApi* | [**device_reverse_delete**](docs/HubApi.md#device_reverse_delete) | **DELETE** /device/reverse | unrevrse the device
-*HubApi* | [**device_reverse_put**](docs/HubApi.md#device_reverse_put) | **PUT** /device/reverse | reverse a device
-*HubApi* | [**device_shell_post**](docs/HubApi.md#device_shell_post) | **POST** /device/shell | run adb shell command
-*HubApi* | [**devices**](docs/HubApi.md#devices) | **GET** /devices | list all attached devices to RobusTest
+*HubApi* | [**adb_command**](docs/HubApi.md#adb_command) | **POST** /device/command | run adb  command
+*HubApi* | [**device_shell**](docs/HubApi.md#device_shell) | **POST** /device/shell | run adb shell command
+*HubApi* | [**devices_list**](docs/HubApi.md#devices_list) | **GET** /devices | list all attached devices to RobusTest
+*HubApi* | [**free_device**](docs/HubApi.md#free_device) | **DELETE** /device | free device
+*HubApi* | [**get_free_device**](docs/HubApi.md#get_free_device) | **PUT** /device | get free device based on given parameters
+*HubApi* | [**reverse_device**](docs/HubApi.md#reverse_device) | **PUT** /device/reverse | reverse a device
+*HubApi* | [**unreverse_device**](docs/HubApi.md#unreverse_device) | **DELETE** /device/reverse | unrevrse the device
 
 
 ## Documentation For Models

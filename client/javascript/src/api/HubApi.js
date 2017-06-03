@@ -46,8 +46,8 @@
 
 
     /**
-     * Callback function to receive the result of the deviceCommandPost operation.
-     * @callback module:api/HubApi~deviceCommandPostCallback
+     * Callback function to receive the result of the adbCommand operation.
+     * @callback module:api/HubApi~adbCommandCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse2001} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -57,10 +57,10 @@
      * run adb  command
      * @param {Object} opts Optional parameters
      * @param {module:model/Device5} opts.device 
-     * @param {module:api/HubApi~deviceCommandPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/HubApi~adbCommandCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse2001}
      */
-    this.deviceCommandPost = function(opts, callback) {
+    this.adbCommand = function(opts, callback) {
       opts = opts || {};
       var postBody = opts['device'];
 
@@ -87,172 +87,8 @@
     }
 
     /**
-     * Callback function to receive the result of the deviceDelete operation.
-     * @callback module:api/HubApi~deviceDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Device} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * free device
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Device1} opts.device 
-     * @param {module:api/HubApi~deviceDeleteCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Device}
-     */
-    this.deviceDelete = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['device'];
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Device;
-
-      return this.apiClient.callApi(
-        '/device', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the devicePut operation.
-     * @callback module:api/HubApi~devicePutCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Device} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * get free device based on given parameters
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Device} opts.device 
-     * @param {module:api/HubApi~devicePutCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Device}
-     */
-    this.devicePut = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['device'];
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Device;
-
-      return this.apiClient.callApi(
-        '/device', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deviceReverseDelete operation.
-     * @callback module:api/HubApi~deviceReverseDeleteCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Device} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * unrevrse the device
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Device3} opts.device 
-     * @param {module:api/HubApi~deviceReverseDeleteCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Device}
-     */
-    this.deviceReverseDelete = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['device'];
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Device;
-
-      return this.apiClient.callApi(
-        '/device/reverse', 'DELETE',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deviceReversePut operation.
-     * @callback module:api/HubApi~deviceReversePutCallback
-     * @param {String} error Error message, if any.
-     * @param {module:model/Device} data The data returned by the service call.
-     * @param {String} response The complete HTTP response.
-     */
-
-    /**
-     * reverse a device
-     * @param {Object} opts Optional parameters
-     * @param {module:model/Device2} opts.device 
-     * @param {module:api/HubApi~deviceReversePutCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Device}
-     */
-    this.deviceReversePut = function(opts, callback) {
-      opts = opts || {};
-      var postBody = opts['device'];
-
-
-      var pathParams = {
-      };
-      var queryParams = {
-      };
-      var headerParams = {
-      };
-      var formParams = {
-      };
-
-      var authNames = [];
-      var contentTypes = ['application/json'];
-      var accepts = ['application/json'];
-      var returnType = Device;
-
-      return this.apiClient.callApi(
-        '/device/reverse', 'PUT',
-        pathParams, queryParams, headerParams, formParams, postBody,
-        authNames, contentTypes, accepts, returnType, callback
-      );
-    }
-
-    /**
-     * Callback function to receive the result of the deviceShellPost operation.
-     * @callback module:api/HubApi~deviceShellPostCallback
+     * Callback function to receive the result of the deviceShell operation.
+     * @callback module:api/HubApi~deviceShellCallback
      * @param {String} error Error message, if any.
      * @param {module:model/InlineResponse200} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -262,10 +98,10 @@
      * run adb shell command
      * @param {Object} opts Optional parameters
      * @param {module:model/Device4} opts.device 
-     * @param {module:api/HubApi~deviceShellPostCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/HubApi~deviceShellCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/InlineResponse200}
      */
-    this.deviceShellPost = function(opts, callback) {
+    this.deviceShell = function(opts, callback) {
       opts = opts || {};
       var postBody = opts['device'];
 
@@ -292,8 +128,8 @@
     }
 
     /**
-     * Callback function to receive the result of the devices operation.
-     * @callback module:api/HubApi~devicesCallback
+     * Callback function to receive the result of the devicesList operation.
+     * @callback module:api/HubApi~devicesListCallback
      * @param {String} error Error message, if any.
      * @param {module:model/HubDevices} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -301,10 +137,10 @@
 
     /**
      * list all attached devices to RobusTest
-     * @param {module:api/HubApi~devicesCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/HubApi~devicesListCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/HubDevices}
      */
-    this.devices = function(callback) {
+    this.devicesList = function(callback) {
       var postBody = null;
 
 
@@ -324,6 +160,170 @@
 
       return this.apiClient.callApi(
         '/devices', 'GET',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the freeDevice operation.
+     * @callback module:api/HubApi~freeDeviceCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Device} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * free device
+     * @param {Object} opts Optional parameters
+     * @param {module:model/Device1} opts.device 
+     * @param {module:api/HubApi~freeDeviceCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Device}
+     */
+    this.freeDevice = function(opts, callback) {
+      opts = opts || {};
+      var postBody = opts['device'];
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Device;
+
+      return this.apiClient.callApi(
+        '/device', 'DELETE',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the getFreeDevice operation.
+     * @callback module:api/HubApi~getFreeDeviceCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Device} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * get free device based on given parameters
+     * @param {Object} opts Optional parameters
+     * @param {module:model/Device} opts.device 
+     * @param {module:api/HubApi~getFreeDeviceCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Device}
+     */
+    this.getFreeDevice = function(opts, callback) {
+      opts = opts || {};
+      var postBody = opts['device'];
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Device;
+
+      return this.apiClient.callApi(
+        '/device', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the reverseDevice operation.
+     * @callback module:api/HubApi~reverseDeviceCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Device} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * reverse a device
+     * @param {Object} opts Optional parameters
+     * @param {module:model/Device2} opts.device 
+     * @param {module:api/HubApi~reverseDeviceCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Device}
+     */
+    this.reverseDevice = function(opts, callback) {
+      opts = opts || {};
+      var postBody = opts['device'];
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Device;
+
+      return this.apiClient.callApi(
+        '/device/reverse', 'PUT',
+        pathParams, queryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the unreverseDevice operation.
+     * @callback module:api/HubApi~unreverseDeviceCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Device} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * unrevrse the device
+     * @param {Object} opts Optional parameters
+     * @param {module:model/Device3} opts.device 
+     * @param {module:api/HubApi~unreverseDeviceCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Device}
+     */
+    this.unreverseDevice = function(opts, callback) {
+      opts = opts || {};
+      var postBody = opts['device'];
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = Device;
+
+      return this.apiClient.callApi(
+        '/device/reverse', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

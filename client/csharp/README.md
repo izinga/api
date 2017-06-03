@@ -75,12 +75,12 @@ namespace Example
             try
             {
                 // run adb  command
-                InlineResponse2001 result = apiInstance.DeviceCommandPost(device);
+                InlineResponse2001 result = apiInstance.AdbCommand(device);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling HubApi.DeviceCommandPost: " + e.Message );
+                Debug.Print("Exception when calling HubApi.AdbCommand: " + e.Message );
             }
         }
     }
@@ -94,13 +94,13 @@ All URIs are relative to *http://mobile.robustest.com:8085*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*HubApi* | [**DeviceCommandPost**](docs/HubApi.md#devicecommandpost) | **POST** /device/command | run adb  command
-*HubApi* | [**DeviceDelete**](docs/HubApi.md#devicedelete) | **DELETE** /device | free device
-*HubApi* | [**DevicePut**](docs/HubApi.md#deviceput) | **PUT** /device | get free device based on given parameters
-*HubApi* | [**DeviceReverseDelete**](docs/HubApi.md#devicereversedelete) | **DELETE** /device/reverse | unrevrse the device
-*HubApi* | [**DeviceReversePut**](docs/HubApi.md#devicereverseput) | **PUT** /device/reverse | reverse a device
-*HubApi* | [**DeviceShellPost**](docs/HubApi.md#deviceshellpost) | **POST** /device/shell | run adb shell command
-*HubApi* | [**Devices**](docs/HubApi.md#devices) | **GET** /devices | list all attached devices to RobusTest
+*HubApi* | [**AdbCommand**](docs/HubApi.md#adbcommand) | **POST** /device/command | run adb  command
+*HubApi* | [**DeviceShell**](docs/HubApi.md#deviceshell) | **POST** /device/shell | run adb shell command
+*HubApi* | [**DevicesList**](docs/HubApi.md#deviceslist) | **GET** /devices | list all attached devices to RobusTest
+*HubApi* | [**FreeDevice**](docs/HubApi.md#freedevice) | **DELETE** /device | free device
+*HubApi* | [**GetFreeDevice**](docs/HubApi.md#getfreedevice) | **PUT** /device | get free device based on given parameters
+*HubApi* | [**ReverseDevice**](docs/HubApi.md#reversedevice) | **PUT** /device/reverse | reverse a device
+*HubApi* | [**UnreverseDevice**](docs/HubApi.md#unreversedevice) | **DELETE** /device/reverse | unrevrse the device
 
 
 <a name="documentation-for-models"></a>

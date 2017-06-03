@@ -4,18 +4,18 @@ All URIs are relative to *http://mobile.robustest.com:8085*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
-[**deviceCommandPost**](HubApi.md#deviceCommandPost) | **POST** /device/command | run adb  command
-[**deviceDelete**](HubApi.md#deviceDelete) | **DELETE** /device | free device
-[**devicePut**](HubApi.md#devicePut) | **PUT** /device | get free device based on given parameters
-[**deviceReverseDelete**](HubApi.md#deviceReverseDelete) | **DELETE** /device/reverse | unrevrse the device
-[**deviceReversePut**](HubApi.md#deviceReversePut) | **PUT** /device/reverse | reverse a device
-[**deviceShellPost**](HubApi.md#deviceShellPost) | **POST** /device/shell | run adb shell command
-[**devices**](HubApi.md#devices) | **GET** /devices | list all attached devices to RobusTest
+[**adbCommand**](HubApi.md#adbCommand) | **POST** /device/command | run adb  command
+[**deviceShell**](HubApi.md#deviceShell) | **POST** /device/shell | run adb shell command
+[**devicesList**](HubApi.md#devicesList) | **GET** /devices | list all attached devices to RobusTest
+[**freeDevice**](HubApi.md#freeDevice) | **DELETE** /device | free device
+[**getFreeDevice**](HubApi.md#getFreeDevice) | **PUT** /device | get free device based on given parameters
+[**reverseDevice**](HubApi.md#reverseDevice) | **PUT** /device/reverse | reverse a device
+[**unreverseDevice**](HubApi.md#unreverseDevice) | **DELETE** /device/reverse | unrevrse the device
 
 
-<a name="deviceCommandPost"></a>
-# **deviceCommandPost**
-> InlineResponse2001 deviceCommandPost(device)
+<a name="adbCommand"></a>
+# **adbCommand**
+> InlineResponse2001 adbCommand(device)
 
 run adb  command
 
@@ -29,10 +29,10 @@ run adb  command
 HubApi apiInstance = new HubApi();
 Device5 device = new Device5(); // Device5 | 
 try {
-    InlineResponse2001 result = apiInstance.deviceCommandPost(device);
+    InlineResponse2001 result = apiInstance.adbCommand(device);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling HubApi#deviceCommandPost");
+    System.err.println("Exception when calling HubApi#adbCommand");
     e.printStackTrace();
 }
 ```
@@ -56,181 +56,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="deviceDelete"></a>
-# **deviceDelete**
-> Device deviceDelete(device)
-
-free device
-
-### Example
-```java
-// Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.HubApi;
-
-
-HubApi apiInstance = new HubApi();
-Device1 device = new Device1(); // Device1 | 
-try {
-    Device result = apiInstance.deviceDelete(device);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling HubApi#deviceDelete");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **device** | [**Device1**](Device1.md)|  | [optional]
-
-### Return type
-
-[**Device**](Device.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="devicePut"></a>
-# **devicePut**
-> Device devicePut(device)
-
-get free device based on given parameters
-
-### Example
-```java
-// Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.HubApi;
-
-
-HubApi apiInstance = new HubApi();
-Device device = new Device(); // Device | 
-try {
-    Device result = apiInstance.devicePut(device);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling HubApi#devicePut");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **device** | [**Device**](Device.md)|  | [optional]
-
-### Return type
-
-[**Device**](Device.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="deviceReverseDelete"></a>
-# **deviceReverseDelete**
-> Device deviceReverseDelete(device)
-
-unrevrse the device
-
-### Example
-```java
-// Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.HubApi;
-
-
-HubApi apiInstance = new HubApi();
-Device3 device = new Device3(); // Device3 | 
-try {
-    Device result = apiInstance.deviceReverseDelete(device);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling HubApi#deviceReverseDelete");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **device** | [**Device3**](Device3.md)|  | [optional]
-
-### Return type
-
-[**Device**](Device.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="deviceReversePut"></a>
-# **deviceReversePut**
-> Device deviceReversePut(device)
-
-reverse a device
-
-### Example
-```java
-// Import classes:
-//import io.swagger.client.ApiException;
-//import io.swagger.client.api.HubApi;
-
-
-HubApi apiInstance = new HubApi();
-Device2 device = new Device2(); // Device2 | 
-try {
-    Device result = apiInstance.deviceReversePut(device);
-    System.out.println(result);
-} catch (ApiException e) {
-    System.err.println("Exception when calling HubApi#deviceReversePut");
-    e.printStackTrace();
-}
-```
-
-### Parameters
-
-Name | Type | Description  | Notes
-------------- | ------------- | ------------- | -------------
- **device** | [**Device2**](Device2.md)|  | [optional]
-
-### Return type
-
-[**Device**](Device.md)
-
-### Authorization
-
-No authorization required
-
-### HTTP request headers
-
- - **Content-Type**: application/json
- - **Accept**: application/json
-
-<a name="deviceShellPost"></a>
-# **deviceShellPost**
-> InlineResponse200 deviceShellPost(device)
+<a name="deviceShell"></a>
+# **deviceShell**
+> InlineResponse200 deviceShell(device)
 
 run adb shell command
 
@@ -244,10 +72,10 @@ run adb shell command
 HubApi apiInstance = new HubApi();
 Device4 device = new Device4(); // Device4 | 
 try {
-    InlineResponse200 result = apiInstance.deviceShellPost(device);
+    InlineResponse200 result = apiInstance.deviceShell(device);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling HubApi#deviceShellPost");
+    System.err.println("Exception when calling HubApi#deviceShell");
     e.printStackTrace();
 }
 ```
@@ -271,9 +99,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="devices"></a>
-# **devices**
-> HubDevices devices()
+<a name="devicesList"></a>
+# **devicesList**
+> HubDevices devicesList()
 
 list all attached devices to RobusTest
 
@@ -286,10 +114,10 @@ list all attached devices to RobusTest
 
 HubApi apiInstance = new HubApi();
 try {
-    HubDevices result = apiInstance.devices();
+    HubDevices result = apiInstance.devicesList();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling HubApi#devices");
+    System.err.println("Exception when calling HubApi#devicesList");
     e.printStackTrace();
 }
 ```
@@ -300,6 +128,178 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**HubDevices**](HubDevices.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="freeDevice"></a>
+# **freeDevice**
+> Device freeDevice(device)
+
+free device
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiException;
+//import io.swagger.client.api.HubApi;
+
+
+HubApi apiInstance = new HubApi();
+Device1 device = new Device1(); // Device1 | 
+try {
+    Device result = apiInstance.freeDevice(device);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling HubApi#freeDevice");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **device** | [**Device1**](Device1.md)|  | [optional]
+
+### Return type
+
+[**Device**](Device.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="getFreeDevice"></a>
+# **getFreeDevice**
+> Device getFreeDevice(device)
+
+get free device based on given parameters
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiException;
+//import io.swagger.client.api.HubApi;
+
+
+HubApi apiInstance = new HubApi();
+Device device = new Device(); // Device | 
+try {
+    Device result = apiInstance.getFreeDevice(device);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling HubApi#getFreeDevice");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **device** | [**Device**](Device.md)|  | [optional]
+
+### Return type
+
+[**Device**](Device.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="reverseDevice"></a>
+# **reverseDevice**
+> Device reverseDevice(device)
+
+reverse a device
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiException;
+//import io.swagger.client.api.HubApi;
+
+
+HubApi apiInstance = new HubApi();
+Device2 device = new Device2(); // Device2 | 
+try {
+    Device result = apiInstance.reverseDevice(device);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling HubApi#reverseDevice");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **device** | [**Device2**](Device2.md)|  | [optional]
+
+### Return type
+
+[**Device**](Device.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="unreverseDevice"></a>
+# **unreverseDevice**
+> Device unreverseDevice(device)
+
+unrevrse the device
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiException;
+//import io.swagger.client.api.HubApi;
+
+
+HubApi apiInstance = new HubApi();
+Device3 device = new Device3(); // Device3 | 
+try {
+    Device result = apiInstance.unreverseDevice(device);
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling HubApi#unreverseDevice");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **device** | [**Device3**](Device3.md)|  | [optional]
+
+### Return type
+
+[**Device**](Device.md)
 
 ### Authorization
 

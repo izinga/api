@@ -33,7 +33,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>InlineResponse2001</returns>
-        InlineResponse2001 DeviceCommandPost (Device5 device = null);
+        InlineResponse2001 AdbCommand (Device5 device = null);
 
         /// <summary>
         /// run adb  command
@@ -44,91 +44,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>ApiResponse of InlineResponse2001</returns>
-        ApiResponse<InlineResponse2001> DeviceCommandPostWithHttpInfo (Device5 device = null);
-        /// <summary>
-        /// free device
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Device</returns>
-        Device DeviceDelete (Device1 device = null);
-
-        /// <summary>
-        /// free device
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>ApiResponse of Device</returns>
-        ApiResponse<Device> DeviceDeleteWithHttpInfo (Device1 device = null);
-        /// <summary>
-        /// get free device based on given parameters
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Device</returns>
-        Device DevicePut (Device device = null);
-
-        /// <summary>
-        /// get free device based on given parameters
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>ApiResponse of Device</returns>
-        ApiResponse<Device> DevicePutWithHttpInfo (Device device = null);
-        /// <summary>
-        /// unrevrse the device
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Device</returns>
-        Device DeviceReverseDelete (Device3 device = null);
-
-        /// <summary>
-        /// unrevrse the device
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>ApiResponse of Device</returns>
-        ApiResponse<Device> DeviceReverseDeleteWithHttpInfo (Device3 device = null);
-        /// <summary>
-        /// reverse a device
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Device</returns>
-        Device DeviceReversePut (Device2 device = null);
-
-        /// <summary>
-        /// reverse a device
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>ApiResponse of Device</returns>
-        ApiResponse<Device> DeviceReversePutWithHttpInfo (Device2 device = null);
+        ApiResponse<InlineResponse2001> AdbCommandWithHttpInfo (Device5 device = null);
         /// <summary>
         /// run adb shell command
         /// </summary>
@@ -138,7 +54,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>InlineResponse200</returns>
-        InlineResponse200 DeviceShellPost (Device4 device = null);
+        InlineResponse200 DeviceShell (Device4 device = null);
 
         /// <summary>
         /// run adb shell command
@@ -149,7 +65,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>ApiResponse of InlineResponse200</returns>
-        ApiResponse<InlineResponse200> DeviceShellPostWithHttpInfo (Device4 device = null);
+        ApiResponse<InlineResponse200> DeviceShellWithHttpInfo (Device4 device = null);
         /// <summary>
         /// list all attached devices to RobusTest
         /// </summary>
@@ -158,7 +74,7 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>HubDevices</returns>
-        HubDevices Devices ();
+        HubDevices DevicesList ();
 
         /// <summary>
         /// list all attached devices to RobusTest
@@ -168,7 +84,91 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of HubDevices</returns>
-        ApiResponse<HubDevices> DevicesWithHttpInfo ();
+        ApiResponse<HubDevices> DevicesListWithHttpInfo ();
+        /// <summary>
+        /// free device
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Device</returns>
+        Device FreeDevice (Device1 device = null);
+
+        /// <summary>
+        /// free device
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>ApiResponse of Device</returns>
+        ApiResponse<Device> FreeDeviceWithHttpInfo (Device1 device = null);
+        /// <summary>
+        /// get free device based on given parameters
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Device</returns>
+        Device GetFreeDevice (Device device = null);
+
+        /// <summary>
+        /// get free device based on given parameters
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>ApiResponse of Device</returns>
+        ApiResponse<Device> GetFreeDeviceWithHttpInfo (Device device = null);
+        /// <summary>
+        /// reverse a device
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Device</returns>
+        Device ReverseDevice (Device2 device = null);
+
+        /// <summary>
+        /// reverse a device
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>ApiResponse of Device</returns>
+        ApiResponse<Device> ReverseDeviceWithHttpInfo (Device2 device = null);
+        /// <summary>
+        /// unrevrse the device
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Device</returns>
+        Device UnreverseDevice (Device3 device = null);
+
+        /// <summary>
+        /// unrevrse the device
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>ApiResponse of Device</returns>
+        ApiResponse<Device> UnreverseDeviceWithHttpInfo (Device3 device = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -180,7 +180,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>Task of InlineResponse2001</returns>
-        System.Threading.Tasks.Task<InlineResponse2001> DeviceCommandPostAsync (Device5 device = null);
+        System.Threading.Tasks.Task<InlineResponse2001> AdbCommandAsync (Device5 device = null);
 
         /// <summary>
         /// run adb  command
@@ -191,91 +191,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse2001)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse2001>> DeviceCommandPostAsyncWithHttpInfo (Device5 device = null);
-        /// <summary>
-        /// free device
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Task of Device</returns>
-        System.Threading.Tasks.Task<Device> DeviceDeleteAsync (Device1 device = null);
-
-        /// <summary>
-        /// free device
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Task of ApiResponse (Device)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Device>> DeviceDeleteAsyncWithHttpInfo (Device1 device = null);
-        /// <summary>
-        /// get free device based on given parameters
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Task of Device</returns>
-        System.Threading.Tasks.Task<Device> DevicePutAsync (Device device = null);
-
-        /// <summary>
-        /// get free device based on given parameters
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Task of ApiResponse (Device)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Device>> DevicePutAsyncWithHttpInfo (Device device = null);
-        /// <summary>
-        /// unrevrse the device
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Task of Device</returns>
-        System.Threading.Tasks.Task<Device> DeviceReverseDeleteAsync (Device3 device = null);
-
-        /// <summary>
-        /// unrevrse the device
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Task of ApiResponse (Device)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Device>> DeviceReverseDeleteAsyncWithHttpInfo (Device3 device = null);
-        /// <summary>
-        /// reverse a device
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Task of Device</returns>
-        System.Threading.Tasks.Task<Device> DeviceReversePutAsync (Device2 device = null);
-
-        /// <summary>
-        /// reverse a device
-        /// </summary>
-        /// <remarks>
-        /// 
-        /// </remarks>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Task of ApiResponse (Device)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Device>> DeviceReversePutAsyncWithHttpInfo (Device2 device = null);
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse2001>> AdbCommandAsyncWithHttpInfo (Device5 device = null);
         /// <summary>
         /// run adb shell command
         /// </summary>
@@ -285,7 +201,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>Task of InlineResponse200</returns>
-        System.Threading.Tasks.Task<InlineResponse200> DeviceShellPostAsync (Device4 device = null);
+        System.Threading.Tasks.Task<InlineResponse200> DeviceShellAsync (Device4 device = null);
 
         /// <summary>
         /// run adb shell command
@@ -296,7 +212,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse200)</returns>
-        System.Threading.Tasks.Task<ApiResponse<InlineResponse200>> DeviceShellPostAsyncWithHttpInfo (Device4 device = null);
+        System.Threading.Tasks.Task<ApiResponse<InlineResponse200>> DeviceShellAsyncWithHttpInfo (Device4 device = null);
         /// <summary>
         /// list all attached devices to RobusTest
         /// </summary>
@@ -305,7 +221,7 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of HubDevices</returns>
-        System.Threading.Tasks.Task<HubDevices> DevicesAsync ();
+        System.Threading.Tasks.Task<HubDevices> DevicesListAsync ();
 
         /// <summary>
         /// list all attached devices to RobusTest
@@ -315,7 +231,91 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (HubDevices)</returns>
-        System.Threading.Tasks.Task<ApiResponse<HubDevices>> DevicesAsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<HubDevices>> DevicesListAsyncWithHttpInfo ();
+        /// <summary>
+        /// free device
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Task of Device</returns>
+        System.Threading.Tasks.Task<Device> FreeDeviceAsync (Device1 device = null);
+
+        /// <summary>
+        /// free device
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Task of ApiResponse (Device)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Device>> FreeDeviceAsyncWithHttpInfo (Device1 device = null);
+        /// <summary>
+        /// get free device based on given parameters
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Task of Device</returns>
+        System.Threading.Tasks.Task<Device> GetFreeDeviceAsync (Device device = null);
+
+        /// <summary>
+        /// get free device based on given parameters
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Task of ApiResponse (Device)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Device>> GetFreeDeviceAsyncWithHttpInfo (Device device = null);
+        /// <summary>
+        /// reverse a device
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Task of Device</returns>
+        System.Threading.Tasks.Task<Device> ReverseDeviceAsync (Device2 device = null);
+
+        /// <summary>
+        /// reverse a device
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Task of ApiResponse (Device)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Device>> ReverseDeviceAsyncWithHttpInfo (Device2 device = null);
+        /// <summary>
+        /// unrevrse the device
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Task of Device</returns>
+        System.Threading.Tasks.Task<Device> UnreverseDeviceAsync (Device3 device = null);
+
+        /// <summary>
+        /// unrevrse the device
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Task of ApiResponse (Device)</returns>
+        System.Threading.Tasks.Task<ApiResponse<Device>> UnreverseDeviceAsyncWithHttpInfo (Device3 device = null);
         #endregion Asynchronous Operations
     }
 
@@ -434,9 +434,9 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>InlineResponse2001</returns>
-        public InlineResponse2001 DeviceCommandPost (Device5 device = null)
+        public InlineResponse2001 AdbCommand (Device5 device = null)
         {
-             ApiResponse<InlineResponse2001> localVarResponse = DeviceCommandPostWithHttpInfo(device);
+             ApiResponse<InlineResponse2001> localVarResponse = AdbCommandWithHttpInfo(device);
              return localVarResponse.Data;
         }
 
@@ -446,7 +446,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>ApiResponse of InlineResponse2001</returns>
-        public ApiResponse< InlineResponse2001 > DeviceCommandPostWithHttpInfo (Device5 device = null)
+        public ApiResponse< InlineResponse2001 > AdbCommandWithHttpInfo (Device5 device = null)
         {
 
             var localVarPath = "/device/command";
@@ -493,7 +493,7 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("DeviceCommandPost", localVarResponse);
+                Exception exception = ExceptionFactory("AdbCommand", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -509,9 +509,9 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>Task of InlineResponse2001</returns>
-        public async System.Threading.Tasks.Task<InlineResponse2001> DeviceCommandPostAsync (Device5 device = null)
+        public async System.Threading.Tasks.Task<InlineResponse2001> AdbCommandAsync (Device5 device = null)
         {
-             ApiResponse<InlineResponse2001> localVarResponse = await DeviceCommandPostAsyncWithHttpInfo(device);
+             ApiResponse<InlineResponse2001> localVarResponse = await AdbCommandAsyncWithHttpInfo(device);
              return localVarResponse.Data;
 
         }
@@ -522,7 +522,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse2001)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2001>> DeviceCommandPostAsyncWithHttpInfo (Device5 device = null)
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse2001>> AdbCommandAsyncWithHttpInfo (Device5 device = null)
         {
 
             var localVarPath = "/device/command";
@@ -569,7 +569,7 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("DeviceCommandPost", localVarResponse);
+                Exception exception = ExceptionFactory("AdbCommand", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -580,618 +580,14 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// free device 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Device</returns>
-        public Device DeviceDelete (Device1 device = null)
-        {
-             ApiResponse<Device> localVarResponse = DeviceDeleteWithHttpInfo(device);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// free device 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>ApiResponse of Device</returns>
-        public ApiResponse< Device > DeviceDeleteWithHttpInfo (Device1 device = null)
-        {
-
-            var localVarPath = "/device";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (device != null && device.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(device); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = device; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeviceDelete", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Device>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Device) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
-            
-        }
-
-        /// <summary>
-        /// free device 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Task of Device</returns>
-        public async System.Threading.Tasks.Task<Device> DeviceDeleteAsync (Device1 device = null)
-        {
-             ApiResponse<Device> localVarResponse = await DeviceDeleteAsyncWithHttpInfo(device);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// free device 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Task of ApiResponse (Device)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Device>> DeviceDeleteAsyncWithHttpInfo (Device1 device = null)
-        {
-
-            var localVarPath = "/device";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (device != null && device.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(device); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = device; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeviceDelete", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Device>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Device) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
-            
-        }
-
-        /// <summary>
-        /// get free device based on given parameters 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Device</returns>
-        public Device DevicePut (Device device = null)
-        {
-             ApiResponse<Device> localVarResponse = DevicePutWithHttpInfo(device);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// get free device based on given parameters 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>ApiResponse of Device</returns>
-        public ApiResponse< Device > DevicePutWithHttpInfo (Device device = null)
-        {
-
-            var localVarPath = "/device";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (device != null && device.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(device); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = device; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DevicePut", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Device>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Device) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
-            
-        }
-
-        /// <summary>
-        /// get free device based on given parameters 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Task of Device</returns>
-        public async System.Threading.Tasks.Task<Device> DevicePutAsync (Device device = null)
-        {
-             ApiResponse<Device> localVarResponse = await DevicePutAsyncWithHttpInfo(device);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// get free device based on given parameters 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Task of ApiResponse (Device)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Device>> DevicePutAsyncWithHttpInfo (Device device = null)
-        {
-
-            var localVarPath = "/device";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (device != null && device.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(device); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = device; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DevicePut", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Device>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Device) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
-            
-        }
-
-        /// <summary>
-        /// unrevrse the device 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Device</returns>
-        public Device DeviceReverseDelete (Device3 device = null)
-        {
-             ApiResponse<Device> localVarResponse = DeviceReverseDeleteWithHttpInfo(device);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// unrevrse the device 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>ApiResponse of Device</returns>
-        public ApiResponse< Device > DeviceReverseDeleteWithHttpInfo (Device3 device = null)
-        {
-
-            var localVarPath = "/device/reverse";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (device != null && device.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(device); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = device; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeviceReverseDelete", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Device>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Device) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
-            
-        }
-
-        /// <summary>
-        /// unrevrse the device 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Task of Device</returns>
-        public async System.Threading.Tasks.Task<Device> DeviceReverseDeleteAsync (Device3 device = null)
-        {
-             ApiResponse<Device> localVarResponse = await DeviceReverseDeleteAsyncWithHttpInfo(device);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// unrevrse the device 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Task of ApiResponse (Device)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Device>> DeviceReverseDeleteAsyncWithHttpInfo (Device3 device = null)
-        {
-
-            var localVarPath = "/device/reverse";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (device != null && device.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(device); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = device; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeviceReverseDelete", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Device>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Device) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
-            
-        }
-
-        /// <summary>
-        /// reverse a device 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Device</returns>
-        public Device DeviceReversePut (Device2 device = null)
-        {
-             ApiResponse<Device> localVarResponse = DeviceReversePutWithHttpInfo(device);
-             return localVarResponse.Data;
-        }
-
-        /// <summary>
-        /// reverse a device 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>ApiResponse of Device</returns>
-        public ApiResponse< Device > DeviceReversePutWithHttpInfo (Device2 device = null)
-        {
-
-            var localVarPath = "/device/reverse";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (device != null && device.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(device); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = device; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeviceReversePut", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Device>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Device) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
-            
-        }
-
-        /// <summary>
-        /// reverse a device 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Task of Device</returns>
-        public async System.Threading.Tasks.Task<Device> DeviceReversePutAsync (Device2 device = null)
-        {
-             ApiResponse<Device> localVarResponse = await DeviceReversePutAsyncWithHttpInfo(device);
-             return localVarResponse.Data;
-
-        }
-
-        /// <summary>
-        /// reverse a device 
-        /// </summary>
-        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
-        /// <param name="device"> (optional)</param>
-        /// <returns>Task of ApiResponse (Device)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Device>> DeviceReversePutAsyncWithHttpInfo (Device2 device = null)
-        {
-
-            var localVarPath = "/device/reverse";
-            var localVarPathParams = new Dictionary<String, String>();
-            var localVarQueryParams = new Dictionary<String, String>();
-            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
-            var localVarFormParams = new Dictionary<String, String>();
-            var localVarFileParams = new Dictionary<String, FileParameter>();
-            Object localVarPostBody = null;
-
-            // to determine the Content-Type header
-            String[] localVarHttpContentTypes = new String[] {
-                "application/json"
-            };
-            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
-
-            // to determine the Accept header
-            String[] localVarHttpHeaderAccepts = new String[] {
-                "application/json"
-            };
-            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
-            if (localVarHttpHeaderAccept != null)
-                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
-
-            // set "format" to json by default
-            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
-            localVarPathParams.Add("format", "json");
-            if (device != null && device.GetType() != typeof(byte[]))
-            {
-                localVarPostBody = Configuration.ApiClient.Serialize(device); // http body (model) parameter
-            }
-            else
-            {
-                localVarPostBody = device; // byte array
-            }
-
-
-            // make the HTTP request
-            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
-                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
-                localVarPathParams, localVarHttpContentType);
-
-            int localVarStatusCode = (int) localVarResponse.StatusCode;
-
-            if (ExceptionFactory != null)
-            {
-                Exception exception = ExceptionFactory("DeviceReversePut", localVarResponse);
-                if (exception != null) throw exception;
-            }
-
-            return new ApiResponse<Device>(localVarStatusCode,
-                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Device) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
-            
-        }
-
-        /// <summary>
         /// run adb shell command 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>InlineResponse200</returns>
-        public InlineResponse200 DeviceShellPost (Device4 device = null)
+        public InlineResponse200 DeviceShell (Device4 device = null)
         {
-             ApiResponse<InlineResponse200> localVarResponse = DeviceShellPostWithHttpInfo(device);
+             ApiResponse<InlineResponse200> localVarResponse = DeviceShellWithHttpInfo(device);
              return localVarResponse.Data;
         }
 
@@ -1201,7 +597,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>ApiResponse of InlineResponse200</returns>
-        public ApiResponse< InlineResponse200 > DeviceShellPostWithHttpInfo (Device4 device = null)
+        public ApiResponse< InlineResponse200 > DeviceShellWithHttpInfo (Device4 device = null)
         {
 
             var localVarPath = "/device/shell";
@@ -1248,7 +644,7 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("DeviceShellPost", localVarResponse);
+                Exception exception = ExceptionFactory("DeviceShell", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1264,9 +660,9 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>Task of InlineResponse200</returns>
-        public async System.Threading.Tasks.Task<InlineResponse200> DeviceShellPostAsync (Device4 device = null)
+        public async System.Threading.Tasks.Task<InlineResponse200> DeviceShellAsync (Device4 device = null)
         {
-             ApiResponse<InlineResponse200> localVarResponse = await DeviceShellPostAsyncWithHttpInfo(device);
+             ApiResponse<InlineResponse200> localVarResponse = await DeviceShellAsyncWithHttpInfo(device);
              return localVarResponse.Data;
 
         }
@@ -1277,7 +673,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>Task of ApiResponse (InlineResponse200)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse200>> DeviceShellPostAsyncWithHttpInfo (Device4 device = null)
+        public async System.Threading.Tasks.Task<ApiResponse<InlineResponse200>> DeviceShellAsyncWithHttpInfo (Device4 device = null)
         {
 
             var localVarPath = "/device/shell";
@@ -1324,7 +720,7 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("DeviceShellPost", localVarResponse);
+                Exception exception = ExceptionFactory("DeviceShell", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1339,9 +735,9 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>HubDevices</returns>
-        public HubDevices Devices ()
+        public HubDevices DevicesList ()
         {
-             ApiResponse<HubDevices> localVarResponse = DevicesWithHttpInfo();
+             ApiResponse<HubDevices> localVarResponse = DevicesListWithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -1350,7 +746,7 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of HubDevices</returns>
-        public ApiResponse< HubDevices > DevicesWithHttpInfo ()
+        public ApiResponse< HubDevices > DevicesListWithHttpInfo ()
         {
 
             var localVarPath = "/devices";
@@ -1389,7 +785,7 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("Devices", localVarResponse);
+                Exception exception = ExceptionFactory("DevicesList", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1404,9 +800,9 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of HubDevices</returns>
-        public async System.Threading.Tasks.Task<HubDevices> DevicesAsync ()
+        public async System.Threading.Tasks.Task<HubDevices> DevicesListAsync ()
         {
-             ApiResponse<HubDevices> localVarResponse = await DevicesAsyncWithHttpInfo();
+             ApiResponse<HubDevices> localVarResponse = await DevicesListAsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -1416,7 +812,7 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (HubDevices)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<HubDevices>> DevicesAsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<HubDevices>> DevicesListAsyncWithHttpInfo ()
         {
 
             var localVarPath = "/devices";
@@ -1455,13 +851,617 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("Devices", localVarResponse);
+                Exception exception = ExceptionFactory("DevicesList", localVarResponse);
                 if (exception != null) throw exception;
             }
 
             return new ApiResponse<HubDevices>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
                 (HubDevices) Configuration.ApiClient.Deserialize(localVarResponse, typeof(HubDevices)));
+            
+        }
+
+        /// <summary>
+        /// free device 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Device</returns>
+        public Device FreeDevice (Device1 device = null)
+        {
+             ApiResponse<Device> localVarResponse = FreeDeviceWithHttpInfo(device);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// free device 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>ApiResponse of Device</returns>
+        public ApiResponse< Device > FreeDeviceWithHttpInfo (Device1 device = null)
+        {
+
+            var localVarPath = "/device";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (device != null && device.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(device); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = device; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("FreeDevice", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Device>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Device) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
+            
+        }
+
+        /// <summary>
+        /// free device 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Task of Device</returns>
+        public async System.Threading.Tasks.Task<Device> FreeDeviceAsync (Device1 device = null)
+        {
+             ApiResponse<Device> localVarResponse = await FreeDeviceAsyncWithHttpInfo(device);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// free device 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Task of ApiResponse (Device)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Device>> FreeDeviceAsyncWithHttpInfo (Device1 device = null)
+        {
+
+            var localVarPath = "/device";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (device != null && device.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(device); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = device; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("FreeDevice", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Device>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Device) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
+            
+        }
+
+        /// <summary>
+        /// get free device based on given parameters 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Device</returns>
+        public Device GetFreeDevice (Device device = null)
+        {
+             ApiResponse<Device> localVarResponse = GetFreeDeviceWithHttpInfo(device);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// get free device based on given parameters 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>ApiResponse of Device</returns>
+        public ApiResponse< Device > GetFreeDeviceWithHttpInfo (Device device = null)
+        {
+
+            var localVarPath = "/device";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (device != null && device.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(device); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = device; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetFreeDevice", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Device>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Device) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
+            
+        }
+
+        /// <summary>
+        /// get free device based on given parameters 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Task of Device</returns>
+        public async System.Threading.Tasks.Task<Device> GetFreeDeviceAsync (Device device = null)
+        {
+             ApiResponse<Device> localVarResponse = await GetFreeDeviceAsyncWithHttpInfo(device);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// get free device based on given parameters 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Task of ApiResponse (Device)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Device>> GetFreeDeviceAsyncWithHttpInfo (Device device = null)
+        {
+
+            var localVarPath = "/device";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (device != null && device.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(device); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = device; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("GetFreeDevice", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Device>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Device) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
+            
+        }
+
+        /// <summary>
+        /// reverse a device 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Device</returns>
+        public Device ReverseDevice (Device2 device = null)
+        {
+             ApiResponse<Device> localVarResponse = ReverseDeviceWithHttpInfo(device);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// reverse a device 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>ApiResponse of Device</returns>
+        public ApiResponse< Device > ReverseDeviceWithHttpInfo (Device2 device = null)
+        {
+
+            var localVarPath = "/device/reverse";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (device != null && device.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(device); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = device; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ReverseDevice", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Device>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Device) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
+            
+        }
+
+        /// <summary>
+        /// reverse a device 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Task of Device</returns>
+        public async System.Threading.Tasks.Task<Device> ReverseDeviceAsync (Device2 device = null)
+        {
+             ApiResponse<Device> localVarResponse = await ReverseDeviceAsyncWithHttpInfo(device);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// reverse a device 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Task of ApiResponse (Device)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Device>> ReverseDeviceAsyncWithHttpInfo (Device2 device = null)
+        {
+
+            var localVarPath = "/device/reverse";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (device != null && device.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(device); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = device; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.PUT, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("ReverseDevice", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Device>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Device) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
+            
+        }
+
+        /// <summary>
+        /// unrevrse the device 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Device</returns>
+        public Device UnreverseDevice (Device3 device = null)
+        {
+             ApiResponse<Device> localVarResponse = UnreverseDeviceWithHttpInfo(device);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// unrevrse the device 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>ApiResponse of Device</returns>
+        public ApiResponse< Device > UnreverseDeviceWithHttpInfo (Device3 device = null)
+        {
+
+            var localVarPath = "/device/reverse";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (device != null && device.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(device); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = device; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UnreverseDevice", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Device>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Device) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
+            
+        }
+
+        /// <summary>
+        /// unrevrse the device 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Task of Device</returns>
+        public async System.Threading.Tasks.Task<Device> UnreverseDeviceAsync (Device3 device = null)
+        {
+             ApiResponse<Device> localVarResponse = await UnreverseDeviceAsyncWithHttpInfo(device);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// unrevrse the device 
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="device"> (optional)</param>
+        /// <returns>Task of ApiResponse (Device)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Device>> UnreverseDeviceAsyncWithHttpInfo (Device3 device = null)
+        {
+
+            var localVarPath = "/device/reverse";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new Dictionary<String, String>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            // set "format" to json by default
+            // e.g. /pet/{petId}.{format} becomes /pet/{petId}.json
+            localVarPathParams.Add("format", "json");
+            if (device != null && device.GetType() != typeof(byte[]))
+            {
+                localVarPostBody = Configuration.ApiClient.Serialize(device); // http body (model) parameter
+            }
+            else
+            {
+                localVarPostBody = device; // byte array
+            }
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("UnreverseDevice", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Device>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Device) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
             
         }
 

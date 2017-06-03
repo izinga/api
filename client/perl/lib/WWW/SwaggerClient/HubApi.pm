@@ -52,7 +52,7 @@ sub new {
 
 
 #
-# device_command_post
+# adb_command
 #
 # run adb  command
 # 
@@ -65,7 +65,7 @@ sub new {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'device_command_post' } = { 
+    __PACKAGE__->method_documentation->{ 'adb_command' } = { 
     	summary => 'run adb  command',
         params => $params,
         returns => 'InlineResponse2001',
@@ -73,7 +73,7 @@ sub new {
 }
 # @return InlineResponse2001
 #
-sub device_command_post {
+sub adb_command {
     my ($self, %args) = @_;
 
     # parse inputs
@@ -113,251 +113,7 @@ sub device_command_post {
 }
 
 #
-# device_delete
-#
-# free device
-# 
-# @param Device1 $device  (optional)
-{
-    my $params = {
-    'device' => {
-        data_type => 'Device1',
-        description => '',
-        required => '0',
-    },
-    };
-    __PACKAGE__->method_documentation->{ 'device_delete' } = { 
-    	summary => 'free device',
-        params => $params,
-        returns => 'Device',
-        };
-}
-# @return Device
-#
-sub device_delete {
-    my ($self, %args) = @_;
-
-    # parse inputs
-    my $_resource_path = '/device';
-    $_resource_path =~ s/{format}/json/; # default format to json
-
-    my $_method = 'DELETE';
-    my $query_params = {};
-    my $header_params = {};
-    my $form_params = {};
-
-    # 'Accept' and 'Content-Type' header
-    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
-    if ($_header_accept) {
-        $header_params->{'Accept'} = $_header_accept;
-    }
-    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
-
-    my $_body_data;
-    # body params
-    if ( exists $args{'device'}) {
-        $_body_data = $args{'device'};
-    }
-
-    # authentication setting, if any
-    my $auth_settings = [qw()];
-
-    # make the API Call
-    my $response = $self->{api_client}->call_api($_resource_path, $_method,
-                                           $query_params, $form_params,
-                                           $header_params, $_body_data, $auth_settings);
-    if (!$response) {
-        return;
-    }
-    my $_response_object = $self->{api_client}->deserialize('Device', $response);
-    return $_response_object;
-}
-
-#
-# device_put
-#
-# get free device based on given parameters
-# 
-# @param Device $device  (optional)
-{
-    my $params = {
-    'device' => {
-        data_type => 'Device',
-        description => '',
-        required => '0',
-    },
-    };
-    __PACKAGE__->method_documentation->{ 'device_put' } = { 
-    	summary => 'get free device based on given parameters',
-        params => $params,
-        returns => 'Device',
-        };
-}
-# @return Device
-#
-sub device_put {
-    my ($self, %args) = @_;
-
-    # parse inputs
-    my $_resource_path = '/device';
-    $_resource_path =~ s/{format}/json/; # default format to json
-
-    my $_method = 'PUT';
-    my $query_params = {};
-    my $header_params = {};
-    my $form_params = {};
-
-    # 'Accept' and 'Content-Type' header
-    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
-    if ($_header_accept) {
-        $header_params->{'Accept'} = $_header_accept;
-    }
-    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
-
-    my $_body_data;
-    # body params
-    if ( exists $args{'device'}) {
-        $_body_data = $args{'device'};
-    }
-
-    # authentication setting, if any
-    my $auth_settings = [qw()];
-
-    # make the API Call
-    my $response = $self->{api_client}->call_api($_resource_path, $_method,
-                                           $query_params, $form_params,
-                                           $header_params, $_body_data, $auth_settings);
-    if (!$response) {
-        return;
-    }
-    my $_response_object = $self->{api_client}->deserialize('Device', $response);
-    return $_response_object;
-}
-
-#
-# device_reverse_delete
-#
-# unrevrse the device
-# 
-# @param Device3 $device  (optional)
-{
-    my $params = {
-    'device' => {
-        data_type => 'Device3',
-        description => '',
-        required => '0',
-    },
-    };
-    __PACKAGE__->method_documentation->{ 'device_reverse_delete' } = { 
-    	summary => 'unrevrse the device',
-        params => $params,
-        returns => 'Device',
-        };
-}
-# @return Device
-#
-sub device_reverse_delete {
-    my ($self, %args) = @_;
-
-    # parse inputs
-    my $_resource_path = '/device/reverse';
-    $_resource_path =~ s/{format}/json/; # default format to json
-
-    my $_method = 'DELETE';
-    my $query_params = {};
-    my $header_params = {};
-    my $form_params = {};
-
-    # 'Accept' and 'Content-Type' header
-    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
-    if ($_header_accept) {
-        $header_params->{'Accept'} = $_header_accept;
-    }
-    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
-
-    my $_body_data;
-    # body params
-    if ( exists $args{'device'}) {
-        $_body_data = $args{'device'};
-    }
-
-    # authentication setting, if any
-    my $auth_settings = [qw()];
-
-    # make the API Call
-    my $response = $self->{api_client}->call_api($_resource_path, $_method,
-                                           $query_params, $form_params,
-                                           $header_params, $_body_data, $auth_settings);
-    if (!$response) {
-        return;
-    }
-    my $_response_object = $self->{api_client}->deserialize('Device', $response);
-    return $_response_object;
-}
-
-#
-# device_reverse_put
-#
-# reverse a device
-# 
-# @param Device2 $device  (optional)
-{
-    my $params = {
-    'device' => {
-        data_type => 'Device2',
-        description => '',
-        required => '0',
-    },
-    };
-    __PACKAGE__->method_documentation->{ 'device_reverse_put' } = { 
-    	summary => 'reverse a device',
-        params => $params,
-        returns => 'Device',
-        };
-}
-# @return Device
-#
-sub device_reverse_put {
-    my ($self, %args) = @_;
-
-    # parse inputs
-    my $_resource_path = '/device/reverse';
-    $_resource_path =~ s/{format}/json/; # default format to json
-
-    my $_method = 'PUT';
-    my $query_params = {};
-    my $header_params = {};
-    my $form_params = {};
-
-    # 'Accept' and 'Content-Type' header
-    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
-    if ($_header_accept) {
-        $header_params->{'Accept'} = $_header_accept;
-    }
-    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
-
-    my $_body_data;
-    # body params
-    if ( exists $args{'device'}) {
-        $_body_data = $args{'device'};
-    }
-
-    # authentication setting, if any
-    my $auth_settings = [qw()];
-
-    # make the API Call
-    my $response = $self->{api_client}->call_api($_resource_path, $_method,
-                                           $query_params, $form_params,
-                                           $header_params, $_body_data, $auth_settings);
-    if (!$response) {
-        return;
-    }
-    my $_response_object = $self->{api_client}->deserialize('Device', $response);
-    return $_response_object;
-}
-
-#
-# device_shell_post
+# device_shell
 #
 # run adb shell command
 # 
@@ -370,7 +126,7 @@ sub device_reverse_put {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'device_shell_post' } = { 
+    __PACKAGE__->method_documentation->{ 'device_shell' } = { 
     	summary => 'run adb shell command',
         params => $params,
         returns => 'InlineResponse200',
@@ -378,7 +134,7 @@ sub device_reverse_put {
 }
 # @return InlineResponse200
 #
-sub device_shell_post {
+sub device_shell {
     my ($self, %args) = @_;
 
     # parse inputs
@@ -418,14 +174,14 @@ sub device_shell_post {
 }
 
 #
-# devices
+# devices_list
 #
 # list all attached devices to RobusTest
 # 
 {
     my $params = {
     };
-    __PACKAGE__->method_documentation->{ 'devices' } = { 
+    __PACKAGE__->method_documentation->{ 'devices_list' } = { 
     	summary => 'list all attached devices to RobusTest',
         params => $params,
         returns => 'HubDevices',
@@ -433,7 +189,7 @@ sub device_shell_post {
 }
 # @return HubDevices
 #
-sub devices {
+sub devices_list {
     my ($self, %args) = @_;
 
     # parse inputs
@@ -464,6 +220,250 @@ sub devices {
         return;
     }
     my $_response_object = $self->{api_client}->deserialize('HubDevices', $response);
+    return $_response_object;
+}
+
+#
+# free_device
+#
+# free device
+# 
+# @param Device1 $device  (optional)
+{
+    my $params = {
+    'device' => {
+        data_type => 'Device1',
+        description => '',
+        required => '0',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'free_device' } = { 
+    	summary => 'free device',
+        params => $params,
+        returns => 'Device',
+        };
+}
+# @return Device
+#
+sub free_device {
+    my ($self, %args) = @_;
+
+    # parse inputs
+    my $_resource_path = '/device';
+    $_resource_path =~ s/{format}/json/; # default format to json
+
+    my $_method = 'DELETE';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'device'}) {
+        $_body_data = $args{'device'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw()];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('Device', $response);
+    return $_response_object;
+}
+
+#
+# get_free_device
+#
+# get free device based on given parameters
+# 
+# @param Device $device  (optional)
+{
+    my $params = {
+    'device' => {
+        data_type => 'Device',
+        description => '',
+        required => '0',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'get_free_device' } = { 
+    	summary => 'get free device based on given parameters',
+        params => $params,
+        returns => 'Device',
+        };
+}
+# @return Device
+#
+sub get_free_device {
+    my ($self, %args) = @_;
+
+    # parse inputs
+    my $_resource_path = '/device';
+    $_resource_path =~ s/{format}/json/; # default format to json
+
+    my $_method = 'PUT';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'device'}) {
+        $_body_data = $args{'device'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw()];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('Device', $response);
+    return $_response_object;
+}
+
+#
+# reverse_device
+#
+# reverse a device
+# 
+# @param Device2 $device  (optional)
+{
+    my $params = {
+    'device' => {
+        data_type => 'Device2',
+        description => '',
+        required => '0',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'reverse_device' } = { 
+    	summary => 'reverse a device',
+        params => $params,
+        returns => 'Device',
+        };
+}
+# @return Device
+#
+sub reverse_device {
+    my ($self, %args) = @_;
+
+    # parse inputs
+    my $_resource_path = '/device/reverse';
+    $_resource_path =~ s/{format}/json/; # default format to json
+
+    my $_method = 'PUT';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'device'}) {
+        $_body_data = $args{'device'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw()];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('Device', $response);
+    return $_response_object;
+}
+
+#
+# unreverse_device
+#
+# unrevrse the device
+# 
+# @param Device3 $device  (optional)
+{
+    my $params = {
+    'device' => {
+        data_type => 'Device3',
+        description => '',
+        required => '0',
+    },
+    };
+    __PACKAGE__->method_documentation->{ 'unreverse_device' } = { 
+    	summary => 'unrevrse the device',
+        params => $params,
+        returns => 'Device',
+        };
+}
+# @return Device
+#
+sub unreverse_device {
+    my ($self, %args) = @_;
+
+    # parse inputs
+    my $_resource_path = '/device/reverse';
+    $_resource_path =~ s/{format}/json/; # default format to json
+
+    my $_method = 'DELETE';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    my $_body_data;
+    # body params
+    if ( exists $args{'device'}) {
+        $_body_data = $args{'device'};
+    }
+
+    # authentication setting, if any
+    my $auth_settings = [qw()];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('Device', $response);
     return $_response_object;
 }
 

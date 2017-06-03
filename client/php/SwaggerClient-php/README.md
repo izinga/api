@@ -60,10 +60,10 @@ $api_instance = new Swagger\Client\Api\HubApi();
 $device = new \Swagger\Client\Model\Device5(); // \Swagger\Client\Model\Device5 | 
 
 try {
-    $result = $api_instance->deviceCommandPost($device);
+    $result = $api_instance->adbCommand($device);
     print_r($result);
 } catch (Exception $e) {
-    echo 'Exception when calling HubApi->deviceCommandPost: ', $e->getMessage(), PHP_EOL;
+    echo 'Exception when calling HubApi->adbCommand: ', $e->getMessage(), PHP_EOL;
 }
 
 ?>
@@ -75,13 +75,13 @@ All URIs are relative to *http://mobile.robustest.com:8085*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*HubApi* | [**deviceCommandPost**](docs/Api/HubApi.md#devicecommandpost) | **POST** /device/command | run adb  command
-*HubApi* | [**deviceDelete**](docs/Api/HubApi.md#devicedelete) | **DELETE** /device | free device
-*HubApi* | [**devicePut**](docs/Api/HubApi.md#deviceput) | **PUT** /device | get free device based on given parameters
-*HubApi* | [**deviceReverseDelete**](docs/Api/HubApi.md#devicereversedelete) | **DELETE** /device/reverse | unrevrse the device
-*HubApi* | [**deviceReversePut**](docs/Api/HubApi.md#devicereverseput) | **PUT** /device/reverse | reverse a device
-*HubApi* | [**deviceShellPost**](docs/Api/HubApi.md#deviceshellpost) | **POST** /device/shell | run adb shell command
-*HubApi* | [**devices**](docs/Api/HubApi.md#devices) | **GET** /devices | list all attached devices to RobusTest
+*HubApi* | [**adbCommand**](docs/Api/HubApi.md#adbcommand) | **POST** /device/command | run adb  command
+*HubApi* | [**deviceShell**](docs/Api/HubApi.md#deviceshell) | **POST** /device/shell | run adb shell command
+*HubApi* | [**devicesList**](docs/Api/HubApi.md#deviceslist) | **GET** /devices | list all attached devices to RobusTest
+*HubApi* | [**freeDevice**](docs/Api/HubApi.md#freedevice) | **DELETE** /device | free device
+*HubApi* | [**getFreeDevice**](docs/Api/HubApi.md#getfreedevice) | **PUT** /device | get free device based on given parameters
+*HubApi* | [**reverseDevice**](docs/Api/HubApi.md#reversedevice) | **PUT** /device/reverse | reverse a device
+*HubApi* | [**unreverseDevice**](docs/Api/HubApi.md#unreversedevice) | **DELETE** /device/reverse | unrevrse the device
 
 
 ## Documentation For Models

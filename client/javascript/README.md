@@ -65,7 +65,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-api.deviceCommandPost(opts, callback);
+api.adbCommand(opts, callback);
 
 ```
 
@@ -75,13 +75,13 @@ All URIs are relative to *http://mobile.robustest.com:8085*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*RobusTestHub.HubApi* | [**deviceCommandPost**](docs/HubApi.md#deviceCommandPost) | **POST** /device/command | run adb  command
-*RobusTestHub.HubApi* | [**deviceDelete**](docs/HubApi.md#deviceDelete) | **DELETE** /device | free device
-*RobusTestHub.HubApi* | [**devicePut**](docs/HubApi.md#devicePut) | **PUT** /device | get free device based on given parameters
-*RobusTestHub.HubApi* | [**deviceReverseDelete**](docs/HubApi.md#deviceReverseDelete) | **DELETE** /device/reverse | unrevrse the device
-*RobusTestHub.HubApi* | [**deviceReversePut**](docs/HubApi.md#deviceReversePut) | **PUT** /device/reverse | reverse a device
-*RobusTestHub.HubApi* | [**deviceShellPost**](docs/HubApi.md#deviceShellPost) | **POST** /device/shell | run adb shell command
-*RobusTestHub.HubApi* | [**devices**](docs/HubApi.md#devices) | **GET** /devices | list all attached devices to RobusTest
+*RobusTestHub.HubApi* | [**adbCommand**](docs/HubApi.md#adbCommand) | **POST** /device/command | run adb  command
+*RobusTestHub.HubApi* | [**deviceShell**](docs/HubApi.md#deviceShell) | **POST** /device/shell | run adb shell command
+*RobusTestHub.HubApi* | [**devicesList**](docs/HubApi.md#devicesList) | **GET** /devices | list all attached devices to RobusTest
+*RobusTestHub.HubApi* | [**freeDevice**](docs/HubApi.md#freeDevice) | **DELETE** /device | free device
+*RobusTestHub.HubApi* | [**getFreeDevice**](docs/HubApi.md#getFreeDevice) | **PUT** /device | get free device based on given parameters
+*RobusTestHub.HubApi* | [**reverseDevice**](docs/HubApi.md#reverseDevice) | **PUT** /device/reverse | reverse a device
+*RobusTestHub.HubApi* | [**unreverseDevice**](docs/HubApi.md#unreverseDevice) | **DELETE** /device/reverse | unrevrse the device
 
 
 ## Documentation for Models

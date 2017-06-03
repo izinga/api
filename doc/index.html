@@ -198,21 +198,21 @@ font-style: italic;
   <div class="method-summary"></div>
   <h4><a href="#Hub">Hub</a></h4>
   <ul>
-  <li><a href="#deviceCommandPost"><code><span class="http-method">post</span> /device/command</code></a></li>
-  <li><a href="#deviceDelete"><code><span class="http-method">delete</span> /device</code></a></li>
-  <li><a href="#devicePut"><code><span class="http-method">put</span> /device</code></a></li>
-  <li><a href="#deviceReverseDelete"><code><span class="http-method">delete</span> /device/reverse</code></a></li>
-  <li><a href="#deviceReversePut"><code><span class="http-method">put</span> /device/reverse</code></a></li>
-  <li><a href="#deviceShellPost"><code><span class="http-method">post</span> /device/shell</code></a></li>
-  <li><a href="#devices"><code><span class="http-method">get</span> /devices</code></a></li>
+  <li><a href="#adb command"><code><span class="http-method">post</span> /device/command</code></a></li>
+  <li><a href="#device shell"><code><span class="http-method">post</span> /device/shell</code></a></li>
+  <li><a href="#devices list"><code><span class="http-method">get</span> /devices</code></a></li>
+  <li><a href="#free device"><code><span class="http-method">delete</span> /device</code></a></li>
+  <li><a href="#get free device"><code><span class="http-method">put</span> /device</code></a></li>
+  <li><a href="#reverse device"><code><span class="http-method">put</span> /device/reverse</code></a></li>
+  <li><a href="#unreverse device"><code><span class="http-method">delete</span> /device/reverse</code></a></li>
   </ul>
 
   <h1><a name="Hub">Hub</a></h1>
-  <div class="method"><a name="deviceCommandPost"/>
+  <div class="method"><a name="adb command"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="post"><code class="huge"><span class="http-method">post</span> /device/command</code></pre></div>
-    <div class="method-summary">run adb  command (<span class="nickname">deviceCommandPost</span>)</div>
+    <div class="method-summary">run adb  command (<span class="nickname">adb command</span>)</div>
     <div class="method-notes"></div>
 
 
@@ -264,11 +264,110 @@ font-style: italic;
         <a href="#Error">Error</a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="deviceDelete"/>
+  <div class="method"><a name="device shell"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="post"><code class="huge"><span class="http-method">post</span> /device/shell</code></pre></div>
+    <div class="method-summary">run adb shell command (<span class="nickname">device shell</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Request body</h3>
+    <div class="field-items">
+      <div class="param">device <a href="#Device_4">Device_4</a> (optional)</div>
+
+      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
+
+    </div>  <!-- field-items -->
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#inline_response_200">inline_response_200</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{
+  "msg" : "aeiou",
+  "status" : true
+}</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+        <a href="#inline_response_200">inline_response_200</a>
+    <h4 class="field-label">0</h4>
+    Unexpected error
+        <a href="#Error">Error</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="devices list"/>
+    <div class="method-path">
+    <a class="up" href="#__Methods">Up</a>
+    <pre class="get"><code class="huge"><span class="http-method">get</span> /devices</code></pre></div>
+    <div class="method-summary">list all attached devices to RobusTest (<span class="nickname">devices list</span>)</div>
+    <div class="method-notes"></div>
+
+
+    <h3 class="field-label">Consumes</h3>
+    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+
+
+
+
+    <h3 class="field-label">Return type</h3>
+    <div class="return-type">
+      <a href="#HubDevices">HubDevices</a>
+      
+    </div>
+
+    <!--Todo: process Response Object and its headers, schema, examples -->
+
+    <h3 class="field-label">Example data</h3>
+    <div class="example-data-content-type">Content-Type: application/json</div>
+    <pre class="example"><code>{ }</code></pre>
+
+    <h3 class="field-label">Produces</h3>
+    This API call produces the following media types according to the <span class="header">Accept</span> request header;
+    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
+    <ul>
+      <li><code>application/json</code></li>
+    </ul>
+
+    <h3 class="field-label">Responses</h3>
+    <h4 class="field-label">200</h4>
+    successful operation
+        <a href="#HubDevices">HubDevices</a>
+  </div> <!-- method -->
+  <hr/>
+  <div class="method"><a name="free device"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="delete"><code class="huge"><span class="http-method">delete</span> /device</code></pre></div>
-    <div class="method-summary">free device (<span class="nickname">deviceDelete</span>)</div>
+    <div class="method-summary">free device (<span class="nickname">free device</span>)</div>
     <div class="method-notes"></div>
 
 
@@ -325,11 +424,11 @@ font-style: italic;
         <a href="#Error">Error</a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="devicePut"/>
+  <div class="method"><a name="get free device"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="put"><code class="huge"><span class="http-method">put</span> /device</code></pre></div>
-    <div class="method-summary">get free device based on given parameters (<span class="nickname">devicePut</span>)</div>
+    <div class="method-summary">get free device based on given parameters (<span class="nickname">get free device</span>)</div>
     <div class="method-notes"></div>
 
 
@@ -386,72 +485,11 @@ font-style: italic;
         <a href="#Error">Error</a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="deviceReverseDelete"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /device/reverse</code></pre></div>
-    <div class="method-summary">unrevrse the device (<span class="nickname">deviceReverseDelete</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Request body</h3>
-    <div class="field-items">
-      <div class="param">device <a href="#Device_3">Device_3</a> (optional)</div>
-
-      <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
-
-    </div>  <!-- field-items -->
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#Device">Device</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{
-  "os" : "aeiou",
-  "serial" : "aeiou",
-  "session" : "aeiou",
-  "name" : "aeiou",
-  "_id" : "aeiou",
-  "version" : "aeiou",
-  "reverseKey" : "aeiou"
-}</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    successful operation
-        <a href="#Device">Device</a>
-    <h4 class="field-label">0</h4>
-    Unexpected error
-        <a href="#Error">Error</a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="deviceReversePut"/>
+  <div class="method"><a name="reverse device"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
     <pre class="put"><code class="huge"><span class="http-method">put</span> /device/reverse</code></pre></div>
-    <div class="method-summary">reverse a device (<span class="nickname">deviceReversePut</span>)</div>
+    <div class="method-summary">reverse a device (<span class="nickname">reverse device</span>)</div>
     <div class="method-notes"></div>
 
 
@@ -508,11 +546,11 @@ font-style: italic;
         <a href="#Error">Error</a>
   </div> <!-- method -->
   <hr/>
-  <div class="method"><a name="deviceShellPost"/>
+  <div class="method"><a name="unreverse device"/>
     <div class="method-path">
     <a class="up" href="#__Methods">Up</a>
-    <pre class="post"><code class="huge"><span class="http-method">post</span> /device/shell</code></pre></div>
-    <div class="method-summary">run adb shell command (<span class="nickname">deviceShellPost</span>)</div>
+    <pre class="delete"><code class="huge"><span class="http-method">delete</span> /device/reverse</code></pre></div>
+    <div class="method-summary">unrevrse the device (<span class="nickname">unreverse device</span>)</div>
     <div class="method-notes"></div>
 
 
@@ -524,7 +562,7 @@ font-style: italic;
 
     <h3 class="field-label">Request body</h3>
     <div class="field-items">
-      <div class="param">device <a href="#Device_4">Device_4</a> (optional)</div>
+      <div class="param">device <a href="#Device_3">Device_3</a> (optional)</div>
 
       <div class="param-desc"><span class="param-type">Body Parameter</span> &mdash;  </div>
 
@@ -535,7 +573,7 @@ font-style: italic;
 
     <h3 class="field-label">Return type</h3>
     <div class="return-type">
-      <a href="#inline_response_200">inline_response_200</a>
+      <a href="#Device">Device</a>
       
     </div>
 
@@ -544,8 +582,13 @@ font-style: italic;
     <h3 class="field-label">Example data</h3>
     <div class="example-data-content-type">Content-Type: application/json</div>
     <pre class="example"><code>{
-  "msg" : "aeiou",
-  "status" : true
+  "os" : "aeiou",
+  "serial" : "aeiou",
+  "session" : "aeiou",
+  "name" : "aeiou",
+  "_id" : "aeiou",
+  "version" : "aeiou",
+  "reverseKey" : "aeiou"
 }</code></pre>
 
     <h3 class="field-label">Produces</h3>
@@ -558,53 +601,10 @@ font-style: italic;
     <h3 class="field-label">Responses</h3>
     <h4 class="field-label">200</h4>
     successful operation
-        <a href="#inline_response_200">inline_response_200</a>
+        <a href="#Device">Device</a>
     <h4 class="field-label">0</h4>
     Unexpected error
         <a href="#Error">Error</a>
-  </div> <!-- method -->
-  <hr/>
-  <div class="method"><a name="devices"/>
-    <div class="method-path">
-    <a class="up" href="#__Methods">Up</a>
-    <pre class="get"><code class="huge"><span class="http-method">get</span> /devices</code></pre></div>
-    <div class="method-summary">list all attached devices to RobusTest (<span class="nickname">devices</span>)</div>
-    <div class="method-notes"></div>
-
-
-    <h3 class="field-label">Consumes</h3>
-    This API call consumes the following media types via the <span class="heaader">Content-Type</span> request header:
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-
-
-
-
-    <h3 class="field-label">Return type</h3>
-    <div class="return-type">
-      <a href="#HubDevices">HubDevices</a>
-      
-    </div>
-
-    <!--Todo: process Response Object and its headers, schema, examples -->
-
-    <h3 class="field-label">Example data</h3>
-    <div class="example-data-content-type">Content-Type: application/json</div>
-    <pre class="example"><code>{ }</code></pre>
-
-    <h3 class="field-label">Produces</h3>
-    This API call produces the following media types according to the <span class="header">Accept</span> request header;
-    the media type will be conveyed by the <span class="heaader">Content-Type</span> response header.
-    <ul>
-      <li><code>application/json</code></li>
-    </ul>
-
-    <h3 class="field-label">Responses</h3>
-    <h4 class="field-label">200</h4>
-    successful operation
-        <a href="#HubDevices">HubDevices</a>
   </div> <!-- method -->
   <hr/>
 
