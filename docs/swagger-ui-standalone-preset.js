@@ -1529,20 +1529,7 @@
                             width: "224",
                             src: "./logo.png",
                             alt: "RobusTest"
-                        }), c.default.createElement("span", null, "")), c.default.createElement("form", {
-                            className: "download-url-wrapper",
-                            onSubmit: this.downloadUrl
-                        }, c.default.createElement("input", {
-                            className: "download-url-input",
-                            type: "text",
-                            onChange: this.onUrlChange,
-                            value: this.state.url,
-                            disabled: s,
-                            style: a
-                        }), c.default.createElement(i, {
-                            className: "download-url-button",
-                            onClick: this.downloadUrl
-                        }, "Explore")))))
+                        }), )))
                     }
                 }]), t
             }(c.default.Component);
