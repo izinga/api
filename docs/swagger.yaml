@@ -2,7 +2,6 @@ swagger: '2.0'
 info:
   description: |
     RobusTest Hub Api
-    [http://mobile.robustest.com:8085
   version: "1.0.0"
   title: RobusTest Hub
 tags:
@@ -12,7 +11,7 @@ tags:
 host: mobile.robustest.com:8085
 schemes:
   - http
-  - https  
+  - https
 produces:
   - application/json
 # basePath: /v2
@@ -22,7 +21,7 @@ paths:
       operationId: devices list
       tags:
       - hub
-      summary: list all attached devices to RobusTest 
+      summary: list all attached devices to RobusTest
       consumes:
       - application/json
       produces:
@@ -32,7 +31,7 @@ paths:
           description: successful operation
           schema:
             $ref: '#/definitions/HubDevices'
-    
+
   /device:
     put:
       tags:
@@ -43,7 +42,7 @@ paths:
       - application/json
       produces:
       - application/json
-      
+
       parameters:
         - in: body
           name: device
@@ -59,7 +58,7 @@ paths:
                 type: string
               reverseKey:
                 type: string
-     
+
       responses:
         200:
           description: successful operation
@@ -69,7 +68,7 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/Error'
-        
+
     delete:
       tags:
       - hub
@@ -79,7 +78,7 @@ paths:
       - application/json
       produces:
       - application/json
-      
+
       parameters:
         - in: body
           name: device
@@ -91,7 +90,7 @@ paths:
               device:
                 type: string
                 description: device id
-     
+
       responses:
         200:
           description: successful operation
@@ -101,7 +100,7 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/Error'
-            
+
   /device/reverse:
     put:
       operationId: reverse device
@@ -112,7 +111,7 @@ paths:
       - application/json
       produces:
       - application/json
-      
+
       parameters:
         - in: body
           name: device
@@ -124,7 +123,7 @@ paths:
               device:
                 type: string
                 description: device id
-     
+
       responses:
         200:
           description: successful operation
@@ -134,7 +133,7 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/Error'
-        
+
     delete:
       tags:
       - hub
@@ -144,7 +143,7 @@ paths:
       - application/json
       produces:
       - application/json
-      
+
       parameters:
         - in: body
           name: device
@@ -165,19 +164,19 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/Error'
-       
-            
+
+
   /device/shell:
     post:
       tags:
       - hub
       operationId: device shell
-      summary: run adb shell command 
+      summary: run adb shell command
       consumes:
       - application/json
       produces:
       - application/json
-      
+
       parameters:
         - in: body
           name: device
@@ -191,7 +190,7 @@ paths:
                 type: string
               command:
                 type : string
-     
+
       responses:
         200:
           description: successful operation
@@ -208,18 +207,18 @@ paths:
           schema:
             $ref: '#/definitions/Error'
 
-            
+
   /device/command:
     post:
       tags:
       - hub
       operationId: adb command
-      summary: run adb  command 
+      summary: run adb  command
       consumes:
       - application/json
       produces:
       - application/json
-      
+
       parameters:
         - in: body
           name: device
@@ -233,7 +232,7 @@ paths:
                 type: string
               command:
                 type : string
-     
+
       responses:
         200:
           description: successful operation
@@ -262,9 +261,9 @@ definitions:
       offline:
         items:
            $ref: '#/definitions/Device'
-  
-          
-      
+
+
+
   Device:
     type: object
     properties:
@@ -289,8 +288,8 @@ definitions:
       reverseKey:
         type: string
         description: reverse key
-      
-  
+
+
   HubSession:
     type: object
     properties:
