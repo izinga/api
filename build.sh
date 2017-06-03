@@ -7,4 +7,3 @@ swagger-codegen generate -i swagger.yaml  -l perl -o client/perl
 swagger-codegen generate -i swagger.yaml  -l javascript -o client/javascript
 swagger-codegen generate -i swagger.yaml  -l csharp -o client/csharp
 swagger-codegen generate -i swagger.yaml  -l swift -o client/swift
-swagger-codegen generate -i swagger.yaml  -l html2 -o docs
