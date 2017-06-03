@@ -1529,7 +1529,7 @@
                             width: "224",
                             src: "./logo.png",
                             alt: "RobusTest"
-                        }), )))
+                        }), c.default.createElement("span", null, "")),)))
                     }
                 }]), t
             }(c.default.Component);
