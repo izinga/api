@@ -1529,7 +1529,7 @@
                             width: "224",
                             src: "./logo.png",
                             alt: "RobusTest"
-                        }), c.default.createElement("form", {
+                        }), c.default.createElement("span", null, "")), c.default.createElement("form", {
                             className: "download-url-wrapper",
                             onSubmit: this.downloadUrl
                         }, c.default.createElement("input", {
