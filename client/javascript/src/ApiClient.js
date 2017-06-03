@@ -44,9 +44,9 @@
     /**
      * The base URL against which to resolve every API call's (relative) path.
      * @type {String}
-     * @default http://mobile.robustest.com:8085
+     * @default https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0
      */
-    this.basePath = 'http://mobile.robustest.com:8085'.replace(/\/+$/, '');
+    this.basePath = 'https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0'.replace(/\/+$/, '');
 
     /**
      * The authentication methods to be included for all API calls.

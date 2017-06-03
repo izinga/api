@@ -149,7 +149,7 @@ class Decoders {
             Decoders.addDecoder(clazz: Device.self) { (source: AnyObject) -> Device in
                 let sourceDictionary = source as! [NSObject:AnyObject]
                 let instance = Device()
-                instance.device = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["device"])
+                instance.id = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["_id"])
                 instance.deviceName = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["deviceName"])
                 instance.platformVersion = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["platformVersion"])
                 instance.reverseKey = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["reverseKey"])
@@ -165,7 +165,7 @@ class Decoders {
             Decoders.addDecoder(clazz: Device1.self) { (source: AnyObject) -> Device1 in
                 let sourceDictionary = source as! [NSObject:AnyObject]
                 let instance = Device1()
-                instance.device = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["device"])
+                instance.id = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["_id"])
                 return instance
             }
 
@@ -178,7 +178,7 @@ class Decoders {
             Decoders.addDecoder(clazz: Device2.self) { (source: AnyObject) -> Device2 in
                 let sourceDictionary = source as! [NSObject:AnyObject]
                 let instance = Device2()
-                instance.device = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["device"])
+                instance.id = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["_id"])
                 return instance
             }
 
@@ -191,7 +191,7 @@ class Decoders {
             Decoders.addDecoder(clazz: Device3.self) { (source: AnyObject) -> Device3 in
                 let sourceDictionary = source as! [NSObject:AnyObject]
                 let instance = Device3()
-                instance.device = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["device"])
+                instance.id = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["_id"])
                 return instance
             }
 
@@ -204,7 +204,7 @@ class Decoders {
             Decoders.addDecoder(clazz: Device4.self) { (source: AnyObject) -> Device4 in
                 let sourceDictionary = source as! [NSObject:AnyObject]
                 let instance = Device4()
-                instance.device = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["device"])
+                instance.id = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["_id"])
                 instance.command = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["command"])
                 return instance
             }
@@ -218,7 +218,7 @@ class Decoders {
             Decoders.addDecoder(clazz: Device5.self) { (source: AnyObject) -> Device5 in
                 let sourceDictionary = source as! [NSObject:AnyObject]
                 let instance = Device5()
-                instance.device = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["device"])
+                instance.id = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["_id"])
                 instance.command = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["command"])
                 return instance
             }

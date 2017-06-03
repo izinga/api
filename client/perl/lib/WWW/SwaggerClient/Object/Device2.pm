@@ -142,9 +142,9 @@ __PACKAGE__->class_documentation({description => '',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'device' => {
+    '_id' => {
     	datatype => 'string',
-    	base_name => 'device',
+    	base_name => '_id',
     	description => 'device id',
     	format => '',
     	read_only => '',
@@ -152,11 +152,11 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->swagger_types( {
-    'device' => 'string'
+    '_id' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
-    'device' => 'device'
+    '_id' => '_id'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});

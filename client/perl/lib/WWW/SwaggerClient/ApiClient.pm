@@ -46,7 +46,7 @@ sub _new_instance
     my $class = shift;
     my (%args) = (
         'ua' => LWP::UserAgent->new,
-        'base_url' => 'http://mobile.robustest.com:8085',
+        'base_url' => 'https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0',
         @_
     );
   

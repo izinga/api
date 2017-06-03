@@ -9,10 +9,10 @@ tags:
 - name: hub
   description: Everything about to run existing appium test cases
 
-host: mobile.robustest.com:8085
-schemes:
-  - http
-  - https  
+# host: mobile.robustest.com:8085
+# schemes:
+#   - http
+#   - https
 produces:
   - application/json
 # basePath: /v2
@@ -22,7 +22,7 @@ paths:
       operationId: devices list
       tags:
       - hub
-      summary: list all attached devices to RobusTest 
+      summary: list all attached devices to RobusTest
       consumes:
       - application/json
       produces:
@@ -32,7 +32,7 @@ paths:
           description: successful operation
           schema:
             $ref: '#/definitions/HubDevices'
-    
+
   /device:
     put:
       tags:
@@ -43,23 +43,23 @@ paths:
       - application/json
       produces:
       - application/json
-      
+
       parameters:
         - in: body
           name: device
           schema:
             type: object
             properties:
-              device:
+              _id:
                 type: string
                 description: device id
               deviceName:
                 type: string
               platformVersion:
                 type: string
-              reverseKey:
+              reserveKey:
                 type: string
-     
+
       responses:
         200:
           description: successful operation
@@ -69,7 +69,7 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/Error'
-        
+
     delete:
       tags:
       - hub
@@ -79,19 +79,19 @@ paths:
       - application/json
       produces:
       - application/json
-      
+
       parameters:
         - in: body
           name: device
           schema:
             type: object
             required:
-              - device
+              - _id
             properties:
-              device:
+              _id:
                 type: string
                 description: device id
-     
+
       responses:
         200:
           description: successful operation
@@ -101,30 +101,30 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/Error'
-            
-  /device/reverse:
+
+  /device/reserve:
     put:
-      operationId: reverse device
+      operationId: reserve device
       tags:
       - hub
-      summary: reverse a device
+      summary: reserve a device
       consumes:
       - application/json
       produces:
       - application/json
-      
+
       parameters:
         - in: body
           name: device
           schema:
             type: object
             required:
-              - device
+              - _id
             properties:
-              device:
+              _id:
                 type: string
                 description: device id
-     
+
       responses:
         200:
           description: successful operation
@@ -134,26 +134,26 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/Error'
-        
+
     delete:
       tags:
       - hub
-      operationId: unreverse device
+      operationId: unreserve device
       summary: unrevrse the device
       consumes:
       - application/json
       produces:
       - application/json
-      
+
       parameters:
         - in: body
           name: device
           schema:
             type: object
             required:
-              - device
+              - _id
             properties:
-              device:
+              _id:
                 type: string
                 description: device id
       responses:
@@ -165,33 +165,33 @@ paths:
           description: Unexpected error
           schema:
             $ref: '#/definitions/Error'
-       
-            
+
+
   /device/shell:
     post:
       tags:
       - hub
       operationId: device shell
-      summary: run adb shell command 
+      summary: run adb shell command
       consumes:
       - application/json
       produces:
       - application/json
-      
+
       parameters:
         - in: body
           name: device
           schema:
             type: object
             required:
-              - device
+              - _id
               - command
             properties:
-              device:
+              _id:
                 type: string
               command:
                 type : string
-     
+
       responses:
         200:
           description: successful operation
@@ -208,32 +208,32 @@ paths:
           schema:
             $ref: '#/definitions/Error'
 
-            
+
   /device/command:
     post:
       tags:
       - hub
       operationId: adb command
-      summary: run adb  command 
+      summary: run adb  command
       consumes:
       - application/json
       produces:
       - application/json
-      
+
       parameters:
         - in: body
           name: device
           schema:
             type: object
             required:
-              - device
+              - _id
               - command
             properties:
-              device:
+              _id:
                 type: string
               command:
                 type : string
-     
+
       responses:
         200:
           description: successful operation
@@ -262,9 +262,9 @@ definitions:
       offline:
         items:
            $ref: '#/definitions/Device'
-  
-          
-      
+
+
+
   Device:
     type: object
     properties:
@@ -286,11 +286,11 @@ definitions:
       session:
         type: string
         description:  current test session id
-      reverseKey:
+      reserveKey:
         type: string
-        description: reverse key
-      
-  
+        description: reserve key
+
+
   HubSession:
     type: object
     properties:
@@ -313,3 +313,9 @@ definitions:
         type: string
       fields:
         type: string
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+basePath: /Izinga/Hub/1.0.0
+schemes:
+ - https
+ - http

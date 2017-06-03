@@ -13,7 +13,7 @@ package swagger
 type Device struct {
 
 	// device id
-	Device string `json:"device,omitempty"`
+	Id string `json:"_id,omitempty"`
 
 	DeviceName string `json:"deviceName,omitempty"`
 

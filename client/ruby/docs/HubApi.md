@@ -1,14 +1,14 @@
 # SwaggerClient::HubApi
 
-All URIs are relative to *http://mobile.robustest.com:8085*
+All URIs are relative to *https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0*
 
 Method | HTTP request | Description
 ------------- | ------------- | -------------
 [**adb_command**](HubApi.md#adb_command) | **POST** /device/command | run adb  command
 [**device_shell**](HubApi.md#device_shell) | **POST** /device/shell | run adb shell command
 [**devices_list**](HubApi.md#devices_list) | **GET** /devices | list all attached devices to RobusTest
-[**free_device**](HubApi.md#free_device) | **DELETE** /device | free device
-[**get_free_device**](HubApi.md#get_free_device) | **PUT** /device | get free device based on given parameters
+[**free_device**](HubApi.md#free_device) | **DELETE** /_id | free device
+[**get_free_device**](HubApi.md#get_free_device) | **PUT** /_id | get free device based on given parameters
 [**reverse_device**](HubApi.md#reverse_device) | **PUT** /device/reverse | reverse a device
 [**unreverse_device**](HubApi.md#unreverse_device) | **DELETE** /device/reverse | unrevrse the device
 

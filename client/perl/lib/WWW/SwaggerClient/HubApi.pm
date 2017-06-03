@@ -249,7 +249,7 @@ sub free_device {
     my ($self, %args) = @_;
 
     # parse inputs
-    my $_resource_path = '/device';
+    my $_resource_path = '/_id';
     $_resource_path =~ s/{format}/json/; # default format to json
 
     my $_method = 'DELETE';
@@ -310,7 +310,7 @@ sub get_free_device {
     my ($self, %args) = @_;
 
     # parse inputs
-    my $_resource_path = '/device';
+    my $_resource_path = '/_id';
     $_resource_path =~ s/{format}/json/; # default format to json
 
     my $_method = 'PUT';

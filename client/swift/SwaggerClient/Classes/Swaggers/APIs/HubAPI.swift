@@ -133,7 +133,7 @@ public class HubAPI: APIBase {
 
     /**
      free device
-     - DELETE /device
+     - DELETE /_id
      - examples: [{contentType=application/json, example={
   "os" : "aeiou",
   "serial" : "aeiou",
@@ -149,7 +149,7 @@ public class HubAPI: APIBase {
      - returns: RequestBuilder<Device> 
      */
     public class func freeDeviceWithRequestBuilder(device device: Device1? = nil) -> RequestBuilder<Device> {
-        let path = "/device"
+        let path = "/_id"
         let URLString = SwaggerClientAPI.basePath + path
         let parameters = device?.encodeToJSON() as? [String:AnyObject]
  
@@ -175,7 +175,7 @@ public class HubAPI: APIBase {
 
     /**
      get free device based on given parameters
-     - PUT /device
+     - PUT /_id
      - examples: [{contentType=application/json, example={
   "os" : "aeiou",
   "serial" : "aeiou",
@@ -191,7 +191,7 @@ public class HubAPI: APIBase {
      - returns: RequestBuilder<Device> 
      */
     public class func getFreeDeviceWithRequestBuilder(device device: Device? = nil) -> RequestBuilder<Device> {
-        let path = "/device"
+        let path = "/_id"
         let URLString = SwaggerClientAPI.basePath + path
         let parameters = device?.encodeToJSON() as? [String:AnyObject]
  

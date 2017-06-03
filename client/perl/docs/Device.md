@@ -8,7 +8,7 @@ use WWW::SwaggerClient::Object::Device;
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**device** | **string** | device id | [optional] 
+**_id** | **string** | device id | [optional] 
 **device_name** | **string** |  | [optional] 
 **platform_version** | **string** |  | [optional] 
 **reverse_key** | **string** |  | [optional] 

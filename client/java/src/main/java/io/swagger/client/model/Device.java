@@ -21,10 +21,10 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Device
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-06-03T08:51:35.255+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-06-03T18:48:48.351+05:30")
 public class Device {
-  @SerializedName("device")
-  private String device = null;
+  @SerializedName("_id")
+  private String id = null;
 
   @SerializedName("deviceName")
   private String deviceName = null;
@@ -35,22 +35,22 @@ public class Device {
   @SerializedName("reverseKey")
   private String reverseKey = null;
 
-  public Device device(String device) {
-    this.device = device;
+  public Device id(String id) {
+    this.id = id;
     return this;
   }
 
    /**
    * device id
-   * @return device
+   * @return id
   **/
   @ApiModelProperty(example = "null", value = "device id")
-  public String getDevice() {
-    return device;
+  public String getId() {
+    return id;
   }
 
-  public void setDevice(String device) {
-    this.device = device;
+  public void setId(String id) {
+    this.id = id;
   }
 
   public Device deviceName(String deviceName) {
@@ -117,7 +117,7 @@ public class Device {
       return false;
     }
     Device device = (Device) o;
-    return Objects.equals(this.device, device.device) &&
+    return Objects.equals(this.id, device.id) &&
         Objects.equals(this.deviceName, device.deviceName) &&
         Objects.equals(this.platformVersion, device.platformVersion) &&
         Objects.equals(this.reverseKey, device.reverseKey);
@@ -125,7 +125,7 @@ public class Device {
 
   @Override
   public int hashCode() {
-    return Objects.hash(device, deviceName, platformVersion, reverseKey);
+    return Objects.hash(id, deviceName, platformVersion, reverseKey);
   }
 
 
@@ -134,7 +134,7 @@ public class Device {
     StringBuilder sb = new StringBuilder();
     sb.append("class Device {\n");
     
-    sb.append("    device: ").append(toIndentedString(device)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    deviceName: ").append(toIndentedString(deviceName)).append("\n");
     sb.append("    platformVersion: ").append(toIndentedString(platformVersion)).append("\n");
     sb.append("    reverseKey: ").append(toIndentedString(reverseKey)).append("\n");

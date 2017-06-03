@@ -62,8 +62,8 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('device')) {
-        obj['device'] = ApiClient.convertToType(data['device'], 'String');
+      if (data.hasOwnProperty('_id')) {
+        obj['_id'] = ApiClient.convertToType(data['_id'], 'String');
       }
       if (data.hasOwnProperty('deviceName')) {
         obj['deviceName'] = ApiClient.convertToType(data['deviceName'], 'String');
@@ -80,9 +80,9 @@
 
   /**
    * device id
-   * @member {String} device
+   * @member {String} _id
    */
-  exports.prototype['device'] = undefined;
+  exports.prototype['_id'] = undefined;
   /**
    * @member {String} deviceName
    */

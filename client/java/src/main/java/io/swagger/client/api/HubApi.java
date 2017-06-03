@@ -404,7 +404,7 @@ public class HubApi {
         Object localVarPostBody = device;
         
         // create path and map variables
-        String localVarPath = "/device".replaceAll("\\{format\\}","json");
+        String localVarPath = "/_id".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -517,7 +517,7 @@ public class HubApi {
         Object localVarPostBody = device;
         
         // create path and map variables
-        String localVarPath = "/device".replaceAll("\\{format\\}","json");
+        String localVarPath = "/_id".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 

@@ -48,17 +48,17 @@ namespace IO.Swagger.Client
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default configuration and base path (http://mobile.robustest.com:8085).
+        /// with default configuration and base path (https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0).
         /// </summary>
         public ApiClient()
         {
             Configuration = Configuration.Default;
-            RestClient = new RestClient("http://mobile.robustest.com:8085");
+            RestClient = new RestClient("https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0");
         }
 
         /// <summary>
         /// Initializes a new instance of the <see cref="ApiClient" /> class
-        /// with default base path (http://mobile.robustest.com:8085).
+        /// with default base path (https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0).
         /// </summary>
         /// <param name="config">An instance of Configuration.</param>
         public ApiClient(Configuration config = null)
@@ -68,7 +68,7 @@ namespace IO.Swagger.Client
             else
                 Configuration = config;
 
-            RestClient = new RestClient("http://mobile.robustest.com:8085");
+            RestClient = new RestClient("https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0");
         }
 
         /// <summary>
@@ -76,7 +76,7 @@ namespace IO.Swagger.Client
         /// with default configuration.
         /// </summary>
         /// <param name="basePath">The base path.</param>
-        public ApiClient(String basePath = "http://mobile.robustest.com:8085")
+        public ApiClient(String basePath = "https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0")
         {
            if (String.IsNullOrEmpty(basePath))
                 throw new ArgumentException("basePath cannot be empty");

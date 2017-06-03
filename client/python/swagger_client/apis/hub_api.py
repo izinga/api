@@ -404,7 +404,7 @@ class HubApi(object):
 
         collection_formats = {}
 
-        resource_path = '/device'.replace('{format}', 'json')
+        resource_path = '/_id'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -506,7 +506,7 @@ class HubApi(object):
 
         collection_formats = {}
 
-        resource_path = '/device'.replace('{format}', 'json')
+        resource_path = '/_id'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

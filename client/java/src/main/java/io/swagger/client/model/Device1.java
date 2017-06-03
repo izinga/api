@@ -21,27 +21,27 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Device1
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-06-03T08:51:35.255+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-06-03T18:48:48.351+05:30")
 public class Device1 {
-  @SerializedName("device")
-  private String device = null;
+  @SerializedName("_id")
+  private String id = null;
 
-  public Device1 device(String device) {
-    this.device = device;
+  public Device1 id(String id) {
+    this.id = id;
     return this;
   }
 
    /**
    * device id
-   * @return device
+   * @return id
   **/
   @ApiModelProperty(example = "null", required = true, value = "device id")
-  public String getDevice() {
-    return device;
+  public String getId() {
+    return id;
   }
 
-  public void setDevice(String device) {
-    this.device = device;
+  public void setId(String id) {
+    this.id = id;
   }
 
 
@@ -54,12 +54,12 @@ public class Device1 {
       return false;
     }
     Device1 device1 = (Device1) o;
-    return Objects.equals(this.device, device1.device);
+    return Objects.equals(this.id, device1.id);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(device);
+    return Objects.hash(id);
   }
 
 
@@ -68,7 +68,7 @@ public class Device1 {
     StringBuilder sb = new StringBuilder();
     sb.append("class Device1 {\n");
     
-    sb.append("    device: ").append(toIndentedString(device)).append("\n");
+    sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("}");
     return sb.toString();
   }

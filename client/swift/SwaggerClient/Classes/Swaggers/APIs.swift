@@ -7,7 +7,7 @@
 import Foundation
 
 public class SwaggerClientAPI {
-    public static var basePath = "http://mobile.robustest.com:8085"
+    public static var basePath = "https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0"
     public static var credential: NSURLCredential?
     public static var customHeaders: [String:String] = [:]  
     static var requestBuilderFactory: RequestBuilderFactory = AlamofireRequestBuilderFactory()

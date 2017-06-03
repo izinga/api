@@ -142,9 +142,9 @@ __PACKAGE__->class_documentation({description => '',
 }                                 );
 
 __PACKAGE__->method_documentation({
-    'device' => {
+    '_id' => {
     	datatype => 'string',
-    	base_name => 'device',
+    	base_name => '_id',
     	description => 'device id',
     	format => '',
     	read_only => '',
@@ -173,14 +173,14 @@ __PACKAGE__->method_documentation({
 });
 
 __PACKAGE__->swagger_types( {
-    'device' => 'string',
+    '_id' => 'string',
     'device_name' => 'string',
     'platform_version' => 'string',
     'reverse_key' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
-    'device' => 'device',
+    '_id' => '_id',
     'device_name' => 'deviceName',
     'platform_version' => 'platformVersion',
     'reverse_key' => 'reverseKey'

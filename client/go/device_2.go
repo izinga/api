@@ -13,5 +13,5 @@ package swagger
 type Device2 struct {
 
 	// device id
-	Device string `json:"device"`
+	Id string `json:"_id"`
 }

@@ -32,13 +32,13 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Device" /> class.
         /// </summary>
-        /// <param name="_Device">device id.</param>
+        /// <param name="Id">device id.</param>
         /// <param name="DeviceName">DeviceName.</param>
         /// <param name="PlatformVersion">PlatformVersion.</param>
         /// <param name="ReverseKey">ReverseKey.</param>
-        public Device(string _Device = default(string), string DeviceName = default(string), string PlatformVersion = default(string), string ReverseKey = default(string))
+        public Device(string Id = default(string), string DeviceName = default(string), string PlatformVersion = default(string), string ReverseKey = default(string))
         {
-            this._Device = _Device;
+            this.Id = Id;
             this.DeviceName = DeviceName;
             this.PlatformVersion = PlatformVersion;
             this.ReverseKey = ReverseKey;
@@ -48,8 +48,8 @@ namespace IO.Swagger.Model
         /// device id
         /// </summary>
         /// <value>device id</value>
-        [DataMember(Name="device", EmitDefaultValue=false)]
-        public string _Device { get; set; }
+        [DataMember(Name="_id", EmitDefaultValue=false)]
+        public string Id { get; set; }
         /// <summary>
         /// Gets or Sets DeviceName
         /// </summary>
@@ -73,7 +73,7 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Device {\n");
-            sb.Append("  _Device: ").Append(_Device).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  DeviceName: ").Append(DeviceName).Append("\n");
             sb.Append("  PlatformVersion: ").Append(PlatformVersion).Append("\n");
             sb.Append("  ReverseKey: ").Append(ReverseKey).Append("\n");
@@ -114,9 +114,9 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this._Device == other._Device ||
-                    this._Device != null &&
-                    this._Device.Equals(other._Device)
+                    this.Id == other.Id ||
+                    this.Id != null &&
+                    this.Id.Equals(other.Id)
                 ) && 
                 (
                     this.DeviceName == other.DeviceName ||
@@ -146,8 +146,8 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this._Device != null)
-                    hash = hash * 59 + this._Device.GetHashCode();
+                if (this.Id != null)
+                    hash = hash * 59 + this.Id.GetHashCode();
                 if (this.DeviceName != null)
                     hash = hash * 59 + this.DeviceName.GetHashCode();
                 if (this.PlatformVersion != null)

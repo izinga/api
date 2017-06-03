@@ -14,7 +14,7 @@ require 'date'
 module SwaggerClient
 
   class Device5
-    attr_accessor :device
+    attr_accessor :_id
 
     attr_accessor :command
 
@@ -22,7 +22,7 @@ module SwaggerClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'device' => :'device',
+        :'_id' => :'_id',
         :'command' => :'command'
       }
     end
@@ -30,7 +30,7 @@ module SwaggerClient
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'device' => :'String',
+        :'_id' => :'String',
         :'command' => :'String'
       }
     end
@@ -43,8 +43,8 @@ module SwaggerClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'device')
-        self.device = attributes[:'device']
+      if attributes.has_key?(:'_id')
+        self._id = attributes[:'_id']
       end
 
       if attributes.has_key?(:'command')
@@ -57,8 +57,8 @@ module SwaggerClient
     # @return Array for valid properies with the reasons
     def list_invalid_properties
       invalid_properties = Array.new
-      if @device.nil?
-        invalid_properties.push("invalid value for 'device', device cannot be nil.")
+      if @_id.nil?
+        invalid_properties.push("invalid value for '_id', _id cannot be nil.")
       end
 
       if @command.nil?
@@ -71,7 +71,7 @@ module SwaggerClient
     # Check to see if the all the properties in the model are valid
     # @return true if the model is valid
     def valid?
-      return false if @device.nil?
+      return false if @_id.nil?
       return false if @command.nil?
       return true
     end
@@ -81,7 +81,7 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          device == o.device &&
+          _id == o._id &&
           command == o.command
     end
 
@@ -94,7 +94,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [device, command].hash
+      [_id, command].hash
     end
 
     # Builds the object from hash

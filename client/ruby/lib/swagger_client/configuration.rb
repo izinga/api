@@ -122,9 +122,9 @@ module SwaggerClient
     attr_accessor :force_ending_format
 
     def initialize
-      @scheme = 'http'
-      @host = 'mobile.robustest.com:8085'
-      @base_path = ''
+      @scheme = 'https'
+      @host = 'virtserver.swaggerhub.com'
+      @base_path = '/Izinga/Hub/1.0.0'
       @api_key = {}
       @api_key_prefix = {}
       @timeout = 0

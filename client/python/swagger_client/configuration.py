@@ -45,7 +45,7 @@ class Configuration(object):
         Constructor
         """
         # Default Base url
-        self.host = "http://mobile.robustest.com:8085"
+        self.host = "https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0"
         # Default api client
         self.api_client = None
         # Temp file folder for downloading files

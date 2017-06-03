@@ -4,7 +4,7 @@
 ## Properties
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**device** | **String** | device id | 
+**id** | **String** | device id | 
 
 
 

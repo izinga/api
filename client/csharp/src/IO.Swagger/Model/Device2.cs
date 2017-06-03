@@ -37,17 +37,17 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Initializes a new instance of the <see cref="Device2" /> class.
         /// </summary>
-        /// <param name="Device">device id (required).</param>
-        public Device2(string Device = default(string))
+        /// <param name="Id">device id (required).</param>
+        public Device2(string Id = default(string))
         {
-            // to ensure "Device" is required (not null)
-            if (Device == null)
+            // to ensure "Id" is required (not null)
+            if (Id == null)
             {
-                throw new InvalidDataException("Device is a required property for Device2 and cannot be null");
+                throw new InvalidDataException("Id is a required property for Device2 and cannot be null");
             }
             else
             {
-                this.Device = Device;
+                this.Id = Id;
             }
         }
         
@@ -55,8 +55,8 @@ namespace IO.Swagger.Model
         /// device id
         /// </summary>
         /// <value>device id</value>
-        [DataMember(Name="device", EmitDefaultValue=false)]
-        public string Device { get; set; }
+        [DataMember(Name="_id", EmitDefaultValue=false)]
+        public string Id { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -65,7 +65,7 @@ namespace IO.Swagger.Model
         {
             var sb = new StringBuilder();
             sb.Append("class Device2 {\n");
-            sb.Append("  Device: ").Append(Device).Append("\n");
+            sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -103,9 +103,9 @@ namespace IO.Swagger.Model
 
             return 
                 (
-                    this.Device == other.Device ||
-                    this.Device != null &&
-                    this.Device.Equals(other.Device)
+                    this.Id == other.Id ||
+                    this.Id != null &&
+                    this.Id.Equals(other.Id)
                 );
         }
 
@@ -120,8 +120,8 @@ namespace IO.Swagger.Model
             {
                 int hash = 41;
                 // Suitable nullity checks etc, of course :)
-                if (this.Device != null)
-                    hash = hash * 59 + this.Device.GetHashCode();
+                if (this.Id != null)
+                    hash = hash * 59 + this.Id.GetHashCode();
                 return hash;
             }
         }

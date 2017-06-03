@@ -12,7 +12,7 @@ package swagger
 
 type Device5 struct {
 
-	Device string `json:"device"`
+	Id string `json:"_id"`
 
 	Command string `json:"command"`
 }

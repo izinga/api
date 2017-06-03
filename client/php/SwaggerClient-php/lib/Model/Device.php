@@ -54,7 +54,7 @@ class Device implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'device' => 'string',
+        '_id' => 'string',
         'device_name' => 'string',
         'platform_version' => 'string',
         'reverse_key' => 'string'
@@ -70,7 +70,7 @@ class Device implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'device' => 'device',
+        '_id' => '_id',
         'device_name' => 'deviceName',
         'platform_version' => 'platformVersion',
         'reverse_key' => 'reverseKey'
@@ -82,7 +82,7 @@ class Device implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'device' => 'setDevice',
+        '_id' => 'setId',
         'device_name' => 'setDeviceName',
         'platform_version' => 'setPlatformVersion',
         'reverse_key' => 'setReverseKey'
@@ -94,7 +94,7 @@ class Device implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'device' => 'getDevice',
+        '_id' => 'getId',
         'device_name' => 'getDeviceName',
         'platform_version' => 'getPlatformVersion',
         'reverse_key' => 'getReverseKey'
@@ -131,7 +131,7 @@ class Device implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['device'] = isset($data['device']) ? $data['device'] : null;
+        $this->container['_id'] = isset($data['_id']) ? $data['_id'] : null;
         $this->container['device_name'] = isset($data['device_name']) ? $data['device_name'] : null;
         $this->container['platform_version'] = isset($data['platform_version']) ? $data['platform_version'] : null;
         $this->container['reverse_key'] = isset($data['reverse_key']) ? $data['reverse_key'] : null;
@@ -163,22 +163,22 @@ class Device implements ArrayAccess
 
 
     /**
-     * Gets device
+     * Gets _id
      * @return string
      */
-    public function getDevice()
+    public function getId()
     {
-        return $this->container['device'];
+        return $this->container['_id'];
     }
 
     /**
-     * Sets device
-     * @param string $device device id
+     * Sets _id
+     * @param string $_id device id
      * @return $this
      */
-    public function setDevice($device)
+    public function setId($_id)
     {
-        $this->container['device'] = $device;
+        $this->container['_id'] = $_id;
 
         return $this;
     }

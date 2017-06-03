@@ -9,7 +9,7 @@ import Foundation
 
 
 public class Device5: JSONEncodable {
-    public var device: String?
+    public var id: String?
     public var command: String?
 
     public init() {}
@@ -17,7 +17,7 @@ public class Device5: JSONEncodable {
     // MARK: JSONEncodable
     func encodeToJSON() -> AnyObject {
         var nillableDictionary = [String:AnyObject?]()
-        nillableDictionary["device"] = self.device
+        nillableDictionary["_id"] = self.id
         nillableDictionary["command"] = self.command
         let dictionary: [String:AnyObject] = APIHelper.rejectNil(nillableDictionary) ?? [:]
         return dictionary

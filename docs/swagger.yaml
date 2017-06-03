@@ -2,16 +2,17 @@ swagger: '2.0'
 info:
   description: |
     RobusTest Hub Api
+    [http://mobile.robustest.com:8085
   version: "1.0.0"
   title: RobusTest Hub
 tags:
 - name: hub
   description: Everything about to run existing appium test cases
 
-host: mobile.robustest.com:8085
-schemes:
-  - http
-  - https
+# host: mobile.robustest.com:8085
+# schemes:
+#   - http
+#   - https
 produces:
   - application/json
 # basePath: /v2
@@ -49,14 +50,14 @@ paths:
           schema:
             type: object
             properties:
-              device:
+              _id:
                 type: string
                 description: device id
               deviceName:
                 type: string
               platformVersion:
                 type: string
-              reverseKey:
+              reserveKey:
                 type: string
 
       responses:
@@ -85,9 +86,9 @@ paths:
           schema:
             type: object
             required:
-              - device
+              - _id
             properties:
-              device:
+              _id:
                 type: string
                 description: device id
 
@@ -101,12 +102,12 @@ paths:
           schema:
             $ref: '#/definitions/Error'
 
-  /device/reverse:
+  /device/reserve:
     put:
-      operationId: reverse device
+      operationId: reserve device
       tags:
       - hub
-      summary: reverse a device
+      summary: reserve a device
       consumes:
       - application/json
       produces:
@@ -118,9 +119,9 @@ paths:
           schema:
             type: object
             required:
-              - device
+              - _id
             properties:
-              device:
+              _id:
                 type: string
                 description: device id
 
@@ -137,7 +138,7 @@ paths:
     delete:
       tags:
       - hub
-      operationId: unreverse device
+      operationId: unreserve device
       summary: unrevrse the device
       consumes:
       - application/json
@@ -150,9 +151,9 @@ paths:
           schema:
             type: object
             required:
-              - device
+              - _id
             properties:
-              device:
+              _id:
                 type: string
                 description: device id
       responses:
@@ -183,10 +184,10 @@ paths:
           schema:
             type: object
             required:
-              - device
+              - _id
               - command
             properties:
-              device:
+              _id:
                 type: string
               command:
                 type : string
@@ -225,10 +226,10 @@ paths:
           schema:
             type: object
             required:
-              - device
+              - _id
               - command
             properties:
-              device:
+              _id:
                 type: string
               command:
                 type : string
@@ -285,9 +286,9 @@ definitions:
       session:
         type: string
         description:  current test session id
-      reverseKey:
+      reserveKey:
         type: string
-        description: reverse key
+        description: reserve key
 
 
   HubSession:
@@ -312,3 +313,9 @@ definitions:
         type: string
       fields:
         type: string
+# Added by API Auto Mocking Plugin
+host: virtserver.swaggerhub.com
+basePath: /Izinga/Hub/1.0.0
+schemes:
+ - https
+ - http

@@ -17,15 +17,15 @@ Put the package under your project folder and add the following in import:
 
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://mobile.robustest.com:8085*
+All URIs are relative to *https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *HubApi* | [**AdbCommand**](docs/HubApi.md#adbcommand) | **Post** /device/command | run adb  command
 *HubApi* | [**DeviceShell**](docs/HubApi.md#deviceshell) | **Post** /device/shell | run adb shell command
 *HubApi* | [**DevicesList**](docs/HubApi.md#deviceslist) | **Get** /devices | list all attached devices to RobusTest
-*HubApi* | [**FreeDevice**](docs/HubApi.md#freedevice) | **Delete** /device | free device
-*HubApi* | [**GetFreeDevice**](docs/HubApi.md#getfreedevice) | **Put** /device | get free device based on given parameters
+*HubApi* | [**FreeDevice**](docs/HubApi.md#freedevice) | **Delete** /_id | free device
+*HubApi* | [**GetFreeDevice**](docs/HubApi.md#getfreedevice) | **Put** /_id | get free device based on given parameters
 *HubApi* | [**ReverseDevice**](docs/HubApi.md#reversedevice) | **Put** /device/reverse | reverse a device
 *HubApi* | [**UnreverseDevice**](docs/HubApi.md#unreversedevice) | **Delete** /device/reverse | unrevrse the device
 

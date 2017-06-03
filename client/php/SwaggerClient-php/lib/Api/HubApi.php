@@ -349,7 +349,7 @@ class HubApi
     public function freeDeviceWithHttpInfo($device = null)
     {
         // parse inputs
-        $resourcePath = "/device";
+        $resourcePath = "/_id";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -384,7 +384,7 @@ class HubApi
                 $httpBody,
                 $headerParams,
                 '\Swagger\Client\Model\Device',
-                '/device'
+                '/_id'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Device', $httpHeader), $statusCode, $httpHeader];
@@ -431,7 +431,7 @@ class HubApi
     public function getFreeDeviceWithHttpInfo($device = null)
     {
         // parse inputs
-        $resourcePath = "/device";
+        $resourcePath = "/_id";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -466,7 +466,7 @@ class HubApi
                 $httpBody,
                 $headerParams,
                 '\Swagger\Client\Model\Device',
-                '/device'
+                '/_id'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Device', $httpHeader), $statusCode, $httpHeader];

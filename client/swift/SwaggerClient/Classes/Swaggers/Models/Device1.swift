@@ -10,14 +10,14 @@ import Foundation
 
 public class Device1: JSONEncodable {
     /** device id */
-    public var device: String?
+    public var id: String?
 
     public init() {}
 
     // MARK: JSONEncodable
     func encodeToJSON() -> AnyObject {
         var nillableDictionary = [String:AnyObject?]()
-        nillableDictionary["device"] = self.device
+        nillableDictionary["_id"] = self.id
         let dictionary: [String:AnyObject] = APIHelper.rejectNil(nillableDictionary) ?? [:]
         return dictionary
     }

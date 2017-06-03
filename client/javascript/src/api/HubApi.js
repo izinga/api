@@ -200,7 +200,7 @@
       var returnType = Device;
 
       return this.apiClient.callApi(
-        '/device', 'DELETE',
+        '/_id', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -241,7 +241,7 @@
       var returnType = Device;
 
       return this.apiClient.callApi(
-        '/device', 'PUT',
+        '/_id', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

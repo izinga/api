@@ -88,7 +88,7 @@ class Configuration
      *
      * @var string
      */
-    protected $host = 'http://mobile.robustest.com:8085';
+    protected $host = 'https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0';
 
     /**
      * Timeout (second) of the HTTP request, by default set to 0, no timeout

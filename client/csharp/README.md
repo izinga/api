@@ -90,15 +90,15 @@ namespace Example
 <a name="documentation-for-api-endpoints"></a>
 ## Documentation for API Endpoints
 
-All URIs are relative to *http://mobile.robustest.com:8085*
+All URIs are relative to *https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *HubApi* | [**AdbCommand**](docs/HubApi.md#adbcommand) | **POST** /device/command | run adb  command
 *HubApi* | [**DeviceShell**](docs/HubApi.md#deviceshell) | **POST** /device/shell | run adb shell command
 *HubApi* | [**DevicesList**](docs/HubApi.md#deviceslist) | **GET** /devices | list all attached devices to RobusTest
-*HubApi* | [**FreeDevice**](docs/HubApi.md#freedevice) | **DELETE** /device | free device
-*HubApi* | [**GetFreeDevice**](docs/HubApi.md#getfreedevice) | **PUT** /device | get free device based on given parameters
+*HubApi* | [**FreeDevice**](docs/HubApi.md#freedevice) | **DELETE** /_id | free device
+*HubApi* | [**GetFreeDevice**](docs/HubApi.md#getfreedevice) | **PUT** /_id | get free device based on given parameters
 *HubApi* | [**ReverseDevice**](docs/HubApi.md#reversedevice) | **PUT** /device/reverse | reverse a device
 *HubApi* | [**UnreverseDevice**](docs/HubApi.md#unreversedevice) | **DELETE** /device/reverse | unrevrse the device
 

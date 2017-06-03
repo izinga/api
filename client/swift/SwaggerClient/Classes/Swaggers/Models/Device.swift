@@ -10,7 +10,7 @@ import Foundation
 
 public class Device: JSONEncodable {
     /** device id */
-    public var device: String?
+    public var id: String?
     public var deviceName: String?
     public var platformVersion: String?
     public var reverseKey: String?
@@ -20,7 +20,7 @@ public class Device: JSONEncodable {
     // MARK: JSONEncodable
     func encodeToJSON() -> AnyObject {
         var nillableDictionary = [String:AnyObject?]()
-        nillableDictionary["device"] = self.device
+        nillableDictionary["_id"] = self.id
         nillableDictionary["deviceName"] = self.deviceName
         nillableDictionary["platformVersion"] = self.platformVersion
         nillableDictionary["reverseKey"] = self.reverseKey

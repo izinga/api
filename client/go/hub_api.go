@@ -226,7 +226,7 @@ func (a HubApi) FreeDevice(device Device1) (*Device, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
-	localVarPath := a.Configuration.BasePath + "/device"
+	localVarPath := a.Configuration.BasePath + "/_id"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -287,7 +287,7 @@ func (a HubApi) GetFreeDevice(device Device) (*Device, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Put")
 	// create path and map variables
-	localVarPath := a.Configuration.BasePath + "/device"
+	localVarPath := a.Configuration.BasePath + "/_id"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}

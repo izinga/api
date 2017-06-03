@@ -54,7 +54,7 @@ class Device4 implements ArrayAccess
       * @var string[]
       */
     protected static $swaggerTypes = [
-        'device' => 'string',
+        '_id' => 'string',
         'command' => 'string'
     ];
 
@@ -68,7 +68,7 @@ class Device4 implements ArrayAccess
      * @var string[]
      */
     protected static $attributeMap = [
-        'device' => 'device',
+        '_id' => '_id',
         'command' => 'command'
     ];
 
@@ -78,7 +78,7 @@ class Device4 implements ArrayAccess
      * @var string[]
      */
     protected static $setters = [
-        'device' => 'setDevice',
+        '_id' => 'setId',
         'command' => 'setCommand'
     ];
 
@@ -88,7 +88,7 @@ class Device4 implements ArrayAccess
      * @var string[]
      */
     protected static $getters = [
-        'device' => 'getDevice',
+        '_id' => 'getId',
         'command' => 'getCommand'
     ];
 
@@ -123,7 +123,7 @@ class Device4 implements ArrayAccess
      */
     public function __construct(array $data = null)
     {
-        $this->container['device'] = isset($data['device']) ? $data['device'] : null;
+        $this->container['_id'] = isset($data['_id']) ? $data['_id'] : null;
         $this->container['command'] = isset($data['command']) ? $data['command'] : null;
     }
 
@@ -136,8 +136,8 @@ class Device4 implements ArrayAccess
     {
         $invalid_properties = [];
 
-        if ($this->container['device'] === null) {
-            $invalid_properties[] = "'device' can't be null";
+        if ($this->container['_id'] === null) {
+            $invalid_properties[] = "'_id' can't be null";
         }
         if ($this->container['command'] === null) {
             $invalid_properties[] = "'command' can't be null";
@@ -154,7 +154,7 @@ class Device4 implements ArrayAccess
     public function valid()
     {
 
-        if ($this->container['device'] === null) {
+        if ($this->container['_id'] === null) {
             return false;
         }
         if ($this->container['command'] === null) {
@@ -165,22 +165,22 @@ class Device4 implements ArrayAccess
 
 
     /**
-     * Gets device
+     * Gets _id
      * @return string
      */
-    public function getDevice()
+    public function getId()
     {
-        return $this->container['device'];
+        return $this->container['_id'];
     }
 
     /**
-     * Sets device
-     * @param string $device
+     * Sets _id
+     * @param string $_id
      * @return $this
      */
-    public function setDevice($device)
+    public function setId($_id)
     {
-        $this->container['device'] = $device;
+        $this->container['_id'] = $_id;
 
         return $this;
     }

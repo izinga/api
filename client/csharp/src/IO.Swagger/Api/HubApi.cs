@@ -882,7 +882,7 @@ namespace IO.Swagger.Api
         public ApiResponse< Device > FreeDeviceWithHttpInfo (Device1 device = null)
         {
 
-            var localVarPath = "/device";
+            var localVarPath = "/_id";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -958,7 +958,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<Device>> FreeDeviceAsyncWithHttpInfo (Device1 device = null)
         {
 
-            var localVarPath = "/device";
+            var localVarPath = "/_id";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1033,7 +1033,7 @@ namespace IO.Swagger.Api
         public ApiResponse< Device > GetFreeDeviceWithHttpInfo (Device device = null)
         {
 
-            var localVarPath = "/device";
+            var localVarPath = "/_id";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1109,7 +1109,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<Device>> GetFreeDeviceAsyncWithHttpInfo (Device device = null)
         {
 
-            var localVarPath = "/device";
+            var localVarPath = "/_id";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);

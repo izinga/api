@@ -15,7 +15,7 @@ module SwaggerClient
 
   class Device
     # device id
-    attr_accessor :device
+    attr_accessor :_id
 
     attr_accessor :device_name
 
@@ -27,7 +27,7 @@ module SwaggerClient
     # Attribute mapping from ruby-style variable name to JSON key.
     def self.attribute_map
       {
-        :'device' => :'device',
+        :'_id' => :'_id',
         :'device_name' => :'deviceName',
         :'platform_version' => :'platformVersion',
         :'reverse_key' => :'reverseKey'
@@ -37,7 +37,7 @@ module SwaggerClient
     # Attribute type mapping.
     def self.swagger_types
       {
-        :'device' => :'String',
+        :'_id' => :'String',
         :'device_name' => :'String',
         :'platform_version' => :'String',
         :'reverse_key' => :'String'
@@ -52,8 +52,8 @@ module SwaggerClient
       # convert string to symbol for hash key
       attributes = attributes.each_with_object({}){|(k,v), h| h[k.to_sym] = v}
 
-      if attributes.has_key?(:'device')
-        self.device = attributes[:'device']
+      if attributes.has_key?(:'_id')
+        self._id = attributes[:'_id']
       end
 
       if attributes.has_key?(:'deviceName')
@@ -88,7 +88,7 @@ module SwaggerClient
     def ==(o)
       return true if self.equal?(o)
       self.class == o.class &&
-          device == o.device &&
+          _id == o._id &&
           device_name == o.device_name &&
           platform_version == o.platform_version &&
           reverse_key == o.reverse_key
@@ -103,7 +103,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [device, device_name, platform_version, reverse_key].hash
+      [_id, device_name, platform_version, reverse_key].hash
     end
 
     # Builds the object from hash

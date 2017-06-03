@@ -3,7 +3,7 @@
 
 Name | Type | Description | Notes
 ------------ | ------------- | ------------- | -------------
-**_Device** | **string** | device id | [optional] 
+**Id** | **string** | device id | [optional] 
 **DeviceName** | **string** |  | [optional] 
 **PlatformVersion** | **string** |  | [optional] 
 **ReverseKey** | **string** |  | [optional] 

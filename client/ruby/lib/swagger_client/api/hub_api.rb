@@ -190,7 +190,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: HubApi.free_device ..."
       end
       # resource path
-      local_var_path = "/device".sub('{format}','json')
+      local_var_path = "/_id".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -241,7 +241,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: HubApi.get_free_device ..."
       end
       # resource path
-      local_var_path = "/device".sub('{format}','json')
+      local_var_path = "/_id".sub('{format}','json')
 
       # query parameters
       query_params = {}

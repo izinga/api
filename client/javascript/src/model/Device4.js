@@ -41,13 +41,13 @@
    * Constructs a new <code>Device4</code>.
    * @alias module:model/Device4
    * @class
-   * @param device {String} 
+   * @param id {String} 
    * @param command {String} 
    */
-  var exports = function(device, command) {
+  var exports = function(id, command) {
     var _this = this;
 
-    _this['device'] = device;
+    _this['_id'] = id;
     _this['command'] = command;
   };
 
@@ -62,8 +62,8 @@
     if (data) {
       obj = obj || new exports();
 
-      if (data.hasOwnProperty('device')) {
-        obj['device'] = ApiClient.convertToType(data['device'], 'String');
+      if (data.hasOwnProperty('_id')) {
+        obj['_id'] = ApiClient.convertToType(data['_id'], 'String');
       }
       if (data.hasOwnProperty('command')) {
         obj['command'] = ApiClient.convertToType(data['command'], 'String');
@@ -73,9 +73,9 @@
   }
 
   /**
-   * @member {String} device
+   * @member {String} _id
    */
-  exports.prototype['device'] = undefined;
+  exports.prototype['_id'] = undefined;
   /**
    * @member {String} command
    */
