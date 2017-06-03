@@ -1527,7 +1527,7 @@
                         }, c.default.createElement("img", {
                             height: "65",
                             width: "224",
-                            src: h.default,
+                            src: "./logo.png",
                             alt: "RobusTest"
                         }), c.default.createElement("span", null, "swagger")), c.default.createElement("form", {
                             className: "download-url-wrapper",
