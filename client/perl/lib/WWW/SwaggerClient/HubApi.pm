@@ -374,7 +374,7 @@ sub get_screenshot {
     my $_resource_path = '/device/screenshot';
     $_resource_path =~ s/{format}/json/; # default format to json
 
-    my $_method = 'PUT';
+    my $_method = 'POST';
     my $query_params = {};
     my $header_params = {};
     my $form_params = {};

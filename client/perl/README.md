@@ -294,7 +294,7 @@ Class | Method | HTTP request | Description
 *HubApi* | [**devices_list**](docs/HubApi.md#devices_list) | **GET** /devices | list all attached devices to RobusTest
 *HubApi* | [**free_device**](docs/HubApi.md#free_device) | **DELETE** /device | free device
 *HubApi* | [**get_free_device**](docs/HubApi.md#get_free_device) | **PUT** /device | get free device based on given parameters
-*HubApi* | [**get_screenshot**](docs/HubApi.md#get_screenshot) | **PUT** /device/screenshot | get screenshot from device
+*HubApi* | [**get_screenshot**](docs/HubApi.md#get_screenshot) | **POST** /device/screenshot | get screenshot from device
 *HubApi* | [**unreserve_device**](docs/HubApi.md#unreserve_device) | **DELETE** /device/screenshot | unrevrse the device
 
 

@@ -26,7 +26,7 @@ Class | Method | HTTP request | Description
 *HubApi* | [**DevicesList**](docs/HubApi.md#deviceslist) | **Get** /devices | list all attached devices to RobusTest
 *HubApi* | [**FreeDevice**](docs/HubApi.md#freedevice) | **Delete** /device | free device
 *HubApi* | [**GetFreeDevice**](docs/HubApi.md#getfreedevice) | **Put** /device | get free device based on given parameters
-*HubApi* | [**GetScreenshot**](docs/HubApi.md#getscreenshot) | **Put** /device/screenshot | get screenshot from device
+*HubApi* | [**GetScreenshot**](docs/HubApi.md#getscreenshot) | **Post** /device/screenshot | get screenshot from device
 *HubApi* | [**UnreserveDevice**](docs/HubApi.md#unreservedevice) | **Delete** /device/screenshot | unrevrse the device
 
 

@@ -217,7 +217,7 @@ public class HubAPI: APIBase {
 
     /**
      get screenshot from device
-     - PUT /device/screenshot
+     - POST /device/screenshot
      - examples: [{contentType=application/json, example=""}]
      
      - parameter device: (body)  (optional)
@@ -233,7 +233,7 @@ public class HubAPI: APIBase {
  
         let requestBuilder: RequestBuilder<NSURL>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
-        return requestBuilder.init(method: "PUT", URLString: URLString, parameters: convertedParameters, isBody: true)
+        return requestBuilder.init(method: "POST", URLString: URLString, parameters: convertedParameters, isBody: true)
     }
 
     /**

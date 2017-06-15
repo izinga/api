@@ -543,7 +543,7 @@ class HubApi
         try {
             list($response, $statusCode, $httpHeader) = $this->apiClient->callApi(
                 $resourcePath,
-                'PUT',
+                'POST',
                 $queryParams,
                 $httpBody,
                 $headerParams,

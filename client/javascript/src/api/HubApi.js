@@ -282,7 +282,7 @@
       var returnType = File;
 
       return this.apiClient.callApi(
-        '/device/screenshot', 'PUT',
+        '/device/screenshot', 'POST',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

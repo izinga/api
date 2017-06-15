@@ -632,7 +632,7 @@ class HubApi(object):
         # Authentication setting
         auth_settings = []
 
-        return self.api_client.call_api(resource_path, 'PUT',
+        return self.api_client.call_api(resource_path, 'POST',
                                         path_params,
                                         query_params,
                                         header_params,

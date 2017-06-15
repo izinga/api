@@ -9,7 +9,7 @@ Method | HTTP request | Description
 [**devices_list**](HubApi.md#devices_list) | **GET** /devices | list all attached devices to RobusTest
 [**free_device**](HubApi.md#free_device) | **DELETE** /device | free device
 [**get_free_device**](HubApi.md#get_free_device) | **PUT** /device | get free device based on given parameters
-[**get_screenshot**](HubApi.md#get_screenshot) | **PUT** /device/screenshot | get screenshot from device
+[**get_screenshot**](HubApi.md#get_screenshot) | **POST** /device/screenshot | get screenshot from device
 [**unreserve_device**](HubApi.md#unreserve_device) | **DELETE** /device/screenshot | unrevrse the device
 
 

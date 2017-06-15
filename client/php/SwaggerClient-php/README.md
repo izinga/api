@@ -80,7 +80,7 @@ Class | Method | HTTP request | Description
 *HubApi* | [**devicesList**](docs/Api/HubApi.md#deviceslist) | **GET** /devices | list all attached devices to RobusTest
 *HubApi* | [**freeDevice**](docs/Api/HubApi.md#freedevice) | **DELETE** /device | free device
 *HubApi* | [**getFreeDevice**](docs/Api/HubApi.md#getfreedevice) | **PUT** /device | get free device based on given parameters
-*HubApi* | [**getScreenshot**](docs/Api/HubApi.md#getscreenshot) | **PUT** /device/screenshot | get screenshot from device
+*HubApi* | [**getScreenshot**](docs/Api/HubApi.md#getscreenshot) | **POST** /device/screenshot | get screenshot from device
 *HubApi* | [**unreserveDevice**](docs/Api/HubApi.md#unreservedevice) | **DELETE** /device/screenshot | unrevrse the device
 
 

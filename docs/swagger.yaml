@@ -103,7 +103,7 @@ paths:
             $ref: '#/definitions/Error'
 
   /device/screenshot:
-    put:
+    post:
       operationId: get screenshot
       tags:
       - hub

@@ -348,7 +348,7 @@ func (a HubApi) GetFreeDevice(device Device) (*Device, *APIResponse, error) {
  */
 func (a HubApi) GetScreenshot(device Device2) (**os.File, *APIResponse, error) {
 
-	var localVarHttpMethod = strings.ToUpper("Put")
+	var localVarHttpMethod = strings.ToUpper("Post")
 	// create path and map variables
 	localVarPath := a.Configuration.BasePath + "/device/screenshot"
 
