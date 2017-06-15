@@ -1,6 +1,6 @@
 /*
  * RobusTest Hub
- * RobusTest Hub Api [http://mobile.robustest.com:8085 
+ * RobusTest Hub Api [http://enterprice.robustest.com:8085 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -16,7 +16,7 @@ package io.swagger.client;
 import java.util.Map;
 import java.util.List;
 
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-06-03T18:48:48.351+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-06-15T13:04:37.852+05:30")
 public class ApiException extends Exception {
     private int code = 0;
     private Map<String, List<String>> responseHeaders = null;

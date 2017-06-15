@@ -7,10 +7,10 @@ Method | HTTP request | Description
 [**AdbCommand**](HubApi.md#adbcommand) | **POST** /device/command | run adb  command
 [**DeviceShell**](HubApi.md#deviceshell) | **POST** /device/shell | run adb shell command
 [**DevicesList**](HubApi.md#deviceslist) | **GET** /devices | list all attached devices to RobusTest
-[**FreeDevice**](HubApi.md#freedevice) | **DELETE** /_id | free device
-[**GetFreeDevice**](HubApi.md#getfreedevice) | **PUT** /_id | get free device based on given parameters
-[**ReverseDevice**](HubApi.md#reversedevice) | **PUT** /device/reverse | reverse a device
-[**UnreverseDevice**](HubApi.md#unreversedevice) | **DELETE** /device/reverse | unrevrse the device
+[**FreeDevice**](HubApi.md#freedevice) | **DELETE** /device | free device
+[**GetFreeDevice**](HubApi.md#getfreedevice) | **PUT** /device | get free device based on given parameters
+[**GetScreenshot**](HubApi.md#getscreenshot) | **PUT** /device/screenshot | get screenshot from device
+[**UnreserveDevice**](HubApi.md#unreservedevice) | **DELETE** /device/screenshot | unrevrse the device
 
 
 <a name="adbcommand"></a>
@@ -309,11 +309,11 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="reversedevice"></a>
-# **ReverseDevice**
-> Device ReverseDevice (Device2 device = null)
+<a name="getscreenshot"></a>
+# **GetScreenshot**
+> System.IO.Stream GetScreenshot (Device2 device = null)
 
-reverse a device
+get screenshot from device
 
 ### Example
 ```csharp
@@ -325,7 +325,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class ReverseDeviceExample
+    public class GetScreenshotExample
     {
         public void main()
         {
@@ -335,13 +335,13 @@ namespace Example
 
             try
             {
-                // reverse a device
-                Device result = apiInstance.ReverseDevice(device);
+                // get screenshot from device
+                System.IO.Stream result = apiInstance.GetScreenshot(device);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling HubApi.ReverseDevice: " + e.Message );
+                Debug.Print("Exception when calling HubApi.GetScreenshot: " + e.Message );
             }
         }
     }
@@ -356,7 +356,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Device**](Device.md)
+**System.IO.Stream**
 
 ### Authorization
 
@@ -369,9 +369,9 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-<a name="unreversedevice"></a>
-# **UnreverseDevice**
-> Device UnreverseDevice (Device3 device = null)
+<a name="unreservedevice"></a>
+# **UnreserveDevice**
+> Device UnreserveDevice (Device3 device = null)
 
 unrevrse the device
 
@@ -385,7 +385,7 @@ using IO.Swagger.Model;
 
 namespace Example
 {
-    public class UnreverseDeviceExample
+    public class UnreserveDeviceExample
     {
         public void main()
         {
@@ -396,12 +396,12 @@ namespace Example
             try
             {
                 // unrevrse the device
-                Device result = apiInstance.UnreverseDevice(device);
+                Device result = apiInstance.UnreserveDevice(device);
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
-                Debug.Print("Exception when calling HubApi.UnreverseDevice: " + e.Message );
+                Debug.Print("Exception when calling HubApi.UnreserveDevice: " + e.Message );
             }
         }
     }

@@ -1,7 +1,7 @@
 /* 
  * RobusTest Hub
  *
- * RobusTest Hub Api [http://mobile.robustest.com:8085 
+ * RobusTest Hub Api [http://enterprice.robustest.com:8085 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -13,6 +13,8 @@ package swagger
 import (
 	"net/url"
 	"strings"
+	"os"
+	"io/ioutil"
 	"encoding/json"
 )
 
@@ -226,7 +228,7 @@ func (a HubApi) FreeDevice(device Device1) (*Device, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
-	localVarPath := a.Configuration.BasePath + "/_id"
+	localVarPath := a.Configuration.BasePath + "/device"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -287,7 +289,7 @@ func (a HubApi) GetFreeDevice(device Device) (*Device, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Put")
 	// create path and map variables
-	localVarPath := a.Configuration.BasePath + "/_id"
+	localVarPath := a.Configuration.BasePath + "/device"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -339,16 +341,16 @@ func (a HubApi) GetFreeDevice(device Device) (*Device, *APIResponse, error) {
 }
 
 /**
- * reverse a device
+ * get screenshot from device
  *
  * @param device 
- * @return *Device
+ * @return **os.File
  */
-func (a HubApi) ReverseDevice(device Device2) (*Device, *APIResponse, error) {
+func (a HubApi) GetScreenshot(device Device2) (**os.File, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Put")
 	// create path and map variables
-	localVarPath := a.Configuration.BasePath + "/device/reverse"
+	localVarPath := a.Configuration.BasePath + "/device/screenshot"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -381,12 +383,12 @@ func (a HubApi) ReverseDevice(device Device2) (*Device, *APIResponse, error) {
 	}
 	// body params
 	localVarPostBody = &device
-	var successPayload = new(Device)
+	var successPayload = new(*os.File)
 	localVarHttpResponse, err := a.Configuration.APIClient.CallAPI(localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
 
 	var localVarURL, _ = url.Parse(localVarPath)
 	localVarURL.RawQuery = localVarQueryParams.Encode()
-	var localVarAPIResponse = &APIResponse{Operation: "ReverseDevice", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	var localVarAPIResponse = &APIResponse{Operation: "GetScreenshot", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
 	if localVarHttpResponse != nil {
 		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
 		localVarAPIResponse.Payload = localVarHttpResponse.Body()
@@ -405,11 +407,11 @@ func (a HubApi) ReverseDevice(device Device2) (*Device, *APIResponse, error) {
  * @param device 
  * @return *Device
  */
-func (a HubApi) UnreverseDevice(device Device3) (*Device, *APIResponse, error) {
+func (a HubApi) UnreserveDevice(device Device3) (*Device, *APIResponse, error) {
 
 	var localVarHttpMethod = strings.ToUpper("Delete")
 	// create path and map variables
-	localVarPath := a.Configuration.BasePath + "/device/reverse"
+	localVarPath := a.Configuration.BasePath + "/device/screenshot"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -447,7 +449,7 @@ func (a HubApi) UnreverseDevice(device Device3) (*Device, *APIResponse, error) {
 
 	var localVarURL, _ = url.Parse(localVarPath)
 	localVarURL.RawQuery = localVarQueryParams.Encode()
-	var localVarAPIResponse = &APIResponse{Operation: "UnreverseDevice", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
+	var localVarAPIResponse = &APIResponse{Operation: "UnreserveDevice", Method: localVarHttpMethod, RequestURL: localVarURL.String()}
 	if localVarHttpResponse != nil {
 		localVarAPIResponse.Response = localVarHttpResponse.RawResponse
 		localVarAPIResponse.Payload = localVarHttpResponse.Body()

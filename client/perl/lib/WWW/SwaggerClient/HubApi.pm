@@ -2,7 +2,7 @@
 
 RobusTest Hub
 
-RobusTest Hub Api [http://mobile.robustest.com:8085 
+RobusTest Hub Api [http://enterprice.robustest.com:8085 
 
 OpenAPI spec version: 1.0.0
 
@@ -249,7 +249,7 @@ sub free_device {
     my ($self, %args) = @_;
 
     # parse inputs
-    my $_resource_path = '/_id';
+    my $_resource_path = '/device';
     $_resource_path =~ s/{format}/json/; # default format to json
 
     my $_method = 'DELETE';
@@ -310,7 +310,7 @@ sub get_free_device {
     my ($self, %args) = @_;
 
     # parse inputs
-    my $_resource_path = '/_id';
+    my $_resource_path = '/device';
     $_resource_path =~ s/{format}/json/; # default format to json
 
     my $_method = 'PUT';
@@ -346,9 +346,9 @@ sub get_free_device {
 }
 
 #
-# reverse_device
+# get_screenshot
 #
-# reverse a device
+# get screenshot from device
 # 
 # @param Device2 $device  (optional)
 {
@@ -359,19 +359,19 @@ sub get_free_device {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'reverse_device' } = { 
-    	summary => 'reverse a device',
+    __PACKAGE__->method_documentation->{ 'get_screenshot' } = { 
+    	summary => 'get screenshot from device',
         params => $params,
-        returns => 'Device',
+        returns => 'File',
         };
 }
-# @return Device
+# @return File
 #
-sub reverse_device {
+sub get_screenshot {
     my ($self, %args) = @_;
 
     # parse inputs
-    my $_resource_path = '/device/reverse';
+    my $_resource_path = '/device/screenshot';
     $_resource_path =~ s/{format}/json/; # default format to json
 
     my $_method = 'PUT';
@@ -402,12 +402,12 @@ sub reverse_device {
     if (!$response) {
         return;
     }
-    my $_response_object = $self->{api_client}->deserialize('Device', $response);
+    my $_response_object = $self->{api_client}->deserialize('File', $response);
     return $_response_object;
 }
 
 #
-# unreverse_device
+# unreserve_device
 #
 # unrevrse the device
 # 
@@ -420,7 +420,7 @@ sub reverse_device {
         required => '0',
     },
     };
-    __PACKAGE__->method_documentation->{ 'unreverse_device' } = { 
+    __PACKAGE__->method_documentation->{ 'unreserve_device' } = { 
     	summary => 'unrevrse the device',
         params => $params,
         returns => 'Device',
@@ -428,11 +428,11 @@ sub reverse_device {
 }
 # @return Device
 #
-sub unreverse_device {
+sub unreserve_device {
     my ($self, %args) = @_;
 
     # parse inputs
-    my $_resource_path = '/device/reverse';
+    my $_resource_path = '/device/screenshot';
     $_resource_path =~ s/{format}/json/; # default format to json
 
     my $_method = 'DELETE';

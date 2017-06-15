@@ -7,10 +7,10 @@ Method | HTTP request | Description
 [**adbCommand**](HubApi.md#adbCommand) | **POST** /device/command | run adb  command
 [**deviceShell**](HubApi.md#deviceShell) | **POST** /device/shell | run adb shell command
 [**devicesList**](HubApi.md#devicesList) | **GET** /devices | list all attached devices to RobusTest
-[**freeDevice**](HubApi.md#freeDevice) | **DELETE** /_id | free device
-[**getFreeDevice**](HubApi.md#getFreeDevice) | **PUT** /_id | get free device based on given parameters
-[**reverseDevice**](HubApi.md#reverseDevice) | **PUT** /device/reverse | reverse a device
-[**unreverseDevice**](HubApi.md#unreverseDevice) | **DELETE** /device/reverse | unrevrse the device
+[**freeDevice**](HubApi.md#freeDevice) | **DELETE** /device | free device
+[**getFreeDevice**](HubApi.md#getFreeDevice) | **PUT** /device | get free device based on given parameters
+[**getScreenshot**](HubApi.md#getScreenshot) | **PUT** /device/screenshot | get screenshot from device
+[**unreserveDevice**](HubApi.md#unreserveDevice) | **DELETE** /device/screenshot | unrevrse the device
 
 
 <a name="adbCommand"></a>
@@ -224,11 +224,11 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="reverseDevice"></a>
-# **reverseDevice**
-> Device reverseDevice(device)
+<a name="getScreenshot"></a>
+# **getScreenshot**
+> File getScreenshot(device)
 
-reverse a device
+get screenshot from device
 
 ### Example
 ```java
@@ -240,10 +240,10 @@ reverse a device
 HubApi apiInstance = new HubApi();
 Device2 device = new Device2(); // Device2 | 
 try {
-    Device result = apiInstance.reverseDevice(device);
+    File result = apiInstance.getScreenshot(device);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling HubApi#reverseDevice");
+    System.err.println("Exception when calling HubApi#getScreenshot");
     e.printStackTrace();
 }
 ```
@@ -256,7 +256,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Device**](Device.md)
+[**File**](File.md)
 
 ### Authorization
 
@@ -267,9 +267,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="unreverseDevice"></a>
-# **unreverseDevice**
-> Device unreverseDevice(device)
+<a name="unreserveDevice"></a>
+# **unreserveDevice**
+> Device unreserveDevice(device)
 
 unrevrse the device
 
@@ -283,10 +283,10 @@ unrevrse the device
 HubApi apiInstance = new HubApi();
 Device3 device = new Device3(); // Device3 | 
 try {
-    Device result = apiInstance.unreverseDevice(device);
+    Device result = apiInstance.unreserveDevice(device);
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling HubApi#unreverseDevice");
+    System.err.println("Exception when calling HubApi#unreserveDevice");
     e.printStackTrace();
 }
 ```

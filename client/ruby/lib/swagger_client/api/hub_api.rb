@@ -1,7 +1,7 @@
 =begin
 #RobusTest Hub
 
-#RobusTest Hub Api [http://mobile.robustest.com:8085 
+#RobusTest Hub Api [http://enterprice.robustest.com:8085 
 
 OpenAPI spec version: 1.0.0
 
@@ -190,7 +190,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: HubApi.free_device ..."
       end
       # resource path
-      local_var_path = "/_id".sub('{format}','json')
+      local_var_path = "/device".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -241,7 +241,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: HubApi.get_free_device ..."
       end
       # resource path
-      local_var_path = "/_id".sub('{format}','json')
+      local_var_path = "/device".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -272,27 +272,27 @@ module SwaggerClient
       return data, status_code, headers
     end
 
-    # reverse a device
+    # get screenshot from device
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Device2] :device 
-    # @return [Device]
-    def reverse_device(opts = {})
-      data, _status_code, _headers = reverse_device_with_http_info(opts)
+    # @return [File]
+    def get_screenshot(opts = {})
+      data, _status_code, _headers = get_screenshot_with_http_info(opts)
       return data
     end
 
-    # reverse a device
+    # get screenshot from device
     # 
     # @param [Hash] opts the optional parameters
     # @option opts [Device2] :device 
-    # @return [Array<(Device, Fixnum, Hash)>] Device data, response status code and response headers
-    def reverse_device_with_http_info(opts = {})
+    # @return [Array<(File, Fixnum, Hash)>] File data, response status code and response headers
+    def get_screenshot_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: HubApi.reverse_device ..."
+        @api_client.config.logger.debug "Calling API: HubApi.get_screenshot ..."
       end
       # resource path
-      local_var_path = "/device/reverse".sub('{format}','json')
+      local_var_path = "/device/screenshot".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -316,9 +316,9 @@ module SwaggerClient
         :form_params => form_params,
         :body => post_body,
         :auth_names => auth_names,
-        :return_type => 'Device')
+        :return_type => 'File')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: HubApi#reverse_device\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: HubApi#get_screenshot\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end
@@ -328,8 +328,8 @@ module SwaggerClient
     # @param [Hash] opts the optional parameters
     # @option opts [Device3] :device 
     # @return [Device]
-    def unreverse_device(opts = {})
-      data, _status_code, _headers = unreverse_device_with_http_info(opts)
+    def unreserve_device(opts = {})
+      data, _status_code, _headers = unreserve_device_with_http_info(opts)
       return data
     end
 
@@ -338,12 +338,12 @@ module SwaggerClient
     # @param [Hash] opts the optional parameters
     # @option opts [Device3] :device 
     # @return [Array<(Device, Fixnum, Hash)>] Device data, response status code and response headers
-    def unreverse_device_with_http_info(opts = {})
+    def unreserve_device_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: HubApi.unreverse_device ..."
+        @api_client.config.logger.debug "Calling API: HubApi.unreserve_device ..."
       end
       # resource path
-      local_var_path = "/device/reverse".sub('{format}','json')
+      local_var_path = "/device/screenshot".sub('{format}','json')
 
       # query parameters
       query_params = {}
@@ -369,7 +369,7 @@ module SwaggerClient
         :auth_names => auth_names,
         :return_type => 'Device')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: HubApi#unreverse_device\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: HubApi#unreserve_device\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

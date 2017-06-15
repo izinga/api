@@ -1,7 +1,7 @@
 /* 
  * RobusTest Hub
  *
- * RobusTest Hub Api [http://mobile.robustest.com:8085 
+ * RobusTest Hub Api [http://enterprice.robustest.com:8085 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -128,26 +128,26 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of Device</returns>
         ApiResponse<Device> GetFreeDeviceWithHttpInfo (Device device = null);
         /// <summary>
-        /// reverse a device
+        /// get screenshot from device
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
-        /// <returns>Device</returns>
-        Device ReverseDevice (Device2 device = null);
+        /// <returns>System.IO.Stream</returns>
+        System.IO.Stream GetScreenshot (Device2 device = null);
 
         /// <summary>
-        /// reverse a device
+        /// get screenshot from device
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
-        /// <returns>ApiResponse of Device</returns>
-        ApiResponse<Device> ReverseDeviceWithHttpInfo (Device2 device = null);
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        ApiResponse<System.IO.Stream> GetScreenshotWithHttpInfo (Device2 device = null);
         /// <summary>
         /// unrevrse the device
         /// </summary>
@@ -157,7 +157,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>Device</returns>
-        Device UnreverseDevice (Device3 device = null);
+        Device UnreserveDevice (Device3 device = null);
 
         /// <summary>
         /// unrevrse the device
@@ -168,7 +168,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>ApiResponse of Device</returns>
-        ApiResponse<Device> UnreverseDeviceWithHttpInfo (Device3 device = null);
+        ApiResponse<Device> UnreserveDeviceWithHttpInfo (Device3 device = null);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -275,26 +275,26 @@ namespace IO.Swagger.Api
         /// <returns>Task of ApiResponse (Device)</returns>
         System.Threading.Tasks.Task<ApiResponse<Device>> GetFreeDeviceAsyncWithHttpInfo (Device device = null);
         /// <summary>
-        /// reverse a device
+        /// get screenshot from device
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
-        /// <returns>Task of Device</returns>
-        System.Threading.Tasks.Task<Device> ReverseDeviceAsync (Device2 device = null);
+        /// <returns>Task of System.IO.Stream</returns>
+        System.Threading.Tasks.Task<System.IO.Stream> GetScreenshotAsync (Device2 device = null);
 
         /// <summary>
-        /// reverse a device
+        /// get screenshot from device
         /// </summary>
         /// <remarks>
         /// 
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
-        /// <returns>Task of ApiResponse (Device)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Device>> ReverseDeviceAsyncWithHttpInfo (Device2 device = null);
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetScreenshotAsyncWithHttpInfo (Device2 device = null);
         /// <summary>
         /// unrevrse the device
         /// </summary>
@@ -304,7 +304,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>Task of Device</returns>
-        System.Threading.Tasks.Task<Device> UnreverseDeviceAsync (Device3 device = null);
+        System.Threading.Tasks.Task<Device> UnreserveDeviceAsync (Device3 device = null);
 
         /// <summary>
         /// unrevrse the device
@@ -315,7 +315,7 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>Task of ApiResponse (Device)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Device>> UnreverseDeviceAsyncWithHttpInfo (Device3 device = null);
+        System.Threading.Tasks.Task<ApiResponse<Device>> UnreserveDeviceAsyncWithHttpInfo (Device3 device = null);
         #endregion Asynchronous Operations
     }
 
@@ -882,7 +882,7 @@ namespace IO.Swagger.Api
         public ApiResponse< Device > FreeDeviceWithHttpInfo (Device1 device = null)
         {
 
-            var localVarPath = "/_id";
+            var localVarPath = "/device";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -958,7 +958,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<Device>> FreeDeviceAsyncWithHttpInfo (Device1 device = null)
         {
 
-            var localVarPath = "/_id";
+            var localVarPath = "/device";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1033,7 +1033,7 @@ namespace IO.Swagger.Api
         public ApiResponse< Device > GetFreeDeviceWithHttpInfo (Device device = null)
         {
 
-            var localVarPath = "/_id";
+            var localVarPath = "/device";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1109,7 +1109,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<Device>> GetFreeDeviceAsyncWithHttpInfo (Device device = null)
         {
 
-            var localVarPath = "/_id";
+            var localVarPath = "/device";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1164,27 +1164,27 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
-        /// reverse a device 
+        /// get screenshot from device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
-        /// <returns>Device</returns>
-        public Device ReverseDevice (Device2 device = null)
+        /// <returns>System.IO.Stream</returns>
+        public System.IO.Stream GetScreenshot (Device2 device = null)
         {
-             ApiResponse<Device> localVarResponse = ReverseDeviceWithHttpInfo(device);
+             ApiResponse<System.IO.Stream> localVarResponse = GetScreenshotWithHttpInfo(device);
              return localVarResponse.Data;
         }
 
         /// <summary>
-        /// reverse a device 
+        /// get screenshot from device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
-        /// <returns>ApiResponse of Device</returns>
-        public ApiResponse< Device > ReverseDeviceWithHttpInfo (Device2 device = null)
+        /// <returns>ApiResponse of System.IO.Stream</returns>
+        public ApiResponse< System.IO.Stream > GetScreenshotWithHttpInfo (Device2 device = null)
         {
 
-            var localVarPath = "/device/reverse";
+            var localVarPath = "/device/screenshot";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1228,39 +1228,39 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("ReverseDevice", localVarResponse);
+                Exception exception = ExceptionFactory("GetScreenshot", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Device>(localVarStatusCode,
+            return new ApiResponse<System.IO.Stream>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Device) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
+                (System.IO.Stream) Configuration.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
             
         }
 
         /// <summary>
-        /// reverse a device 
+        /// get screenshot from device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
-        /// <returns>Task of Device</returns>
-        public async System.Threading.Tasks.Task<Device> ReverseDeviceAsync (Device2 device = null)
+        /// <returns>Task of System.IO.Stream</returns>
+        public async System.Threading.Tasks.Task<System.IO.Stream> GetScreenshotAsync (Device2 device = null)
         {
-             ApiResponse<Device> localVarResponse = await ReverseDeviceAsyncWithHttpInfo(device);
+             ApiResponse<System.IO.Stream> localVarResponse = await GetScreenshotAsyncWithHttpInfo(device);
              return localVarResponse.Data;
 
         }
 
         /// <summary>
-        /// reverse a device 
+        /// get screenshot from device 
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
-        /// <returns>Task of ApiResponse (Device)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Device>> ReverseDeviceAsyncWithHttpInfo (Device2 device = null)
+        /// <returns>Task of ApiResponse (System.IO.Stream)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<System.IO.Stream>> GetScreenshotAsyncWithHttpInfo (Device2 device = null)
         {
 
-            var localVarPath = "/device/reverse";
+            var localVarPath = "/device/screenshot";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1304,13 +1304,13 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("ReverseDevice", localVarResponse);
+                Exception exception = ExceptionFactory("GetScreenshot", localVarResponse);
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Device>(localVarStatusCode,
+            return new ApiResponse<System.IO.Stream>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Device) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Device)));
+                (System.IO.Stream) Configuration.ApiClient.Deserialize(localVarResponse, typeof(System.IO.Stream)));
             
         }
 
@@ -1320,9 +1320,9 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>Device</returns>
-        public Device UnreverseDevice (Device3 device = null)
+        public Device UnreserveDevice (Device3 device = null)
         {
-             ApiResponse<Device> localVarResponse = UnreverseDeviceWithHttpInfo(device);
+             ApiResponse<Device> localVarResponse = UnreserveDeviceWithHttpInfo(device);
              return localVarResponse.Data;
         }
 
@@ -1332,10 +1332,10 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>ApiResponse of Device</returns>
-        public ApiResponse< Device > UnreverseDeviceWithHttpInfo (Device3 device = null)
+        public ApiResponse< Device > UnreserveDeviceWithHttpInfo (Device3 device = null)
         {
 
-            var localVarPath = "/device/reverse";
+            var localVarPath = "/device/screenshot";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1379,7 +1379,7 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("UnreverseDevice", localVarResponse);
+                Exception exception = ExceptionFactory("UnreserveDevice", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1395,9 +1395,9 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>Task of Device</returns>
-        public async System.Threading.Tasks.Task<Device> UnreverseDeviceAsync (Device3 device = null)
+        public async System.Threading.Tasks.Task<Device> UnreserveDeviceAsync (Device3 device = null)
         {
-             ApiResponse<Device> localVarResponse = await UnreverseDeviceAsyncWithHttpInfo(device);
+             ApiResponse<Device> localVarResponse = await UnreserveDeviceAsyncWithHttpInfo(device);
              return localVarResponse.Data;
 
         }
@@ -1408,10 +1408,10 @@ namespace IO.Swagger.Api
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="device"> (optional)</param>
         /// <returns>Task of ApiResponse (Device)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Device>> UnreverseDeviceAsyncWithHttpInfo (Device3 device = null)
+        public async System.Threading.Tasks.Task<ApiResponse<Device>> UnreserveDeviceAsyncWithHttpInfo (Device3 device = null)
         {
 
-            var localVarPath = "/device/reverse";
+            var localVarPath = "/device/screenshot";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new Dictionary<String, String>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1455,7 +1455,7 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("UnreverseDevice", localVarResponse);
+                Exception exception = ExceptionFactory("UnreserveDevice", localVarResponse);
                 if (exception != null) throw exception;
             }
 

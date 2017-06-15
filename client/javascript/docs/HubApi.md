@@ -7,10 +7,10 @@ Method | HTTP request | Description
 [**adbCommand**](HubApi.md#adbCommand) | **POST** /device/command | run adb  command
 [**deviceShell**](HubApi.md#deviceShell) | **POST** /device/shell | run adb shell command
 [**devicesList**](HubApi.md#devicesList) | **GET** /devices | list all attached devices to RobusTest
-[**freeDevice**](HubApi.md#freeDevice) | **DELETE** /_id | free device
-[**getFreeDevice**](HubApi.md#getFreeDevice) | **PUT** /_id | get free device based on given parameters
-[**reverseDevice**](HubApi.md#reverseDevice) | **PUT** /device/reverse | reverse a device
-[**unreverseDevice**](HubApi.md#unreverseDevice) | **DELETE** /device/reverse | unrevrse the device
+[**freeDevice**](HubApi.md#freeDevice) | **DELETE** /device | free device
+[**getFreeDevice**](HubApi.md#getFreeDevice) | **PUT** /device | get free device based on given parameters
+[**getScreenshot**](HubApi.md#getScreenshot) | **PUT** /device/screenshot | get screenshot from device
+[**unreserveDevice**](HubApi.md#unreserveDevice) | **DELETE** /device/screenshot | unrevrse the device
 
 
 <a name="adbCommand"></a>
@@ -231,11 +231,11 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="reverseDevice"></a>
-# **reverseDevice**
-> Device reverseDevice(opts)
+<a name="getScreenshot"></a>
+# **getScreenshot**
+> File getScreenshot(opts)
 
-reverse a device
+get screenshot from device
 
 ### Example
 ```javascript
@@ -254,7 +254,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.reverseDevice(opts, callback);
+apiInstance.getScreenshot(opts, callback);
 ```
 
 ### Parameters
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Device**](Device.md)
+**File**
 
 ### Authorization
 
@@ -276,9 +276,9 @@ No authorization required
  - **Content-Type**: application/json
  - **Accept**: application/json
 
-<a name="unreverseDevice"></a>
-# **unreverseDevice**
-> Device unreverseDevice(opts)
+<a name="unreserveDevice"></a>
+# **unreserveDevice**
+> Device unreserveDevice(opts)
 
 unrevrse the device
 
@@ -299,7 +299,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.unreverseDevice(opts, callback);
+apiInstance.unreserveDevice(opts, callback);
 ```
 
 ### Parameters

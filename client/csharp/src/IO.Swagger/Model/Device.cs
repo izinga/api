@@ -1,7 +1,7 @@
 /* 
  * RobusTest Hub
  *
- * RobusTest Hub Api [http://mobile.robustest.com:8085 
+ * RobusTest Hub Api [http://enterprice.robustest.com:8085 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -35,13 +35,13 @@ namespace IO.Swagger.Model
         /// <param name="Id">device id.</param>
         /// <param name="DeviceName">DeviceName.</param>
         /// <param name="PlatformVersion">PlatformVersion.</param>
-        /// <param name="ReverseKey">ReverseKey.</param>
-        public Device(string Id = default(string), string DeviceName = default(string), string PlatformVersion = default(string), string ReverseKey = default(string))
+        /// <param name="ReserveKey">ReserveKey.</param>
+        public Device(string Id = default(string), string DeviceName = default(string), string PlatformVersion = default(string), string ReserveKey = default(string))
         {
             this.Id = Id;
             this.DeviceName = DeviceName;
             this.PlatformVersion = PlatformVersion;
-            this.ReverseKey = ReverseKey;
+            this.ReserveKey = ReserveKey;
         }
         
         /// <summary>
@@ -61,10 +61,10 @@ namespace IO.Swagger.Model
         [DataMember(Name="platformVersion", EmitDefaultValue=false)]
         public string PlatformVersion { get; set; }
         /// <summary>
-        /// Gets or Sets ReverseKey
+        /// Gets or Sets ReserveKey
         /// </summary>
-        [DataMember(Name="reverseKey", EmitDefaultValue=false)]
-        public string ReverseKey { get; set; }
+        [DataMember(Name="reserveKey", EmitDefaultValue=false)]
+        public string ReserveKey { get; set; }
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -76,7 +76,7 @@ namespace IO.Swagger.Model
             sb.Append("  Id: ").Append(Id).Append("\n");
             sb.Append("  DeviceName: ").Append(DeviceName).Append("\n");
             sb.Append("  PlatformVersion: ").Append(PlatformVersion).Append("\n");
-            sb.Append("  ReverseKey: ").Append(ReverseKey).Append("\n");
+            sb.Append("  ReserveKey: ").Append(ReserveKey).Append("\n");
             sb.Append("}\n");
             return sb.ToString();
         }
@@ -129,9 +129,9 @@ namespace IO.Swagger.Model
                     this.PlatformVersion.Equals(other.PlatformVersion)
                 ) && 
                 (
-                    this.ReverseKey == other.ReverseKey ||
-                    this.ReverseKey != null &&
-                    this.ReverseKey.Equals(other.ReverseKey)
+                    this.ReserveKey == other.ReserveKey ||
+                    this.ReserveKey != null &&
+                    this.ReserveKey.Equals(other.ReserveKey)
                 );
         }
 
@@ -152,8 +152,8 @@ namespace IO.Swagger.Model
                     hash = hash * 59 + this.DeviceName.GetHashCode();
                 if (this.PlatformVersion != null)
                     hash = hash * 59 + this.PlatformVersion.GetHashCode();
-                if (this.ReverseKey != null)
-                    hash = hash * 59 + this.ReverseKey.GetHashCode();
+                if (this.ReserveKey != null)
+                    hash = hash * 59 + this.ReserveKey.GetHashCode();
                 return hash;
             }
         }

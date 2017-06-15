@@ -1,6 +1,6 @@
 /**
  * RobusTest Hub
- * RobusTest Hub Api [http://mobile.robustest.com:8085 
+ * RobusTest Hub Api [http://enterprice.robustest.com:8085 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -71,8 +71,8 @@
       if (data.hasOwnProperty('platformVersion')) {
         obj['platformVersion'] = ApiClient.convertToType(data['platformVersion'], 'String');
       }
-      if (data.hasOwnProperty('reverseKey')) {
-        obj['reverseKey'] = ApiClient.convertToType(data['reverseKey'], 'String');
+      if (data.hasOwnProperty('reserveKey')) {
+        obj['reserveKey'] = ApiClient.convertToType(data['reserveKey'], 'String');
       }
     }
     return obj;
@@ -92,9 +92,9 @@
    */
   exports.prototype['platformVersion'] = undefined;
   /**
-   * @member {String} reverseKey
+   * @member {String} reserveKey
    */
-  exports.prototype['reverseKey'] = undefined;
+  exports.prototype['reserveKey'] = undefined;
 
 
 

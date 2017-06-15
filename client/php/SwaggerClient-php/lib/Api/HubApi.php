@@ -12,7 +12,7 @@
 /**
  * RobusTest Hub
  *
- * RobusTest Hub Api [http://mobile.robustest.com:8085
+ * RobusTest Hub Api [http://enterprice.robustest.com:8085
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -349,7 +349,7 @@ class HubApi
     public function freeDeviceWithHttpInfo($device = null)
     {
         // parse inputs
-        $resourcePath = "/_id";
+        $resourcePath = "/device";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -384,7 +384,7 @@ class HubApi
                 $httpBody,
                 $headerParams,
                 '\Swagger\Client\Model\Device',
-                '/_id'
+                '/device'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Device', $httpHeader), $statusCode, $httpHeader];
@@ -431,7 +431,7 @@ class HubApi
     public function getFreeDeviceWithHttpInfo($device = null)
     {
         // parse inputs
-        $resourcePath = "/_id";
+        $resourcePath = "/device";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -466,7 +466,7 @@ class HubApi
                 $httpBody,
                 $headerParams,
                 '\Swagger\Client\Model\Device',
-                '/_id'
+                '/device'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Device', $httpHeader), $statusCode, $httpHeader];
@@ -487,33 +487,33 @@ class HubApi
     }
 
     /**
-     * Operation reverseDevice
+     * Operation getScreenshot
      *
-     * reverse a device
+     * get screenshot from device
      *
      * @param \Swagger\Client\Model\Device2 $device  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return \Swagger\Client\Model\Device
+     * @return \SplFileObject
      */
-    public function reverseDevice($device = null)
+    public function getScreenshot($device = null)
     {
-        list($response) = $this->reverseDeviceWithHttpInfo($device);
+        list($response) = $this->getScreenshotWithHttpInfo($device);
         return $response;
     }
 
     /**
-     * Operation reverseDeviceWithHttpInfo
+     * Operation getScreenshotWithHttpInfo
      *
-     * reverse a device
+     * get screenshot from device
      *
      * @param \Swagger\Client\Model\Device2 $device  (optional)
      * @throws \Swagger\Client\ApiException on non-2xx response
-     * @return array of \Swagger\Client\Model\Device, HTTP status code, HTTP response headers (array of strings)
+     * @return array of \SplFileObject, HTTP status code, HTTP response headers (array of strings)
      */
-    public function reverseDeviceWithHttpInfo($device = null)
+    public function getScreenshotWithHttpInfo($device = null)
     {
         // parse inputs
-        $resourcePath = "/device/reverse";
+        $resourcePath = "/device/screenshot";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -547,15 +547,15 @@ class HubApi
                 $queryParams,
                 $httpBody,
                 $headerParams,
-                '\Swagger\Client\Model\Device',
-                '/device/reverse'
+                '\SplFileObject',
+                '/device/screenshot'
             );
 
-            return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Device', $httpHeader), $statusCode, $httpHeader];
+            return [$this->apiClient->getSerializer()->deserialize($response, '\SplFileObject', $httpHeader), $statusCode, $httpHeader];
         } catch (ApiException $e) {
             switch ($e->getCode()) {
                 case 200:
-                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\Swagger\Client\Model\Device', $e->getResponseHeaders());
+                    $data = $this->apiClient->getSerializer()->deserialize($e->getResponseBody(), '\SplFileObject', $e->getResponseHeaders());
                     $e->setResponseObject($data);
                     break;
                 case 0:
@@ -569,7 +569,7 @@ class HubApi
     }
 
     /**
-     * Operation unreverseDevice
+     * Operation unreserveDevice
      *
      * unrevrse the device
      *
@@ -577,14 +577,14 @@ class HubApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return \Swagger\Client\Model\Device
      */
-    public function unreverseDevice($device = null)
+    public function unreserveDevice($device = null)
     {
-        list($response) = $this->unreverseDeviceWithHttpInfo($device);
+        list($response) = $this->unreserveDeviceWithHttpInfo($device);
         return $response;
     }
 
     /**
-     * Operation unreverseDeviceWithHttpInfo
+     * Operation unreserveDeviceWithHttpInfo
      *
      * unrevrse the device
      *
@@ -592,10 +592,10 @@ class HubApi
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @return array of \Swagger\Client\Model\Device, HTTP status code, HTTP response headers (array of strings)
      */
-    public function unreverseDeviceWithHttpInfo($device = null)
+    public function unreserveDeviceWithHttpInfo($device = null)
     {
         // parse inputs
-        $resourcePath = "/device/reverse";
+        $resourcePath = "/device/screenshot";
         $httpBody = '';
         $queryParams = [];
         $headerParams = [];
@@ -630,7 +630,7 @@ class HubApi
                 $httpBody,
                 $headerParams,
                 '\Swagger\Client\Model\Device',
-                '/device/reverse'
+                '/device/screenshot'
             );
 
             return [$this->apiClient->getSerializer()->deserialize($response, '\Swagger\Client\Model\Device', $httpHeader), $statusCode, $httpHeader];

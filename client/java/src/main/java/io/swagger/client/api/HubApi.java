@@ -1,6 +1,6 @@
 /*
  * RobusTest Hub
- * RobusTest Hub Api [http://mobile.robustest.com:8085 
+ * RobusTest Hub Api [http://enterprice.robustest.com:8085 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -34,6 +34,7 @@ import io.swagger.client.model.Device3;
 import io.swagger.client.model.Device4;
 import io.swagger.client.model.Device5;
 import io.swagger.client.model.Error;
+import java.io.File;
 import io.swagger.client.model.HubDevices;
 import io.swagger.client.model.InlineResponse200;
 import io.swagger.client.model.InlineResponse2001;
@@ -404,7 +405,7 @@ public class HubApi {
         Object localVarPostBody = device;
         
         // create path and map variables
-        String localVarPath = "/_id".replaceAll("\\{format\\}","json");
+        String localVarPath = "/device".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -517,7 +518,7 @@ public class HubApi {
         Object localVarPostBody = device;
         
         // create path and map variables
-        String localVarPath = "/_id".replaceAll("\\{format\\}","json");
+        String localVarPath = "/device".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -625,12 +626,12 @@ public class HubApi {
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
-    /* Build call for reverseDevice */
-    private com.squareup.okhttp.Call reverseDeviceCall(Device2 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /* Build call for getScreenshot */
+    private com.squareup.okhttp.Call getScreenshotCall(Device2 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = device;
         
         // create path and map variables
-        String localVarPath = "/device/reverse".replaceAll("\\{format\\}","json");
+        String localVarPath = "/device/screenshot".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -667,10 +668,10 @@ public class HubApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call reverseDeviceValidateBeforeCall(Device2 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call getScreenshotValidateBeforeCall(Device2 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         
-        com.squareup.okhttp.Call call = reverseDeviceCall(device, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = getScreenshotCall(device, progressListener, progressRequestListener);
         return call;
 
         
@@ -680,39 +681,39 @@ public class HubApi {
     }
 
     /**
-     * reverse a device
+     * get screenshot from device
      * 
      * @param device  (optional)
-     * @return Device
+     * @return File
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Device reverseDevice(Device2 device) throws ApiException {
-        ApiResponse<Device> resp = reverseDeviceWithHttpInfo(device);
+    public File getScreenshot(Device2 device) throws ApiException {
+        ApiResponse<File> resp = getScreenshotWithHttpInfo(device);
         return resp.getData();
     }
 
     /**
-     * reverse a device
+     * get screenshot from device
      * 
      * @param device  (optional)
-     * @return ApiResponse&lt;Device&gt;
+     * @return ApiResponse&lt;File&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Device> reverseDeviceWithHttpInfo(Device2 device) throws ApiException {
-        com.squareup.okhttp.Call call = reverseDeviceValidateBeforeCall(device, null, null);
-        Type localVarReturnType = new TypeToken<Device>(){}.getType();
+    public ApiResponse<File> getScreenshotWithHttpInfo(Device2 device) throws ApiException {
+        com.squareup.okhttp.Call call = getScreenshotValidateBeforeCall(device, null, null);
+        Type localVarReturnType = new TypeToken<File>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * reverse a device (asynchronously)
+     * get screenshot from device (asynchronously)
      * 
      * @param device  (optional)
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call reverseDeviceAsync(Device2 device, final ApiCallback<Device> callback) throws ApiException {
+    public com.squareup.okhttp.Call getScreenshotAsync(Device2 device, final ApiCallback<File> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -733,17 +734,17 @@ public class HubApi {
             };
         }
 
-        com.squareup.okhttp.Call call = reverseDeviceValidateBeforeCall(device, progressListener, progressRequestListener);
-        Type localVarReturnType = new TypeToken<Device>(){}.getType();
+        com.squareup.okhttp.Call call = getScreenshotValidateBeforeCall(device, progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<File>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
     }
-    /* Build call for unreverseDevice */
-    private com.squareup.okhttp.Call unreverseDeviceCall(Device3 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    /* Build call for unreserveDevice */
+    private com.squareup.okhttp.Call unreserveDeviceCall(Device3 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         Object localVarPostBody = device;
         
         // create path and map variables
-        String localVarPath = "/device/reverse".replaceAll("\\{format\\}","json");
+        String localVarPath = "/device/screenshot".replaceAll("\\{format\\}","json");
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
 
@@ -780,10 +781,10 @@ public class HubApi {
     }
     
     @SuppressWarnings("rawtypes")
-    private com.squareup.okhttp.Call unreverseDeviceValidateBeforeCall(Device3 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+    private com.squareup.okhttp.Call unreserveDeviceValidateBeforeCall(Device3 device, final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
         
         
-        com.squareup.okhttp.Call call = unreverseDeviceCall(device, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = unreserveDeviceCall(device, progressListener, progressRequestListener);
         return call;
 
         
@@ -799,8 +800,8 @@ public class HubApi {
      * @return Device
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public Device unreverseDevice(Device3 device) throws ApiException {
-        ApiResponse<Device> resp = unreverseDeviceWithHttpInfo(device);
+    public Device unreserveDevice(Device3 device) throws ApiException {
+        ApiResponse<Device> resp = unreserveDeviceWithHttpInfo(device);
         return resp.getData();
     }
 
@@ -811,8 +812,8 @@ public class HubApi {
      * @return ApiResponse&lt;Device&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<Device> unreverseDeviceWithHttpInfo(Device3 device) throws ApiException {
-        com.squareup.okhttp.Call call = unreverseDeviceValidateBeforeCall(device, null, null);
+    public ApiResponse<Device> unreserveDeviceWithHttpInfo(Device3 device) throws ApiException {
+        com.squareup.okhttp.Call call = unreserveDeviceValidateBeforeCall(device, null, null);
         Type localVarReturnType = new TypeToken<Device>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
@@ -825,7 +826,7 @@ public class HubApi {
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call unreverseDeviceAsync(Device3 device, final ApiCallback<Device> callback) throws ApiException {
+    public com.squareup.okhttp.Call unreserveDeviceAsync(Device3 device, final ApiCallback<Device> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -846,7 +847,7 @@ public class HubApi {
             };
         }
 
-        com.squareup.okhttp.Call call = unreverseDeviceValidateBeforeCall(device, progressListener, progressRequestListener);
+        com.squareup.okhttp.Call call = unreserveDeviceValidateBeforeCall(device, progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<Device>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;

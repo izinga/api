@@ -2,7 +2,7 @@
 
 RobusTest Hub
 
-RobusTest Hub Api [http://mobile.robustest.com:8085 
+RobusTest Hub Api [http://enterprice.robustest.com:8085 
 
 OpenAPI spec version: 1.0.0
 
@@ -44,7 +44,7 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 RobusTest Hub
 
-RobusTest Hub Api [http://mobile.robustest.com:8085 
+RobusTest Hub Api [http://enterprice.robustest.com:8085 
 
 OpenAPI spec version: 1.0.0
 

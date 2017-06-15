@@ -3,7 +3,7 @@
 =begin
 #RobusTest Hub
 
-#RobusTest Hub Api [http://mobile.robustest.com:8085 
+#RobusTest Hub Api [http://enterprice.robustest.com:8085 
 
 OpenAPI spec version: 1.0.0
 
@@ -22,7 +22,7 @@ Gem::Specification.new do |s|
   s.email       = [""]
   s.homepage    = "https://github.com/swagger-api/swagger-codegen"
   s.summary     = "RobusTest Hub Ruby Gem"
-  s.description = "RobusTest Hub Api [http://mobile.robustest.com:8085 "
+  s.description = "RobusTest Hub Api [http://enterprice.robustest.com:8085 "
   # TODO uncommnet and update below with a proper license 
   #s.license     = "Apache 2.0"
   s.required_ruby_version = ">= 1.9"

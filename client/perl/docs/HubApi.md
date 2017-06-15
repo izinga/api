@@ -12,10 +12,10 @@ Method | HTTP request | Description
 [**adb_command**](HubApi.md#adb_command) | **POST** /device/command | run adb  command
 [**device_shell**](HubApi.md#device_shell) | **POST** /device/shell | run adb shell command
 [**devices_list**](HubApi.md#devices_list) | **GET** /devices | list all attached devices to RobusTest
-[**free_device**](HubApi.md#free_device) | **DELETE** /_id | free device
-[**get_free_device**](HubApi.md#get_free_device) | **PUT** /_id | get free device based on given parameters
-[**reverse_device**](HubApi.md#reverse_device) | **PUT** /device/reverse | reverse a device
-[**unreverse_device**](HubApi.md#unreverse_device) | **DELETE** /device/reverse | unrevrse the device
+[**free_device**](HubApi.md#free_device) | **DELETE** /device | free device
+[**get_free_device**](HubApi.md#get_free_device) | **PUT** /device | get free device based on given parameters
+[**get_screenshot**](HubApi.md#get_screenshot) | **PUT** /device/screenshot | get screenshot from device
+[**unreserve_device**](HubApi.md#unreserve_device) | **DELETE** /device/screenshot | unrevrse the device
 
 
 # **adb_command**
@@ -234,10 +234,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **reverse_device**
-> Device reverse_device(device => $device)
+# **get_screenshot**
+> File get_screenshot(device => $device)
 
-reverse a device
+get screenshot from device
 
 ### Example 
 ```perl
@@ -249,11 +249,11 @@ my $api_instance = WWW::SwaggerClient::HubApi->new();
 my $device = WWW::SwaggerClient::Object::Device2->new(); # Device2 | 
 
 eval { 
-    my $result = $api_instance->reverse_device(device => $device);
+    my $result = $api_instance->get_screenshot(device => $device);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling HubApi->reverse_device: $@\n";
+    warn "Exception when calling HubApi->get_screenshot: $@\n";
 }
 ```
 
@@ -265,7 +265,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Device**](Device.md)
+[**File**](File.md)
 
 ### Authorization
 
@@ -278,8 +278,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **unreverse_device**
-> Device unreverse_device(device => $device)
+# **unreserve_device**
+> Device unreserve_device(device => $device)
 
 unrevrse the device
 
@@ -293,11 +293,11 @@ my $api_instance = WWW::SwaggerClient::HubApi->new();
 my $device = WWW::SwaggerClient::Object::Device3->new(); # Device3 | 
 
 eval { 
-    my $result = $api_instance->unreverse_device(device => $device);
+    my $result = $api_instance->unreserve_device(device => $device);
     print Dumper($result);
 };
 if ($@) {
-    warn "Exception when calling HubApi->unreverse_device: $@\n";
+    warn "Exception when calling HubApi->unreserve_device: $@\n";
 }
 ```
 

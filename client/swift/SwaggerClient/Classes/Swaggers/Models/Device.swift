@@ -13,7 +13,7 @@ public class Device: JSONEncodable {
     public var id: String?
     public var deviceName: String?
     public var platformVersion: String?
-    public var reverseKey: String?
+    public var reserveKey: String?
 
     public init() {}
 
@@ -23,7 +23,7 @@ public class Device: JSONEncodable {
         nillableDictionary["_id"] = self.id
         nillableDictionary["deviceName"] = self.deviceName
         nillableDictionary["platformVersion"] = self.platformVersion
-        nillableDictionary["reverseKey"] = self.reverseKey
+        nillableDictionary["reserveKey"] = self.reserveKey
         let dictionary: [String:AnyObject] = APIHelper.rejectNil(nillableDictionary) ?? [:]
         return dictionary
     }

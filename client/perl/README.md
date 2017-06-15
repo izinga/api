@@ -2,7 +2,7 @@
 
 WWW::SwaggerClient::Role - a Moose role for the RobusTest Hub
 
-RobusTest Hub Api [http://mobile.robustest.com:8085 
+RobusTest Hub Api [http://enterprice.robustest.com:8085 
 
 # VERSION
 
@@ -292,10 +292,10 @@ Class | Method | HTTP request | Description
 *HubApi* | [**adb_command**](docs/HubApi.md#adb_command) | **POST** /device/command | run adb  command
 *HubApi* | [**device_shell**](docs/HubApi.md#device_shell) | **POST** /device/shell | run adb shell command
 *HubApi* | [**devices_list**](docs/HubApi.md#devices_list) | **GET** /devices | list all attached devices to RobusTest
-*HubApi* | [**free_device**](docs/HubApi.md#free_device) | **DELETE** /_id | free device
-*HubApi* | [**get_free_device**](docs/HubApi.md#get_free_device) | **PUT** /_id | get free device based on given parameters
-*HubApi* | [**reverse_device**](docs/HubApi.md#reverse_device) | **PUT** /device/reverse | reverse a device
-*HubApi* | [**unreverse_device**](docs/HubApi.md#unreverse_device) | **DELETE** /device/reverse | unrevrse the device
+*HubApi* | [**free_device**](docs/HubApi.md#free_device) | **DELETE** /device | free device
+*HubApi* | [**get_free_device**](docs/HubApi.md#get_free_device) | **PUT** /device | get free device based on given parameters
+*HubApi* | [**get_screenshot**](docs/HubApi.md#get_screenshot) | **PUT** /device/screenshot | get screenshot from device
+*HubApi* | [**unreserve_device**](docs/HubApi.md#unreserve_device) | **DELETE** /device/screenshot | unrevrse the device
 
 
 # DOCUMENTATION FOR MODELS

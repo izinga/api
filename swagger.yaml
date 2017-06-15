@@ -102,12 +102,12 @@ paths:
           schema:
             $ref: '#/definitions/Error'
 
-  /device/reserve:
+  /device/screenshot:
     put:
-      operationId: reserve device
+      operationId: get screenshot
       tags:
       - hub
-      summary: reserve a device
+      summary: get screenshot from device
       consumes:
       - application/json
       produces:
@@ -127,9 +127,10 @@ paths:
 
       responses:
         200:
-          description: successful operation
+          description: return screenshot
           schema:
-            $ref: '#/definitions/Device'
+            description: Returns jpg file
+            type: file
         default:
           description: Unexpected error
           schema:

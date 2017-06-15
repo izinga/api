@@ -7,10 +7,10 @@ Method | HTTP request | Description
 [**adb_command**](HubApi.md#adb_command) | **POST** /device/command | run adb  command
 [**device_shell**](HubApi.md#device_shell) | **POST** /device/shell | run adb shell command
 [**devices_list**](HubApi.md#devices_list) | **GET** /devices | list all attached devices to RobusTest
-[**free_device**](HubApi.md#free_device) | **DELETE** /_id | free device
-[**get_free_device**](HubApi.md#get_free_device) | **PUT** /_id | get free device based on given parameters
-[**reverse_device**](HubApi.md#reverse_device) | **PUT** /device/reverse | reverse a device
-[**unreverse_device**](HubApi.md#unreverse_device) | **DELETE** /device/reverse | unrevrse the device
+[**free_device**](HubApi.md#free_device) | **DELETE** /device | free device
+[**get_free_device**](HubApi.md#get_free_device) | **PUT** /device | get free device based on given parameters
+[**get_screenshot**](HubApi.md#get_screenshot) | **PUT** /device/screenshot | get screenshot from device
+[**unreserve_device**](HubApi.md#unreserve_device) | **DELETE** /device/screenshot | unrevrse the device
 
 
 # **adb_command**
@@ -236,10 +236,10 @@ No authorization required
 
 
 
-# **reverse_device**
-> Device reverse_device(opts)
+# **get_screenshot**
+> File get_screenshot(opts)
 
-reverse a device
+get screenshot from device
 
 ### Example
 ```ruby
@@ -253,11 +253,11 @@ opts = {
 }
 
 begin
-  #reverse a device
-  result = api_instance.reverse_device(opts)
+  #get screenshot from device
+  result = api_instance.get_screenshot(opts)
   p result
 rescue SwaggerClient::ApiError => e
-  puts "Exception when calling HubApi->reverse_device: #{e}"
+  puts "Exception when calling HubApi->get_screenshot: #{e}"
 end
 ```
 
@@ -269,7 +269,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Device**](Device.md)
+**File**
 
 ### Authorization
 
@@ -282,8 +282,8 @@ No authorization required
 
 
 
-# **unreverse_device**
-> Device unreverse_device(opts)
+# **unreserve_device**
+> Device unreserve_device(opts)
 
 unrevrse the device
 
@@ -300,10 +300,10 @@ opts = {
 
 begin
   #unrevrse the device
-  result = api_instance.unreverse_device(opts)
+  result = api_instance.unreserve_device(opts)
   p result
 rescue SwaggerClient::ApiError => e
-  puts "Exception when calling HubApi->unreverse_device: #{e}"
+  puts "Exception when calling HubApi->unreserve_device: #{e}"
 end
 ```
 

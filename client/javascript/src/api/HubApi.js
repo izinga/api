@@ -1,6 +1,6 @@
 /**
  * RobusTest Hub
- * RobusTest Hub Api [http://mobile.robustest.com:8085 
+ * RobusTest Hub Api [http://enterprice.robustest.com:8085 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -200,7 +200,7 @@
       var returnType = Device;
 
       return this.apiClient.callApi(
-        '/_id', 'DELETE',
+        '/device', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
@@ -241,28 +241,28 @@
       var returnType = Device;
 
       return this.apiClient.callApi(
-        '/_id', 'PUT',
+        '/device', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the reverseDevice operation.
-     * @callback module:api/HubApi~reverseDeviceCallback
+     * Callback function to receive the result of the getScreenshot operation.
+     * @callback module:api/HubApi~getScreenshotCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Device} data The data returned by the service call.
+     * @param {File} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
 
     /**
-     * reverse a device
+     * get screenshot from device
      * @param {Object} opts Optional parameters
      * @param {module:model/Device2} opts.device 
-     * @param {module:api/HubApi~reverseDeviceCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Device}
+     * @param {module:api/HubApi~getScreenshotCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link File}
      */
-    this.reverseDevice = function(opts, callback) {
+    this.getScreenshot = function(opts, callback) {
       opts = opts || {};
       var postBody = opts['device'];
 
@@ -279,18 +279,18 @@
       var authNames = [];
       var contentTypes = ['application/json'];
       var accepts = ['application/json'];
-      var returnType = Device;
+      var returnType = File;
 
       return this.apiClient.callApi(
-        '/device/reverse', 'PUT',
+        '/device/screenshot', 'PUT',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
     }
 
     /**
-     * Callback function to receive the result of the unreverseDevice operation.
-     * @callback module:api/HubApi~unreverseDeviceCallback
+     * Callback function to receive the result of the unreserveDevice operation.
+     * @callback module:api/HubApi~unreserveDeviceCallback
      * @param {String} error Error message, if any.
      * @param {module:model/Device} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
@@ -300,10 +300,10 @@
      * unrevrse the device
      * @param {Object} opts Optional parameters
      * @param {module:model/Device3} opts.device 
-     * @param {module:api/HubApi~unreverseDeviceCallback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/HubApi~unreserveDeviceCallback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link module:model/Device}
      */
-    this.unreverseDevice = function(opts, callback) {
+    this.unreserveDevice = function(opts, callback) {
       opts = opts || {};
       var postBody = opts['device'];
 
@@ -323,7 +323,7 @@
       var returnType = Device;
 
       return this.apiClient.callApi(
-        '/device/reverse', 'DELETE',
+        '/device/screenshot', 'DELETE',
         pathParams, queryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

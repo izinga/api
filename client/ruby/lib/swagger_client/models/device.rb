@@ -1,7 +1,7 @@
 =begin
 #RobusTest Hub
 
-#RobusTest Hub Api [http://mobile.robustest.com:8085 
+#RobusTest Hub Api [http://enterprice.robustest.com:8085 
 
 OpenAPI spec version: 1.0.0
 
@@ -21,7 +21,7 @@ module SwaggerClient
 
     attr_accessor :platform_version
 
-    attr_accessor :reverse_key
+    attr_accessor :reserve_key
 
 
     # Attribute mapping from ruby-style variable name to JSON key.
@@ -30,7 +30,7 @@ module SwaggerClient
         :'_id' => :'_id',
         :'device_name' => :'deviceName',
         :'platform_version' => :'platformVersion',
-        :'reverse_key' => :'reverseKey'
+        :'reserve_key' => :'reserveKey'
       }
     end
 
@@ -40,7 +40,7 @@ module SwaggerClient
         :'_id' => :'String',
         :'device_name' => :'String',
         :'platform_version' => :'String',
-        :'reverse_key' => :'String'
+        :'reserve_key' => :'String'
       }
     end
 
@@ -64,8 +64,8 @@ module SwaggerClient
         self.platform_version = attributes[:'platformVersion']
       end
 
-      if attributes.has_key?(:'reverseKey')
-        self.reverse_key = attributes[:'reverseKey']
+      if attributes.has_key?(:'reserveKey')
+        self.reserve_key = attributes[:'reserveKey']
       end
 
     end
@@ -91,7 +91,7 @@ module SwaggerClient
           _id == o._id &&
           device_name == o.device_name &&
           platform_version == o.platform_version &&
-          reverse_key == o.reverse_key
+          reserve_key == o.reserve_key
     end
 
     # @see the `==` method
@@ -103,7 +103,7 @@ module SwaggerClient
     # Calculates hash code according to all attributes.
     # @return [Fixnum] Hash code
     def hash
-      [_id, device_name, platform_version, reverse_key].hash
+      [_id, device_name, platform_version, reserve_key].hash
     end
 
     # Builds the object from hash

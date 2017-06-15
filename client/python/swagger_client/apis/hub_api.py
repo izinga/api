@@ -3,7 +3,7 @@
 """
     RobusTest Hub
 
-    RobusTest Hub Api [http://mobile.robustest.com:8085 
+    RobusTest Hub Api [http://enterprice.robustest.com:8085 
 
     OpenAPI spec version: 1.0.0
     
@@ -404,7 +404,7 @@ class HubApi(object):
 
         collection_formats = {}
 
-        resource_path = '/_id'.replace('{format}', 'json')
+        resource_path = '/device'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -506,7 +506,7 @@ class HubApi(object):
 
         collection_formats = {}
 
-        resource_path = '/_id'.replace('{format}', 'json')
+        resource_path = '/device'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -545,46 +545,46 @@ class HubApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def reverse_device(self, **kwargs):
+    def get_screenshot(self, **kwargs):
         """
-        reverse a device
+        get screenshot from device
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.reverse_device(callback=callback_function)
+        >>> thread = api.get_screenshot(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param Device2 device:
-        :return: Device
+        :return: file
                  If the method is called asynchronously,
                  returns the request thread.
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.reverse_device_with_http_info(**kwargs)
+            return self.get_screenshot_with_http_info(**kwargs)
         else:
-            (data) = self.reverse_device_with_http_info(**kwargs)
+            (data) = self.get_screenshot_with_http_info(**kwargs)
             return data
 
-    def reverse_device_with_http_info(self, **kwargs):
+    def get_screenshot_with_http_info(self, **kwargs):
         """
-        reverse a device
+        get screenshot from device
         This method makes a synchronous HTTP request by default. To make an
         asynchronous HTTP request, please define a `callback` function
         to be invoked when receiving the response.
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.reverse_device_with_http_info(callback=callback_function)
+        >>> thread = api.get_screenshot_with_http_info(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
         :param Device2 device:
-        :return: Device
+        :return: file
                  If the method is called asynchronously,
                  returns the request thread.
         """
@@ -600,7 +600,7 @@ class HubApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method reverse_device" % key
+                    " to method get_screenshot" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -608,7 +608,7 @@ class HubApi(object):
 
         collection_formats = {}
 
-        resource_path = '/device/reverse'.replace('{format}', 'json')
+        resource_path = '/device/screenshot'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}
@@ -639,7 +639,7 @@ class HubApi(object):
                                         body=body_params,
                                         post_params=form_params,
                                         files=local_var_files,
-                                        response_type='Device',
+                                        response_type='file',
                                         auth_settings=auth_settings,
                                         callback=params.get('callback'),
                                         _return_http_data_only=params.get('_return_http_data_only'),
@@ -647,7 +647,7 @@ class HubApi(object):
                                         _request_timeout=params.get('_request_timeout'),
                                         collection_formats=collection_formats)
 
-    def unreverse_device(self, **kwargs):
+    def unreserve_device(self, **kwargs):
         """
         unrevrse the device
         This method makes a synchronous HTTP request by default. To make an
@@ -656,7 +656,7 @@ class HubApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.unreverse_device(callback=callback_function)
+        >>> thread = api.unreserve_device(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -667,12 +667,12 @@ class HubApi(object):
         """
         kwargs['_return_http_data_only'] = True
         if kwargs.get('callback'):
-            return self.unreverse_device_with_http_info(**kwargs)
+            return self.unreserve_device_with_http_info(**kwargs)
         else:
-            (data) = self.unreverse_device_with_http_info(**kwargs)
+            (data) = self.unreserve_device_with_http_info(**kwargs)
             return data
 
-    def unreverse_device_with_http_info(self, **kwargs):
+    def unreserve_device_with_http_info(self, **kwargs):
         """
         unrevrse the device
         This method makes a synchronous HTTP request by default. To make an
@@ -681,7 +681,7 @@ class HubApi(object):
         >>> def callback_function(response):
         >>>     pprint(response)
         >>>
-        >>> thread = api.unreverse_device_with_http_info(callback=callback_function)
+        >>> thread = api.unreserve_device_with_http_info(callback=callback_function)
 
         :param callback function: The callback function
             for asynchronous request. (optional)
@@ -702,7 +702,7 @@ class HubApi(object):
             if key not in all_params:
                 raise TypeError(
                     "Got an unexpected keyword argument '%s'"
-                    " to method unreverse_device" % key
+                    " to method unreserve_device" % key
                 )
             params[key] = val
         del params['kwargs']
@@ -710,7 +710,7 @@ class HubApi(object):
 
         collection_formats = {}
 
-        resource_path = '/device/reverse'.replace('{format}', 'json')
+        resource_path = '/device/screenshot'.replace('{format}', 'json')
         path_params = {}
 
         query_params = {}

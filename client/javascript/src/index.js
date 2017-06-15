@@ -1,6 +1,6 @@
 /**
  * RobusTest Hub
- * RobusTest Hub Api [http://mobile.robustest.com:8085 
+ * RobusTest Hub Api [http://enterprice.robustest.com:8085 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -23,7 +23,7 @@
   'use strict';
 
   /**
-   * RobusTest_Hub_Api_httpmobile_robustest_com8085.<br>
+   * RobusTest_Hub_Api_httpenterprice_robustest_com8085.<br>
    * The <code>index</code> module provides access to constructors for all the classes which comprise the public API.
    * <p>
    * An AMD (recommended!) or CommonJS application will generally do something equivalent to the following:

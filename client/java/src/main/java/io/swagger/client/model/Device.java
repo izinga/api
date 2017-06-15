@@ -1,6 +1,6 @@
 /*
  * RobusTest Hub
- * RobusTest Hub Api [http://mobile.robustest.com:8085 
+ * RobusTest Hub Api [http://enterprice.robustest.com:8085 
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -21,7 +21,7 @@ import io.swagger.annotations.ApiModelProperty;
 /**
  * Device
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-06-03T18:48:48.351+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-06-15T13:04:37.852+05:30")
 public class Device {
   @SerializedName("_id")
   private String id = null;
@@ -32,8 +32,8 @@ public class Device {
   @SerializedName("platformVersion")
   private String platformVersion = null;
 
-  @SerializedName("reverseKey")
-  private String reverseKey = null;
+  @SerializedName("reserveKey")
+  private String reserveKey = null;
 
   public Device id(String id) {
     this.id = id;
@@ -89,22 +89,22 @@ public class Device {
     this.platformVersion = platformVersion;
   }
 
-  public Device reverseKey(String reverseKey) {
-    this.reverseKey = reverseKey;
+  public Device reserveKey(String reserveKey) {
+    this.reserveKey = reserveKey;
     return this;
   }
 
    /**
-   * Get reverseKey
-   * @return reverseKey
+   * Get reserveKey
+   * @return reserveKey
   **/
   @ApiModelProperty(example = "null", value = "")
-  public String getReverseKey() {
-    return reverseKey;
+  public String getReserveKey() {
+    return reserveKey;
   }
 
-  public void setReverseKey(String reverseKey) {
-    this.reverseKey = reverseKey;
+  public void setReserveKey(String reserveKey) {
+    this.reserveKey = reserveKey;
   }
 
 
@@ -120,12 +120,12 @@ public class Device {
     return Objects.equals(this.id, device.id) &&
         Objects.equals(this.deviceName, device.deviceName) &&
         Objects.equals(this.platformVersion, device.platformVersion) &&
-        Objects.equals(this.reverseKey, device.reverseKey);
+        Objects.equals(this.reserveKey, device.reserveKey);
   }
 
   @Override
   public int hashCode() {
-    return Objects.hash(id, deviceName, platformVersion, reverseKey);
+    return Objects.hash(id, deviceName, platformVersion, reserveKey);
   }
 
 
@@ -137,7 +137,7 @@ public class Device {
     sb.append("    id: ").append(toIndentedString(id)).append("\n");
     sb.append("    deviceName: ").append(toIndentedString(deviceName)).append("\n");
     sb.append("    platformVersion: ").append(toIndentedString(platformVersion)).append("\n");
-    sb.append("    reverseKey: ").append(toIndentedString(reverseKey)).append("\n");
+    sb.append("    reserveKey: ").append(toIndentedString(reserveKey)).append("\n");
     sb.append("}");
     return sb.toString();
   }

@@ -7,10 +7,10 @@ Method | HTTP request | Description
 [**AdbCommand**](HubApi.md#AdbCommand) | **Post** /device/command | run adb  command
 [**DeviceShell**](HubApi.md#DeviceShell) | **Post** /device/shell | run adb shell command
 [**DevicesList**](HubApi.md#DevicesList) | **Get** /devices | list all attached devices to RobusTest
-[**FreeDevice**](HubApi.md#FreeDevice) | **Delete** /_id | free device
-[**GetFreeDevice**](HubApi.md#GetFreeDevice) | **Put** /_id | get free device based on given parameters
-[**ReverseDevice**](HubApi.md#ReverseDevice) | **Put** /device/reverse | reverse a device
-[**UnreverseDevice**](HubApi.md#UnreverseDevice) | **Delete** /device/reverse | unrevrse the device
+[**FreeDevice**](HubApi.md#FreeDevice) | **Delete** /device | free device
+[**GetFreeDevice**](HubApi.md#GetFreeDevice) | **Put** /device | get free device based on given parameters
+[**GetScreenshot**](HubApi.md#GetScreenshot) | **Put** /device/screenshot | get screenshot from device
+[**UnreserveDevice**](HubApi.md#UnreserveDevice) | **Delete** /device/screenshot | unrevrse the device
 
 
 # **AdbCommand**
@@ -145,10 +145,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **ReverseDevice**
-> Device ReverseDevice($device)
+# **GetScreenshot**
+> *os.File GetScreenshot($device)
 
-reverse a device
+get screenshot from device
 
 
 ### Parameters
@@ -159,7 +159,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Device**](Device.md)
+[***os.File**](*os.File.md)
 
 ### Authorization
 
@@ -172,8 +172,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **UnreverseDevice**
-> Device UnreverseDevice($device)
+# **UnreserveDevice**
+> Device UnreserveDevice($device)
 
 unrevrse the device
 

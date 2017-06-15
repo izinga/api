@@ -13,7 +13,7 @@
 /**
  * RobusTest Hub
  *
- * RobusTest Hub Api [http://mobile.robustest.com:8085
+ * RobusTest Hub Api [http://enterprice.robustest.com:8085
  *
  * OpenAPI spec version: 1.0.0
  * 
@@ -57,7 +57,7 @@ class Device implements ArrayAccess
         '_id' => 'string',
         'device_name' => 'string',
         'platform_version' => 'string',
-        'reverse_key' => 'string'
+        'reserve_key' => 'string'
     ];
 
     public static function swaggerTypes()
@@ -73,7 +73,7 @@ class Device implements ArrayAccess
         '_id' => '_id',
         'device_name' => 'deviceName',
         'platform_version' => 'platformVersion',
-        'reverse_key' => 'reverseKey'
+        'reserve_key' => 'reserveKey'
     ];
 
 
@@ -85,7 +85,7 @@ class Device implements ArrayAccess
         '_id' => 'setId',
         'device_name' => 'setDeviceName',
         'platform_version' => 'setPlatformVersion',
-        'reverse_key' => 'setReverseKey'
+        'reserve_key' => 'setReserveKey'
     ];
 
 
@@ -97,7 +97,7 @@ class Device implements ArrayAccess
         '_id' => 'getId',
         'device_name' => 'getDeviceName',
         'platform_version' => 'getPlatformVersion',
-        'reverse_key' => 'getReverseKey'
+        'reserve_key' => 'getReserveKey'
     ];
 
     public static function attributeMap()
@@ -134,7 +134,7 @@ class Device implements ArrayAccess
         $this->container['_id'] = isset($data['_id']) ? $data['_id'] : null;
         $this->container['device_name'] = isset($data['device_name']) ? $data['device_name'] : null;
         $this->container['platform_version'] = isset($data['platform_version']) ? $data['platform_version'] : null;
-        $this->container['reverse_key'] = isset($data['reverse_key']) ? $data['reverse_key'] : null;
+        $this->container['reserve_key'] = isset($data['reserve_key']) ? $data['reserve_key'] : null;
     }
 
     /**
@@ -226,22 +226,22 @@ class Device implements ArrayAccess
     }
 
     /**
-     * Gets reverse_key
+     * Gets reserve_key
      * @return string
      */
-    public function getReverseKey()
+    public function getReserveKey()
     {
-        return $this->container['reverse_key'];
+        return $this->container['reserve_key'];
     }
 
     /**
-     * Sets reverse_key
-     * @param string $reverse_key
+     * Sets reserve_key
+     * @param string $reserve_key
      * @return $this
      */
-    public function setReverseKey($reverse_key)
+    public function setReserveKey($reserve_key)
     {
-        $this->container['reverse_key'] = $reverse_key;
+        $this->container['reserve_key'] = $reserve_key;
 
         return $this;
     }

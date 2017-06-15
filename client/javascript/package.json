@@ -1,7 +1,7 @@
 {
   "name": "robus_test_hub",
   "version": "1.0.0",
-  "description": "RobusTest_Hub_Api_httpmobile_robustest_com8085",
+  "description": "RobusTest_Hub_Api_httpenterprice_robustest_com8085",
   "license": "Unlicense",
   "main": "src/index.js",
   "scripts": {

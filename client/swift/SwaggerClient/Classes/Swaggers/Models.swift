@@ -152,7 +152,7 @@ class Decoders {
                 instance.id = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["_id"])
                 instance.deviceName = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["deviceName"])
                 instance.platformVersion = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["platformVersion"])
-                instance.reverseKey = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["reverseKey"])
+                instance.reserveKey = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["reserveKey"])
                 return instance
             }
 

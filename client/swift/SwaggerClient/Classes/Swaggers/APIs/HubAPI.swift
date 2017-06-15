@@ -133,15 +133,15 @@ public class HubAPI: APIBase {
 
     /**
      free device
-     - DELETE /_id
+     - DELETE /device
      - examples: [{contentType=application/json, example={
   "os" : "aeiou",
+  "reserveKey" : "aeiou",
   "serial" : "aeiou",
   "session" : "aeiou",
   "name" : "aeiou",
   "_id" : "aeiou",
-  "version" : "aeiou",
-  "reverseKey" : "aeiou"
+  "version" : "aeiou"
 }}]
      
      - parameter device: (body)  (optional)
@@ -149,7 +149,7 @@ public class HubAPI: APIBase {
      - returns: RequestBuilder<Device> 
      */
     public class func freeDeviceWithRequestBuilder(device device: Device1? = nil) -> RequestBuilder<Device> {
-        let path = "/_id"
+        let path = "/device"
         let URLString = SwaggerClientAPI.basePath + path
         let parameters = device?.encodeToJSON() as? [String:AnyObject]
  
@@ -175,15 +175,15 @@ public class HubAPI: APIBase {
 
     /**
      get free device based on given parameters
-     - PUT /_id
+     - PUT /device
      - examples: [{contentType=application/json, example={
   "os" : "aeiou",
+  "reserveKey" : "aeiou",
   "serial" : "aeiou",
   "session" : "aeiou",
   "name" : "aeiou",
   "_id" : "aeiou",
-  "version" : "aeiou",
-  "reverseKey" : "aeiou"
+  "version" : "aeiou"
 }}]
      
      - parameter device: (body)  (optional)
@@ -191,7 +191,7 @@ public class HubAPI: APIBase {
      - returns: RequestBuilder<Device> 
      */
     public class func getFreeDeviceWithRequestBuilder(device device: Device? = nil) -> RequestBuilder<Device> {
-        let path = "/_id"
+        let path = "/device"
         let URLString = SwaggerClientAPI.basePath + path
         let parameters = device?.encodeToJSON() as? [String:AnyObject]
  
@@ -203,43 +203,35 @@ public class HubAPI: APIBase {
     }
 
     /**
-     reverse a device
+     get screenshot from device
      
      - parameter device: (body)  (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func reverseDevice(device device: Device2? = nil, completion: ((data: Device?, error: ErrorType?) -> Void)) {
-        reverseDeviceWithRequestBuilder(device: device).execute { (response, error) -> Void in
+    public class func getScreenshot(device device: Device2? = nil, completion: ((data: NSURL?, error: ErrorType?) -> Void)) {
+        getScreenshotWithRequestBuilder(device: device).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
     }
 
 
     /**
-     reverse a device
-     - PUT /device/reverse
-     - examples: [{contentType=application/json, example={
-  "os" : "aeiou",
-  "serial" : "aeiou",
-  "session" : "aeiou",
-  "name" : "aeiou",
-  "_id" : "aeiou",
-  "version" : "aeiou",
-  "reverseKey" : "aeiou"
-}}]
+     get screenshot from device
+     - PUT /device/screenshot
+     - examples: [{contentType=application/json, example=""}]
      
      - parameter device: (body)  (optional)
 
-     - returns: RequestBuilder<Device> 
+     - returns: RequestBuilder<NSURL> 
      */
-    public class func reverseDeviceWithRequestBuilder(device device: Device2? = nil) -> RequestBuilder<Device> {
-        let path = "/device/reverse"
+    public class func getScreenshotWithRequestBuilder(device device: Device2? = nil) -> RequestBuilder<NSURL> {
+        let path = "/device/screenshot"
         let URLString = SwaggerClientAPI.basePath + path
         let parameters = device?.encodeToJSON() as? [String:AnyObject]
  
         let convertedParameters = APIHelper.convertBoolToString(parameters)
  
-        let requestBuilder: RequestBuilder<Device>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+        let requestBuilder: RequestBuilder<NSURL>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
 
         return requestBuilder.init(method: "PUT", URLString: URLString, parameters: convertedParameters, isBody: true)
     }
@@ -250,8 +242,8 @@ public class HubAPI: APIBase {
      - parameter device: (body)  (optional)
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func unreverseDevice(device device: Device3? = nil, completion: ((data: Device?, error: ErrorType?) -> Void)) {
-        unreverseDeviceWithRequestBuilder(device: device).execute { (response, error) -> Void in
+    public class func unreserveDevice(device device: Device3? = nil, completion: ((data: Device?, error: ErrorType?) -> Void)) {
+        unreserveDeviceWithRequestBuilder(device: device).execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
     }
@@ -259,23 +251,23 @@ public class HubAPI: APIBase {
 
     /**
      unrevrse the device
-     - DELETE /device/reverse
+     - DELETE /device/screenshot
      - examples: [{contentType=application/json, example={
   "os" : "aeiou",
+  "reserveKey" : "aeiou",
   "serial" : "aeiou",
   "session" : "aeiou",
   "name" : "aeiou",
   "_id" : "aeiou",
-  "version" : "aeiou",
-  "reverseKey" : "aeiou"
+  "version" : "aeiou"
 }}]
      
      - parameter device: (body)  (optional)
 
      - returns: RequestBuilder<Device> 
      */
-    public class func unreverseDeviceWithRequestBuilder(device device: Device3? = nil) -> RequestBuilder<Device> {
-        let path = "/device/reverse"
+    public class func unreserveDeviceWithRequestBuilder(device device: Device3? = nil) -> RequestBuilder<Device> {
+        let path = "/device/screenshot"
         let URLString = SwaggerClientAPI.basePath + path
         let parameters = device?.encodeToJSON() as? [String:AnyObject]
  

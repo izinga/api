@@ -7,10 +7,10 @@ Method | HTTP request | Description
 [**adb_command**](HubApi.md#adb_command) | **POST** /device/command | run adb  command
 [**device_shell**](HubApi.md#device_shell) | **POST** /device/shell | run adb shell command
 [**devices_list**](HubApi.md#devices_list) | **GET** /devices | list all attached devices to RobusTest
-[**free_device**](HubApi.md#free_device) | **DELETE** /_id | free device
-[**get_free_device**](HubApi.md#get_free_device) | **PUT** /_id | get free device based on given parameters
-[**reverse_device**](HubApi.md#reverse_device) | **PUT** /device/reverse | reverse a device
-[**unreverse_device**](HubApi.md#unreverse_device) | **DELETE** /device/reverse | unrevrse the device
+[**free_device**](HubApi.md#free_device) | **DELETE** /device | free device
+[**get_free_device**](HubApi.md#get_free_device) | **PUT** /device | get free device based on given parameters
+[**get_screenshot**](HubApi.md#get_screenshot) | **PUT** /device/screenshot | get screenshot from device
+[**unreserve_device**](HubApi.md#unreserve_device) | **DELETE** /device/screenshot | unrevrse the device
 
 
 # **adb_command**
@@ -239,10 +239,10 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **reverse_device**
-> Device reverse_device(device=device)
+# **get_screenshot**
+> file get_screenshot(device=device)
 
-reverse a device
+get screenshot from device
 
 ### Example 
 ```python
@@ -257,11 +257,11 @@ api_instance = swagger_client.HubApi()
 device = swagger_client.Device2() # Device2 |  (optional)
 
 try: 
-    # reverse a device
-    api_response = api_instance.reverse_device(device=device)
+    # get screenshot from device
+    api_response = api_instance.get_screenshot(device=device)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling HubApi->reverse_device: %s\n" % e)
+    print("Exception when calling HubApi->get_screenshot: %s\n" % e)
 ```
 
 ### Parameters
@@ -272,7 +272,7 @@ Name | Type | Description  | Notes
 
 ### Return type
 
-[**Device**](Device.md)
+[**file**](file.md)
 
 ### Authorization
 
@@ -285,8 +285,8 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
-# **unreverse_device**
-> Device unreverse_device(device=device)
+# **unreserve_device**
+> Device unreserve_device(device=device)
 
 unrevrse the device
 
@@ -304,10 +304,10 @@ device = swagger_client.Device3() # Device3 |  (optional)
 
 try: 
     # unrevrse the device
-    api_response = api_instance.unreverse_device(device=device)
+    api_response = api_instance.unreserve_device(device=device)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling HubApi->unreverse_device: %s\n" % e)
+    print("Exception when calling HubApi->unreserve_device: %s\n" % e)
 ```
 
 ### Parameters

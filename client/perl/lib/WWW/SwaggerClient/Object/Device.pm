@@ -2,7 +2,7 @@
 
 RobusTest Hub
 
-RobusTest Hub Api [http://mobile.robustest.com:8085 
+RobusTest Hub Api [http://enterprice.robustest.com:8085 
 
 OpenAPI spec version: 1.0.0
 
@@ -44,7 +44,7 @@ use base ("Class::Accessor", "Class::Data::Inheritable");
 
 RobusTest Hub
 
-RobusTest Hub Api [http://mobile.robustest.com:8085 
+RobusTest Hub Api [http://enterprice.robustest.com:8085 
 
 OpenAPI spec version: 1.0.0
 
@@ -163,9 +163,9 @@ __PACKAGE__->method_documentation({
     	format => '',
     	read_only => '',
     		},
-    'reverse_key' => {
+    'reserve_key' => {
     	datatype => 'string',
-    	base_name => 'reverseKey',
+    	base_name => 'reserveKey',
     	description => '',
     	format => '',
     	read_only => '',
@@ -176,14 +176,14 @@ __PACKAGE__->swagger_types( {
     '_id' => 'string',
     'device_name' => 'string',
     'platform_version' => 'string',
-    'reverse_key' => 'string'
+    'reserve_key' => 'string'
 } );
 
 __PACKAGE__->attribute_map( {
     '_id' => '_id',
     'device_name' => 'deviceName',
     'platform_version' => 'platformVersion',
-    'reverse_key' => 'reverseKey'
+    'reserve_key' => 'reserveKey'
 } );
 
 __PACKAGE__->mk_accessors(keys %{__PACKAGE__->attribute_map});
