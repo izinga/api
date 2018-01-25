@@ -1,5 +1,5 @@
 cp swagger.yaml ./docs/
-swagger-codegen generate -i swagger.yaml  -l python -o client/python
+# swagger-codegen generate -i swagger.yaml  -l python -o client/python
 # swagger-codegen generate -i swagger.yaml  -l java -o client/java
 # swagger-codegen generate -i swagger.yaml  -l ruby -o client/ruby
 # swagger-codegen generate -i swagger.yaml  -l go -o client/go

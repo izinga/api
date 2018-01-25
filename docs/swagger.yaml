@@ -31,7 +31,7 @@ paths:
       summary: get all test suite for project
       operationId: test suites for project
       tags:
-      - hub
+      - test suite 
       responses:
         200:
           description: successful operation
@@ -282,31 +282,32 @@ paths:
 definitions:
   Testsuite:
     type : object
-    _id:
-      type: string
-      description: Test suite ID
-    name:
-      type: string
-      description:  Test suite  Name
-    desc:
-      type: string
-      description:  Test suite  description
-    project:
-      type: string
-      description:  Test suite  project id
-    testscripts:
-      description:  test script id
-      schema:
-        type: array
-        style: simple
-        items:
-          type: string  
-    createdBy:
-      type: string
-      description:  User who created test suite 
-    uodatedBy:
-      type: string
-      description:  User who uodated test suite 
+    properties:
+      _id:
+        type: string
+        description: Test suite ID
+      name:
+        type: string
+        description:  Test suite  Name
+      desc:
+        type: string
+        description:  Test suite  description
+      project:
+        type: string
+        description:  Test suite  project id
+      testscripts:
+        description:  test script id
+        schema:
+          type: array
+          style: simple
+          items:
+            type: string  
+      createdBy:
+        type: string
+        description:  User who created test suite 
+      updatedBy:
+        type: string
+        description:  User who uodated test suite 
 
   HubDevices:
     type : object
