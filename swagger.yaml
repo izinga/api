@@ -12,9 +12,7 @@ license:
 version: 1.0.1
 
 tags:
-- name: hub
-  description: Everything about to run existing appium test cases
-- name: test suite 
+- name: Testsuite
   description : Api to handle test suites
 
 # host: mobile.robustest.com:8085
@@ -31,7 +29,7 @@ paths:
       summary: get all test suite for project
       operationId: test suites for project
       tags:
-      - test suite 
+      - Testsuite
       responses:
         200:
           description: successful operation
@@ -46,239 +44,7 @@ paths:
             type: string
             style: simple
 
-  /devices:
-    get:
-      operationId: devices list
-      tags:
-      - hub
-      summary: list all attached devices to RobusTest
-      consumes:
-      - application/json
-      produces:
-      - application/json
-      responses:
-        200:
-          description: successful operation
-          schema:
-            $ref: '#/definitions/HubDevices'
-
-  /device:
-    put:
-      tags:
-      - hub
-      operationId: get free device
-      summary: get free device based on given parameters
-      consumes:
-      - application/json
-      produces:
-      - application/json
-
-      parameters:
-        - in: body
-          name: device
-          schema:
-            type: object
-            properties:
-              _id:
-                type: string
-                description: device id
-              deviceName:
-                type: string
-              platformVersion:
-                type: string
-              reserveKey:
-                type: string
-
-      responses:
-        200:
-          description: successful operation
-          schema:
-            $ref: '#/definitions/Device'
-        default:
-          description: Unexpected error
-          schema:
-            $ref: '#/definitions/Error'
-
-    delete:
-      tags:
-      - hub
-      operationId: free device
-      summary: free device
-      consumes:
-      - application/json
-      produces:
-      - application/json
-
-      parameters:
-        - in: body
-          name: device
-          schema:
-            type: object
-            required:
-              - _id
-            properties:
-              _id:
-                type: string
-                description: device id
-
-      responses:
-        200:
-          description: successful operation
-          schema:
-            $ref: '#/definitions/Device'
-        default:
-          description: Unexpected error
-          schema:
-            $ref: '#/definitions/Error'
-
-  /device/screenshot:
-    post:
-      operationId: get screenshot
-      tags:
-      - hub
-      summary: get screenshot from device
-      consumes:
-      - application/json
-      produces:
-      - application/json
-
-      parameters:
-        - in: body
-          name: device
-          schema:
-            type: object
-            required:
-              - _id
-            properties:
-              _id:
-                type: string
-                description: device id
-
-      responses:
-        200:
-          description: return screenshot
-          schema:
-            description: Returns jpg file
-            type: file
-        default:
-          description: Unexpected error
-          schema:
-            $ref: '#/definitions/Error'
-
-    delete:
-      tags:
-      - hub
-      operationId: unreserve device
-      summary: unrevrse the device
-      consumes:
-      - application/json
-      produces:
-      - application/json
-
-      parameters:
-        - in: body
-          name: device
-          schema:
-            type: object
-            required:
-              - _id
-            properties:
-              _id:
-                type: string
-                description: device id
-      responses:
-        200:
-          description: successful operation
-          schema:
-            $ref: '#/definitions/Device'
-        default:
-          description: Unexpected error
-          schema:
-            $ref: '#/definitions/Error'
-
-
-  /device/shell:
-    post:
-      tags:
-      - hub
-      operationId: device shell
-      summary: run adb shell command
-      consumes:
-      - application/json
-      produces:
-      - application/json
-
-      parameters:
-        - in: body
-          name: device
-          schema:
-            type: object
-            required:
-              - _id
-              - command
-            properties:
-              _id:
-                type: string
-              command:
-                type : string
-
-      responses:
-        200:
-          description: successful operation
-          schema:
-            type: object
-            properties:
-              status:
-                type : boolean
-              msg:
-                type: string
-                description: raw shell command output
-        default:
-          description: Unexpected error
-          schema:
-            $ref: '#/definitions/Error'
-
-
-  /device/command:
-    post:
-      tags:
-      - hub
-      operationId: adb command
-      summary: run adb  command
-      consumes:
-      - application/json
-      produces:
-      - application/json
-
-      parameters:
-        - in: body
-          name: device
-          schema:
-            type: object
-            required:
-              - _id
-              - command
-            properties:
-              _id:
-                type: string
-              command:
-                type : string
-
-      responses:
-        200:
-          description: successful operation
-          schema:
-            type: object
-            properties:
-              status:
-                type : boolean
-              msg:
-                type: string
-                description: raw adb command output
-        default:
-          description: Unexpected error
-          schema:
-            $ref: '#/definitions/Error'
+ 
 definitions:
   Testsuite:
     type : object
@@ -297,10 +63,7 @@ definitions:
         description:  Test suite  project id
       testscripts:
         description:  test script id
-        schema:
-          type: array
-          style: simple
-          items:
+        items:
             type: string  
       createdBy:
         type: string
@@ -309,69 +72,9 @@ definitions:
         type: string
         description:  User who uodated test suite 
 
-  HubDevices:
-    type : object
-    properties:
-      available:
-        items:
-           $ref: '#/definitions/Device'
-      busy:
-        items:
-           $ref: '#/definitions/Device'
-      offline:
-        items:
-           $ref: '#/definitions/Device'
 
 
 
-  Device:
-    type: object
-    properties:
-      _id:
-        type: string
-        description: Device ID
-      name:
-        type: string
-        description:  Device Name
-      version:
-        type: string
-        description: device os version
-      os:
-        type: string
-        description: device os Android/iOS
-      serial:
-        type: string
-        description: Device serial, in case of android adb id and in case of iOS device serial
-      session:
-        type: string
-        description:  current test session id
-      reserveKey:
-        type: string
-        description: reserve key
-
-
-  HubSession:
-    type: object
-    properties:
-      userName:
-        type: string
-      projectName:
-        type: string
-      userEmail:
-        type: string
-      type:
-        type: string
-      appName:
-        type: string
-  Error:
-    properties:
-      code:
-        type: integer
-        format: int32
-      msg:
-        type: string
-      fields:
-        type: string
 # Added by API Auto Mocking Plugin
 host: virtserver.swaggerhub.com
 basePath: /Izinga/Hub/1.0.0

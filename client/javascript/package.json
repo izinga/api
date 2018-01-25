@@ -1,7 +1,7 @@
 {
-  "name": "robus_test_hub",
+  "name": "swagger-js-client",
   "version": "1.0.0",
-  "description": "RobusTest_Hub_Api_httpenterprice_robustest_com8085",
+  "description": "Client library of swagger-js-client",
   "license": "Unlicense",
   "main": "src/index.js",
   "scripts": {

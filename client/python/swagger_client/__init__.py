@@ -14,21 +14,10 @@
 from __future__ import absolute_import
 
 # import apis into sdk package
-from swagger_client.api.hub_api import HubApi
+from swagger_client.api.testsuite_api import TestsuiteApi
 
 # import ApiClient
 from swagger_client.api_client import ApiClient
 from swagger_client.configuration import Configuration
 # import models into sdk package
-from swagger_client.models.device import Device
-from swagger_client.models.device_1 import Device1
-from swagger_client.models.device_2 import Device2
-from swagger_client.models.device_3 import Device3
-from swagger_client.models.device_4 import Device4
-from swagger_client.models.device_5 import Device5
-from swagger_client.models.error import Error
-from swagger_client.models.hub_devices import HubDevices
-from swagger_client.models.hub_session import HubSession
-from swagger_client.models.inline_response_200 import InlineResponse200
-from swagger_client.models.inline_response_200_1 import InlineResponse2001
 from swagger_client.models.testsuite import Testsuite

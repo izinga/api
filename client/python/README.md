@@ -50,15 +50,15 @@ import swagger_client
 from swagger_client.rest import ApiException
 from pprint import pprint
 # create an instance of the API class
-api_instance = swagger_client.HubApi()
-device = swagger_client.Device5() # Device5 |  (optional)
+api_instance = swagger_client.TestsuiteApi()
+project_id = 'project_id_example' # str | project id
 
 try:
-    # run adb  command
-    api_response = api_instance.adb_command(device=device)
+    # get all test suite for project
+    api_response = api_instance.test_suites_for_project(project_id)
     pprint(api_response)
 except ApiException as e:
-    print("Exception when calling HubApi->adb_command: %s\n" % e)
+    print("Exception when calling TestsuiteApi->test_suites_for_project: %s\n" % e)
 
 ```
 
@@ -68,29 +68,11 @@ All URIs are relative to *https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0*
 
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
-*HubApi* | [**adb_command**](docs/HubApi.md#adb_command) | **POST** /device/command | run adb  command
-*HubApi* | [**device_shell**](docs/HubApi.md#device_shell) | **POST** /device/shell | run adb shell command
-*HubApi* | [**devices_list**](docs/HubApi.md#devices_list) | **GET** /devices | list all attached devices to RobusTest
-*HubApi* | [**free_device**](docs/HubApi.md#free_device) | **DELETE** /device | free device
-*HubApi* | [**get_free_device**](docs/HubApi.md#get_free_device) | **PUT** /device | get free device based on given parameters
-*HubApi* | [**get_screenshot**](docs/HubApi.md#get_screenshot) | **POST** /device/screenshot | get screenshot from device
-*HubApi* | [**test_suites_for_project**](docs/HubApi.md#test_suites_for_project) | **GET** /v3/testsuites | get all test suite for project
-*HubApi* | [**unreserve_device**](docs/HubApi.md#unreserve_device) | **DELETE** /device/screenshot | unrevrse the device
+*TestsuiteApi* | [**test_suites_for_project**](docs/TestsuiteApi.md#test_suites_for_project) | **GET** /v3/testsuites | get all test suite for project
 
 
 ## Documentation For Models
 
- - [Device](docs/Device.md)
- - [Device1](docs/Device1.md)
- - [Device2](docs/Device2.md)
- - [Device3](docs/Device3.md)
- - [Device4](docs/Device4.md)
- - [Device5](docs/Device5.md)
- - [Error](docs/Error.md)
- - [HubDevices](docs/HubDevices.md)
- - [HubSession](docs/HubSession.md)
- - [InlineResponse200](docs/InlineResponse200.md)
- - [InlineResponse2001](docs/InlineResponse2001.md)
  - [Testsuite](docs/Testsuite.md)
 
 
