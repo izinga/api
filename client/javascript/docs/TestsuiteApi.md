@@ -1,0 +1,55 @@
+# SwaggerJsClient.TestsuiteApi
+
+All URIs are relative to *https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0*
+
+Method | HTTP request | Description
+------------- | ------------- | -------------
+[**testSuitesForProject**](TestsuiteApi.md#testSuitesForProject) | **GET** /v3/testsuites | get all test suite for project
+
+
+<a name="testSuitesForProject"></a>
+# **testSuitesForProject**
+> Testsuite testSuitesForProject(projectID)
+
+get all test suite for project
+
+return all test suite for given project
+
+### Example
+```javascript
+var SwaggerJsClient = require('swagger-js-client');
+
+var apiInstance = new SwaggerJsClient.TestsuiteApi();
+
+var projectID = "projectID_example"; // String | project id
+
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.testSuitesForProject(projectID, callback);
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **projectID** | **String**| project id | 
+
+### Return type
+
+[**Testsuite**](Testsuite.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
