@@ -63,8 +63,7 @@ $apiInstance = new Swagger\Client\Api\TestsuiteApi(
 $project_id = "project_id_example"; // string | project id
 
 try {
-    $result = $apiInstance->testSuitesForProject($project_id);
-    print_r($result);
+    $apiInstance->testSuitesForProject($project_id);
 } catch (Exception $e) {
     echo 'Exception when calling TestsuiteApi->testSuitesForProject: ', $e->getMessage(), PHP_EOL;
 }
@@ -79,6 +78,7 @@ All URIs are relative to *https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *TestsuiteApi* | [**testSuitesForProject**](docs/Api/TestsuiteApi.md#testsuitesforproject) | **GET** /v3/testsuites | get all test suite for project
+*TestsuiteApi* | [**testSuitesForProject_0**](docs/Api/TestsuiteApi.md#testsuitesforproject_0) | **GET** /v3/testsuite | get all test suite for project
 
 
 ## Documentation For Models

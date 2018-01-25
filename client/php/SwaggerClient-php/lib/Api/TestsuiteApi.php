@@ -87,12 +87,11 @@ class TestsuiteApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return \Swagger\Client\Model\Testsuite
+     * @return void
      */
     public function testSuitesForProject($project_id)
     {
-        list($response) = $this->testSuitesForProjectWithHttpInfo($project_id);
-        return $response;
+        $this->testSuitesForProjectWithHttpInfo($project_id);
     }
 
     /**
@@ -104,12 +103,238 @@ class TestsuiteApi
      *
      * @throws \Swagger\Client\ApiException on non-2xx response
      * @throws \InvalidArgumentException
-     * @return array of \Swagger\Client\Model\Testsuite, HTTP status code, HTTP response headers (array of strings)
+     * @return array of null, HTTP status code, HTTP response headers (array of strings)
      */
     public function testSuitesForProjectWithHttpInfo($project_id)
     {
-        $returnType = '\Swagger\Client\Model\Testsuite';
+        $returnType = '';
         $request = $this->testSuitesForProjectRequest($project_id);
+
+        try {
+            $options = $this->createHttpClientOption();
+            try {
+                $response = $this->client->send($request, $options);
+            } catch (RequestException $e) {
+                throw new ApiException(
+                    "[{$e->getCode()}] {$e->getMessage()}",
+                    $e->getCode(),
+                    $e->getResponse() ? $e->getResponse()->getHeaders() : null,
+                    $e->getResponse() ? $e->getResponse()->getBody()->getContents() : null
+                );
+            }
+
+            $statusCode = $response->getStatusCode();
+
+            if ($statusCode < 200 || $statusCode > 299) {
+                throw new ApiException(
+                    sprintf(
+                        '[%d] Error connecting to the API (%s)',
+                        $statusCode,
+                        $request->getUri()
+                    ),
+                    $statusCode,
+                    $response->getHeaders(),
+                    $response->getBody()
+                );
+            }
+
+            return [null, $statusCode, $response->getHeaders()];
+
+        } catch (ApiException $e) {
+            switch ($e->getCode()) {
+            }
+            throw $e;
+        }
+    }
+
+    /**
+     * Operation testSuitesForProjectAsync
+     *
+     * get all test suite for project
+     *
+     * @param  string $project_id project id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function testSuitesForProjectAsync($project_id)
+    {
+        return $this->testSuitesForProjectAsyncWithHttpInfo($project_id)
+            ->then(
+                function ($response) {
+                    return $response[0];
+                }
+            );
+    }
+
+    /**
+     * Operation testSuitesForProjectAsyncWithHttpInfo
+     *
+     * get all test suite for project
+     *
+     * @param  string $project_id project id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Promise\PromiseInterface
+     */
+    public function testSuitesForProjectAsyncWithHttpInfo($project_id)
+    {
+        $returnType = '';
+        $request = $this->testSuitesForProjectRequest($project_id);
+
+        return $this->client
+            ->sendAsync($request, $this->createHttpClientOption())
+            ->then(
+                function ($response) use ($returnType) {
+                    return [null, $response->getStatusCode(), $response->getHeaders()];
+                },
+                function ($exception) {
+                    $response = $exception->getResponse();
+                    $statusCode = $response->getStatusCode();
+                    throw new ApiException(
+                        sprintf(
+                            '[%d] Error connecting to the API (%s)',
+                            $statusCode,
+                            $exception->getRequest()->getUri()
+                        ),
+                        $statusCode,
+                        $response->getHeaders(),
+                        $response->getBody()
+                    );
+                }
+            );
+    }
+
+    /**
+     * Create request for operation 'testSuitesForProject'
+     *
+     * @param  string $project_id project id (required)
+     *
+     * @throws \InvalidArgumentException
+     * @return \GuzzleHttp\Psr7\Request
+     */
+    protected function testSuitesForProjectRequest($project_id)
+    {
+        // verify the required parameter 'project_id' is set
+        if ($project_id === null) {
+            throw new \InvalidArgumentException(
+                'Missing the required parameter $project_id when calling testSuitesForProject'
+            );
+        }
+
+        $resourcePath = '/v3/testsuites';
+        $formParams = [];
+        $queryParams = [];
+        $headerParams = [];
+        $httpBody = '';
+        $multipart = false;
+
+
+        // path params
+        if ($project_id !== null) {
+            $resourcePath = str_replace(
+                '{' . 'projectID' . '}',
+                ObjectSerializer::toPathValue($project_id),
+                $resourcePath
+            );
+        }
+
+        // body params
+        $_tempBody = null;
+
+        if ($multipart) {
+            $headers = $this->headerSelector->selectHeadersForMultipart(
+                ['application/json']
+            );
+        } else {
+            $headers = $this->headerSelector->selectHeaders(
+                ['application/json'],
+                []
+            );
+        }
+
+        // for model (json/xml)
+        if (isset($_tempBody)) {
+            // $_tempBody is the method argument, if present
+            $httpBody = $_tempBody;
+            // \stdClass has no __toString(), so we should encode it manually
+            if ($httpBody instanceof \stdClass && $headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($httpBody);
+            }
+        } elseif (count($formParams) > 0) {
+            if ($multipart) {
+                $multipartContents = [];
+                foreach ($formParams as $formParamName => $formParamValue) {
+                    $multipartContents[] = [
+                        'name' => $formParamName,
+                        'contents' => $formParamValue
+                    ];
+                }
+                // for HTTP post (form)
+                $httpBody = new MultipartStream($multipartContents);
+
+            } elseif ($headers['Content-Type'] === 'application/json') {
+                $httpBody = \GuzzleHttp\json_encode($formParams);
+
+            } else {
+                // for HTTP post (form)
+                $httpBody = \GuzzleHttp\Psr7\build_query($formParams);
+            }
+        }
+
+
+        $defaultHeaders = [];
+        if ($this->config->getUserAgent()) {
+            $defaultHeaders['User-Agent'] = $this->config->getUserAgent();
+        }
+
+        $headers = array_merge(
+            $defaultHeaders,
+            $headerParams,
+            $headers
+        );
+
+        $query = \GuzzleHttp\Psr7\build_query($queryParams);
+        return new Request(
+            'GET',
+            $this->config->getHost() . $resourcePath . ($query ? "?{$query}" : ''),
+            $headers,
+            $httpBody
+        );
+    }
+
+    /**
+     * Operation testSuitesForProject_0
+     *
+     * get all test suite for project
+     *
+     * @param  string $id test suite id (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return \Swagger\Client\Model\Testsuite
+     */
+    public function testSuitesForProject_0($id)
+    {
+        list($response) = $this->testSuitesForProject_0WithHttpInfo($id);
+        return $response;
+    }
+
+    /**
+     * Operation testSuitesForProject_0WithHttpInfo
+     *
+     * get all test suite for project
+     *
+     * @param  string $id test suite id (required)
+     *
+     * @throws \Swagger\Client\ApiException on non-2xx response
+     * @throws \InvalidArgumentException
+     * @return array of \Swagger\Client\Model\Testsuite, HTTP status code, HTTP response headers (array of strings)
+     */
+    public function testSuitesForProject_0WithHttpInfo($id)
+    {
+        $returnType = '\Swagger\Client\Model\Testsuite';
+        $request = $this->testSuitesForProject_0Request($id);
 
         try {
             $options = $this->createHttpClientOption();
@@ -171,18 +396,18 @@ class TestsuiteApi
     }
 
     /**
-     * Operation testSuitesForProjectAsync
+     * Operation testSuitesForProject_0Async
      *
      * get all test suite for project
      *
-     * @param  string $project_id project id (required)
+     * @param  string $id test suite id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function testSuitesForProjectAsync($project_id)
+    public function testSuitesForProject_0Async($id)
     {
-        return $this->testSuitesForProjectAsyncWithHttpInfo($project_id)
+        return $this->testSuitesForProject_0AsyncWithHttpInfo($id)
             ->then(
                 function ($response) {
                     return $response[0];
@@ -191,19 +416,19 @@ class TestsuiteApi
     }
 
     /**
-     * Operation testSuitesForProjectAsyncWithHttpInfo
+     * Operation testSuitesForProject_0AsyncWithHttpInfo
      *
      * get all test suite for project
      *
-     * @param  string $project_id project id (required)
+     * @param  string $id test suite id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Promise\PromiseInterface
      */
-    public function testSuitesForProjectAsyncWithHttpInfo($project_id)
+    public function testSuitesForProject_0AsyncWithHttpInfo($id)
     {
         $returnType = '\Swagger\Client\Model\Testsuite';
-        $request = $this->testSuitesForProjectRequest($project_id);
+        $request = $this->testSuitesForProject_0Request($id);
 
         return $this->client
             ->sendAsync($request, $this->createHttpClientOption())
@@ -243,23 +468,23 @@ class TestsuiteApi
     }
 
     /**
-     * Create request for operation 'testSuitesForProject'
+     * Create request for operation 'testSuitesForProject_0'
      *
-     * @param  string $project_id project id (required)
+     * @param  string $id test suite id (required)
      *
      * @throws \InvalidArgumentException
      * @return \GuzzleHttp\Psr7\Request
      */
-    protected function testSuitesForProjectRequest($project_id)
+    protected function testSuitesForProject_0Request($id)
     {
-        // verify the required parameter 'project_id' is set
-        if ($project_id === null) {
+        // verify the required parameter 'id' is set
+        if ($id === null) {
             throw new \InvalidArgumentException(
-                'Missing the required parameter $project_id when calling testSuitesForProject'
+                'Missing the required parameter $id when calling testSuitesForProject_0'
             );
         }
 
-        $resourcePath = '/v3/testsuites';
+        $resourcePath = '/v3/testsuite';
         $formParams = [];
         $queryParams = [];
         $headerParams = [];
@@ -268,10 +493,10 @@ class TestsuiteApi
 
 
         // path params
-        if ($project_id !== null) {
+        if ($id !== null) {
             $resourcePath = str_replace(
-                '{' . 'projectID' . '}',
-                ObjectSerializer::toPathValue($project_id),
+                '{' . 'id' . '}',
+                ObjectSerializer::toPathValue($id),
                 $resourcePath
             );
         }

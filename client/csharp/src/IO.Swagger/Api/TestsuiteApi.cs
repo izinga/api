@@ -28,8 +28,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectID">project id</param>
-        /// <returns>Testsuite</returns>
-        Testsuite TestSuitesForProject (string projectID);
+        /// <returns></returns>
+        void TestSuitesForProject (string projectID);
 
         /// <summary>
         /// get all test suite for project
@@ -39,8 +39,29 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectID">project id</param>
+        /// <returns>ApiResponse of Object(void)</returns>
+        ApiResponse<Object> TestSuitesForProjectWithHttpInfo (string projectID);
+        /// <summary>
+        /// get all test suite for project
+        /// </summary>
+        /// <remarks>
+        /// return all test suite for given project
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">test suite id</param>
+        /// <returns>Testsuite</returns>
+        Testsuite TestSuitesForProject_0 (string id);
+
+        /// <summary>
+        /// get all test suite for project
+        /// </summary>
+        /// <remarks>
+        /// return all test suite for given project
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">test suite id</param>
         /// <returns>ApiResponse of Testsuite</returns>
-        ApiResponse<Testsuite> TestSuitesForProjectWithHttpInfo (string projectID);
+        ApiResponse<Testsuite> TestSuitesForProject_0WithHttpInfo (string id);
         #endregion Synchronous Operations
         #region Asynchronous Operations
         /// <summary>
@@ -51,8 +72,8 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectID">project id</param>
-        /// <returns>Task of Testsuite</returns>
-        System.Threading.Tasks.Task<Testsuite> TestSuitesForProjectAsync (string projectID);
+        /// <returns>Task of void</returns>
+        System.Threading.Tasks.Task TestSuitesForProjectAsync (string projectID);
 
         /// <summary>
         /// get all test suite for project
@@ -62,8 +83,29 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectID">project id</param>
+        /// <returns>Task of ApiResponse</returns>
+        System.Threading.Tasks.Task<ApiResponse<Object>> TestSuitesForProjectAsyncWithHttpInfo (string projectID);
+        /// <summary>
+        /// get all test suite for project
+        /// </summary>
+        /// <remarks>
+        /// return all test suite for given project
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">test suite id</param>
+        /// <returns>Task of Testsuite</returns>
+        System.Threading.Tasks.Task<Testsuite> TestSuitesForProject_0Async (string id);
+
+        /// <summary>
+        /// get all test suite for project
+        /// </summary>
+        /// <remarks>
+        /// return all test suite for given project
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">test suite id</param>
         /// <returns>Task of ApiResponse (Testsuite)</returns>
-        System.Threading.Tasks.Task<ApiResponse<Testsuite>> TestSuitesForProjectAsyncWithHttpInfo (string projectID);
+        System.Threading.Tasks.Task<ApiResponse<Testsuite>> TestSuitesForProject_0AsyncWithHttpInfo (string id);
         #endregion Asynchronous Operations
     }
 
@@ -169,11 +211,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectID">project id</param>
-        /// <returns>Testsuite</returns>
-        public Testsuite TestSuitesForProject (string projectID)
+        /// <returns></returns>
+        public void TestSuitesForProject (string projectID)
         {
-             ApiResponse<Testsuite> localVarResponse = TestSuitesForProjectWithHttpInfo(projectID);
-             return localVarResponse.Data;
+             TestSuitesForProjectWithHttpInfo(projectID);
         }
 
         /// <summary>
@@ -181,8 +222,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectID">project id</param>
-        /// <returns>ApiResponse of Testsuite</returns>
-        public ApiResponse< Testsuite > TestSuitesForProjectWithHttpInfo (string projectID)
+        /// <returns>ApiResponse of Object(void)</returns>
+        public ApiResponse<Object> TestSuitesForProjectWithHttpInfo (string projectID)
         {
             // verify the required parameter 'projectID' is set
             if (projectID == null)
@@ -225,9 +266,9 @@ namespace IO.Swagger.Api
                 if (exception != null) throw exception;
             }
 
-            return new ApiResponse<Testsuite>(localVarStatusCode,
+            return new ApiResponse<Object>(localVarStatusCode,
                 localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
-                (Testsuite) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Testsuite)));
+                null);
         }
 
         /// <summary>
@@ -235,11 +276,10 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectID">project id</param>
-        /// <returns>Task of Testsuite</returns>
-        public async System.Threading.Tasks.Task<Testsuite> TestSuitesForProjectAsync (string projectID)
+        /// <returns>Task of void</returns>
+        public async System.Threading.Tasks.Task TestSuitesForProjectAsync (string projectID)
         {
-             ApiResponse<Testsuite> localVarResponse = await TestSuitesForProjectAsyncWithHttpInfo(projectID);
-             return localVarResponse.Data;
+             await TestSuitesForProjectAsyncWithHttpInfo(projectID);
 
         }
 
@@ -248,8 +288,8 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <param name="projectID">project id</param>
-        /// <returns>Task of ApiResponse (Testsuite)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<Testsuite>> TestSuitesForProjectAsyncWithHttpInfo (string projectID)
+        /// <returns>Task of ApiResponse</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Object>> TestSuitesForProjectAsyncWithHttpInfo (string projectID)
         {
             // verify the required parameter 'projectID' is set
             if (projectID == null)
@@ -289,6 +329,139 @@ namespace IO.Swagger.Api
             if (ExceptionFactory != null)
             {
                 Exception exception = ExceptionFactory("TestSuitesForProject", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Object>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                null);
+        }
+
+        /// <summary>
+        /// get all test suite for project return all test suite for given project
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">test suite id</param>
+        /// <returns>Testsuite</returns>
+        public Testsuite TestSuitesForProject_0 (string id)
+        {
+             ApiResponse<Testsuite> localVarResponse = TestSuitesForProject_0WithHttpInfo(id);
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// get all test suite for project return all test suite for given project
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">test suite id</param>
+        /// <returns>ApiResponse of Testsuite</returns>
+        public ApiResponse< Testsuite > TestSuitesForProject_0WithHttpInfo (string id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling TestsuiteApi->TestSuitesForProject_0");
+
+            var localVarPath = "/v3/testsuite";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TestSuitesForProject_0", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<Testsuite>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (Testsuite) Configuration.ApiClient.Deserialize(localVarResponse, typeof(Testsuite)));
+        }
+
+        /// <summary>
+        /// get all test suite for project return all test suite for given project
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">test suite id</param>
+        /// <returns>Task of Testsuite</returns>
+        public async System.Threading.Tasks.Task<Testsuite> TestSuitesForProject_0Async (string id)
+        {
+             ApiResponse<Testsuite> localVarResponse = await TestSuitesForProject_0AsyncWithHttpInfo(id);
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// get all test suite for project return all test suite for given project
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="id">test suite id</param>
+        /// <returns>Task of ApiResponse (Testsuite)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<Testsuite>> TestSuitesForProject_0AsyncWithHttpInfo (string id)
+        {
+            // verify the required parameter 'id' is set
+            if (id == null)
+                throw new ApiException(400, "Missing required parameter 'id' when calling TestsuiteApi->TestSuitesForProject_0");
+
+            var localVarPath = "/v3/testsuite";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+            if (id != null) localVarPathParams.Add("id", Configuration.ApiClient.ParameterToString(id)); // path parameter
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.GET, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("TestSuitesForProject_0", localVarResponse);
                 if (exception != null) throw exception;
             }
 

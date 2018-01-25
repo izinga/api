@@ -55,8 +55,7 @@ project_id = 'project_id_example' # str | project id
 
 try:
     # get all test suite for project
-    api_response = api_instance.test_suites_for_project(project_id)
-    pprint(api_response)
+    api_instance.test_suites_for_project(project_id)
 except ApiException as e:
     print("Exception when calling TestsuiteApi->test_suites_for_project: %s\n" % e)
 
@@ -69,6 +68,7 @@ All URIs are relative to *https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *TestsuiteApi* | [**test_suites_for_project**](docs/TestsuiteApi.md#test_suites_for_project) | **GET** /v3/testsuites | get all test suite for project
+*TestsuiteApi* | [**test_suites_for_project_0**](docs/TestsuiteApi.md#test_suites_for_project_0) | **GET** /v3/testsuite | get all test suite for project
 
 
 ## Documentation For Models

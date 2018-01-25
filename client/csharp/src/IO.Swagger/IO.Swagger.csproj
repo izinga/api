@@ -8,7 +8,7 @@
     
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{858FCDAB-A1E0-4558-A0E4-9476734A40DD}</ProjectGuid>
+    <ProjectGuid>{044AC969-E7F4-453C-8725-B0461FE28398}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>IO.Swagger</RootNamespace>

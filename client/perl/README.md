@@ -254,8 +254,7 @@ my $api_instance = WWW::SwaggerClient::->new(
 my $project_id = 'project_id_example'; # string | project id
 
 eval {
-    my $result = $api_instance->test_suites_for_project(project_id => $project_id);
-    print Dumper($result);
+    $api_instance->test_suites_for_project(project_id => $project_id);
 };
 if ($@) {
     warn "Exception when calling TestsuiteApi->test_suites_for_project: $@\n";
@@ -270,6 +269,7 @@ All URIs are relative to *https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *TestsuiteApi* | [**test_suites_for_project**](docs/TestsuiteApi.md#test_suites_for_project) | **GET** /v3/testsuites | get all test suite for project
+*TestsuiteApi* | [**test_suites_for_project_1**](docs/TestsuiteApi.md#test_suites_for_project_1) | **GET** /v3/testsuite | get all test suite for project
 
 
 # DOCUMENTATION FOR MODELS

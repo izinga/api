@@ -50,7 +50,7 @@
      * Callback function to receive the result of the testSuitesForProject operation.
      * @callback module:api/TestsuiteApi~testSuitesForProjectCallback
      * @param {String} error Error message, if any.
-     * @param {module:model/Testsuite} data The data returned by the service call.
+     * @param data This operation does not return a value.
      * @param {String} response The complete HTTP response.
      */
 
@@ -59,7 +59,6 @@
      * return all test suite for given project
      * @param {String} projectID project id
      * @param {module:api/TestsuiteApi~testSuitesForProjectCallback} callback The callback function, accepting three arguments: error, data, response
-     * data is of type: {@link module:model/Testsuite}
      */
     this.testSuitesForProject = function(projectID, callback) {
       var postBody = null;
@@ -85,10 +84,58 @@
       var authNames = [];
       var contentTypes = [];
       var accepts = ['application/json'];
-      var returnType = Testsuite;
+      var returnType = null;
 
       return this.apiClient.callApi(
         '/v3/testsuites', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the testSuitesForProject_0 operation.
+     * @callback module:api/TestsuiteApi~testSuitesForProject_0Callback
+     * @param {String} error Error message, if any.
+     * @param {module:model/Testsuite} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * get all test suite for project
+     * return all test suite for given project
+     * @param {String} id test suite id
+     * @param {module:api/TestsuiteApi~testSuitesForProject_0Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/Testsuite}
+     */
+    this.testSuitesForProject_0 = function(id, callback) {
+      var postBody = null;
+
+      // verify the required parameter 'id' is set
+      if (id === undefined || id === null) {
+        throw new Error("Missing the required parameter 'id' when calling testSuitesForProject_0");
+      }
+
+
+      var pathParams = {
+        'id': id
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = [];
+      var accepts = ['application/json'];
+      var returnType = Testsuite;
+
+      return this.apiClient.callApi(
+        '/v3/testsuite', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

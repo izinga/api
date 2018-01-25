@@ -21,6 +21,7 @@ All URIs are relative to *https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *TestsuiteApi* | [**TestSuitesForProject**](docs/TestsuiteApi.md#testsuitesforproject) | **Get** /v3/testsuites | get all test suite for project
+*TestsuiteApi* | [**TestSuitesForProject_0**](docs/TestsuiteApi.md#testsuitesforproject_0) | **Get** /v3/testsuite | get all test suite for project
 
 
 ## Documentation For Models

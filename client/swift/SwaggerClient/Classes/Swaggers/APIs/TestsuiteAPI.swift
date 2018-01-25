@@ -16,9 +16,9 @@ public class TestsuiteAPI: APIBase {
      - parameter projectID: (path) project id 
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func testSuitesForProject(projectID projectID: String, completion: ((data: Testsuite?, error: ErrorType?) -> Void)) {
+    public class func testSuitesForProject(projectID projectID: String, completion: ((error: ErrorType?) -> Void)) {
         testSuitesForProjectWithRequestBuilder(projectID: projectID).execute { (response, error) -> Void in
-            completion(data: response?.body, error: error);
+            completion(error: error);
         }
     }
 
@@ -26,6 +26,44 @@ public class TestsuiteAPI: APIBase {
     /**
      get all test suite for project
      - GET /v3/testsuites
+     - return all test suite for given project
+     
+     - parameter projectID: (path) project id 
+
+     - returns: RequestBuilder<Void> 
+     */
+    public class func testSuitesForProjectWithRequestBuilder(projectID projectID: String) -> RequestBuilder<Void> {
+        var path = "/v3/testsuites"
+        path = path.stringByReplacingOccurrencesOfString("{projectID}", withString: "\(projectID)", options: .LiteralSearch, range: nil)
+        let URLString = SwaggerClientAPI.basePath + path
+
+        let nillableParameters: [String:AnyObject?] = [:]
+ 
+        let parameters = APIHelper.rejectNil(nillableParameters)
+ 
+        let convertedParameters = APIHelper.convertBoolToString(parameters)
+ 
+        let requestBuilder: RequestBuilder<Void>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "GET", URLString: URLString, parameters: convertedParameters, isBody: true)
+    }
+
+    /**
+     get all test suite for project
+     
+     - parameter id: (path) test suite id 
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    public class func testSuitesForProject_0(id id: String, completion: ((data: Testsuite?, error: ErrorType?) -> Void)) {
+        testSuitesForProject_0WithRequestBuilder(id: id).execute { (response, error) -> Void in
+            completion(data: response?.body, error: error);
+        }
+    }
+
+
+    /**
+     get all test suite for project
+     - GET /v3/testsuite
      - return all test suite for given project
      - examples: [{contentType=application/json, example={
   "updatedBy" : "updatedBy",
@@ -36,13 +74,13 @@ public class TestsuiteAPI: APIBase {
   "desc" : "desc"
 }}]
      
-     - parameter projectID: (path) project id 
+     - parameter id: (path) test suite id 
 
      - returns: RequestBuilder<Testsuite> 
      */
-    public class func testSuitesForProjectWithRequestBuilder(projectID projectID: String) -> RequestBuilder<Testsuite> {
-        var path = "/v3/testsuites"
-        path = path.stringByReplacingOccurrencesOfString("{projectID}", withString: "\(projectID)", options: .LiteralSearch, range: nil)
+    public class func testSuitesForProject_0WithRequestBuilder(id id: String) -> RequestBuilder<Testsuite> {
+        var path = "/v3/testsuite"
+        path = path.stringByReplacingOccurrencesOfString("{id}", withString: "\(id)", options: .LiteralSearch, range: nil)
         let URLString = SwaggerClientAPI.basePath + path
 
         let nillableParameters: [String:AnyObject?] = [:]

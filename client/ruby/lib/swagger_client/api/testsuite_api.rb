@@ -20,17 +20,17 @@ module SwaggerClient
     # return all test suite for given project
     # @param project_id project id
     # @param [Hash] opts the optional parameters
-    # @return [Testsuite]
+    # @return [nil]
     def test_suites_for_project(project_id, opts = {})
-      data, _status_code, _headers = test_suites_for_project_with_http_info(project_id, opts)
-      return data
+      test_suites_for_project_with_http_info(project_id, opts)
+      return nil
     end
 
     # get all test suite for project
     # return all test suite for given project
     # @param project_id project id
     # @param [Hash] opts the optional parameters
-    # @return [Array<(Testsuite, Fixnum, Hash)>] Testsuite data, response status code and response headers
+    # @return [Array<(nil, Fixnum, Hash)>] nil, response status code and response headers
     def test_suites_for_project_with_http_info(project_id, opts = {})
       if @api_client.config.debugging
         @api_client.config.logger.debug "Calling API: TestsuiteApi.test_suites_for_project ..."
@@ -61,10 +61,62 @@ module SwaggerClient
         :query_params => query_params,
         :form_params => form_params,
         :body => post_body,
+        :auth_names => auth_names)
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: TestsuiteApi#test_suites_for_project\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
+    # get all test suite for project
+    # return all test suite for given project
+    # @param id test suite id
+    # @param [Hash] opts the optional parameters
+    # @return [Testsuite]
+    def test_suites_for_project_0(id, opts = {})
+      data, _status_code, _headers = test_suites_for_project_0_with_http_info(id, opts)
+      return data
+    end
+
+    # get all test suite for project
+    # return all test suite for given project
+    # @param id test suite id
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(Testsuite, Fixnum, Hash)>] Testsuite data, response status code and response headers
+    def test_suites_for_project_0_with_http_info(id, opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: TestsuiteApi.test_suites_for_project_0 ..."
+      end
+      # verify the required parameter 'id' is set
+      if @api_client.config.client_side_validation && id.nil?
+        fail ArgumentError, "Missing the required parameter 'id' when calling TestsuiteApi.test_suites_for_project_0"
+      end
+      # resource path
+      local_var_path = "/v3/testsuite".sub('{' + 'id' + '}', id.to_s)
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:GET, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
         :auth_names => auth_names,
         :return_type => 'Testsuite')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: TestsuiteApi#test_suites_for_project\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: TestsuiteApi#test_suites_for_project_0\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

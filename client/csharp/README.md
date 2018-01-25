@@ -75,8 +75,7 @@ namespace Example
             try
             {
                 // get all test suite for project
-                Testsuite result = apiInstance.TestSuitesForProject(projectID);
-                Debug.WriteLine(result);
+                apiInstance.TestSuitesForProject(projectID);
             }
             catch (Exception e)
             {
@@ -96,6 +95,7 @@ All URIs are relative to *https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *TestsuiteApi* | [**TestSuitesForProject**](docs/TestsuiteApi.md#testsuitesforproject) | **GET** /v3/testsuites | get all test suite for project
+*TestsuiteApi* | [**TestSuitesForProject_0**](docs/TestsuiteApi.md#testsuitesforproject_0) | **GET** /v3/testsuite | get all test suite for project
 
 
 <a name="documentation-for-models"></a>

@@ -60,8 +60,7 @@ project_id = "project_id_example" # String | project id
 
 begin
   #get all test suite for project
-  result = api_instance.test_suites_for_project(project_id)
-  p result
+  api_instance.test_suites_for_project(project_id)
 rescue SwaggerClient::ApiError => e
   puts "Exception when calling TestsuiteApi->test_suites_for_project: #{e}"
 end
@@ -75,6 +74,7 @@ All URIs are relative to *https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *SwaggerClient::TestsuiteApi* | [**test_suites_for_project**](docs/TestsuiteApi.md#test_suites_for_project) | **GET** /v3/testsuites | get all test suite for project
+*SwaggerClient::TestsuiteApi* | [**test_suites_for_project_0**](docs/TestsuiteApi.md#test_suites_for_project_0) | **GET** /v3/testsuite | get all test suite for project
 
 
 ## Documentation for Models

@@ -27,6 +27,22 @@ paths:
       responses:
         200:
           description: "successful operation"
+  /v3/testsuite:
+    get:
+      tags:
+      - "Testsuite"
+      summary: "get all test suite for project"
+      description: "return all test suite for given project"
+      operationId: "test suites for project"
+      parameters:
+      - name: "id"
+        in: "path"
+        description: "test suite id"
+        required: true
+        x-exportParamName: "Id"
+      responses:
+        200:
+          description: "successful operation"
           schema:
             $ref: "#/definitions/Testsuite"
 definitions:

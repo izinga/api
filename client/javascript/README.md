@@ -103,7 +103,7 @@ var callback = function(error, data, response) {
   if (error) {
     console.error(error);
   } else {
-    console.log('API called successfully. Returned data: ' + data);
+    console.log('API called successfully.');
   }
 };
 api.testSuitesForProject(projectID, callback);
@@ -117,6 +117,7 @@ All URIs are relative to *https://virtserver.swaggerhub.com/Izinga/Hub/1.0.0*
 Class | Method | HTTP request | Description
 ------------ | ------------- | ------------- | -------------
 *SwaggerJsClient.TestsuiteApi* | [**testSuitesForProject**](docs/TestsuiteApi.md#testSuitesForProject) | **GET** /v3/testsuites | get all test suite for project
+*SwaggerJsClient.TestsuiteApi* | [**testSuitesForProject_0**](docs/TestsuiteApi.md#testSuitesForProject_0) | **GET** /v3/testsuite | get all test suite for project
 
 
 ## Documentation for Models
