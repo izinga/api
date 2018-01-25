@@ -14,14 +14,19 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 
 /**
  * Error
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-06-15T13:12:07.992+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-25T11:27:00.305+05:30")
 public class Error {
   @SerializedName("code")
   private Integer code = null;
@@ -41,7 +46,7 @@ public class Error {
    * Get code
    * @return code
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   public Integer getCode() {
     return code;
   }
@@ -59,7 +64,7 @@ public class Error {
    * Get msg
    * @return msg
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   public String getMsg() {
     return msg;
   }
@@ -77,7 +82,7 @@ public class Error {
    * Get fields
    * @return fields
   **/
-  @ApiModelProperty(example = "null", value = "")
+  @ApiModelProperty(value = "")
   public String getFields() {
     return fields;
   }
@@ -129,6 +134,6 @@ public class Error {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

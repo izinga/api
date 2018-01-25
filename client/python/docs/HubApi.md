@@ -10,6 +10,7 @@ Method | HTTP request | Description
 [**free_device**](HubApi.md#free_device) | **DELETE** /device | free device
 [**get_free_device**](HubApi.md#get_free_device) | **PUT** /device | get free device based on given parameters
 [**get_screenshot**](HubApi.md#get_screenshot) | **POST** /device/screenshot | get screenshot from device
+[**test_suites_for_project**](HubApi.md#test_suites_for_project) | **GET** /v3/testsuites | get all test suite for project
 [**unreserve_device**](HubApi.md#unreserve_device) | **DELETE** /device/screenshot | unrevrse the device
 
 
@@ -18,9 +19,9 @@ Method | HTTP request | Description
 
 run adb  command
 
-### Example 
+### Example
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -30,7 +31,7 @@ from pprint import pprint
 api_instance = swagger_client.HubApi()
 device = swagger_client.Device5() # Device5 |  (optional)
 
-try: 
+try:
     # run adb  command
     api_response = api_instance.adb_command(device=device)
     pprint(api_response)
@@ -64,9 +65,9 @@ No authorization required
 
 run adb shell command
 
-### Example 
+### Example
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -76,7 +77,7 @@ from pprint import pprint
 api_instance = swagger_client.HubApi()
 device = swagger_client.Device4() # Device4 |  (optional)
 
-try: 
+try:
     # run adb shell command
     api_response = api_instance.device_shell(device=device)
     pprint(api_response)
@@ -110,9 +111,9 @@ No authorization required
 
 list all attached devices to RobusTest
 
-### Example 
+### Example
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -121,7 +122,7 @@ from pprint import pprint
 # create an instance of the API class
 api_instance = swagger_client.HubApi()
 
-try: 
+try:
     # list all attached devices to RobusTest
     api_response = api_instance.devices_list()
     pprint(api_response)
@@ -152,9 +153,9 @@ No authorization required
 
 free device
 
-### Example 
+### Example
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -164,7 +165,7 @@ from pprint import pprint
 api_instance = swagger_client.HubApi()
 device = swagger_client.Device1() # Device1 |  (optional)
 
-try: 
+try:
     # free device
     api_response = api_instance.free_device(device=device)
     pprint(api_response)
@@ -198,9 +199,9 @@ No authorization required
 
 get free device based on given parameters
 
-### Example 
+### Example
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -210,7 +211,7 @@ from pprint import pprint
 api_instance = swagger_client.HubApi()
 device = swagger_client.Device() # Device |  (optional)
 
-try: 
+try:
     # get free device based on given parameters
     api_response = api_instance.get_free_device(device=device)
     pprint(api_response)
@@ -244,9 +245,9 @@ No authorization required
 
 get screenshot from device
 
-### Example 
+### Example
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -256,7 +257,7 @@ from pprint import pprint
 api_instance = swagger_client.HubApi()
 device = swagger_client.Device2() # Device2 |  (optional)
 
-try: 
+try:
     # get screenshot from device
     api_response = api_instance.get_screenshot(device=device)
     pprint(api_response)
@@ -285,14 +286,62 @@ No authorization required
 
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
+# **test_suites_for_project**
+> Testsuite test_suites_for_project(project_id)
+
+get all test suite for project
+
+return all test suite for given project
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.HubApi()
+project_id = 'project_id_example' # str | project id
+
+try:
+    # get all test suite for project
+    api_response = api_instance.test_suites_for_project(project_id)
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling HubApi->test_suites_for_project: %s\n" % e)
+```
+
+### Parameters
+
+Name | Type | Description  | Notes
+------------- | ------------- | ------------- | -------------
+ **project_id** | **str**| project id | 
+
+### Return type
+
+[**Testsuite**](Testsuite.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: Not defined
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
 # **unreserve_device**
 > Device unreserve_device(device=device)
 
 unrevrse the device
 
-### Example 
+### Example
 ```python
-from __future__ import print_statement
+from __future__ import print_function
 import time
 import swagger_client
 from swagger_client.rest import ApiException
@@ -302,7 +351,7 @@ from pprint import pprint
 api_instance = swagger_client.HubApi()
 device = swagger_client.Device3() # Device3 |  (optional)
 
-try: 
+try:
     # unrevrse the device
     api_response = api_instance.unreserve_device(device=device)
     pprint(api_response)

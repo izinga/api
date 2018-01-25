@@ -1,13 +1,21 @@
 swagger: '2.0'
-info:
-  description: |
-    RobusTest Hub Api
-    [http://enterprice.robustest.com:8085
-  version: "1.0.0"
-  title: RobusTest Hub
+title: RobusTest Api documentation 
+description: RobusTest Api documentation
+termsOfService: http://robustest.com/terms/
+contact:
+  name: API Support
+  url: http://www.robustest.com/support
+  email: support@robustest.com
+license:
+  name: Apache 2.0
+  url: http://www.apache.org/licenses/LICENSE-2.0.html
+version: 1.0.1
+
 tags:
 - name: hub
   description: Everything about to run existing appium test cases
+- name: test suite 
+  description : Api to handle test suites
 
 # host: mobile.robustest.com:8085
 # schemes:
@@ -17,6 +25,27 @@ produces:
   - application/json
 # basePath: /v2
 paths:
+  /v3/testsuites:
+    get:
+      description: return all test suite for given project
+      summary: get all test suite for project
+      operationId: test suites for project
+      tags:
+      - hub
+      responses:
+        200:
+          description: successful operation
+          schema:
+            $ref: '#/definitions/Testsuite'
+      parameters:
+        - name: projectID
+          in: path
+          description: project id
+          required: true
+          schema:
+            type: string
+            style: simple
+
   /devices:
     get:
       operationId: devices list
@@ -251,6 +280,34 @@ paths:
           schema:
             $ref: '#/definitions/Error'
 definitions:
+  Testsuite:
+    type : object
+    _id:
+      type: string
+      description: Test suite ID
+    name:
+      type: string
+      description:  Test suite  Name
+    desc:
+      type: string
+      description:  Test suite  description
+    project:
+      type: string
+      description:  Test suite  project id
+    testscripts:
+      description:  test script id
+      schema:
+        type: array
+        style: simple
+        items:
+          type: string  
+    createdBy:
+      type: string
+      description:  User who created test suite 
+    uodatedBy:
+      type: string
+      description:  User who uodated test suite 
+
   HubDevices:
     type : object
     properties:

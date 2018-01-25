@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
 namespace IO.Swagger.Model
 {
@@ -50,21 +51,25 @@ namespace IO.Swagger.Model
         /// <value>device id</value>
         [DataMember(Name="_id", EmitDefaultValue=false)]
         public string Id { get; set; }
+
         /// <summary>
         /// Gets or Sets DeviceName
         /// </summary>
         [DataMember(Name="deviceName", EmitDefaultValue=false)]
         public string DeviceName { get; set; }
+
         /// <summary>
         /// Gets or Sets PlatformVersion
         /// </summary>
         [DataMember(Name="platformVersion", EmitDefaultValue=false)]
         public string PlatformVersion { get; set; }
+
         /// <summary>
         /// Gets or Sets ReserveKey
         /// </summary>
         [DataMember(Name="reserveKey", EmitDefaultValue=false)]
         public string ReserveKey { get; set; }
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -93,45 +98,43 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
+        /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as Device);
+            return this.Equals(input as Device);
         }
 
         /// <summary>
         /// Returns true if Device instances are equal
         /// </summary>
-        /// <param name="other">Instance of Device to be compared</param>
+        /// <param name="input">Instance of Device to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(Device other)
+        public bool Equals(Device input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
+            if (input == null)
                 return false;
 
             return 
                 (
-                    this.Id == other.Id ||
-                    this.Id != null &&
-                    this.Id.Equals(other.Id)
+                    this.Id == input.Id ||
+                    (this.Id != null &&
+                    this.Id.Equals(input.Id))
                 ) && 
                 (
-                    this.DeviceName == other.DeviceName ||
-                    this.DeviceName != null &&
-                    this.DeviceName.Equals(other.DeviceName)
+                    this.DeviceName == input.DeviceName ||
+                    (this.DeviceName != null &&
+                    this.DeviceName.Equals(input.DeviceName))
                 ) && 
                 (
-                    this.PlatformVersion == other.PlatformVersion ||
-                    this.PlatformVersion != null &&
-                    this.PlatformVersion.Equals(other.PlatformVersion)
+                    this.PlatformVersion == input.PlatformVersion ||
+                    (this.PlatformVersion != null &&
+                    this.PlatformVersion.Equals(input.PlatformVersion))
                 ) && 
                 (
-                    this.ReserveKey == other.ReserveKey ||
-                    this.ReserveKey != null &&
-                    this.ReserveKey.Equals(other.ReserveKey)
+                    this.ReserveKey == input.ReserveKey ||
+                    (this.ReserveKey != null &&
+                    this.ReserveKey.Equals(input.ReserveKey))
                 );
         }
 
@@ -141,25 +144,28 @@ namespace IO.Swagger.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
+                int hashCode = 41;
                 if (this.Id != null)
-                    hash = hash * 59 + this.Id.GetHashCode();
+                    hashCode = hashCode * 59 + this.Id.GetHashCode();
                 if (this.DeviceName != null)
-                    hash = hash * 59 + this.DeviceName.GetHashCode();
+                    hashCode = hashCode * 59 + this.DeviceName.GetHashCode();
                 if (this.PlatformVersion != null)
-                    hash = hash * 59 + this.PlatformVersion.GetHashCode();
+                    hashCode = hashCode * 59 + this.PlatformVersion.GetHashCode();
                 if (this.ReserveKey != null)
-                    hash = hash * 59 + this.ReserveKey.GetHashCode();
-                return hash;
+                    hashCode = hashCode * 59 + this.ReserveKey.GetHashCode();
+                return hashCode;
             }
         }
 
-        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-        { 
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
             yield break;
         }
     }

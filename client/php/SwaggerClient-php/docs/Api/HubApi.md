@@ -23,11 +23,15 @@ run adb  command
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\HubApi();
+$apiInstance = new Swagger\Client\Api\HubApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $device = new \Swagger\Client\Model\Device5(); // \Swagger\Client\Model\Device5 | 
 
 try {
-    $result = $api_instance->adbCommand($device);
+    $result = $apiInstance->adbCommand($device);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling HubApi->adbCommand: ', $e->getMessage(), PHP_EOL;
@@ -39,7 +43,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **device** | [**\Swagger\Client\Model\Device5**](../Model/\Swagger\Client\Model\Device5.md)|  | [optional]
+ **device** | [**\Swagger\Client\Model\Device5**](../Model/Device5.md)|  | [optional]
 
 ### Return type
 
@@ -66,11 +70,15 @@ run adb shell command
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\HubApi();
+$apiInstance = new Swagger\Client\Api\HubApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $device = new \Swagger\Client\Model\Device4(); // \Swagger\Client\Model\Device4 | 
 
 try {
-    $result = $api_instance->deviceShell($device);
+    $result = $apiInstance->deviceShell($device);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling HubApi->deviceShell: ', $e->getMessage(), PHP_EOL;
@@ -82,7 +90,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **device** | [**\Swagger\Client\Model\Device4**](../Model/\Swagger\Client\Model\Device4.md)|  | [optional]
+ **device** | [**\Swagger\Client\Model\Device4**](../Model/Device4.md)|  | [optional]
 
 ### Return type
 
@@ -109,10 +117,14 @@ list all attached devices to RobusTest
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\HubApi();
+$apiInstance = new Swagger\Client\Api\HubApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 
 try {
-    $result = $api_instance->devicesList();
+    $result = $apiInstance->devicesList();
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling HubApi->devicesList: ', $e->getMessage(), PHP_EOL;
@@ -148,11 +160,15 @@ free device
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\HubApi();
+$apiInstance = new Swagger\Client\Api\HubApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $device = new \Swagger\Client\Model\Device1(); // \Swagger\Client\Model\Device1 | 
 
 try {
-    $result = $api_instance->freeDevice($device);
+    $result = $apiInstance->freeDevice($device);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling HubApi->freeDevice: ', $e->getMessage(), PHP_EOL;
@@ -164,7 +180,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **device** | [**\Swagger\Client\Model\Device1**](../Model/\Swagger\Client\Model\Device1.md)|  | [optional]
+ **device** | [**\Swagger\Client\Model\Device1**](../Model/Device1.md)|  | [optional]
 
 ### Return type
 
@@ -191,11 +207,15 @@ get free device based on given parameters
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\HubApi();
+$apiInstance = new Swagger\Client\Api\HubApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $device = new \Swagger\Client\Model\Device(); // \Swagger\Client\Model\Device | 
 
 try {
-    $result = $api_instance->getFreeDevice($device);
+    $result = $apiInstance->getFreeDevice($device);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling HubApi->getFreeDevice: ', $e->getMessage(), PHP_EOL;
@@ -207,7 +227,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **device** | [**\Swagger\Client\Model\Device**](../Model/\Swagger\Client\Model\Device.md)|  | [optional]
+ **device** | [**\Swagger\Client\Model\Device**](../Model/Device.md)|  | [optional]
 
 ### Return type
 
@@ -234,11 +254,15 @@ get screenshot from device
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\HubApi();
+$apiInstance = new Swagger\Client\Api\HubApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $device = new \Swagger\Client\Model\Device2(); // \Swagger\Client\Model\Device2 | 
 
 try {
-    $result = $api_instance->getScreenshot($device);
+    $result = $apiInstance->getScreenshot($device);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling HubApi->getScreenshot: ', $e->getMessage(), PHP_EOL;
@@ -250,7 +274,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **device** | [**\Swagger\Client\Model\Device2**](../Model/\Swagger\Client\Model\Device2.md)|  | [optional]
+ **device** | [**\Swagger\Client\Model\Device2**](../Model/Device2.md)|  | [optional]
 
 ### Return type
 
@@ -277,11 +301,15 @@ unrevrse the device
 <?php
 require_once(__DIR__ . '/vendor/autoload.php');
 
-$api_instance = new Swagger\Client\Api\HubApi();
+$apiInstance = new Swagger\Client\Api\HubApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
 $device = new \Swagger\Client\Model\Device3(); // \Swagger\Client\Model\Device3 | 
 
 try {
-    $result = $api_instance->unreserveDevice($device);
+    $result = $apiInstance->unreserveDevice($device);
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling HubApi->unreserveDevice: ', $e->getMessage(), PHP_EOL;
@@ -293,7 +321,7 @@ try {
 
 Name | Type | Description  | Notes
 ------------- | ------------- | ------------- | -------------
- **device** | [**\Swagger\Client\Model\Device3**](../Model/\Swagger\Client\Model\Device3.md)|  | [optional]
+ **device** | [**\Swagger\Client\Model\Device3**](../Model/Device3.md)|  | [optional]
 
 ### Return type
 

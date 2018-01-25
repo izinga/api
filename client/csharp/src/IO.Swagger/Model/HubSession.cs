@@ -20,6 +20,7 @@ using System.Runtime.Serialization;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
 using System.ComponentModel.DataAnnotations;
+using SwaggerDateConverter = IO.Swagger.Client.SwaggerDateConverter;
 
 namespace IO.Swagger.Model
 {
@@ -51,26 +52,31 @@ namespace IO.Swagger.Model
         /// </summary>
         [DataMember(Name="userName", EmitDefaultValue=false)]
         public string UserName { get; set; }
+
         /// <summary>
         /// Gets or Sets ProjectName
         /// </summary>
         [DataMember(Name="projectName", EmitDefaultValue=false)]
         public string ProjectName { get; set; }
+
         /// <summary>
         /// Gets or Sets UserEmail
         /// </summary>
         [DataMember(Name="userEmail", EmitDefaultValue=false)]
         public string UserEmail { get; set; }
+
         /// <summary>
         /// Gets or Sets Type
         /// </summary>
         [DataMember(Name="type", EmitDefaultValue=false)]
         public string Type { get; set; }
+
         /// <summary>
         /// Gets or Sets AppName
         /// </summary>
         [DataMember(Name="appName", EmitDefaultValue=false)]
         public string AppName { get; set; }
+
         /// <summary>
         /// Returns the string presentation of the object
         /// </summary>
@@ -100,50 +106,48 @@ namespace IO.Swagger.Model
         /// <summary>
         /// Returns true if objects are equal
         /// </summary>
-        /// <param name="obj">Object to be compared</param>
+        /// <param name="input">Object to be compared</param>
         /// <returns>Boolean</returns>
-        public override bool Equals(object obj)
+        public override bool Equals(object input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            return this.Equals(obj as HubSession);
+            return this.Equals(input as HubSession);
         }
 
         /// <summary>
         /// Returns true if HubSession instances are equal
         /// </summary>
-        /// <param name="other">Instance of HubSession to be compared</param>
+        /// <param name="input">Instance of HubSession to be compared</param>
         /// <returns>Boolean</returns>
-        public bool Equals(HubSession other)
+        public bool Equals(HubSession input)
         {
-            // credit: http://stackoverflow.com/a/10454552/677735
-            if (other == null)
+            if (input == null)
                 return false;
 
             return 
                 (
-                    this.UserName == other.UserName ||
-                    this.UserName != null &&
-                    this.UserName.Equals(other.UserName)
+                    this.UserName == input.UserName ||
+                    (this.UserName != null &&
+                    this.UserName.Equals(input.UserName))
                 ) && 
                 (
-                    this.ProjectName == other.ProjectName ||
-                    this.ProjectName != null &&
-                    this.ProjectName.Equals(other.ProjectName)
+                    this.ProjectName == input.ProjectName ||
+                    (this.ProjectName != null &&
+                    this.ProjectName.Equals(input.ProjectName))
                 ) && 
                 (
-                    this.UserEmail == other.UserEmail ||
-                    this.UserEmail != null &&
-                    this.UserEmail.Equals(other.UserEmail)
+                    this.UserEmail == input.UserEmail ||
+                    (this.UserEmail != null &&
+                    this.UserEmail.Equals(input.UserEmail))
                 ) && 
                 (
-                    this.Type == other.Type ||
-                    this.Type != null &&
-                    this.Type.Equals(other.Type)
+                    this.Type == input.Type ||
+                    (this.Type != null &&
+                    this.Type.Equals(input.Type))
                 ) && 
                 (
-                    this.AppName == other.AppName ||
-                    this.AppName != null &&
-                    this.AppName.Equals(other.AppName)
+                    this.AppName == input.AppName ||
+                    (this.AppName != null &&
+                    this.AppName.Equals(input.AppName))
                 );
         }
 
@@ -153,27 +157,30 @@ namespace IO.Swagger.Model
         /// <returns>Hash code</returns>
         public override int GetHashCode()
         {
-            // credit: http://stackoverflow.com/a/263416/677735
             unchecked // Overflow is fine, just wrap
             {
-                int hash = 41;
-                // Suitable nullity checks etc, of course :)
+                int hashCode = 41;
                 if (this.UserName != null)
-                    hash = hash * 59 + this.UserName.GetHashCode();
+                    hashCode = hashCode * 59 + this.UserName.GetHashCode();
                 if (this.ProjectName != null)
-                    hash = hash * 59 + this.ProjectName.GetHashCode();
+                    hashCode = hashCode * 59 + this.ProjectName.GetHashCode();
                 if (this.UserEmail != null)
-                    hash = hash * 59 + this.UserEmail.GetHashCode();
+                    hashCode = hashCode * 59 + this.UserEmail.GetHashCode();
                 if (this.Type != null)
-                    hash = hash * 59 + this.Type.GetHashCode();
+                    hashCode = hashCode * 59 + this.Type.GetHashCode();
                 if (this.AppName != null)
-                    hash = hash * 59 + this.AppName.GetHashCode();
-                return hash;
+                    hashCode = hashCode * 59 + this.AppName.GetHashCode();
+                return hashCode;
             }
         }
 
-        public IEnumerable<ValidationResult> Validate(ValidationContext validationContext)
-        { 
+        /// <summary>
+        /// To validate all properties of the instance
+        /// </summary>
+        /// <param name="validationContext">Validation context</param>
+        /// <returns>Validation Result</returns>
+        IEnumerable<System.ComponentModel.DataAnnotations.ValidationResult> IValidatableObject.Validate(ValidationContext validationContext)
+        {
             yield break;
         }
     }

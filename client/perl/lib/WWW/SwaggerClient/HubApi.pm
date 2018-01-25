@@ -28,25 +28,22 @@ use Carp qw( croak );
 use Log::Any qw($log);
 
 use WWW::SwaggerClient::ApiClient;
-use WWW::SwaggerClient::Configuration;
 
 use base "Class::Data::Inheritable";
 
 __PACKAGE__->mk_classdata('method_documentation' => {});
 
 sub new {
-    my $class   = shift;
-    my (%self) = (
-        'api_client' => WWW::SwaggerClient::ApiClient->instance,
-        @_
-    );
+    my $class = shift;
+    my $api_client;
 
-    #my $self = {
-    #    #api_client => $options->{api_client}
-    #    api_client => $default_api_client
-    #}; 
+    if ($_[0] && ref $_[0] && ref $_[0] eq 'WWW::SwaggerClient::ApiClient' ) {
+        $api_client = $_[0];
+    } else {
+        $api_client = WWW::SwaggerClient::ApiClient->new(@_);
+    }
 
-    bless \%self, $class;
+    bless { api_client => $api_client }, $class;
 
 }
 
@@ -78,7 +75,6 @@ sub adb_command {
 
     # parse inputs
     my $_resource_path = '/device/command';
-    $_resource_path =~ s/{format}/json/; # default format to json
 
     my $_method = 'POST';
     my $query_params = {};
@@ -139,7 +135,6 @@ sub device_shell {
 
     # parse inputs
     my $_resource_path = '/device/shell';
-    $_resource_path =~ s/{format}/json/; # default format to json
 
     my $_method = 'POST';
     my $query_params = {};
@@ -194,7 +189,6 @@ sub devices_list {
 
     # parse inputs
     my $_resource_path = '/devices';
-    $_resource_path =~ s/{format}/json/; # default format to json
 
     my $_method = 'GET';
     my $query_params = {};
@@ -250,7 +244,6 @@ sub free_device {
 
     # parse inputs
     my $_resource_path = '/device';
-    $_resource_path =~ s/{format}/json/; # default format to json
 
     my $_method = 'DELETE';
     my $query_params = {};
@@ -311,7 +304,6 @@ sub get_free_device {
 
     # parse inputs
     my $_resource_path = '/device';
-    $_resource_path =~ s/{format}/json/; # default format to json
 
     my $_method = 'PUT';
     my $query_params = {};
@@ -372,7 +364,6 @@ sub get_screenshot {
 
     # parse inputs
     my $_resource_path = '/device/screenshot';
-    $_resource_path =~ s/{format}/json/; # default format to json
 
     my $_method = 'POST';
     my $query_params = {};
@@ -433,7 +424,6 @@ sub unreserve_device {
 
     # parse inputs
     my $_resource_path = '/device/screenshot';
-    $_resource_path =~ s/{format}/json/; # default format to json
 
     my $_method = 'DELETE';
     my $query_params = {};

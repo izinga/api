@@ -33,7 +33,6 @@ namespace Example
     {
         public void main()
         {
-            
             var apiInstance = new HubApi();
             var device = new Device5(); // Device5 |  (optional) 
 
@@ -93,7 +92,6 @@ namespace Example
     {
         public void main()
         {
-            
             var apiInstance = new HubApi();
             var device = new Device4(); // Device4 |  (optional) 
 
@@ -153,7 +151,6 @@ namespace Example
     {
         public void main()
         {
-            
             var apiInstance = new HubApi();
 
             try
@@ -209,7 +206,6 @@ namespace Example
     {
         public void main()
         {
-            
             var apiInstance = new HubApi();
             var device = new Device1(); // Device1 |  (optional) 
 
@@ -269,7 +265,6 @@ namespace Example
     {
         public void main()
         {
-            
             var apiInstance = new HubApi();
             var device = new Device(); // Device |  (optional) 
 
@@ -329,7 +324,6 @@ namespace Example
     {
         public void main()
         {
-            
             var apiInstance = new HubApi();
             var device = new Device2(); // Device2 |  (optional) 
 
@@ -389,7 +383,6 @@ namespace Example
     {
         public void main()
         {
-            
             var apiInstance = new HubApi();
             var device = new Device3(); // Device3 |  (optional) 
 

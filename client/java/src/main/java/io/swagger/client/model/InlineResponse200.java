@@ -14,14 +14,19 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 
 /**
  * InlineResponse200
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-06-15T13:12:07.992+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-25T11:27:00.305+05:30")
 public class InlineResponse200 {
   @SerializedName("status")
   private Boolean status = null;
@@ -38,8 +43,8 @@ public class InlineResponse200 {
    * Get status
    * @return status
   **/
-  @ApiModelProperty(example = "null", value = "")
-  public Boolean getStatus() {
+  @ApiModelProperty(value = "")
+  public Boolean isStatus() {
     return status;
   }
 
@@ -56,7 +61,7 @@ public class InlineResponse200 {
    * raw shell command output
    * @return msg
   **/
-  @ApiModelProperty(example = "null", value = "raw shell command output")
+  @ApiModelProperty(value = "raw shell command output")
   public String getMsg() {
     return msg;
   }
@@ -106,6 +111,6 @@ public class InlineResponse200 {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

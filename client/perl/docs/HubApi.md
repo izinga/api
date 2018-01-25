@@ -26,10 +26,10 @@ run adb  command
 ### Example 
 ```perl
 use Data::Dumper;
-use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::HubApi;
+my $api_instance = WWW::SwaggerClient::HubApi->new(
+);
 
-my $api_instance = WWW::SwaggerClient::HubApi->new();
 my $device = WWW::SwaggerClient::Object::Device5->new(); # Device5 | 
 
 eval { 
@@ -70,10 +70,10 @@ run adb shell command
 ### Example 
 ```perl
 use Data::Dumper;
-use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::HubApi;
+my $api_instance = WWW::SwaggerClient::HubApi->new(
+);
 
-my $api_instance = WWW::SwaggerClient::HubApi->new();
 my $device = WWW::SwaggerClient::Object::Device4->new(); # Device4 | 
 
 eval { 
@@ -114,10 +114,10 @@ list all attached devices to RobusTest
 ### Example 
 ```perl
 use Data::Dumper;
-use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::HubApi;
+my $api_instance = WWW::SwaggerClient::HubApi->new(
+);
 
-my $api_instance = WWW::SwaggerClient::HubApi->new();
 
 eval { 
     my $result = $api_instance->devices_list();
@@ -154,10 +154,10 @@ free device
 ### Example 
 ```perl
 use Data::Dumper;
-use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::HubApi;
+my $api_instance = WWW::SwaggerClient::HubApi->new(
+);
 
-my $api_instance = WWW::SwaggerClient::HubApi->new();
 my $device = WWW::SwaggerClient::Object::Device1->new(); # Device1 | 
 
 eval { 
@@ -198,10 +198,10 @@ get free device based on given parameters
 ### Example 
 ```perl
 use Data::Dumper;
-use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::HubApi;
+my $api_instance = WWW::SwaggerClient::HubApi->new(
+);
 
-my $api_instance = WWW::SwaggerClient::HubApi->new();
 my $device = WWW::SwaggerClient::Object::Device->new(); # Device | 
 
 eval { 
@@ -242,10 +242,10 @@ get screenshot from device
 ### Example 
 ```perl
 use Data::Dumper;
-use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::HubApi;
+my $api_instance = WWW::SwaggerClient::HubApi->new(
+);
 
-my $api_instance = WWW::SwaggerClient::HubApi->new();
 my $device = WWW::SwaggerClient::Object::Device2->new(); # Device2 | 
 
 eval { 
@@ -286,10 +286,10 @@ unrevrse the device
 ### Example 
 ```perl
 use Data::Dumper;
-use WWW::SwaggerClient::Configuration;
 use WWW::SwaggerClient::HubApi;
+my $api_instance = WWW::SwaggerClient::HubApi->new(
+);
 
-my $api_instance = WWW::SwaggerClient::HubApi->new();
 my $device = WWW::SwaggerClient::Object::Device3->new(); # Device3 | 
 
 eval { 

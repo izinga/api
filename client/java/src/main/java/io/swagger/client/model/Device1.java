@@ -14,14 +14,19 @@
 package io.swagger.client.model;
 
 import java.util.Objects;
+import com.google.gson.TypeAdapter;
+import com.google.gson.annotations.JsonAdapter;
 import com.google.gson.annotations.SerializedName;
+import com.google.gson.stream.JsonReader;
+import com.google.gson.stream.JsonWriter;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
+import java.io.IOException;
 
 /**
  * Device1
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2017-06-15T13:12:07.992+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-01-25T11:27:00.305+05:30")
 public class Device1 {
   @SerializedName("_id")
   private String id = null;
@@ -35,7 +40,7 @@ public class Device1 {
    * device id
    * @return id
   **/
-  @ApiModelProperty(example = "null", required = true, value = "device id")
+  @ApiModelProperty(required = true, value = "device id")
   public String getId() {
     return id;
   }
@@ -83,6 +88,6 @@ public class Device1 {
     }
     return o.toString().replace("\n", "\n    ");
   }
-  
+
 }
 

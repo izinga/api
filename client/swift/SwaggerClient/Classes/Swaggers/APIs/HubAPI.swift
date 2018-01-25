@@ -27,7 +27,7 @@ public class HubAPI: APIBase {
      run adb  command
      - POST /device/command
      - examples: [{contentType=application/json, example={
-  "msg" : "aeiou",
+  "msg" : "msg",
   "status" : true
 }}]
      
@@ -64,7 +64,7 @@ public class HubAPI: APIBase {
      run adb shell command
      - POST /device/shell
      - examples: [{contentType=application/json, example={
-  "msg" : "aeiou",
+  "msg" : "msg",
   "status" : true
 }}]
      
@@ -135,13 +135,13 @@ public class HubAPI: APIBase {
      free device
      - DELETE /device
      - examples: [{contentType=application/json, example={
-  "os" : "aeiou",
-  "reserveKey" : "aeiou",
-  "serial" : "aeiou",
-  "session" : "aeiou",
-  "name" : "aeiou",
-  "_id" : "aeiou",
-  "version" : "aeiou"
+  "os" : "os",
+  "reserveKey" : "reserveKey",
+  "serial" : "serial",
+  "session" : "session",
+  "name" : "name",
+  "_id" : "_id",
+  "version" : "version"
 }}]
      
      - parameter device: (body)  (optional)
@@ -177,13 +177,13 @@ public class HubAPI: APIBase {
      get free device based on given parameters
      - PUT /device
      - examples: [{contentType=application/json, example={
-  "os" : "aeiou",
-  "reserveKey" : "aeiou",
-  "serial" : "aeiou",
-  "session" : "aeiou",
-  "name" : "aeiou",
-  "_id" : "aeiou",
-  "version" : "aeiou"
+  "os" : "os",
+  "reserveKey" : "reserveKey",
+  "serial" : "serial",
+  "session" : "session",
+  "name" : "name",
+  "_id" : "_id",
+  "version" : "version"
 }}]
      
      - parameter device: (body)  (optional)
@@ -253,13 +253,13 @@ public class HubAPI: APIBase {
      unrevrse the device
      - DELETE /device/screenshot
      - examples: [{contentType=application/json, example={
-  "os" : "aeiou",
-  "reserveKey" : "aeiou",
-  "serial" : "aeiou",
-  "session" : "aeiou",
-  "name" : "aeiou",
-  "_id" : "aeiou",
-  "version" : "aeiou"
+  "os" : "os",
+  "reserveKey" : "reserveKey",
+  "serial" : "serial",
+  "session" : "session",
+  "name" : "name",
+  "_id" : "_id",
+  "version" : "version"
 }}]
      
      - parameter device: (body)  (optional)
