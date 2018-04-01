@@ -45,12 +45,11 @@ paths:
       responses:
         '200':    # status code
           description: get list of jira config
-          content:
-            application/json:
-              schema: 
-                type: array
-                items: 
-                  $ref: '#/definitions/JiraConfig'
+          schema: 
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/JiraConfig'
 
 
 definitions:
