@@ -58,7 +58,7 @@ paths:
       operationId: jira
       responses:
         '200':    # status code
-          description: get list of jira project
+          description: get a jira project details
           schema: 
             type: object
             $ref: '#/definitions/JiraProject'
