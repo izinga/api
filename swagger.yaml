@@ -31,8 +31,9 @@ paths:
       produces:
         - application/json
       description: create a jira config
-      operationId: jira config for bug id
+      operationId: jira config
       parameters:
+        - description: jira config payload
         - name: body
           in: body
           required: true
