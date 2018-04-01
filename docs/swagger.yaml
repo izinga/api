@@ -19,7 +19,7 @@ paths:
     post:
       summary: create a jira config
       description: create a jira config
-      operationId: jira config
+      operationId: jiraConfig
       parameters:
         - description: jira config payload
         - name: body
@@ -51,7 +51,7 @@ paths:
     put:
       summary: update a jira config
       description: update a jira config
-      operationId: jira config
+      operationId: jiraConfig
       parameters:
         - description: jira config payload
         - name: body
