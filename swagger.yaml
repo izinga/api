@@ -59,7 +59,6 @@ definitions:
         type: "string"
 
   JiraConfigResponse:
-    type : array
     items:
       type: string
 
