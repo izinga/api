@@ -10,10 +10,6 @@ paths:
   /admin/v3/bug/config/jira:
     post:
       summary: create a jira config
-      consumes:
-        - application/json
-      produces:
-        - application/json
       description: create a jira config
       operationId: jira config
       parameters:
@@ -33,8 +29,6 @@ paths:
   /admin/v3/bug/config/jira/configs:
     get:
       summary : get all jira config 
-      produces:
-        -application/json
       description: get all jira config
       operationId: jira config
       responses:
