@@ -128,13 +128,13 @@ paths:
           in: body
           required: true
           schema:
-            $ref: '#/definitions/jiraIssuePayload'
+            $ref: '#/definitions/projectUpdatePayload'
       responses:
         '200':    # status code
           description: A JSON array of jira project names
           schema: 
             type: object
-            $ref: '#/definitions/jiraIssueResponse'
+            $ref: '#/definitions/project'
 definitions:
   JiraConfig:
     type: object
@@ -274,7 +274,6 @@ definitions:
 
   projectUpdatePayload:
     type: object
-
     required: 
       - admin
       - users
