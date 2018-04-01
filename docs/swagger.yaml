@@ -88,6 +88,19 @@ paths:
             items: 
               type : object
               $ref: '#/definitions/JiraProject'
+  /admin/v3//bug/config/jira/config/{congfig_id}/projects:
+    get:
+      summary : get all jira project for given config
+      description: get all jira project for given config
+      operationId: jira
+      responses:
+        '200':    # status code
+          description: get list of jira project for given config
+          schema: 
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/JiraProject'
   /admin/v3/bug/config/jira/projects/{jira_project_id}:
     get:
       summary : get a jira project  details
@@ -271,7 +284,6 @@ definitions:
               type: string
             data: 
               type: string
-
   projectUpdatePayload:
     type: object
     required: 
