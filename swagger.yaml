@@ -47,7 +47,7 @@ paths:
               type : object
               $ref: '#/definitions/JiraConfig'
 
-  /admin/v3/bug/config/jira/{id}:
+  /admin/v3/bug/config/jira/{jira_config_id}:
     put:
       summary: update a jira config
       description: update a jira config
@@ -88,7 +88,7 @@ paths:
             items: 
               type : object
               $ref: '#/definitions/JiraProject'
-  /admin/v3/bug/config/jira/projects/{id}:
+  /admin/v3/bug/config/jira/projects/{jira_project_id}:
     get:
       summary : get a jira project  details
       description: get a jira project details
@@ -248,6 +248,7 @@ definitions:
           properties: 
             type: 
               type: "string"
+              description: valid type ['text', 'png', 'jpeg']
             name: 
               type: "string"
             data: 
