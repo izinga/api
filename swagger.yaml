@@ -28,8 +28,6 @@ paths:
       description: create a jira config
       summary: create a jira config
       operationId: jira config for bug id
-      tags:
-      - JIRA
       requestBody:
         required: true
         content:
