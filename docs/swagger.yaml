@@ -134,29 +134,6 @@ definitions:
         type: "string"
       password: 
         type: "string"
-  JiraConfig:
-    type : object
-    properties: 
-      _id: 
-        type: "string"
-      source: 
-        type: "string"
-      type: 
-        type: "string"
-      url: 
-        type: "string"
-      name: 
-        type: "string"
-      user: 
-        type: "string"
-      password: 
-        type: "string"
-      createdBy: 
-        type: "string"
-      updated: 
-        type: "string"
-      created: 
-        type: "string"
   JiraProject:
     type: object
     properties: 
