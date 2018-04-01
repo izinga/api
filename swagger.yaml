@@ -26,11 +26,10 @@ paths:
             type: array
             items: 
               type: string
-  /admin/v3/bug/config/jira/configs:
     get:
       summary : get all jira config 
       description: get all jira config
-      operationId: jira config
+      operationId: jira
       responses:
         '200':    # status code
           description: get list of jira config
@@ -39,6 +38,30 @@ paths:
             items: 
               type : object
               $ref: '#/definitions/JiraConfig'
+  /admin/v3/bug/config/jira/projects:
+    get:
+      summary : get all jira project 
+      description: get all jira project
+      operationId: jira
+      responses:
+        '200':    # status code
+          description: get list of jira project
+          schema: 
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/JiraProject'
+  /admin/v3/bug/config/jira/projects/{id}:
+    get:
+      summary : get a jira project  details
+      description: get a jira project details
+      operationId: jira
+      responses:
+        '200':    # status code
+          description: get list of jira project
+          schema: 
+            type: object
+            $ref: '#/definitions/JiraProject'
 
 
 definitions:
