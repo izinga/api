@@ -117,7 +117,6 @@ paths:
           schema: 
             type: object
               $ref: '#/definitions/jiraIssueResponse'
-
 definitions:
   JiraConfig:
     type: object

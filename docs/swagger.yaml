@@ -99,8 +99,24 @@ paths:
           schema: 
             type: object
             $ref: '#/definitions/JiraProject'
-
-
+  /v3/bug/jira/{jira_project_id}/create:
+    post:
+      summary: create a jira issue
+      description: create a jira issue
+      operationId: jiraIssue
+      parameters:
+        - description: jira issue payload
+        - name: body
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/jiraIssuePayload'
+      responses:
+        '200':    # status code
+          description: A JSON array of jira project names
+          schema: 
+            type: object
+              $ref: '#/definitions/jiraIssueResponse'
 definitions:
   JiraConfig:
     type: object
@@ -187,4 +203,54 @@ definitions:
         type: "string"
       created: 
         type: "string"
+  jiraIssueResponse:
+    type: object
+    properties: 
+      id: 
+        type: "string"
+      self: 
+        type: "string"
+      key: 
+        type: "string"
+  jiraIssuePayload:
+    type: object
+    required: 
+      - "projectKey"
+      - "assingeeName"
+      - "assingeeKey"
+      - "reporterName"
+      - "reporterKey"
+      - "description"
+      - "summary"
+      - "type"
+      - "attachements"
+    properties: 
+      projectKey: 
+        type: "string"
+      assingeeName: 
+        type: "string"
+      assingeeKey: 
+        type: "string"
+      reporterName: 
+        type: "string"
+      reporterKey: 
+        type: "string"
+      description: 
+        type: "string"
+      summary: 
+        type: "string"
+      type: 
+        type: "string"
+      attachements: 
+        type: "array"
+        items: 
+          type: "object"
+          properties: 
+            type: 
+              type: "string"
+            name: 
+              type: "string"
+            data: 
+              type: "string"
+
 
