@@ -23,18 +23,24 @@ produces:
   - application/json
 # basePath: /v2
 paths:
-  /v3/testsuites:
-    get:
-      description: return all test suite for given project
-      summary: get all test suite for project
-      operationId: test suites for project
+  /admin/v3/bug/config/jira:
+    post:
+      description: create a jira config
+      summary: create a jira config
+      operationId: jira config for bug id
       tags:
-      - Testsuite
+      - JIRA
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: '#/definitions/JiraConfigPayload'
       responses:
         200:
           description: successful operation
           items:
-            $ref: '#/definitions/Testsuite'
+            $ref: '#/definitions/JiraConfig'
       parameters:
         - name: projectID
           in: path
@@ -44,54 +50,28 @@ paths:
             type: string
             style: simple
 
-  /v3/testsuite:
-    get:
-      description: return all test suite for given project
-      summary: get all test suite for project
-      operationId: test suites for project
-      tags:
-      - Testsuite
-      responses:
-        200:
-          description: successful operation
-          schema:
-            $ref: '#/definitions/Testsuite'
-      parameters:
-        - name: id
-          in: path
-          description: test suite id
-          required: true
-          schema:
-            type: string
-            style: simple
-
- 
 definitions:
-  Testsuite:
+  JiraConfig:
     type : object
-    properties:
-      _id:
-        type: string
-        description: Test suite ID
-      name:
-        type: string
-        description:  Test suite  Name
-      desc:
-        type: string
-        description:  Test suite  description
-      project:
-        type: string
-        description:  Test suite  project id
-      testscripts:
-        description:  test script id
-        items:
-            type: string  
-      createdBy:
-        type: string
-        description:  User who created test suite 
-      updatedBy:
-        type: string
-        description:  User who uodated test suite 
+    required: 
+      - "url"
+      - "name"
+      - "user"
+      - "password"
+    properties: 
+      url: 
+        type: "string"
+      name: 
+        type: "string"
+      user: 
+        type: "string"
+      password: 
+        type: "string"
+
+  JiraConfigResponse:
+    type : array
+    items:
+      type: string
 
 
 
