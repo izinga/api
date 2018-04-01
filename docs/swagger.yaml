@@ -110,13 +110,13 @@ paths:
           in: body
           required: true
           schema:
-              $ref: '#/definitions/jiraIssuePayload'
+            $ref: '#/definitions/jiraIssuePayload'
       responses:
         '200':    # status code
           description: A JSON array of jira project names
           schema: 
             type: object
-              $ref: '#/definitions/jiraIssueResponse'
+            $ref: '#/definitions/jiraIssueResponse'
 definitions:
   JiraConfig:
     type: object
