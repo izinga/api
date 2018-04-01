@@ -56,6 +56,17 @@ paths:
           description: jira config
           schema: 
             $ref: '#/definitions/JiraConfig'
+    patch:
+      summary: update all projects for a jira config
+      description: update all projects for a jira config
+      operationId: jira config
+      responses:
+        '200':    # status code
+          description: A JSON array of jira project names
+          schema: 
+            type: array
+            items: 
+              type: string
   /admin/v3/bug/config/jira/projects:
     get:
       summary : get all jira project 
