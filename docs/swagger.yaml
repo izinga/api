@@ -1,9 +1,4 @@
 swagger: '3.0'
-title: RobusTest Api documentation 
-description: RobusTest Api documentation
-version: 1.0.1
-
-
 # host: mobile.robustest.com:8085
 # schemes:
 #   - http
@@ -138,15 +133,3 @@ definitions:
       created: 
         type: "string"
 
-
-
-
-
-
-
-# Added by API Auto Mocking Plugin
-host: virtserver.swaggerhub.com
-basePath: /Izinga/Hub/1.0.0
-schemes:
- - https
- - http
