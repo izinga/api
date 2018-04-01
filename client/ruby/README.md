@@ -75,11 +75,12 @@ Class | Method | HTTP request | Description
 *SwaggerClient::DefaultApi* | [**bug**](docs/DefaultApi.md#bug) | **GET** /admin/v3/bug/trackerlist | get list for all supported bug trakers
 *SwaggerClient::DefaultApi* | [**jira**](docs/DefaultApi.md#jira) | **GET** /admin/v3/bug/config/jira | get all jira config
 *SwaggerClient::DefaultApi* | [**jira_0**](docs/DefaultApi.md#jira_0) | **GET** /admin/v3/bug/config/jira/projects | get all jira project
-*SwaggerClient::DefaultApi* | [**jira_1**](docs/DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/{congfig_id}/projects | get all jira project for given config
+*SwaggerClient::DefaultApi* | [**jira_1**](docs/DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/config/{congfig_id}/projects | get all jira project for given config
 *SwaggerClient::DefaultApi* | [**jira_2**](docs/DefaultApi.md#jira_2) | **GET** /admin/v3/bug/config/jira/projects/{jira_project_id} | get a jira project  details
 *SwaggerClient::DefaultApi* | [**jira_config**](docs/DefaultApi.md#jira_config) | **POST** /admin/v3/bug/config/jira | create a jira config
 *SwaggerClient::DefaultApi* | [**jira_config_0**](docs/DefaultApi.md#jira_config_0) | **PUT** /admin/v3/bug/config/jira/{jira_config_id} | update a jira config
-*SwaggerClient::DefaultApi* | [**jira_config_1**](docs/DefaultApi.md#jira_config_1) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
+*SwaggerClient::DefaultApi* | [**jira_config_1**](docs/DefaultApi.md#jira_config_1) | **DELETE** /admin/v3/bug/config/jira/{jira_config_id} | delete jira config and all associated jira project
+*SwaggerClient::DefaultApi* | [**jira_config_2**](docs/DefaultApi.md#jira_config_2) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
 *SwaggerClient::DefaultApi* | [**jira_issue**](docs/DefaultApi.md#jira_issue) | **POST** /v3/bug/jira/{jira_project_id}/create | create a jira issue
 *SwaggerClient::DefaultApi* | [**project**](docs/DefaultApi.md#project) | **PUT** /v3/project/{project_id} | Update Project
 

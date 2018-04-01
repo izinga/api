@@ -118,10 +118,11 @@ Class | Method | HTTP request | Description
 *RobusTestApi.DefaultApi* | [**jira**](docs/DefaultApi.md#jira) | **GET** /admin/v3/bug/config/jira | get all jira config
 *RobusTestApi.DefaultApi* | [**jiraConfig**](docs/DefaultApi.md#jiraConfig) | **POST** /admin/v3/bug/config/jira | create a jira config
 *RobusTestApi.DefaultApi* | [**jiraConfig_0**](docs/DefaultApi.md#jiraConfig_0) | **PUT** /admin/v3/bug/config/jira/{jira_config_id} | update a jira config
-*RobusTestApi.DefaultApi* | [**jiraConfig_1**](docs/DefaultApi.md#jiraConfig_1) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
+*RobusTestApi.DefaultApi* | [**jiraConfig_1**](docs/DefaultApi.md#jiraConfig_1) | **DELETE** /admin/v3/bug/config/jira/{jira_config_id} | delete jira config and all associated jira project
+*RobusTestApi.DefaultApi* | [**jiraConfig_2**](docs/DefaultApi.md#jiraConfig_2) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
 *RobusTestApi.DefaultApi* | [**jiraIssue**](docs/DefaultApi.md#jiraIssue) | **POST** /v3/bug/jira/{jira_project_id}/create | create a jira issue
 *RobusTestApi.DefaultApi* | [**jira_0**](docs/DefaultApi.md#jira_0) | **GET** /admin/v3/bug/config/jira/projects | get all jira project
-*RobusTestApi.DefaultApi* | [**jira_1**](docs/DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/{congfig_id}/projects | get all jira project for given config
+*RobusTestApi.DefaultApi* | [**jira_1**](docs/DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/config/{congfig_id}/projects | get all jira project for given config
 *RobusTestApi.DefaultApi* | [**jira_2**](docs/DefaultApi.md#jira_2) | **GET** /admin/v3/bug/config/jira/projects/{jira_project_id} | get a jira project  details
 *RobusTestApi.DefaultApi* | [**project**](docs/DefaultApi.md#project) | **PUT** /v3/project/{project_id} | Update Project
 

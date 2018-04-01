@@ -215,7 +215,7 @@ sub jira_1 {
     my ($self, %args) = @_;
 
     # parse inputs
-    my $_resource_path = '/admin/v3/bug/config/jira/{congfig_id}/projects';
+    my $_resource_path = '/admin/v3/bug/config/jira/config/{congfig_id}/projects';
 
     my $_method = 'GET';
     my $query_params = {};
@@ -426,12 +426,61 @@ sub jira_config_0 {
 #
 # jira_config_1
 #
-# update all projects for a jira config
+# delete jira config and all associated jira project
 # 
 {
     my $params = {
     };
     __PACKAGE__->method_documentation->{ 'jira_config_1' } = { 
+    	summary => 'delete jira config and all associated jira project',
+        params => $params,
+        returns => 'string',
+        };
+}
+# @return string
+#
+sub jira_config_1 {
+    my ($self, %args) = @_;
+
+    # parse inputs
+    my $_resource_path = '/admin/v3/bug/config/jira/{jira_config_id}';
+
+    my $_method = 'DELETE';
+    my $query_params = {};
+    my $header_params = {};
+    my $form_params = {};
+
+    # 'Accept' and 'Content-Type' header
+    my $_header_accept = $self->{api_client}->select_header_accept('application/json');
+    if ($_header_accept) {
+        $header_params->{'Accept'} = $_header_accept;
+    }
+    $header_params->{'Content-Type'} = $self->{api_client}->select_header_content_type('application/json');
+
+    my $_body_data;
+    # authentication setting, if any
+    my $auth_settings = [qw()];
+
+    # make the API Call
+    my $response = $self->{api_client}->call_api($_resource_path, $_method,
+                                           $query_params, $form_params,
+                                           $header_params, $_body_data, $auth_settings);
+    if (!$response) {
+        return;
+    }
+    my $_response_object = $self->{api_client}->deserialize('string', $response);
+    return $_response_object;
+}
+
+#
+# jira_config_2
+#
+# update all projects for a jira config
+# 
+{
+    my $params = {
+    };
+    __PACKAGE__->method_documentation->{ 'jira_config_2' } = { 
     	summary => 'update all projects for a jira config',
         params => $params,
         returns => 'ARRAY[string]',
@@ -439,7 +488,7 @@ sub jira_config_0 {
 }
 # @return ARRAY[string]
 #
-sub jira_config_1 {
+sub jira_config_2 {
     my ($self, %args) = @_;
 
     # parse inputs

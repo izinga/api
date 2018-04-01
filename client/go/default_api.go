@@ -284,11 +284,74 @@ func (a *DefaultApiService) JiraConfig_1(ctx context.Context, payload JiraConfig
 	return successPayload, localVarHttpResponse, err
 }
 
+/* DefaultApiService delete jira config and all associated jira project
+ update all projects for a jira config
+ * @param ctx context.Context for authentication, logging, tracing, etc.
+ @return string*/
+func (a *DefaultApiService) JiraConfig_2(ctx context.Context) (string,  *http.Response, error) {
+	var (
+		localVarHttpMethod = strings.ToUpper("Delete")
+		localVarPostBody interface{}
+		localVarFileName string
+		localVarFileBytes []byte
+	 	successPayload  string
+	)
+
+	// create path and map variables
+	localVarPath := a.client.cfg.BasePath + "/admin/v3/bug/config/jira/{jira_config_id}"
+
+	localVarHeaderParams := make(map[string]string)
+	localVarQueryParams := url.Values{}
+	localVarFormParams := url.Values{}
+
+
+	// to determine the Content-Type header
+	localVarHttpContentTypes := []string{ "application/json",  }
+
+	// set Content-Type header
+	localVarHttpContentType := selectHeaderContentType(localVarHttpContentTypes)
+	if localVarHttpContentType != "" {
+		localVarHeaderParams["Content-Type"] = localVarHttpContentType
+	}
+
+	// to determine the Accept header
+	localVarHttpHeaderAccepts := []string{
+		"application/json",
+		}
+
+	// set Accept header
+	localVarHttpHeaderAccept := selectHeaderAccept(localVarHttpHeaderAccepts)
+	if localVarHttpHeaderAccept != "" {
+		localVarHeaderParams["Accept"] = localVarHttpHeaderAccept
+	}
+	r, err := a.client.prepareRequest(ctx, localVarPath, localVarHttpMethod, localVarPostBody, localVarHeaderParams, localVarQueryParams, localVarFormParams, localVarFileName, localVarFileBytes)
+	if err != nil {
+		return successPayload, nil, err
+	}
+
+	localVarHttpResponse, err := a.client.callAPI(r)
+	if err != nil || localVarHttpResponse == nil {
+		return successPayload, localVarHttpResponse, err
+	}
+	defer localVarHttpResponse.Body.Close()
+	if localVarHttpResponse.StatusCode >= 300 {
+		bodyBytes, _ := ioutil.ReadAll(localVarHttpResponse.Body)
+		return successPayload, localVarHttpResponse, reportError("Status: %v, Body: %s", localVarHttpResponse.Status, bodyBytes)
+	}
+
+	if err = json.NewDecoder(localVarHttpResponse.Body).Decode(&successPayload); err != nil {
+		return successPayload, localVarHttpResponse, err
+	}
+
+
+	return successPayload, localVarHttpResponse, err
+}
+
 /* DefaultApiService update all projects for a jira config
  update all projects for a jira config
  * @param ctx context.Context for authentication, logging, tracing, etc.
  @return []string*/
-func (a *DefaultApiService) JiraConfig_2(ctx context.Context) ([]string,  *http.Response, error) {
+func (a *DefaultApiService) JiraConfig_3(ctx context.Context) ([]string,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Patch")
 		localVarPostBody interface{}
@@ -417,7 +480,7 @@ func (a *DefaultApiService) JiraIssue(ctx context.Context, body JiraIssuePayload
  get all jira project
  * @param ctx context.Context for authentication, logging, tracing, etc.
  @return []JiraProject*/
-func (a *DefaultApiService) Jira_3(ctx context.Context) ([]JiraProject,  *http.Response, error) {
+func (a *DefaultApiService) Jira_4(ctx context.Context) ([]JiraProject,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -480,7 +543,7 @@ func (a *DefaultApiService) Jira_3(ctx context.Context) ([]JiraProject,  *http.R
  get all jira project for given config
  * @param ctx context.Context for authentication, logging, tracing, etc.
  @return []JiraProject*/
-func (a *DefaultApiService) Jira_4(ctx context.Context) ([]JiraProject,  *http.Response, error) {
+func (a *DefaultApiService) Jira_5(ctx context.Context) ([]JiraProject,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}
@@ -490,7 +553,7 @@ func (a *DefaultApiService) Jira_4(ctx context.Context) ([]JiraProject,  *http.R
 	)
 
 	// create path and map variables
-	localVarPath := a.client.cfg.BasePath + "/admin/v3/bug/config/jira/{congfig_id}/projects"
+	localVarPath := a.client.cfg.BasePath + "/admin/v3/bug/config/jira/config/{congfig_id}/projects"
 
 	localVarHeaderParams := make(map[string]string)
 	localVarQueryParams := url.Values{}
@@ -543,7 +606,7 @@ func (a *DefaultApiService) Jira_4(ctx context.Context) ([]JiraProject,  *http.R
  get a jira project details
  * @param ctx context.Context for authentication, logging, tracing, etc.
  @return JiraProject*/
-func (a *DefaultApiService) Jira_5(ctx context.Context) (JiraProject,  *http.Response, error) {
+func (a *DefaultApiService) Jira_6(ctx context.Context) (JiraProject,  *http.Response, error) {
 	var (
 		localVarHttpMethod = strings.ToUpper("Get")
 		localVarPostBody interface{}

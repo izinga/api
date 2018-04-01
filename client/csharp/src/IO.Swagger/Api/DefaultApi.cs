@@ -105,6 +105,25 @@ namespace IO.Swagger.Api
         /// <returns>ApiResponse of JiraConfig</returns>
         ApiResponse<JiraConfig> JiraConfig_0WithHttpInfo (JiraConfigPayload payload);
         /// <summary>
+        /// delete jira config and all associated jira project
+        /// </summary>
+        /// <remarks>
+        /// update all projects for a jira config
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>string</returns>
+        string JiraConfig_1 ();
+
+        /// <summary>
+        /// delete jira config and all associated jira project
+        /// </summary>
+        /// <remarks>
+        /// update all projects for a jira config
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of string</returns>
+        ApiResponse<string> JiraConfig_1WithHttpInfo ();
+        /// <summary>
         /// update all projects for a jira config
         /// </summary>
         /// <remarks>
@@ -112,7 +131,7 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;string&gt;</returns>
-        List<string> JiraConfig_1 ();
+        List<string> JiraConfig_2 ();
 
         /// <summary>
         /// update all projects for a jira config
@@ -122,7 +141,7 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        ApiResponse<List<string>> JiraConfig_1WithHttpInfo ();
+        ApiResponse<List<string>> JiraConfig_2WithHttpInfo ();
         /// <summary>
         /// create a jira issue
         /// </summary>
@@ -305,6 +324,25 @@ namespace IO.Swagger.Api
         /// <returns>Task of ApiResponse (JiraConfig)</returns>
         System.Threading.Tasks.Task<ApiResponse<JiraConfig>> JiraConfig_0AsyncWithHttpInfo (JiraConfigPayload payload);
         /// <summary>
+        /// delete jira config and all associated jira project
+        /// </summary>
+        /// <remarks>
+        /// update all projects for a jira config
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of string</returns>
+        System.Threading.Tasks.Task<string> JiraConfig_1Async ();
+
+        /// <summary>
+        /// delete jira config and all associated jira project
+        /// </summary>
+        /// <remarks>
+        /// update all projects for a jira config
+        /// </remarks>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (string)</returns>
+        System.Threading.Tasks.Task<ApiResponse<string>> JiraConfig_1AsyncWithHttpInfo ();
+        /// <summary>
         /// update all projects for a jira config
         /// </summary>
         /// <remarks>
@@ -312,7 +350,7 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;string&gt;</returns>
-        System.Threading.Tasks.Task<List<string>> JiraConfig_1Async ();
+        System.Threading.Tasks.Task<List<string>> JiraConfig_2Async ();
 
         /// <summary>
         /// update all projects for a jira config
@@ -322,7 +360,7 @@ namespace IO.Swagger.Api
         /// </remarks>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        System.Threading.Tasks.Task<ApiResponse<List<string>>> JiraConfig_1AsyncWithHttpInfo ();
+        System.Threading.Tasks.Task<ApiResponse<List<string>>> JiraConfig_2AsyncWithHttpInfo ();
         /// <summary>
         /// create a jira issue
         /// </summary>
@@ -1067,13 +1105,136 @@ namespace IO.Swagger.Api
         }
 
         /// <summary>
+        /// delete jira config and all associated jira project update all projects for a jira config
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>string</returns>
+        public string JiraConfig_1 ()
+        {
+             ApiResponse<string> localVarResponse = JiraConfig_1WithHttpInfo();
+             return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// delete jira config and all associated jira project update all projects for a jira config
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>ApiResponse of string</returns>
+        public ApiResponse< string > JiraConfig_1WithHttpInfo ()
+        {
+
+            var localVarPath = "/admin/v3/bug/config/jira/{jira_config_id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) Configuration.ApiClient.CallApi(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("JiraConfig_1", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<string>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (string) Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)));
+        }
+
+        /// <summary>
+        /// delete jira config and all associated jira project update all projects for a jira config
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of string</returns>
+        public async System.Threading.Tasks.Task<string> JiraConfig_1Async ()
+        {
+             ApiResponse<string> localVarResponse = await JiraConfig_1AsyncWithHttpInfo();
+             return localVarResponse.Data;
+
+        }
+
+        /// <summary>
+        /// delete jira config and all associated jira project update all projects for a jira config
+        /// </summary>
+        /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <returns>Task of ApiResponse (string)</returns>
+        public async System.Threading.Tasks.Task<ApiResponse<string>> JiraConfig_1AsyncWithHttpInfo ()
+        {
+
+            var localVarPath = "/admin/v3/bug/config/jira/{jira_config_id}";
+            var localVarPathParams = new Dictionary<String, String>();
+            var localVarQueryParams = new List<KeyValuePair<String, String>>();
+            var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
+            var localVarFormParams = new Dictionary<String, String>();
+            var localVarFileParams = new Dictionary<String, FileParameter>();
+            Object localVarPostBody = null;
+
+            // to determine the Content-Type header
+            String[] localVarHttpContentTypes = new String[] {
+                "application/json"
+            };
+            String localVarHttpContentType = Configuration.ApiClient.SelectHeaderContentType(localVarHttpContentTypes);
+
+            // to determine the Accept header
+            String[] localVarHttpHeaderAccepts = new String[] {
+                "application/json"
+            };
+            String localVarHttpHeaderAccept = Configuration.ApiClient.SelectHeaderAccept(localVarHttpHeaderAccepts);
+            if (localVarHttpHeaderAccept != null)
+                localVarHeaderParams.Add("Accept", localVarHttpHeaderAccept);
+
+
+
+            // make the HTTP request
+            IRestResponse localVarResponse = (IRestResponse) await Configuration.ApiClient.CallApiAsync(localVarPath,
+                Method.DELETE, localVarQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarFileParams,
+                localVarPathParams, localVarHttpContentType);
+
+            int localVarStatusCode = (int) localVarResponse.StatusCode;
+
+            if (ExceptionFactory != null)
+            {
+                Exception exception = ExceptionFactory("JiraConfig_1", localVarResponse);
+                if (exception != null) throw exception;
+            }
+
+            return new ApiResponse<string>(localVarStatusCode,
+                localVarResponse.Headers.ToDictionary(x => x.Name, x => x.Value.ToString()),
+                (string) Configuration.ApiClient.Deserialize(localVarResponse, typeof(string)));
+        }
+
+        /// <summary>
         /// update all projects for a jira config update all projects for a jira config
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>List&lt;string&gt;</returns>
-        public List<string> JiraConfig_1 ()
+        public List<string> JiraConfig_2 ()
         {
-             ApiResponse<List<string>> localVarResponse = JiraConfig_1WithHttpInfo();
+             ApiResponse<List<string>> localVarResponse = JiraConfig_2WithHttpInfo();
              return localVarResponse.Data;
         }
 
@@ -1082,7 +1243,7 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>ApiResponse of List&lt;string&gt;</returns>
-        public ApiResponse< List<string> > JiraConfig_1WithHttpInfo ()
+        public ApiResponse< List<string> > JiraConfig_2WithHttpInfo ()
         {
 
             var localVarPath = "/admin/v3/bug/config/jira/{jira_config_id}";
@@ -1118,7 +1279,7 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("JiraConfig_1", localVarResponse);
+                Exception exception = ExceptionFactory("JiraConfig_2", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1132,9 +1293,9 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of List&lt;string&gt;</returns>
-        public async System.Threading.Tasks.Task<List<string>> JiraConfig_1Async ()
+        public async System.Threading.Tasks.Task<List<string>> JiraConfig_2Async ()
         {
-             ApiResponse<List<string>> localVarResponse = await JiraConfig_1AsyncWithHttpInfo();
+             ApiResponse<List<string>> localVarResponse = await JiraConfig_2AsyncWithHttpInfo();
              return localVarResponse.Data;
 
         }
@@ -1144,7 +1305,7 @@ namespace IO.Swagger.Api
         /// </summary>
         /// <exception cref="IO.Swagger.Client.ApiException">Thrown when fails to make API call</exception>
         /// <returns>Task of ApiResponse (List&lt;string&gt;)</returns>
-        public async System.Threading.Tasks.Task<ApiResponse<List<string>>> JiraConfig_1AsyncWithHttpInfo ()
+        public async System.Threading.Tasks.Task<ApiResponse<List<string>>> JiraConfig_2AsyncWithHttpInfo ()
         {
 
             var localVarPath = "/admin/v3/bug/config/jira/{jira_config_id}";
@@ -1180,7 +1341,7 @@ namespace IO.Swagger.Api
 
             if (ExceptionFactory != null)
             {
-                Exception exception = ExceptionFactory("JiraConfig_1", localVarResponse);
+                Exception exception = ExceptionFactory("JiraConfig_2", localVarResponse);
                 if (exception != null) throw exception;
             }
 
@@ -1480,7 +1641,7 @@ namespace IO.Swagger.Api
         public ApiResponse< List<JiraProject> > Jira_1WithHttpInfo ()
         {
 
-            var localVarPath = "/admin/v3/bug/config/jira/{congfig_id}/projects";
+            var localVarPath = "/admin/v3/bug/config/jira/config/{congfig_id}/projects";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);
@@ -1542,7 +1703,7 @@ namespace IO.Swagger.Api
         public async System.Threading.Tasks.Task<ApiResponse<List<JiraProject>>> Jira_1AsyncWithHttpInfo ()
         {
 
-            var localVarPath = "/admin/v3/bug/config/jira/{congfig_id}/projects";
+            var localVarPath = "/admin/v3/bug/config/jira/config/{congfig_id}/projects";
             var localVarPathParams = new Dictionary<String, String>();
             var localVarQueryParams = new List<KeyValuePair<String, String>>();
             var localVarHeaderParams = new Dictionary<String, String>(Configuration.DefaultHeader);

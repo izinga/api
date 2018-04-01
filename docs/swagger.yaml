@@ -87,6 +87,14 @@ paths:
             type: array
             items: 
               type: string
+    delete:
+      summary: delete jira config and all associated jira project
+      description: update all projects for a jira config
+      operationId: jiraConfig
+      responses:
+        '200':    # status code
+          schema: 
+            type: string
   /admin/v3/bug/config/jira/projects:
     get:
       summary : get all jira project 
@@ -100,7 +108,7 @@ paths:
             items: 
               type : object
               $ref: '#/definitions/JiraProject'
-  /admin/v3/bug/config/jira/{congfig_id}/projects:
+  /admin/v3/bug/config/jira/config/{congfig_id}/projects:
     get:
       summary : get all jira project for given config
       description: get all jira project for given config

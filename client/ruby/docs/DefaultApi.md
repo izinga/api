@@ -7,11 +7,12 @@ Method | HTTP request | Description
 [**bug**](DefaultApi.md#bug) | **GET** /admin/v3/bug/trackerlist | get list for all supported bug trakers
 [**jira**](DefaultApi.md#jira) | **GET** /admin/v3/bug/config/jira | get all jira config
 [**jira_0**](DefaultApi.md#jira_0) | **GET** /admin/v3/bug/config/jira/projects | get all jira project
-[**jira_1**](DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/{congfig_id}/projects | get all jira project for given config
+[**jira_1**](DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/config/{congfig_id}/projects | get all jira project for given config
 [**jira_2**](DefaultApi.md#jira_2) | **GET** /admin/v3/bug/config/jira/projects/{jira_project_id} | get a jira project  details
 [**jira_config**](DefaultApi.md#jira_config) | **POST** /admin/v3/bug/config/jira | create a jira config
 [**jira_config_0**](DefaultApi.md#jira_config_0) | **PUT** /admin/v3/bug/config/jira/{jira_config_id} | update a jira config
-[**jira_config_1**](DefaultApi.md#jira_config_1) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
+[**jira_config_1**](DefaultApi.md#jira_config_1) | **DELETE** /admin/v3/bug/config/jira/{jira_config_id} | delete jira config and all associated jira project
+[**jira_config_2**](DefaultApi.md#jira_config_2) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
 [**jira_issue**](DefaultApi.md#jira_issue) | **POST** /v3/bug/jira/{jira_project_id}/create | create a jira issue
 [**project**](DefaultApi.md#project) | **PUT** /v3/project/{project_id} | Update Project
 
@@ -316,7 +317,48 @@ No authorization required
 
 
 # **jira_config_1**
-> Array&lt;String&gt; jira_config_1
+> String jira_config_1
+
+delete jira config and all associated jira project
+
+update all projects for a jira config
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+
+api_instance = SwaggerClient::DefaultApi.new
+
+begin
+  #delete jira config and all associated jira project
+  result = api_instance.jira_config_1
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling DefaultApi->jira_config_1: #{e}"
+end
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**String**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **jira_config_2**
+> Array&lt;String&gt; jira_config_2
 
 update all projects for a jira config
 
@@ -331,10 +373,10 @@ api_instance = SwaggerClient::DefaultApi.new
 
 begin
   #update all projects for a jira config
-  result = api_instance.jira_config_1
+  result = api_instance.jira_config_2
   p result
 rescue SwaggerClient::ApiError => e
-  puts "Exception when calling DefaultApi->jira_config_1: #{e}"
+  puts "Exception when calling DefaultApi->jira_config_2: #{e}"
 end
 ```
 

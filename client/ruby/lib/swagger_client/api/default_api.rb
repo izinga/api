@@ -185,7 +185,7 @@ module SwaggerClient
         @api_client.config.logger.debug "Calling API: DefaultApi.jira_1 ..."
       end
       # resource path
-      local_var_path = "/admin/v3/bug/config/jira/{congfig_id}/projects"
+      local_var_path = "/admin/v3/bug/config/jira/config/{congfig_id}/projects"
 
       # query parameters
       query_params = {}
@@ -375,12 +375,61 @@ module SwaggerClient
       return data, status_code, headers
     end
 
+    # delete jira config and all associated jira project
+    # update all projects for a jira config
+    # @param [Hash] opts the optional parameters
+    # @return [String]
+    def jira_config_1(opts = {})
+      data, _status_code, _headers = jira_config_1_with_http_info(opts)
+      return data
+    end
+
+    # delete jira config and all associated jira project
+    # update all projects for a jira config
+    # @param [Hash] opts the optional parameters
+    # @return [Array<(String, Fixnum, Hash)>] String data, response status code and response headers
+    def jira_config_1_with_http_info(opts = {})
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "Calling API: DefaultApi.jira_config_1 ..."
+      end
+      # resource path
+      local_var_path = "/admin/v3/bug/config/jira/{jira_config_id}"
+
+      # query parameters
+      query_params = {}
+
+      # header parameters
+      header_params = {}
+      # HTTP header 'Accept' (if needed)
+      header_params['Accept'] = @api_client.select_header_accept(['application/json'])
+      # HTTP header 'Content-Type'
+      header_params['Content-Type'] = @api_client.select_header_content_type(['application/json'])
+
+      # form parameters
+      form_params = {}
+
+      # http body (model)
+      post_body = nil
+      auth_names = []
+      data, status_code, headers = @api_client.call_api(:DELETE, local_var_path,
+        :header_params => header_params,
+        :query_params => query_params,
+        :form_params => form_params,
+        :body => post_body,
+        :auth_names => auth_names,
+        :return_type => 'String')
+      if @api_client.config.debugging
+        @api_client.config.logger.debug "API called: DefaultApi#jira_config_1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+      end
+      return data, status_code, headers
+    end
+
     # update all projects for a jira config
     # update all projects for a jira config
     # @param [Hash] opts the optional parameters
     # @return [Array<String>]
-    def jira_config_1(opts = {})
-      data, _status_code, _headers = jira_config_1_with_http_info(opts)
+    def jira_config_2(opts = {})
+      data, _status_code, _headers = jira_config_2_with_http_info(opts)
       return data
     end
 
@@ -388,9 +437,9 @@ module SwaggerClient
     # update all projects for a jira config
     # @param [Hash] opts the optional parameters
     # @return [Array<(Array<String>, Fixnum, Hash)>] Array<String> data, response status code and response headers
-    def jira_config_1_with_http_info(opts = {})
+    def jira_config_2_with_http_info(opts = {})
       if @api_client.config.debugging
-        @api_client.config.logger.debug "Calling API: DefaultApi.jira_config_1 ..."
+        @api_client.config.logger.debug "Calling API: DefaultApi.jira_config_2 ..."
       end
       # resource path
       local_var_path = "/admin/v3/bug/config/jira/{jira_config_id}"
@@ -419,7 +468,7 @@ module SwaggerClient
         :auth_names => auth_names,
         :return_type => 'Array<String>')
       if @api_client.config.debugging
-        @api_client.config.logger.debug "API called: DefaultApi#jira_config_1\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
+        @api_client.config.logger.debug "API called: DefaultApi#jira_config_2\nData: #{data.inspect}\nStatus code: #{status_code}\nHeaders: #{headers}"
       end
       return data, status_code, headers
     end

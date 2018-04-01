@@ -8,10 +8,11 @@ Method | HTTP request | Description
 [**Jira**](DefaultApi.md#jira) | **GET** /admin/v3/bug/config/jira | get all jira config
 [**JiraConfig**](DefaultApi.md#jiraconfig) | **POST** /admin/v3/bug/config/jira | create a jira config
 [**JiraConfig_0**](DefaultApi.md#jiraconfig_0) | **PUT** /admin/v3/bug/config/jira/{jira_config_id} | update a jira config
-[**JiraConfig_1**](DefaultApi.md#jiraconfig_1) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
+[**JiraConfig_1**](DefaultApi.md#jiraconfig_1) | **DELETE** /admin/v3/bug/config/jira/{jira_config_id} | delete jira config and all associated jira project
+[**JiraConfig_2**](DefaultApi.md#jiraconfig_2) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
 [**JiraIssue**](DefaultApi.md#jiraissue) | **POST** /v3/bug/jira/{jira_project_id}/create | create a jira issue
 [**Jira_0**](DefaultApi.md#jira_0) | **GET** /admin/v3/bug/config/jira/projects | get all jira project
-[**Jira_1**](DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/{congfig_id}/projects | get all jira project for given config
+[**Jira_1**](DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/config/{congfig_id}/projects | get all jira project for given config
 [**Jira_2**](DefaultApi.md#jira_2) | **GET** /admin/v3/bug/config/jira/projects/{jira_project_id} | get a jira project  details
 [**Project**](DefaultApi.md#project) | **PUT** /v3/project/{project_id} | Update Project
 
@@ -254,9 +255,9 @@ No authorization required
 
 <a name="jiraconfig_1"></a>
 # **JiraConfig_1**
-> List<string> JiraConfig_1 ()
+> string JiraConfig_1 ()
 
-update all projects for a jira config
+delete jira config and all associated jira project
 
 update all projects for a jira config
 
@@ -278,13 +279,70 @@ namespace Example
 
             try
             {
-                // update all projects for a jira config
-                List&lt;string&gt; result = apiInstance.JiraConfig_1();
+                // delete jira config and all associated jira project
+                string result = apiInstance.JiraConfig_1();
                 Debug.WriteLine(result);
             }
             catch (Exception e)
             {
                 Debug.Print("Exception when calling DefaultApi.JiraConfig_1: " + e.Message );
+            }
+        }
+    }
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**string**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a name="jiraconfig_2"></a>
+# **JiraConfig_2**
+> List<string> JiraConfig_2 ()
+
+update all projects for a jira config
+
+update all projects for a jira config
+
+### Example
+```csharp
+using System;
+using System.Diagnostics;
+using IO.Swagger.Api;
+using IO.Swagger.Client;
+using IO.Swagger.Model;
+
+namespace Example
+{
+    public class JiraConfig_2Example
+    {
+        public void main()
+        {
+            var apiInstance = new DefaultApi();
+
+            try
+            {
+                // update all projects for a jira config
+                List&lt;string&gt; result = apiInstance.JiraConfig_2();
+                Debug.WriteLine(result);
+            }
+            catch (Exception e)
+            {
+                Debug.Print("Exception when calling DefaultApi.JiraConfig_2: " + e.Message );
             }
         }
     }

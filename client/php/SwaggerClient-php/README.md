@@ -82,10 +82,11 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**jira**](docs/Api/DefaultApi.md#jira) | **GET** /admin/v3/bug/config/jira | get all jira config
 *DefaultApi* | [**jiraConfig**](docs/Api/DefaultApi.md#jiraconfig) | **POST** /admin/v3/bug/config/jira | create a jira config
 *DefaultApi* | [**jiraConfig_0**](docs/Api/DefaultApi.md#jiraconfig_0) | **PUT** /admin/v3/bug/config/jira/{jira_config_id} | update a jira config
-*DefaultApi* | [**jiraConfig_1**](docs/Api/DefaultApi.md#jiraconfig_1) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
+*DefaultApi* | [**jiraConfig_1**](docs/Api/DefaultApi.md#jiraconfig_1) | **DELETE** /admin/v3/bug/config/jira/{jira_config_id} | delete jira config and all associated jira project
+*DefaultApi* | [**jiraConfig_2**](docs/Api/DefaultApi.md#jiraconfig_2) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
 *DefaultApi* | [**jiraIssue**](docs/Api/DefaultApi.md#jiraissue) | **POST** /v3/bug/jira/{jira_project_id}/create | create a jira issue
 *DefaultApi* | [**jira_0**](docs/Api/DefaultApi.md#jira_0) | **GET** /admin/v3/bug/config/jira/projects | get all jira project
-*DefaultApi* | [**jira_1**](docs/Api/DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/{congfig_id}/projects | get all jira project for given config
+*DefaultApi* | [**jira_1**](docs/Api/DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/config/{congfig_id}/projects | get all jira project for given config
 *DefaultApi* | [**jira_2**](docs/Api/DefaultApi.md#jira_2) | **GET** /admin/v3/bug/config/jira/projects/{jira_project_id} | get a jira project  details
 *DefaultApi* | [**project**](docs/Api/DefaultApi.md#project) | **PUT** /v3/project/{project_id} | Update Project
 

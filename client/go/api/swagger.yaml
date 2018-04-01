@@ -77,6 +77,15 @@ paths:
           description: "jira config"
           schema:
             $ref: "#/definitions/JiraConfig"
+    delete:
+      summary: "delete jira config and all associated jira project"
+      description: "update all projects for a jira config"
+      operationId: "jiraConfig"
+      parameters: []
+      responses:
+        200:
+          schema:
+            type: "string"
     patch:
       summary: "update all projects for a jira config"
       description: "update all projects for a jira config"
@@ -102,7 +111,7 @@ paths:
             type: "array"
             items:
               $ref: "#/definitions/JiraProject"
-  /admin/v3/bug/config/jira/{congfig_id}/projects:
+  /admin/v3/bug/config/jira/config/{congfig_id}/projects:
     get:
       summary: "get all jira project for given config"
       description: "get all jira project for given config"

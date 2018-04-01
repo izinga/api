@@ -26,7 +26,7 @@ import java.io.IOException;
 /**
  * JiraIssuePayloadAttachements
  */
-@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-01T22:39:31.613+05:30")
+@javax.annotation.Generated(value = "io.swagger.codegen.languages.JavaClientCodegen", date = "2018-04-01T23:22:16.340+05:30")
 public class JiraIssuePayloadAttachements {
   @SerializedName("type")
   private String type = null;

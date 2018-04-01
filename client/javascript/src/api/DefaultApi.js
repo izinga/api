@@ -227,6 +227,47 @@
      * Callback function to receive the result of the jiraConfig_1 operation.
      * @callback module:api/DefaultApi~jiraConfig_1Callback
      * @param {String} error Error message, if any.
+     * @param {'String'} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * delete jira config and all associated jira project
+     * update all projects for a jira config
+     * @param {module:api/DefaultApi~jiraConfig_1Callback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link 'String'}
+     */
+    this.jiraConfig_1 = function(callback) {
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = 'String';
+
+      return this.apiClient.callApi(
+        '/admin/v3/bug/config/jira/{jira_config_id}', 'DELETE',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the jiraConfig_2 operation.
+     * @callback module:api/DefaultApi~jiraConfig_2Callback
+     * @param {String} error Error message, if any.
      * @param {Array.<'String'>} data The data returned by the service call.
      * @param {String} response The complete HTTP response.
      */
@@ -234,10 +275,10 @@
     /**
      * update all projects for a jira config
      * update all projects for a jira config
-     * @param {module:api/DefaultApi~jiraConfig_1Callback} callback The callback function, accepting three arguments: error, data, response
+     * @param {module:api/DefaultApi~jiraConfig_2Callback} callback The callback function, accepting three arguments: error, data, response
      * data is of type: {@link Array.<'String'>}
      */
-    this.jiraConfig_1 = function(callback) {
+    this.jiraConfig_2 = function(callback) {
       var postBody = null;
 
 
@@ -387,7 +428,7 @@
       var returnType = [JiraProject];
 
       return this.apiClient.callApi(
-        '/admin/v3/bug/config/jira/{congfig_id}/projects', 'GET',
+        '/admin/v3/bug/config/jira/config/{congfig_id}/projects', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );

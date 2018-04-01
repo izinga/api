@@ -8,10 +8,11 @@ Method | HTTP request | Description
 [**jira**](DefaultApi.md#jira) | **GET** /admin/v3/bug/config/jira | get all jira config
 [**jiraConfig**](DefaultApi.md#jiraConfig) | **POST** /admin/v3/bug/config/jira | create a jira config
 [**jiraConfig_0**](DefaultApi.md#jiraConfig_0) | **PUT** /admin/v3/bug/config/jira/{jira_config_id} | update a jira config
-[**jiraConfig_1**](DefaultApi.md#jiraConfig_1) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
+[**jiraConfig_1**](DefaultApi.md#jiraConfig_1) | **DELETE** /admin/v3/bug/config/jira/{jira_config_id} | delete jira config and all associated jira project
+[**jiraConfig_2**](DefaultApi.md#jiraConfig_2) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
 [**jiraIssue**](DefaultApi.md#jiraIssue) | **POST** /v3/bug/jira/{jira_project_id}/create | create a jira issue
 [**jira_0**](DefaultApi.md#jira_0) | **GET** /admin/v3/bug/config/jira/projects | get all jira project
-[**jira_1**](DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/{congfig_id}/projects | get all jira project for given config
+[**jira_1**](DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/config/{congfig_id}/projects | get all jira project for given config
 [**jira_2**](DefaultApi.md#jira_2) | **GET** /admin/v3/bug/config/jira/projects/{jira_project_id} | get a jira project  details
 [**project**](DefaultApi.md#project) | **PUT** /v3/project/{project_id} | Update Project
 
@@ -190,7 +191,48 @@ No authorization required
 
 <a name="jiraConfig_1"></a>
 # **jiraConfig_1**
-> List&lt;String&gt; jiraConfig_1()
+> String jiraConfig_1()
+
+delete jira config and all associated jira project
+
+update all projects for a jira config
+
+### Example
+```java
+// Import classes:
+//import io.swagger.client.ApiException;
+//import io.swagger.client.api.DefaultApi;
+
+
+DefaultApi apiInstance = new DefaultApi();
+try {
+    String result = apiInstance.jiraConfig_1();
+    System.out.println(result);
+} catch (ApiException e) {
+    System.err.println("Exception when calling DefaultApi#jiraConfig_1");
+    e.printStackTrace();
+}
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**String**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="jiraConfig_2"></a>
+# **jiraConfig_2**
+> List&lt;String&gt; jiraConfig_2()
 
 update all projects for a jira config
 
@@ -205,10 +247,10 @@ update all projects for a jira config
 
 DefaultApi apiInstance = new DefaultApi();
 try {
-    List<String> result = apiInstance.jiraConfig_1();
+    List<String> result = apiInstance.jiraConfig_2();
     System.out.println(result);
 } catch (ApiException e) {
-    System.err.println("Exception when calling DefaultApi#jiraConfig_1");
+    System.err.println("Exception when calling DefaultApi#jiraConfig_2");
     e.printStackTrace();
 }
 ```

@@ -8,10 +8,11 @@ Method | HTTP request | Description
 [**jira**](DefaultApi.md#jira) | **GET** /admin/v3/bug/config/jira | get all jira config
 [**jiraConfig**](DefaultApi.md#jiraConfig) | **POST** /admin/v3/bug/config/jira | create a jira config
 [**jiraConfig_0**](DefaultApi.md#jiraConfig_0) | **PUT** /admin/v3/bug/config/jira/{jira_config_id} | update a jira config
-[**jiraConfig_1**](DefaultApi.md#jiraConfig_1) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
+[**jiraConfig_1**](DefaultApi.md#jiraConfig_1) | **DELETE** /admin/v3/bug/config/jira/{jira_config_id} | delete jira config and all associated jira project
+[**jiraConfig_2**](DefaultApi.md#jiraConfig_2) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
 [**jiraIssue**](DefaultApi.md#jiraIssue) | **POST** /v3/bug/jira/{jira_project_id}/create | create a jira issue
 [**jira_0**](DefaultApi.md#jira_0) | **GET** /admin/v3/bug/config/jira/projects | get all jira project
-[**jira_1**](DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/{congfig_id}/projects | get all jira project for given config
+[**jira_1**](DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/config/{congfig_id}/projects | get all jira project for given config
 [**jira_2**](DefaultApi.md#jira_2) | **GET** /admin/v3/bug/config/jira/projects/{jira_project_id} | get a jira project  details
 [**project**](DefaultApi.md#project) | **PUT** /v3/project/{project_id} | Update Project
 
@@ -205,9 +206,9 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
 
 # **jiraConfig_1**
-> string[] jiraConfig_1()
+> string jiraConfig_1()
 
-update all projects for a jira config
+delete jira config and all associated jira project
 
 update all projects for a jira config
 
@@ -227,6 +228,51 @@ try {
     print_r($result);
 } catch (Exception $e) {
     echo 'Exception when calling DefaultApi->jiraConfig_1: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**string**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **jiraConfig_2**
+> string[] jiraConfig_2()
+
+update all projects for a jira config
+
+update all projects for a jira config
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $result = $apiInstance->jiraConfig_2();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->jiraConfig_2: ', $e->getMessage(), PHP_EOL;
 }
 ?>
 ```

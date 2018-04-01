@@ -8,10 +8,11 @@ Method | HTTP request | Description
 [**Jira**](DefaultApi.md#Jira) | **Get** /admin/v3/bug/config/jira | get all jira config
 [**JiraConfig**](DefaultApi.md#JiraConfig) | **Post** /admin/v3/bug/config/jira | create a jira config
 [**JiraConfig_0**](DefaultApi.md#JiraConfig_0) | **Put** /admin/v3/bug/config/jira/{jira_config_id} | update a jira config
-[**JiraConfig_1**](DefaultApi.md#JiraConfig_1) | **Patch** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
+[**JiraConfig_1**](DefaultApi.md#JiraConfig_1) | **Delete** /admin/v3/bug/config/jira/{jira_config_id} | delete jira config and all associated jira project
+[**JiraConfig_2**](DefaultApi.md#JiraConfig_2) | **Patch** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
 [**JiraIssue**](DefaultApi.md#JiraIssue) | **Post** /v3/bug/jira/{jira_project_id}/create | create a jira issue
 [**Jira_0**](DefaultApi.md#Jira_0) | **Get** /admin/v3/bug/config/jira/projects | get all jira project
-[**Jira_1**](DefaultApi.md#Jira_1) | **Get** /admin/v3/bug/config/jira/{congfig_id}/projects | get all jira project for given config
+[**Jira_1**](DefaultApi.md#Jira_1) | **Get** /admin/v3/bug/config/jira/config/{congfig_id}/projects | get all jira project for given config
 [**Jira_2**](DefaultApi.md#Jira_2) | **Get** /admin/v3/bug/config/jira/projects/{jira_project_id} | get a jira project  details
 [**Project**](DefaultApi.md#Project) | **Put** /v3/project/{project_id} | Update Project
 
@@ -121,7 +122,31 @@ No authorization required
 [[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
 
 # **JiraConfig_1**
-> []string JiraConfig_1(ctx, )
+> string JiraConfig_1(ctx, )
+delete jira config and all associated jira project
+
+update all projects for a jira config
+
+### Required Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**string**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **JiraConfig_2**
+> []string JiraConfig_2(ctx, )
 update all projects for a jira config
 
 update all projects for a jira config

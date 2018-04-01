@@ -8,10 +8,11 @@ Method | HTTP request | Description
 [**jira**](DefaultApi.md#jira) | **GET** /admin/v3/bug/config/jira | get all jira config
 [**jiraConfig**](DefaultApi.md#jiraConfig) | **POST** /admin/v3/bug/config/jira | create a jira config
 [**jiraConfig_0**](DefaultApi.md#jiraConfig_0) | **PUT** /admin/v3/bug/config/jira/{jira_config_id} | update a jira config
-[**jiraConfig_1**](DefaultApi.md#jiraConfig_1) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
+[**jiraConfig_1**](DefaultApi.md#jiraConfig_1) | **DELETE** /admin/v3/bug/config/jira/{jira_config_id} | delete jira config and all associated jira project
+[**jiraConfig_2**](DefaultApi.md#jiraConfig_2) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
 [**jiraIssue**](DefaultApi.md#jiraIssue) | **POST** /v3/bug/jira/{jira_project_id}/create | create a jira issue
 [**jira_0**](DefaultApi.md#jira_0) | **GET** /admin/v3/bug/config/jira/projects | get all jira project
-[**jira_1**](DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/{congfig_id}/projects | get all jira project for given config
+[**jira_1**](DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/config/{congfig_id}/projects | get all jira project for given config
 [**jira_2**](DefaultApi.md#jira_2) | **GET** /admin/v3/bug/config/jira/projects/{jira_project_id} | get a jira project  details
 [**project**](DefaultApi.md#project) | **PUT** /v3/project/{project_id} | Update Project
 
@@ -190,7 +191,47 @@ No authorization required
 
 <a name="jiraConfig_1"></a>
 # **jiraConfig_1**
-> [&#39;String&#39;] jiraConfig_1()
+> &#39;String&#39; jiraConfig_1()
+
+delete jira config and all associated jira project
+
+update all projects for a jira config
+
+### Example
+```javascript
+var RobusTestApi = require('robus_test_api');
+
+var apiInstance = new RobusTestApi.DefaultApi();
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.jiraConfig_1(callback);
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+**&#39;String&#39;**
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="jiraConfig_2"></a>
+# **jiraConfig_2**
+> [&#39;String&#39;] jiraConfig_2()
 
 update all projects for a jira config
 
@@ -209,7 +250,7 @@ var callback = function(error, data, response) {
     console.log('API called successfully. Returned data: ' + data);
   }
 };
-apiInstance.jiraConfig_1(callback);
+apiInstance.jiraConfig_2(callback);
 ```
 
 ### Parameters

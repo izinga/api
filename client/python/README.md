@@ -71,11 +71,12 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**bug**](docs/DefaultApi.md#bug) | **GET** /admin/v3/bug/trackerlist | get list for all supported bug trakers
 *DefaultApi* | [**jira**](docs/DefaultApi.md#jira) | **GET** /admin/v3/bug/config/jira | get all jira config
 *DefaultApi* | [**jira_0**](docs/DefaultApi.md#jira_0) | **GET** /admin/v3/bug/config/jira/projects | get all jira project
-*DefaultApi* | [**jira_1**](docs/DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/{congfig_id}/projects | get all jira project for given config
+*DefaultApi* | [**jira_1**](docs/DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/config/{congfig_id}/projects | get all jira project for given config
 *DefaultApi* | [**jira_2**](docs/DefaultApi.md#jira_2) | **GET** /admin/v3/bug/config/jira/projects/{jira_project_id} | get a jira project  details
 *DefaultApi* | [**jira_config**](docs/DefaultApi.md#jira_config) | **POST** /admin/v3/bug/config/jira | create a jira config
 *DefaultApi* | [**jira_config_0**](docs/DefaultApi.md#jira_config_0) | **PUT** /admin/v3/bug/config/jira/{jira_config_id} | update a jira config
-*DefaultApi* | [**jira_config_1**](docs/DefaultApi.md#jira_config_1) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
+*DefaultApi* | [**jira_config_1**](docs/DefaultApi.md#jira_config_1) | **DELETE** /admin/v3/bug/config/jira/{jira_config_id} | delete jira config and all associated jira project
+*DefaultApi* | [**jira_config_2**](docs/DefaultApi.md#jira_config_2) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
 *DefaultApi* | [**jira_issue**](docs/DefaultApi.md#jira_issue) | **POST** /v3/bug/jira/{jira_project_id}/create | create a jira issue
 *DefaultApi* | [**project**](docs/DefaultApi.md#project) | **PUT** /v3/project/{project_id} | Update Project
 

@@ -184,12 +184,47 @@ public class DefaultAPI: APIBase {
     }
 
     /**
+     delete jira config and all associated jira project
+     
+     - parameter completion: completion handler to receive the data and the error objects
+     */
+    public class func jiraConfig_1(completion: ((data: String?, error: ErrorType?) -> Void)) {
+        jiraConfig_1WithRequestBuilder().execute { (response, error) -> Void in
+            completion(data: response?.body, error: error);
+        }
+    }
+
+
+    /**
+     delete jira config and all associated jira project
+     - DELETE /admin/v3/bug/config/jira/{jiraConfigId}
+     - update all projects for a jira config
+     - examples: [{contentType=application/json, example=""}]
+
+     - returns: RequestBuilder<String> 
+     */
+    public class func jiraConfig_1WithRequestBuilder() -> RequestBuilder<String> {
+        let path = "/admin/v3/bug/config/jira/{jiraConfigId}"
+        let URLString = SwaggerClientAPI.basePath + path
+
+        let nillableParameters: [String:AnyObject?] = [:]
+ 
+        let parameters = APIHelper.rejectNil(nillableParameters)
+ 
+        let convertedParameters = APIHelper.convertBoolToString(parameters)
+ 
+        let requestBuilder: RequestBuilder<String>.Type = SwaggerClientAPI.requestBuilderFactory.getBuilder()
+
+        return requestBuilder.init(method: "DELETE", URLString: URLString, parameters: convertedParameters, isBody: true)
+    }
+
+    /**
      update all projects for a jira config
      
      - parameter completion: completion handler to receive the data and the error objects
      */
-    public class func jiraConfig_1(completion: ((data: [String]?, error: ErrorType?) -> Void)) {
-        jiraConfig_1WithRequestBuilder().execute { (response, error) -> Void in
+    public class func jiraConfig_2(completion: ((data: [String]?, error: ErrorType?) -> Void)) {
+        jiraConfig_2WithRequestBuilder().execute { (response, error) -> Void in
             completion(data: response?.body, error: error);
         }
     }
@@ -203,7 +238,7 @@ public class DefaultAPI: APIBase {
 
      - returns: RequestBuilder<[String]> 
      */
-    public class func jiraConfig_1WithRequestBuilder() -> RequestBuilder<[String]> {
+    public class func jiraConfig_2WithRequestBuilder() -> RequestBuilder<[String]> {
         let path = "/admin/v3/bug/config/jira/{jiraConfigId}"
         let URLString = SwaggerClientAPI.basePath + path
 
@@ -366,7 +401,7 @@ public class DefaultAPI: APIBase {
 
     /**
      get all jira project for given config
-     - GET /admin/v3/bug/config/jira/{congfigId}/projects
+     - GET /admin/v3/bug/config/jira/config/{congfigId}/projects
      - get all jira project for given config
      - examples: [{contentType=application/json, example=[ {
   "component" : [ {
@@ -433,7 +468,7 @@ public class DefaultAPI: APIBase {
      - returns: RequestBuilder<[JiraProject]> 
      */
     public class func jira_1WithRequestBuilder() -> RequestBuilder<[JiraProject]> {
-        let path = "/admin/v3/bug/config/jira/{congfigId}/projects"
+        let path = "/admin/v3/bug/config/jira/config/{congfigId}/projects"
         let URLString = SwaggerClientAPI.basePath + path
 
         let nillableParameters: [String:AnyObject?] = [:]

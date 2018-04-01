@@ -575,7 +575,7 @@ public class DefaultApi {
         }
 
         String[] localVarAuthNames = new String[] {  };
-        return apiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+        return apiClient.buildCall(localVarPath, "DELETE", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
     }
 
     @SuppressWarnings("rawtypes")
@@ -588,36 +588,36 @@ public class DefaultApi {
     }
 
     /**
+     * delete jira config and all associated jira project
      * update all projects for a jira config
-     * update all projects for a jira config
-     * @return List&lt;String&gt;
+     * @return String
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public List<String> jiraConfig_1() throws ApiException {
-        ApiResponse<List<String>> resp = jiraConfig_1WithHttpInfo();
+    public String jiraConfig_1() throws ApiException {
+        ApiResponse<String> resp = jiraConfig_1WithHttpInfo();
         return resp.getData();
     }
 
     /**
+     * delete jira config and all associated jira project
      * update all projects for a jira config
-     * update all projects for a jira config
-     * @return ApiResponse&lt;List&lt;String&gt;&gt;
+     * @return ApiResponse&lt;String&gt;
      * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
      */
-    public ApiResponse<List<String>> jiraConfig_1WithHttpInfo() throws ApiException {
+    public ApiResponse<String> jiraConfig_1WithHttpInfo() throws ApiException {
         com.squareup.okhttp.Call call = jiraConfig_1ValidateBeforeCall(null, null);
-        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
         return apiClient.execute(call, localVarReturnType);
     }
 
     /**
-     * update all projects for a jira config (asynchronously)
+     * delete jira config and all associated jira project (asynchronously)
      * update all projects for a jira config
      * @param callback The callback to be executed when the API call finishes
      * @return The request call
      * @throws ApiException If fail to process the API call, e.g. serializing the request body object
      */
-    public com.squareup.okhttp.Call jiraConfig_1Async(final ApiCallback<List<String>> callback) throws ApiException {
+    public com.squareup.okhttp.Call jiraConfig_1Async(final ApiCallback<String> callback) throws ApiException {
 
         ProgressResponseBody.ProgressListener progressListener = null;
         ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
@@ -639,6 +639,119 @@ public class DefaultApi {
         }
 
         com.squareup.okhttp.Call call = jiraConfig_1ValidateBeforeCall(progressListener, progressRequestListener);
+        Type localVarReturnType = new TypeToken<String>(){}.getType();
+        apiClient.executeAsync(call, localVarReturnType, callback);
+        return call;
+    }
+    /**
+     * Build call for jiraConfig_2
+     * @param progressListener Progress listener
+     * @param progressRequestListener Progress request listener
+     * @return Call to execute
+     * @throws ApiException If fail to serialize the request body object
+     */
+    public com.squareup.okhttp.Call jiraConfig_2Call(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        Object localVarPostBody = null;
+
+        // create path and map variables
+        String localVarPath = "/admin/v3/bug/config/jira/{jira_config_id}";
+
+        List<Pair> localVarQueryParams = new ArrayList<Pair>();
+        List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
+
+        Map<String, String> localVarHeaderParams = new HashMap<String, String>();
+
+        Map<String, Object> localVarFormParams = new HashMap<String, Object>();
+
+        final String[] localVarAccepts = {
+            "application/json"
+        };
+        final String localVarAccept = apiClient.selectHeaderAccept(localVarAccepts);
+        if (localVarAccept != null) localVarHeaderParams.put("Accept", localVarAccept);
+
+        final String[] localVarContentTypes = {
+            "application/json"
+        };
+        final String localVarContentType = apiClient.selectHeaderContentType(localVarContentTypes);
+        localVarHeaderParams.put("Content-Type", localVarContentType);
+
+        if(progressListener != null) {
+            apiClient.getHttpClient().networkInterceptors().add(new com.squareup.okhttp.Interceptor() {
+                @Override
+                public com.squareup.okhttp.Response intercept(com.squareup.okhttp.Interceptor.Chain chain) throws IOException {
+                    com.squareup.okhttp.Response originalResponse = chain.proceed(chain.request());
+                    return originalResponse.newBuilder()
+                    .body(new ProgressResponseBody(originalResponse.body(), progressListener))
+                    .build();
+                }
+            });
+        }
+
+        String[] localVarAuthNames = new String[] {  };
+        return apiClient.buildCall(localVarPath, "PATCH", localVarQueryParams, localVarCollectionQueryParams, localVarPostBody, localVarHeaderParams, localVarFormParams, localVarAuthNames, progressRequestListener);
+    }
+
+    @SuppressWarnings("rawtypes")
+    private com.squareup.okhttp.Call jiraConfig_2ValidateBeforeCall(final ProgressResponseBody.ProgressListener progressListener, final ProgressRequestBody.ProgressRequestListener progressRequestListener) throws ApiException {
+        
+
+        com.squareup.okhttp.Call call = jiraConfig_2Call(progressListener, progressRequestListener);
+        return call;
+
+    }
+
+    /**
+     * update all projects for a jira config
+     * update all projects for a jira config
+     * @return List&lt;String&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public List<String> jiraConfig_2() throws ApiException {
+        ApiResponse<List<String>> resp = jiraConfig_2WithHttpInfo();
+        return resp.getData();
+    }
+
+    /**
+     * update all projects for a jira config
+     * update all projects for a jira config
+     * @return ApiResponse&lt;List&lt;String&gt;&gt;
+     * @throws ApiException If fail to call the API, e.g. server error or cannot deserialize the response body
+     */
+    public ApiResponse<List<String>> jiraConfig_2WithHttpInfo() throws ApiException {
+        com.squareup.okhttp.Call call = jiraConfig_2ValidateBeforeCall(null, null);
+        Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
+        return apiClient.execute(call, localVarReturnType);
+    }
+
+    /**
+     * update all projects for a jira config (asynchronously)
+     * update all projects for a jira config
+     * @param callback The callback to be executed when the API call finishes
+     * @return The request call
+     * @throws ApiException If fail to process the API call, e.g. serializing the request body object
+     */
+    public com.squareup.okhttp.Call jiraConfig_2Async(final ApiCallback<List<String>> callback) throws ApiException {
+
+        ProgressResponseBody.ProgressListener progressListener = null;
+        ProgressRequestBody.ProgressRequestListener progressRequestListener = null;
+
+        if (callback != null) {
+            progressListener = new ProgressResponseBody.ProgressListener() {
+                @Override
+                public void update(long bytesRead, long contentLength, boolean done) {
+                    callback.onDownloadProgress(bytesRead, contentLength, done);
+                }
+            };
+
+            progressRequestListener = new ProgressRequestBody.ProgressRequestListener() {
+                @Override
+                public void onRequestProgress(long bytesWritten, long contentLength, boolean done) {
+                    callback.onUploadProgress(bytesWritten, contentLength, done);
+                }
+            };
+        }
+
+        com.squareup.okhttp.Call call = jiraConfig_2ValidateBeforeCall(progressListener, progressRequestListener);
         Type localVarReturnType = new TypeToken<List<String>>(){}.getType();
         apiClient.executeAsync(call, localVarReturnType, callback);
         return call;
@@ -889,7 +1002,7 @@ public class DefaultApi {
         Object localVarPostBody = null;
 
         // create path and map variables
-        String localVarPath = "/admin/v3/bug/config/jira/{congfig_id}/projects";
+        String localVarPath = "/admin/v3/bug/config/jira/config/{congfig_id}/projects";
 
         List<Pair> localVarQueryParams = new ArrayList<Pair>();
         List<Pair> localVarCollectionQueryParams = new ArrayList<Pair>();
