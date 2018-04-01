@@ -25,20 +25,24 @@ produces:
 paths:
   /admin/v3/bug/config/jira:
     post:
+      consumes:
+        - application/json
+      produces:
+        - application/json
       description: create a jira config
       summary: create a jira config
       operationId: jira config for bug id
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
+      parameters:
+        - name: body
+          in: body
+          required: true
+          schema:
               $ref: '#/definitions/JiraConfigPayload'
       responses:
         200:
           description: successful operation
           items:
-            $ref: '#/definitions/JiraConfigResponse'
+            type: string
 
 definitions:
   JiraConfigPayload:
@@ -58,9 +62,7 @@ definitions:
       password: 
         type: "string"
 
-  JiraConfigResponse:
-    items:
-      type: string
+
 
 
 
