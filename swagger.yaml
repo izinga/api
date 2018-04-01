@@ -1,4 +1,4 @@
-swagger: "2.0"
+swagger: 2.0
 info:
   version: 1.0.0
   title: RobusTest Api
@@ -140,145 +140,145 @@ definitions:
     type: object
     properties: 
       _id: 
-        type: "string"
+        type: string
       source: 
-        type: "string"
+        type: string
       type: 
-        type: "string"
+        type: string
       url: 
-        type: "string"
+        type: string
       name: 
-        type: "string"
+        type: string
       user: 
-        type: "string"
+        type: string
       password: 
-        type: "string"
+        type: string
       createdBy: 
-        type: "string"
+        type: string
       updated: 
-        type: "string"
+        type: string
       created: 
-        type: "string"
+        type: string
 
   JiraConfigPayload:
     type : object
     required: 
-      - "url"
-      - "name"
-      - "user"
-      - "password"
+      - url
+      - name
+      - user
+      - password
     properties: 
       url: 
-        type: "string"
+        type: string
       name: 
-        type: "string"
+        type: string
       user: 
-        type: "string"
+        type: string
       password: 
-        type: "string"
+        type: string
   JiraProject:
     type: object
     properties: 
       _id: 
-        type: "string"
+        type: string
       source: 
-        type: "string"
+        type: string
       key: 
-        type: "string"
+        type: string
       id: 
-        type: "string"
+        type: string
       name: 
-        type: "string"
+        type: string
       desc: 
-        type: "string"
+        type: string
       users: 
-        type: "array"
+        type: array
         items: 
-          type: "object"
+          type: object
           properties: 
             key: 
-              type: "string"
+              type: string
             name: 
-              type: "string"
+              type: string
             email: 
-              type: "string"
+              type: string
             avatarUrl: 
-              type: "string"
+              type: string
             displayName: 
-              type: "string"
+              type: string
       type: 
-        type: "string"
+        type: string
       component: 
-        type: "array"
+        type: array
         items: 
-          type: "object"
+          type: object
           properties: 
             id: 
-              type: "string"
+              type: string
             name: 
-              type: "string"
+              type: string
       updated: 
-        type: "string"
+        type: string
       created: 
-        type: "string"
+        type: string
   jiraIssueResponse:
     type: object
     properties: 
       id: 
-        type: "string"
+        type: string
       self: 
-        type: "string"
+        type: string
       key: 
-        type: "string"
+        type: string
   jiraIssuePayload:
     type: object
     required: 
-      - "projectKey"
-      - "assingeeName"
-      - "assingeeKey"
-      - "reporterName"
-      - "reporterKey"
-      - "description"
-      - "summary"
-      - "type"
-      - "attachements"
+      - projectKey
+      - assingeeName
+      - assingeeKey
+      - reporterName
+      - reporterKey
+      - description
+      - summary
+      - type
+      - attachements
     properties: 
       projectKey: 
-        type: "string"
+        type: string
       assingeeName: 
-        type: "string"
+        type: string
       assingeeKey: 
-        type: "string"
+        type: string
       reporterName: 
-        type: "string"
+        type: string
       reporterKey: 
-        type: "string"
+        type: string
       description: 
-        type: "string"
+        type: string
       summary: 
-        type: "string"
+        type: string
       type: 
-        type: "string"
+        type: string
       attachements: 
-        type: "array"
+        type: array
         items: 
-          type: "object"
+          type: object
           properties: 
             type: 
-              type: "string"
+              type: string
               description: valid type ['text', 'png', 'jpeg']
             name: 
-              type: "string"
+              type: string
             data: 
-              type: "string"
+              type: string
 
   projectUpdatePayload:
     type: object
     required: 
-      - admin
-      - users
       - active
       - bugProject
+      - users
+      - admin
     properties:
       active: 
         type: boolean
@@ -287,54 +287,54 @@ definitions:
       users:
         type: array
         items: 
-          type: "string"
+          type: string
       admin:
         type: array
         items: 
-          type: "string"
+          type: string
   project:
     type: object
     properties: 
       _id: 
-        type: "string"
+        type: string
       name: 
-        type: "string"
+        type: string
       org: 
-        type: "string"
+        type: string
       os: 
-        type: "string"
+        type: string
       icon64: 
-        type: "string"
+        type: string
       type: 
-        type: "string"
+        type: string
       url: 
-        type: "string"
+        type: string
       bugProject: 
-        type: "string"
+        type: string
       admin: 
-        type: "array"
+        type: array
         items: 
-          type: "string"
+          type: string
       users: 
-        type: "array"
+        type: array
         items: 
-          type: "string"
+          type: string
       test_c: 
-        type: "number"
+        type: number
       active: 
-        type: "boolean"
+        type: boolean
       is_universal: 
-        type: "boolean"
+        type: boolean
       last: 
-        type: "string"
+        type: string
       created: 
-        type: "string"
+        type: string
       updated: 
-        type: "string"
+        type: string
       update_by: 
-        type: "string"
+        type: string
       created_by: 
-        type: "string"
+        type: string
 
 
 
