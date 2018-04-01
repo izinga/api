@@ -40,18 +40,10 @@ paths:
         200:
           description: successful operation
           items:
-            $ref: '#/definitions/JiraConfig'
-      parameters:
-        - name: projectID
-          in: path
-          description: project id
-          required: true
-          schema:
-            type: string
-            style: simple
+            $ref: '#/definitions/JiraConfigResponse'
 
 definitions:
-  JiraConfig:
+  JiraConfigPayload:
     type : object
     required: 
       - "url"
