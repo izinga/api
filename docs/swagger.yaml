@@ -25,13 +25,12 @@ produces:
 paths:
   /admin/v3/bug/config/jira:
     post:
-      summary: create and jira config
+      summary: create a jira config
       consumes:
         - application/json
       produces:
         - application/json
       description: create a jira config
-      summary: create a jira config
       operationId: jira config for bug id
       parameters:
         - name: body
