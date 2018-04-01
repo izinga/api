@@ -1,4 +1,4 @@
-openapi: "3.0.0"
+swagger: "2.0"
 info:
   version: 1.0.0
   title: RobusTest Api
@@ -7,11 +7,13 @@ info:
   license:
     name: Apache 2.0
     url: https://www.apache.org/licenses/LICENSE-2.0.html
-servers:
-  - url: http://robustest.com/
+host: robustest.com
+schemes:
+  - http
+consumes:
+  - application/json
 produces:
   - application/json
-# basePath: /v2
 paths:
   /admin/v3/bug/config/jira:
     post:
