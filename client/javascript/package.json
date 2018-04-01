@@ -1,8 +1,8 @@
 {
-  "name": "swagger-js-client",
+  "name": "robus_test_api",
   "version": "1.0.0",
-  "description": "Client library of swagger-js-client",
-  "license": "Unlicense",
+  "description": "RobusTest_Apis",
+  "license": "Apache 2.0",
   "main": "src/index.js",
   "scripts": {
     "test": "./node_modules/mocha/bin/mocha --recursive"

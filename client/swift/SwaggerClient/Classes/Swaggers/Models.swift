@@ -151,20 +151,191 @@ class Decoders {
                 fatalError("formatter failed to parse \(source)")
             }) 
 
-            // Decoder for [Testsuite]
-            Decoders.addDecoder(clazz: [Testsuite].self) { (source: AnyObject) -> [Testsuite] in
-                return Decoders.decode(clazz: [Testsuite].self, source: source)
+            // Decoder for [JiraConfig]
+            Decoders.addDecoder(clazz: [JiraConfig].self) { (source: AnyObject) -> [JiraConfig] in
+                return Decoders.decode(clazz: [JiraConfig].self, source: source)
             }
-            // Decoder for Testsuite
-            Decoders.addDecoder(clazz: Testsuite.self) { (source: AnyObject) -> Testsuite in
+            // Decoder for JiraConfig
+            Decoders.addDecoder(clazz: JiraConfig.self) { (source: AnyObject) -> JiraConfig in
                 let sourceDictionary = source as! [NSObject:AnyObject]
-                let instance = Testsuite()
+                let instance = JiraConfig()
                 instance.id = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["_id"])
+                instance.source = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["source"])
+                instance.type = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["type"])
+                instance.url = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["url"])
+                instance.name = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["name"])
+                instance.user = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["user"])
+                instance.password = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["password"])
+                instance.createdBy = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["createdBy"])
+                instance.updated = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["updated"])
+                instance.created = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["created"])
+                return instance
+            }
+
+
+            // Decoder for [JiraConfigPayload]
+            Decoders.addDecoder(clazz: [JiraConfigPayload].self) { (source: AnyObject) -> [JiraConfigPayload] in
+                return Decoders.decode(clazz: [JiraConfigPayload].self, source: source)
+            }
+            // Decoder for JiraConfigPayload
+            Decoders.addDecoder(clazz: JiraConfigPayload.self) { (source: AnyObject) -> JiraConfigPayload in
+                let sourceDictionary = source as! [NSObject:AnyObject]
+                let instance = JiraConfigPayload()
+                instance.url = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["url"])
+                instance.name = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["name"])
+                instance.user = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["user"])
+                instance.password = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["password"])
+                return instance
+            }
+
+
+            // Decoder for [JiraIssuePayload]
+            Decoders.addDecoder(clazz: [JiraIssuePayload].self) { (source: AnyObject) -> [JiraIssuePayload] in
+                return Decoders.decode(clazz: [JiraIssuePayload].self, source: source)
+            }
+            // Decoder for JiraIssuePayload
+            Decoders.addDecoder(clazz: JiraIssuePayload.self) { (source: AnyObject) -> JiraIssuePayload in
+                let sourceDictionary = source as! [NSObject:AnyObject]
+                let instance = JiraIssuePayload()
+                instance.projectKey = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["projectKey"])
+                instance.assingeeName = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["assingeeName"])
+                instance.assingeeKey = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["assingeeKey"])
+                instance.reporterName = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["reporterName"])
+                instance.reporterKey = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["reporterKey"])
+                instance.description = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["description"])
+                instance.summary = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["summary"])
+                instance.type = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["type"])
+                instance.attachements = Decoders.decodeOptional(clazz: Array.self, source: sourceDictionary["attachements"])
+                return instance
+            }
+
+
+            // Decoder for [JiraIssuePayloadAttachements]
+            Decoders.addDecoder(clazz: [JiraIssuePayloadAttachements].self) { (source: AnyObject) -> [JiraIssuePayloadAttachements] in
+                return Decoders.decode(clazz: [JiraIssuePayloadAttachements].self, source: source)
+            }
+            // Decoder for JiraIssuePayloadAttachements
+            Decoders.addDecoder(clazz: JiraIssuePayloadAttachements.self) { (source: AnyObject) -> JiraIssuePayloadAttachements in
+                let sourceDictionary = source as! [NSObject:AnyObject]
+                let instance = JiraIssuePayloadAttachements()
+                instance.type = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["type"])
+                instance.name = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["name"])
+                instance.data = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["data"])
+                return instance
+            }
+
+
+            // Decoder for [JiraIssueResponse]
+            Decoders.addDecoder(clazz: [JiraIssueResponse].self) { (source: AnyObject) -> [JiraIssueResponse] in
+                return Decoders.decode(clazz: [JiraIssueResponse].self, source: source)
+            }
+            // Decoder for JiraIssueResponse
+            Decoders.addDecoder(clazz: JiraIssueResponse.self) { (source: AnyObject) -> JiraIssueResponse in
+                let sourceDictionary = source as! [NSObject:AnyObject]
+                let instance = JiraIssueResponse()
+                instance.id = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["id"])
+                instance._self = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["self"])
+                instance.key = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["key"])
+                return instance
+            }
+
+
+            // Decoder for [JiraProject]
+            Decoders.addDecoder(clazz: [JiraProject].self) { (source: AnyObject) -> [JiraProject] in
+                return Decoders.decode(clazz: [JiraProject].self, source: source)
+            }
+            // Decoder for JiraProject
+            Decoders.addDecoder(clazz: JiraProject.self) { (source: AnyObject) -> JiraProject in
+                let sourceDictionary = source as! [NSObject:AnyObject]
+                let instance = JiraProject()
+                instance.id = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["_id"])
+                instance.source = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["source"])
+                instance.key = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["key"])
+                instance.id = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["id"])
                 instance.name = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["name"])
                 instance.desc = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["desc"])
-                instance.project = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["project"])
-                instance.createdBy = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["createdBy"])
-                instance.updatedBy = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["updatedBy"])
+                instance.users = Decoders.decodeOptional(clazz: Array.self, source: sourceDictionary["users"])
+                instance.type = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["type"])
+                instance.component = Decoders.decodeOptional(clazz: Array.self, source: sourceDictionary["component"])
+                instance.updated = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["updated"])
+                instance.created = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["created"])
+                return instance
+            }
+
+
+            // Decoder for [JiraProjectComponent]
+            Decoders.addDecoder(clazz: [JiraProjectComponent].self) { (source: AnyObject) -> [JiraProjectComponent] in
+                return Decoders.decode(clazz: [JiraProjectComponent].self, source: source)
+            }
+            // Decoder for JiraProjectComponent
+            Decoders.addDecoder(clazz: JiraProjectComponent.self) { (source: AnyObject) -> JiraProjectComponent in
+                let sourceDictionary = source as! [NSObject:AnyObject]
+                let instance = JiraProjectComponent()
+                instance.id = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["id"])
+                instance.name = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["name"])
+                return instance
+            }
+
+
+            // Decoder for [JiraProjectUsers]
+            Decoders.addDecoder(clazz: [JiraProjectUsers].self) { (source: AnyObject) -> [JiraProjectUsers] in
+                return Decoders.decode(clazz: [JiraProjectUsers].self, source: source)
+            }
+            // Decoder for JiraProjectUsers
+            Decoders.addDecoder(clazz: JiraProjectUsers.self) { (source: AnyObject) -> JiraProjectUsers in
+                let sourceDictionary = source as! [NSObject:AnyObject]
+                let instance = JiraProjectUsers()
+                instance.key = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["key"])
+                instance.name = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["name"])
+                instance.email = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["email"])
+                instance.avatarUrl = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["avatarUrl"])
+                instance.displayName = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["displayName"])
+                return instance
+            }
+
+
+            // Decoder for [Project]
+            Decoders.addDecoder(clazz: [Project].self) { (source: AnyObject) -> [Project] in
+                return Decoders.decode(clazz: [Project].self, source: source)
+            }
+            // Decoder for Project
+            Decoders.addDecoder(clazz: Project.self) { (source: AnyObject) -> Project in
+                let sourceDictionary = source as! [NSObject:AnyObject]
+                let instance = Project()
+                instance.id = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["_id"])
+                instance.name = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["name"])
+                instance.org = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["org"])
+                instance.os = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["os"])
+                instance.icon64 = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["icon64"])
+                instance.type = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["type"])
+                instance.url = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["url"])
+                instance.bugProject = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["bugProject"])
+                instance.admin = Decoders.decodeOptional(clazz: Array.self, source: sourceDictionary["admin"])
+                instance.users = Decoders.decodeOptional(clazz: Array.self, source: sourceDictionary["users"])
+                instance.testC = Decoders.decodeOptional(clazz: Double.self, source: sourceDictionary["test_c"])
+                instance.active = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["active"])
+                instance.isUniversal = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["is_universal"])
+                instance.last = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["last"])
+                instance.created = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["created"])
+                instance.updated = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["updated"])
+                instance.updateBy = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["update_by"])
+                instance.createdBy = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["created_by"])
+                return instance
+            }
+
+
+            // Decoder for [ProjectUpdatePayload]
+            Decoders.addDecoder(clazz: [ProjectUpdatePayload].self) { (source: AnyObject) -> [ProjectUpdatePayload] in
+                return Decoders.decode(clazz: [ProjectUpdatePayload].self, source: source)
+            }
+            // Decoder for ProjectUpdatePayload
+            Decoders.addDecoder(clazz: ProjectUpdatePayload.self) { (source: AnyObject) -> ProjectUpdatePayload in
+                let sourceDictionary = source as! [NSObject:AnyObject]
+                let instance = ProjectUpdatePayload()
+                instance.active = Decoders.decodeOptional(clazz: Bool.self, source: sourceDictionary["active"])
+                instance.bugProject = Decoders.decodeOptional(clazz: String.self, source: sourceDictionary["bugProject"])
+                instance.users = Decoders.decodeOptional(clazz: Array.self, source: sourceDictionary["users"])
+                instance.admin = Decoders.decodeOptional(clazz: Array.self, source: sourceDictionary["admin"])
                 return instance
             }
         }
