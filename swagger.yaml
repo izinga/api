@@ -48,6 +48,23 @@ paths:
                 type: array
                 items: 
                   type: string
+  /admin/v3/bug/config/jira/configs:
+    get:
+      summary : get all jira config 
+      produces:
+        -application/json
+      description: get all jira config
+      operationId: jira config
+      responses:
+        '200':    # status code
+          description: get list of jira config
+          content:
+            application/json:
+              schema: 
+                type: array
+                items: 
+                  $ref: '#/definitions/JiraConfig'
+
 
 definitions:
   JiraConfigPayload:
@@ -66,6 +83,75 @@ definitions:
         type: "string"
       password: 
         type: "string"
+  JiraConfig:
+    type : object
+    properties: 
+      _id: 
+        type: "string"
+      source: 
+        type: "string"
+      type: 
+        type: "string"
+      url: 
+        type: "string"
+      name: 
+        type: "string"
+      user: 
+        type: "string"
+      password: 
+        type: "string"
+      createdBy: 
+        type: "string"
+      updated: 
+        type: "string"
+      created: 
+        type: "string"
+  JiraProject:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      source: 
+        type: "string"
+      key: 
+        type: "string"
+      id: 
+        type: "string"
+      name: 
+        type: "string"
+      desc: 
+        type: "string"
+      users: 
+        type: "array"
+        items: 
+          type: "object"
+          properties: 
+            key: 
+              type: "string"
+            name: 
+              type: "string"
+            email: 
+              type: "string"
+            avatarUrl: 
+              type: "string"
+            displayName: 
+              type: "string"
+      type: 
+        type: "string"
+      component: 
+        type: "array"
+        items: 
+          type: "object"
+          properties: 
+            id: 
+              type: "string"
+            name: 
+              type: "string"
+      updated: 
+        type: "string"
+      created: 
+        type: "string"
+
 
 
 
