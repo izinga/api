@@ -40,7 +40,7 @@ paths:
               $ref: '#/definitions/JiraConfig'
 
   /admin/v3/bug/config/jira/{id}:
-    puy:
+    put:
       summary: update a jira config
       description: update a jira config
       operationId: jira config
