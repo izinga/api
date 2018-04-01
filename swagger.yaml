@@ -1,8 +1,14 @@
-swagger: '3.0'
-# host: mobile.robustest.com:8085
-# schemes:
-#   - http
-#   - https
+openapi: "3.0.0"
+info:
+  version: 1.0.0
+  title: RobusTest Api
+  description: RobusTest Apis
+  termsOfService: http://robustest.com/terms/
+  license:
+    name: Apache 2.0
+    url: https://www.apache.org/licenses/LICENSE-2.0.html
+servers:
+  - url: http://robustest.com/
 produces:
   - application/json
 # basePath: /v2
@@ -15,6 +21,7 @@ paths:
       parameters:
         - description: jira config payload
         - name: body
+          in: body
           required: true
           schema:
               $ref: '#/definitions/JiraConfigPayload'
