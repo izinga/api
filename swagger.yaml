@@ -15,6 +15,18 @@ consumes:
 produces:
   - application/json
 paths:
+  /admin/v3/bug/trackerlist:
+    get:
+      summary: get list for all supported bug trakers
+      description: get list for all supported bug trakers
+      operationId: bug
+      responses:
+        '200':    # status code
+          description: A JSON array of supported bug tracker name
+          schema: 
+            type: array
+            items: 
+              type: string
   /admin/v3/bug/config/jira:
     post:
       summary: create a jira config
