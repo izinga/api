@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**jira_config_1**](DefaultApi.md#jira_config_1) | **DELETE** /admin/v3/bug/config/jira/{jira_config_id} | delete jira config and all associated jira project
 [**jira_config_2**](DefaultApi.md#jira_config_2) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
 [**jira_issue**](DefaultApi.md#jira_issue) | **POST** /v3/bug/jira/{jira_project_id}/create | create a jira issue
+[**neuron**](DefaultApi.md#neuron) | **GET** /node_ip:8080/v2/status | get devices status, in progress, allready added
 [**project**](DefaultApi.md#project) | **PUT** /v3/project/{project_id} | Update Project
 
 
@@ -457,6 +458,50 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**JiraIssueResponse**](JiraIssueResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **neuron**
+> DeviceStatus neuron()
+
+get devices status, in progress, allready added
+
+get devices status, in progress, allready added
+
+### Example
+```python
+from __future__ import print_function
+import time
+import swagger_client
+from swagger_client.rest import ApiException
+from pprint import pprint
+
+# create an instance of the API class
+api_instance = swagger_client.DefaultApi()
+
+try:
+    # get devices status, in progress, allready added
+    api_response = api_instance.neuron()
+    pprint(api_response)
+except ApiException as e:
+    print("Exception when calling DefaultApi->neuron: %s\n" % e)
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**DeviceStatus**](DeviceStatus.md)
 
 ### Authorization
 

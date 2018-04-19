@@ -124,11 +124,13 @@ Class | Method | HTTP request | Description
 *RobusTestApi.DefaultApi* | [**jira_0**](docs/DefaultApi.md#jira_0) | **GET** /admin/v3/bug/config/jira/projects | get all jira project
 *RobusTestApi.DefaultApi* | [**jira_1**](docs/DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/config/{congfig_id}/projects | get all jira project for given config
 *RobusTestApi.DefaultApi* | [**jira_2**](docs/DefaultApi.md#jira_2) | **GET** /admin/v3/bug/config/jira/projects/{jira_project_id} | get a jira project  details
+*RobusTestApi.DefaultApi* | [**neuron**](docs/DefaultApi.md#neuron) | **GET** /node_ip:8080/v2/status | get devices status, in progress, allready added
 *RobusTestApi.DefaultApi* | [**project**](docs/DefaultApi.md#project) | **PUT** /v3/project/{project_id} | Update Project
 
 
 ## Documentation for Models
 
+ - [RobusTestApi.DeviceStatus](docs/DeviceStatus.md)
  - [RobusTestApi.JiraConfig](docs/JiraConfig.md)
  - [RobusTestApi.JiraConfigPayload](docs/JiraConfigPayload.md)
  - [RobusTestApi.JiraIssuePayload](docs/JiraIssuePayload.md)

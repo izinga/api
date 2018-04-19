@@ -16,12 +16,12 @@
 (function(factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/JiraConfig', 'model/JiraConfigPayload', 'model/JiraIssuePayload', 'model/JiraIssuePayloadAttachements', 'model/JiraIssueResponse', 'model/JiraProject', 'model/JiraProjectComponent', 'model/JiraProjectUsers', 'model/Project', 'model/ProjectUpdatePayload', 'api/DefaultApi'], factory);
+    define(['ApiClient', 'model/DeviceStatus', 'model/JiraConfig', 'model/JiraConfigPayload', 'model/JiraIssuePayload', 'model/JiraIssuePayloadAttachements', 'model/JiraIssueResponse', 'model/JiraProject', 'model/JiraProjectComponent', 'model/JiraProjectUsers', 'model/Project', 'model/ProjectUpdatePayload', 'api/DefaultApi'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('./ApiClient'), require('./model/JiraConfig'), require('./model/JiraConfigPayload'), require('./model/JiraIssuePayload'), require('./model/JiraIssuePayloadAttachements'), require('./model/JiraIssueResponse'), require('./model/JiraProject'), require('./model/JiraProjectComponent'), require('./model/JiraProjectUsers'), require('./model/Project'), require('./model/ProjectUpdatePayload'), require('./api/DefaultApi'));
+    module.exports = factory(require('./ApiClient'), require('./model/DeviceStatus'), require('./model/JiraConfig'), require('./model/JiraConfigPayload'), require('./model/JiraIssuePayload'), require('./model/JiraIssuePayloadAttachements'), require('./model/JiraIssueResponse'), require('./model/JiraProject'), require('./model/JiraProjectComponent'), require('./model/JiraProjectUsers'), require('./model/Project'), require('./model/ProjectUpdatePayload'), require('./api/DefaultApi'));
   }
-}(function(ApiClient, JiraConfig, JiraConfigPayload, JiraIssuePayload, JiraIssuePayloadAttachements, JiraIssueResponse, JiraProject, JiraProjectComponent, JiraProjectUsers, Project, ProjectUpdatePayload, DefaultApi) {
+}(function(ApiClient, DeviceStatus, JiraConfig, JiraConfigPayload, JiraIssuePayload, JiraIssuePayloadAttachements, JiraIssueResponse, JiraProject, JiraProjectComponent, JiraProjectUsers, Project, ProjectUpdatePayload, DefaultApi) {
   'use strict';
 
   /**
@@ -61,6 +61,11 @@
      * @property {module:ApiClient}
      */
     ApiClient: ApiClient,
+    /**
+     * The DeviceStatus model constructor.
+     * @property {module:model/DeviceStatus}
+     */
+    DeviceStatus: DeviceStatus,
     /**
      * The JiraConfig model constructor.
      * @property {module:model/JiraConfig}

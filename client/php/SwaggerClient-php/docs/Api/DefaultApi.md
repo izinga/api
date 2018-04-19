@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**jira_0**](DefaultApi.md#jira_0) | **GET** /admin/v3/bug/config/jira/projects | get all jira project
 [**jira_1**](DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/config/{congfig_id}/projects | get all jira project for given config
 [**jira_2**](DefaultApi.md#jira_2) | **GET** /admin/v3/bug/config/jira/projects/{jira_project_id} | get a jira project  details
+[**neuron**](DefaultApi.md#neuron) | **GET** /node_ip:8080/v2/status | get devices status, in progress, allready added
 [**project**](DefaultApi.md#project) | **PUT** /v3/project/{project_id} | Update Project
 
 
@@ -467,6 +468,51 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**\Swagger\Client\Model\JiraProject**](../Model/JiraProject.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../../README.md#documentation-for-api-endpoints) [[Back to Model list]](../../README.md#documentation-for-models) [[Back to README]](../../README.md)
+
+# **neuron**
+> \Swagger\Client\Model\DeviceStatus neuron()
+
+get devices status, in progress, allready added
+
+get devices status, in progress, allready added
+
+### Example
+```php
+<?php
+require_once(__DIR__ . '/vendor/autoload.php');
+
+$apiInstance = new Swagger\Client\Api\DefaultApi(
+    // If you want use custom http client, pass your client which implements `GuzzleHttp\ClientInterface`.
+    // This is optional, `GuzzleHttp\Client` will be used as default.
+    new GuzzleHttp\Client()
+);
+
+try {
+    $result = $apiInstance->neuron();
+    print_r($result);
+} catch (Exception $e) {
+    echo 'Exception when calling DefaultApi->neuron: ', $e->getMessage(), PHP_EOL;
+}
+?>
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**\Swagger\Client\Model\DeviceStatus**](../Model/DeviceStatus.md)
 
 ### Authorization
 

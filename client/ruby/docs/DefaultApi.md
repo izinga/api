@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**jira_config_1**](DefaultApi.md#jira_config_1) | **DELETE** /admin/v3/bug/config/jira/{jira_config_id} | delete jira config and all associated jira project
 [**jira_config_2**](DefaultApi.md#jira_config_2) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
 [**jira_issue**](DefaultApi.md#jira_issue) | **POST** /v3/bug/jira/{jira_project_id}/create | create a jira issue
+[**neuron**](DefaultApi.md#neuron) | **GET** /node_ip:8080/v2/status | get devices status, in progress, allready added
 [**project**](DefaultApi.md#project) | **PUT** /v3/project/{project_id} | Update Project
 
 
@@ -433,6 +434,47 @@ Name | Type | Description  | Notes
 ### Return type
 
 [**JiraIssueResponse**](JiraIssueResponse.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+
+
+# **neuron**
+> DeviceStatus neuron
+
+get devices status, in progress, allready added
+
+get devices status, in progress, allready added
+
+### Example
+```ruby
+# load the gem
+require 'swagger_client'
+
+api_instance = SwaggerClient::DefaultApi.new
+
+begin
+  #get devices status, in progress, allready added
+  result = api_instance.neuron
+  p result
+rescue SwaggerClient::ApiError => e
+  puts "Exception when calling DefaultApi->neuron: #{e}"
+end
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**DeviceStatus**](DeviceStatus.md)
 
 ### Authorization
 

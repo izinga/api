@@ -15,6 +15,17 @@ consumes:
 produces:
   - application/json
 paths:
+  /node_ip:8080/v2/status:
+    get:
+      summary: get devices status, in progress, allready added
+      description: get devices status, in progress, allready added
+      operationId: neuron
+      responses:
+        '200':    # status code
+          description: device list
+          schema: 
+            $ref: '#/definitions/deviceStatus'
+
   /admin/v3/bug/trackerlist:
     get:
       summary: get list for all supported bug trakers
@@ -169,6 +180,25 @@ paths:
             type: object
             $ref: '#/definitions/project'
 definitions:
+  deviceStatus:
+    type: object
+    properties: 
+      addedDevices: 
+        type: "array"
+        items: 
+          type: "string"
+      inProgressDevices: 
+        type: "array"
+        items: 
+          type: "string"
+      notAddedDevices: 
+        type: "array"
+        items: 
+          type: "string"
+      triedAttempted: 
+        type: "array"
+        items: 
+          type: "string"
   JiraConfig:
     type: object
     properties: 

@@ -17,6 +17,7 @@ require 'swagger_client/version'
 require 'swagger_client/configuration'
 
 # Models
+require 'swagger_client/models/device_status'
 require 'swagger_client/models/jira_config'
 require 'swagger_client/models/jira_config_payload'
 require 'swagger_client/models/jira_issue_payload'

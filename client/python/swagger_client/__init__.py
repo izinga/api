@@ -22,6 +22,7 @@ from swagger_client.api.default_api import DefaultApi
 from swagger_client.api_client import ApiClient
 from swagger_client.configuration import Configuration
 # import models into sdk package
+from swagger_client.models.device_status import DeviceStatus
 from swagger_client.models.jira_config import JiraConfig
 from swagger_client.models.jira_config_payload import JiraConfigPayload
 from swagger_client.models.jira_issue_payload import JiraIssuePayload

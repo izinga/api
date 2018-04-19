@@ -88,11 +88,13 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**jira_0**](docs/Api/DefaultApi.md#jira_0) | **GET** /admin/v3/bug/config/jira/projects | get all jira project
 *DefaultApi* | [**jira_1**](docs/Api/DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/config/{congfig_id}/projects | get all jira project for given config
 *DefaultApi* | [**jira_2**](docs/Api/DefaultApi.md#jira_2) | **GET** /admin/v3/bug/config/jira/projects/{jira_project_id} | get a jira project  details
+*DefaultApi* | [**neuron**](docs/Api/DefaultApi.md#neuron) | **GET** /node_ip:8080/v2/status | get devices status, in progress, allready added
 *DefaultApi* | [**project**](docs/Api/DefaultApi.md#project) | **PUT** /v3/project/{project_id} | Update Project
 
 
 ## Documentation For Models
 
+ - [DeviceStatus](docs/Model/DeviceStatus.md)
  - [JiraConfig](docs/Model/JiraConfig.md)
  - [JiraConfigPayload](docs/Model/JiraConfigPayload.md)
  - [JiraIssuePayload](docs/Model/JiraIssuePayload.md)

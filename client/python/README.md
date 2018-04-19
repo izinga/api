@@ -78,11 +78,13 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**jira_config_1**](docs/DefaultApi.md#jira_config_1) | **DELETE** /admin/v3/bug/config/jira/{jira_config_id} | delete jira config and all associated jira project
 *DefaultApi* | [**jira_config_2**](docs/DefaultApi.md#jira_config_2) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
 *DefaultApi* | [**jira_issue**](docs/DefaultApi.md#jira_issue) | **POST** /v3/bug/jira/{jira_project_id}/create | create a jira issue
+*DefaultApi* | [**neuron**](docs/DefaultApi.md#neuron) | **GET** /node_ip:8080/v2/status | get devices status, in progress, allready added
 *DefaultApi* | [**project**](docs/DefaultApi.md#project) | **PUT** /v3/project/{project_id} | Update Project
 
 
 ## Documentation For Models
 
+ - [DeviceStatus](docs/DeviceStatus.md)
  - [JiraConfig](docs/JiraConfig.md)
  - [JiraConfigPayload](docs/JiraConfigPayload.md)
  - [JiraIssuePayload](docs/JiraIssuePayload.md)

@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**Jira_0**](DefaultApi.md#Jira_0) | **Get** /admin/v3/bug/config/jira/projects | get all jira project
 [**Jira_1**](DefaultApi.md#Jira_1) | **Get** /admin/v3/bug/config/jira/config/{congfig_id}/projects | get all jira project for given config
 [**Jira_2**](DefaultApi.md#Jira_2) | **Get** /admin/v3/bug/config/jira/projects/{jira_project_id} | get a jira project  details
+[**Neuron**](DefaultApi.md#Neuron) | **Get** /node_ip:8080/v2/status | get devices status, in progress, allready added
 [**Project**](DefaultApi.md#Project) | **Put** /v3/project/{project_id} | Update Project
 
 
@@ -257,6 +258,30 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**JiraProject**](JiraProject.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+# **Neuron**
+> DeviceStatus Neuron(ctx, )
+get devices status, in progress, allready added
+
+get devices status, in progress, allready added
+
+### Required Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**DeviceStatus**](deviceStatus.md)
 
 ### Authorization
 

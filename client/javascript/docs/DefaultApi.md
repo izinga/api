@@ -14,6 +14,7 @@ Method | HTTP request | Description
 [**jira_0**](DefaultApi.md#jira_0) | **GET** /admin/v3/bug/config/jira/projects | get all jira project
 [**jira_1**](DefaultApi.md#jira_1) | **GET** /admin/v3/bug/config/jira/config/{congfig_id}/projects | get all jira project for given config
 [**jira_2**](DefaultApi.md#jira_2) | **GET** /admin/v3/bug/config/jira/projects/{jira_project_id} | get a jira project  details
+[**neuron**](DefaultApi.md#neuron) | **GET** /node_ip:8080/v2/status | get devices status, in progress, allready added
 [**project**](DefaultApi.md#project) | **PUT** /v3/project/{project_id} | Update Project
 
 
@@ -425,6 +426,46 @@ This endpoint does not need any parameter.
 ### Return type
 
 [**JiraProject**](JiraProject.md)
+
+### Authorization
+
+No authorization required
+
+### HTTP request headers
+
+ - **Content-Type**: application/json
+ - **Accept**: application/json
+
+<a name="neuron"></a>
+# **neuron**
+> DeviceStatus neuron()
+
+get devices status, in progress, allready added
+
+get devices status, in progress, allready added
+
+### Example
+```javascript
+var RobusTestApi = require('robus_test_api');
+
+var apiInstance = new RobusTestApi.DefaultApi();
+
+var callback = function(error, data, response) {
+  if (error) {
+    console.error(error);
+  } else {
+    console.log('API called successfully. Returned data: ' + data);
+  }
+};
+apiInstance.neuron(callback);
+```
+
+### Parameters
+This endpoint does not need any parameter.
+
+### Return type
+
+[**DeviceStatus**](DeviceStatus.md)
 
 ### Authorization
 

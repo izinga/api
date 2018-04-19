@@ -15,6 +15,7 @@
 from __future__ import absolute_import
 
 # import models into model package
+from swagger_client.models.device_status import DeviceStatus
 from swagger_client.models.jira_config import JiraConfig
 from swagger_client.models.jira_config_payload import JiraConfigPayload
 from swagger_client.models.jira_issue_payload import JiraIssuePayload

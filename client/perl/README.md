@@ -227,6 +227,7 @@ use WWW::SwaggerClient::DefaultApi;
 
 To load the models:
 ```perl
+use WWW::SwaggerClient::Object::DeviceStatus;
 use WWW::SwaggerClient::Object::JiraConfig;
 use WWW::SwaggerClient::Object::JiraConfigPayload;
 use WWW::SwaggerClient::Object::JiraIssuePayload;
@@ -251,6 +252,7 @@ use warnings;
 use WWW::SwaggerClient::DefaultApi;
 
 # load the models
+use WWW::SwaggerClient::Object::DeviceStatus;
 use WWW::SwaggerClient::Object::JiraConfig;
 use WWW::SwaggerClient::Object::JiraConfigPayload;
 use WWW::SwaggerClient::Object::JiraIssuePayload;
@@ -296,10 +298,12 @@ Class | Method | HTTP request | Description
 *DefaultApi* | [**jira_config_5**](docs/DefaultApi.md#jira_config_5) | **DELETE** /admin/v3/bug/config/jira/{jira_config_id} | delete jira config and all associated jira project
 *DefaultApi* | [**jira_config_6**](docs/DefaultApi.md#jira_config_6) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
 *DefaultApi* | [**jira_issue**](docs/DefaultApi.md#jira_issue) | **POST** /v3/bug/jira/{jira_project_id}/create | create a jira issue
+*DefaultApi* | [**neuron**](docs/DefaultApi.md#neuron) | **GET** /node_ip:8080/v2/status | get devices status, in progress, allready added
 *DefaultApi* | [**project**](docs/DefaultApi.md#project) | **PUT** /v3/project/{project_id} | Update Project
 
 
 # DOCUMENTATION FOR MODELS
+ - [WWW::SwaggerClient::Object::DeviceStatus](docs/DeviceStatus.md)
  - [WWW::SwaggerClient::Object::JiraConfig](docs/JiraConfig.md)
  - [WWW::SwaggerClient::Object::JiraConfigPayload](docs/JiraConfigPayload.md)
  - [WWW::SwaggerClient::Object::JiraIssuePayload](docs/JiraIssuePayload.md)

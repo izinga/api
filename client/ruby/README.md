@@ -82,11 +82,13 @@ Class | Method | HTTP request | Description
 *SwaggerClient::DefaultApi* | [**jira_config_1**](docs/DefaultApi.md#jira_config_1) | **DELETE** /admin/v3/bug/config/jira/{jira_config_id} | delete jira config and all associated jira project
 *SwaggerClient::DefaultApi* | [**jira_config_2**](docs/DefaultApi.md#jira_config_2) | **PATCH** /admin/v3/bug/config/jira/{jira_config_id} | update all projects for a jira config
 *SwaggerClient::DefaultApi* | [**jira_issue**](docs/DefaultApi.md#jira_issue) | **POST** /v3/bug/jira/{jira_project_id}/create | create a jira issue
+*SwaggerClient::DefaultApi* | [**neuron**](docs/DefaultApi.md#neuron) | **GET** /node_ip:8080/v2/status | get devices status, in progress, allready added
 *SwaggerClient::DefaultApi* | [**project**](docs/DefaultApi.md#project) | **PUT** /v3/project/{project_id} | Update Project
 
 
 ## Documentation for Models
 
+ - [SwaggerClient::DeviceStatus](docs/DeviceStatus.md)
  - [SwaggerClient::JiraConfig](docs/JiraConfig.md)
  - [SwaggerClient::JiraConfigPayload](docs/JiraConfigPayload.md)
  - [SwaggerClient::JiraIssuePayload](docs/JiraIssuePayload.md)

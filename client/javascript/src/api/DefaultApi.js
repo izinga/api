@@ -16,18 +16,18 @@
 (function(root, factory) {
   if (typeof define === 'function' && define.amd) {
     // AMD. Register as an anonymous module.
-    define(['ApiClient', 'model/JiraConfig', 'model/JiraConfigPayload', 'model/JiraIssuePayload', 'model/JiraIssueResponse', 'model/JiraProject', 'model/Project', 'model/ProjectUpdatePayload'], factory);
+    define(['ApiClient', 'model/DeviceStatus', 'model/JiraConfig', 'model/JiraConfigPayload', 'model/JiraIssuePayload', 'model/JiraIssueResponse', 'model/JiraProject', 'model/Project', 'model/ProjectUpdatePayload'], factory);
   } else if (typeof module === 'object' && module.exports) {
     // CommonJS-like environments that support module.exports, like Node.
-    module.exports = factory(require('../ApiClient'), require('../model/JiraConfig'), require('../model/JiraConfigPayload'), require('../model/JiraIssuePayload'), require('../model/JiraIssueResponse'), require('../model/JiraProject'), require('../model/Project'), require('../model/ProjectUpdatePayload'));
+    module.exports = factory(require('../ApiClient'), require('../model/DeviceStatus'), require('../model/JiraConfig'), require('../model/JiraConfigPayload'), require('../model/JiraIssuePayload'), require('../model/JiraIssueResponse'), require('../model/JiraProject'), require('../model/Project'), require('../model/ProjectUpdatePayload'));
   } else {
     // Browser globals (root is window)
     if (!root.RobusTestApi) {
       root.RobusTestApi = {};
     }
-    root.RobusTestApi.DefaultApi = factory(root.RobusTestApi.ApiClient, root.RobusTestApi.JiraConfig, root.RobusTestApi.JiraConfigPayload, root.RobusTestApi.JiraIssuePayload, root.RobusTestApi.JiraIssueResponse, root.RobusTestApi.JiraProject, root.RobusTestApi.Project, root.RobusTestApi.ProjectUpdatePayload);
+    root.RobusTestApi.DefaultApi = factory(root.RobusTestApi.ApiClient, root.RobusTestApi.DeviceStatus, root.RobusTestApi.JiraConfig, root.RobusTestApi.JiraConfigPayload, root.RobusTestApi.JiraIssuePayload, root.RobusTestApi.JiraIssueResponse, root.RobusTestApi.JiraProject, root.RobusTestApi.Project, root.RobusTestApi.ProjectUpdatePayload);
   }
-}(this, function(ApiClient, JiraConfig, JiraConfigPayload, JiraIssuePayload, JiraIssueResponse, JiraProject, Project, ProjectUpdatePayload) {
+}(this, function(ApiClient, DeviceStatus, JiraConfig, JiraConfigPayload, JiraIssuePayload, JiraIssueResponse, JiraProject, Project, ProjectUpdatePayload) {
   'use strict';
 
   /**
@@ -470,6 +470,47 @@
 
       return this.apiClient.callApi(
         '/admin/v3/bug/config/jira/projects/{jira_project_id}', 'GET',
+        pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
+        authNames, contentTypes, accepts, returnType, callback
+      );
+    }
+
+    /**
+     * Callback function to receive the result of the neuron operation.
+     * @callback module:api/DefaultApi~neuronCallback
+     * @param {String} error Error message, if any.
+     * @param {module:model/DeviceStatus} data The data returned by the service call.
+     * @param {String} response The complete HTTP response.
+     */
+
+    /**
+     * get devices status, in progress, allready added
+     * get devices status, in progress, allready added
+     * @param {module:api/DefaultApi~neuronCallback} callback The callback function, accepting three arguments: error, data, response
+     * data is of type: {@link module:model/DeviceStatus}
+     */
+    this.neuron = function(callback) {
+      var postBody = null;
+
+
+      var pathParams = {
+      };
+      var queryParams = {
+      };
+      var collectionQueryParams = {
+      };
+      var headerParams = {
+      };
+      var formParams = {
+      };
+
+      var authNames = [];
+      var contentTypes = ['application/json'];
+      var accepts = ['application/json'];
+      var returnType = DeviceStatus;
+
+      return this.apiClient.callApi(
+        '/node_ip:8080/v2/status', 'GET',
         pathParams, queryParams, collectionQueryParams, headerParams, formParams, postBody,
         authNames, contentTypes, accepts, returnType, callback
       );
