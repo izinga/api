@@ -26,6 +26,23 @@ paths:
           schema: 
             $ref: '#/definitions/deviceStatus'
 
+  /admin/v3/node/:ip:
+    put:
+      summary: update node 
+      description: update node 
+      operationId: node
+      parameters:
+        - description: node  payload
+        - name: body
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/NodePayload'
+      responses:
+        '200':    # status code
+          description: node
+          schema: 
+            $ref: '#/definitions/Node'
   /admin/v3/bug/trackerlist:
     get:
       summary: get list for all supported bug trakers
@@ -180,6 +197,57 @@ paths:
             type: object
             $ref: '#/definitions/project'
 definitions:
+  NodePayload:
+    type : object
+    properties:
+      name: string
+      location: string
+      macAddress: string
+      serial: string
+      contacts: 
+        type: "array"
+        items: 
+          type: "string"
+  Node :
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      name: 
+        type: "string"
+      ip: 
+        type: "string"
+      devices: 
+        type: "array"
+        items: 
+          type: "undefined"
+      location: 
+        type: "string"
+      status: 
+        type: "boolean"
+      version: 
+        type: "boolean"
+      os: 
+        type: "string"
+      serial: 
+        type: "string"
+      macAddress: 
+        type: "string"
+      snapshot: 
+        type: "string"
+      contacts: 
+        type: "array"
+        items: 
+          type: "string"
+      lastConnected: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+      last: 
+        type: "number"
+
   deviceStatus:
     type: object
     properties: 
