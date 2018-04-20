@@ -41,7 +41,7 @@ paths:
               type : object
               $ref: '#/definitions/Contact'
 
-  /admin/v3/contact/:id:
+  /admin/v3/contact/{id}:
     get:
       summary: get contact
       description: get contact
@@ -92,7 +92,7 @@ paths:
           description: contact
           schema: 
             type: string
-  /admin/v3/node/:ip:
+  /admin/v3/node/{ip}:
     put:
       summary: update node 
       description: update node 
