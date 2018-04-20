@@ -200,15 +200,19 @@ definitions:
   NodePayload:
     type : object
     properties:
-      name: string
-      location: string
-      macAddress: string
-      serial: string
+      name: 
+        type: string
+      location: 
+        type: string
+      macAddress:  
+        type: string
+      serial: 
+        type: string
       contacts: 
         type: "array"
         items: 
           type: "string"
-  Node :
+  Node:
     type: object
     properties: 
       _id: 
