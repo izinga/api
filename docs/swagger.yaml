@@ -83,6 +83,15 @@ paths:
           description: Contact
           schema: 
             $ref: '#/definitions/Contact'
+    delete:
+      summary: delete contact
+      description: delete contact
+      operationId: contact
+      responses:
+        '200':    # status code
+          description: contact
+          schema: 
+            type: string
   /admin/v3/node/:ip:
     put:
       summary: update node 
