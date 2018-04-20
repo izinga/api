@@ -26,6 +26,63 @@ paths:
           schema: 
             $ref: '#/definitions/deviceStatus'
 
+
+  /admin/v3/contacts:
+    get:
+      summary: get contact
+      description: get contact
+      operationId: contact
+      responses:
+        '200':    # status code
+          description: contact
+          schema: 
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/Contact'
+
+  /admin/v3/contact/:id:
+    get:
+      summary: get contact
+      description: get contact
+      operationId: contact
+      responses:
+        '200':    # status code
+          description: contact
+          schema: 
+            $ref: '#/definitions/Contact'
+    post:
+      summary: create new contact
+      description: create new contact
+      operationId: contact
+      parameters:
+        - description: create payload
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/ContactPayload'
+      responses:
+        '200':    # status code
+          description: Contact
+          schema: 
+            $ref: '#/definitions/Contact'
+    put:
+      summary: update new contact
+      description: update new contact
+      operationId: contact
+      parameters:
+        - description: update payload
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/ContactPayload'
+      responses:
+        '200':    # status code
+          description: Contact
+          schema: 
+            $ref: '#/definitions/Contact'
   /admin/v3/node/:ip:
     put:
       summary: update node 
@@ -197,6 +254,50 @@ paths:
             type: object
             $ref: '#/definitions/project'
 definitions:
+  ContactPayload:
+    type: object
+    required: 
+      - "name"
+      - "email"
+      - "location"
+      - "role"
+      - "secondaryPhone"
+      - "primaryPhone"
+    properties: 
+      name: 
+        type: "string"
+      email: 
+        type: "string"
+      location: 
+        type: "string"
+      role: 
+        type: "string"
+      secondaryPhone: 
+        type: "string"
+      primaryPhone: 
+        type: "string"
+  Contact:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      name: 
+        type: "string"
+      email: 
+        type: "string"
+      role: 
+        type: "string"
+      location: 
+        type: "string"
+      primaryPhone: 
+        type: "string"
+      secondaryPhone: 
+        type: "string"
+      updated: 
+        type: "string"
+      created: 
+        type: "string"
+
   NodePayload:
     type : object
     properties:
