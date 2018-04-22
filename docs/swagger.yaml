@@ -14,7 +14,22 @@ consumes:
   - application/json
 produces:
   - application/json
+
+
+
 paths:
+  /v3/users:
+    get:
+      summary: get all users
+      description: get all users
+      operationId: user
+      responses:
+        '200':    # status code
+          description: users list
+          schema: 
+            $ref: '#/definitions/user'
+
+
   /node_ip:8080/v2/status:
     get:
       summary: get devices status, in progress, allready added
@@ -536,6 +551,67 @@ definitions:
         type: array
         items: 
           type: string
+  user:
+    type: object
+    properties: 
+        _id: 
+          type: "string"
+        name: 
+          type: "string"
+        email: 
+          type: "string"
+        secrete: 
+          type: "string"
+        password: 
+          type: "string"
+        access_key: 
+          type: "string"
+        active: 
+          type: "boolean"
+        profile: 
+          type: "string"
+        projects: 
+          type: "array"
+          items: 
+            type: "string"
+        isActivated: 
+          type: "boolean"
+        created: 
+          type: "string"
+        updated: 
+          type: "string"
+        confirmed_at: 
+          type: "string"
+        oauth2Uid: 
+          type: "string"
+        oauth2Provider: 
+          type: "string"
+        oauth2Token: 
+          type: "string"
+        oauth2Refresh: 
+          type: "string"
+        oauth2Expiry: 
+          type: "string"
+        confirmToken: 
+          type: "string"
+        confirmed: 
+          type: "boolean"
+        recoverToken: 
+          type: "string"
+        RecoverTokenExpiry: 
+          type: "string"
+        attemptNumber: 
+          type: "number"
+        attemptTime: 
+          type: "string"
+        locked: 
+          type: "string"
+        location: 
+          type: "string"
+        primaryPhone: 
+          type: "string"
+        secondaryPhone: 
+          type: "string"
   project:
     type: object
     properties: 
