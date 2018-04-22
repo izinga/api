@@ -27,8 +27,10 @@ paths:
         '200':    # status code
           description: users list
           schema: 
-            $ref: '#/definitions/user'
-
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/user'
 
   /node_ip:8080/v2/status:
     get:
