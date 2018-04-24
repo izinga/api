@@ -18,6 +18,17 @@ produces:
 
 
 paths:
+  /v3/build/{build id}:
+    delete:
+      summary: delete  build
+      description: delete  build
+      operationId: build
+      responses:
+        '200':    # status code
+          description: build
+          schema: 
+            $ref: '#/definitions/build'
+
   /v3/users:
     get:
       summary: get all users
@@ -280,6 +291,43 @@ paths:
             type: object
             $ref: '#/definitions/project'
 definitions:
+  build:
+    type: object
+    properties:
+      _id: 
+        type: "string"
+      label: 
+        type: "string"
+      Desc: 
+        type: "string"
+      os: 
+        type: "string"
+      icon64: 
+        type: "string"
+      packageName: 
+        type: "string"
+      activityClass: 
+        type: "string"
+      versionName: 
+        type: "string"
+      versionCode: 
+        type: "string"
+      user: 
+        type: "string"
+      project: 
+        type: "string"
+      url: 
+        type: "string"
+      test_c: 
+        type: "number"
+      active: 
+        type: "boolean"
+      last: 
+        type: "string"
+      created: 
+        type: "string"
+
+      
   ContactPayload:
     type: object
     required: 
