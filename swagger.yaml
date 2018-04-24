@@ -46,6 +46,22 @@ paths:
             $ref: '#/definitions/tag'
 
   /v3/build/{build id}:
+    put:
+      summary: update build for project
+      description: update build for project
+      operationId: contact
+      parameters:
+        - description: update payload
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/buildUpdatePayload'
+      responses:
+        '200':    # status code
+          description: build 
+          schema: 
+            $ref: '#/definitions/build'
     delete:
       summary: delete  build
       description: delete  build
@@ -344,6 +360,14 @@ definitions:
         type: "array"
         items: 
           type: "string"  
+  buildUpdatePayload:
+    type: object
+    properties: 
+      desc: 
+        type: "string"
+      activityClass: 
+        type: "string"
+
   build:
     type: object
     properties:
@@ -351,7 +375,7 @@ definitions:
         type: "string"
       label: 
         type: "string"
-      Desc: 
+      desc: 
         type: "string"
       os: 
         type: "string"
