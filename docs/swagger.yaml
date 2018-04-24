@@ -18,6 +18,33 @@ produces:
 
 
 paths:
+  /v3/project/{project_id}/tags:
+    get:
+      summary: get tags for project
+      description: get tags for project
+      operationId: tag
+      responses:
+        '200':    # status code
+          description: tag
+          schema: 
+            $ref: '#/definitions/tag'
+    put:
+      summary: update tags for project
+      description: update tags for project
+      operationId: contact
+      parameters:
+        - description: update payload
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/tagPayload'
+      responses:
+        '200':    # status code
+          description: tags for project
+          schema: 
+            $ref: '#/definitions/tag'
+
   /v3/build/{build id}:
     delete:
       summary: delete  build
@@ -291,6 +318,32 @@ paths:
             type: object
             $ref: '#/definitions/project'
 definitions:
+  tag:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      project: 
+        type: "string"
+      tags: 
+        type: "array"
+        items: 
+          type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+      updateBy: 
+        type: "string"
+      createdBy: 
+        type: "string"
+  tagPayload:
+    type: object
+    properties: 
+      tags: 
+        type: "array"
+        items: 
+          type: "string"  
   build:
     type: object
     properties:
@@ -327,7 +380,7 @@ definitions:
       created: 
         type: "string"
 
-      
+
   ContactPayload:
     type: object
     required: 
