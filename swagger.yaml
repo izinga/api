@@ -18,6 +18,17 @@ produces:
 
 
 paths:
+  /v3/device/{device_id}/usages:
+    get:
+      summary: get device current usages
+      description: get device current usages
+      operationId: device
+      responses:
+        '200':    # status code
+          description: tag
+          schema: 
+            $ref: '#/definitions/deviceUsagse'
+
   /v3/project/{project_id}/tags:
     get:
       summary: get tags for project
@@ -334,6 +345,19 @@ paths:
             type: object
             $ref: '#/definitions/project'
 definitions:
+  deviceUsagse:
+    type: object
+    properties: 
+      UserEmail: 
+        type: "string"
+      UserID: 
+        type: "string"
+      UserName: 
+        type: "string"
+      project: 
+        type: "string"
+      type: 
+        type: "string"
   tag:
     type: object
     properties: 
