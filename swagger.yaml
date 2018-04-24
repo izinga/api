@@ -18,6 +18,24 @@ produces:
 
 
 paths:
+  /v3/automate:
+    post:
+      summary: start automate recording 
+      description: start automate recording 
+      operationId: automate
+      parameters:
+        - description: start automate recording 
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/testPayload'
+      responses:
+        '200':    # status code
+          description: automate response
+          schema: 
+            $ref: '#/definitions/automateResponse'
+
   /v3/device/{device_id}/usages:
     get:
       summary: get device current usages
@@ -345,6 +363,25 @@ paths:
             type: object
             $ref: '#/definitions/project'
 definitions:
+  testPayload:
+    type: object
+    properties: 
+      project: 
+        type: "string"
+      build: 
+        type: "string"
+      device: 
+        type: "string"
+  automateResponse:
+    type: object
+    properties: 
+      status: 
+        type: "string"
+      msg: 
+        type: "string"
+      session: 
+        type: "string"
+
   deviceUsagse:
     type: object
     properties: 
