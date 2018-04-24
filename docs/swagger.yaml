@@ -363,6 +363,8 @@ definitions:
   buildUpdatePayload:
     type: object
     properties: 
+      label: 
+        type: "string"
       desc: 
         type: "string"
       activityClass: 
