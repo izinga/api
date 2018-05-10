@@ -18,7 +18,7 @@ produces:
 
 
 paths:
-  /v3/session/live
+  /v3/session/live:
     get:
       summary: get all live page for logged in user
       description: get all live page for logged in user
