@@ -18,6 +18,19 @@ produces:
 
 
 paths:
+  /v3/session/live
+    get:
+      summary: get all live page for logged in user
+      description: get all live page for logged in user
+      operationId: session
+      responses:
+        '200':    # status code
+          description: testsession
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/testsession'
   /v3/automate:
     post:
       summary: start automate recording 
@@ -845,6 +858,76 @@ definitions:
         type: string
       created_by: 
         type: string
+  testsession:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      org: 
+        type: "string"
+      project: 
+        type: "string"
+      user: 
+        type: "string"
+      os: 
+        type: "string"
+      device: 
+        type: "string"
+      serial: 
+        type: "string"
+      host: 
+        type: "string"
+      port: 
+        type: "number"
+      vnc: 
+        type: "string"
+      build: 
+        type: "string"
+      websocket: 
+        type: "string"
+      appium: 
+        type: "string"
+      browser: 
+        type: "string"
+      url: 
+        type: "string"
+      packageName: 
+        type: "string"
+      activityClass: 
+        type: "string"
+      type: 
+        type: "number"
+      state: 
+        type: "number"
+      screenmode: 
+        type: "string"
+      reason: 
+        type: "string"
+      started: 
+        type: "boolean"
+      completed: 
+        type: "boolean"
+      start: 
+        type: "number"
+      last: 
+        type: "number"
+      isPaused: 
+        type: "boolean"
+      isDistributed: 
+        type: "boolean"
+      isResumed: 
+        type: "boolean"
+      pausedAt: 
+        type: "string"
+      resumedAt: 
+        type: "string"
+      ratio: 
+        type: "number"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+
 
 
 
