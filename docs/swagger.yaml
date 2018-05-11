@@ -49,7 +49,7 @@ paths:
                 items: 
                   type : object
                   $ref: '#/definitions/device'
-  /v3/device/{device_id}?accesskey={access_key}:
+  /v3/device/{device_id}/detail?accesskey={access_key}:
     get:
       summary: get device, session and live screen url by device id
       description: get device, session and live screen url by device id
