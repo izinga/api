@@ -18,7 +18,26 @@ produces:
 
 
 paths:
-  /v3/device/free?accesskey={access_key}&name={device_name}:
+  /v3/device?accesskey={access_key}&name={device_name}:
+    get:
+      summary: get device and session details by device name
+      description: get device and session details by device name
+      operationId: device
+      responses:
+        '200':    # status code
+          description: get device and session details by device name
+          schema:
+            schema: object
+              properties: 
+                device : 
+                  type: object
+                  $ref: '#/definitions/device'
+                session : 
+                  type: object
+                  $ref: '#/definitions/testsession'
+                liveScreen : 
+                  type: string
+  /v3/device?accesskey={access_key}&name={device_name}:
     delete:
       summary: free device by device name
       description: free device by device name
