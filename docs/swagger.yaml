@@ -27,7 +27,7 @@ paths:
         '200':    # status code
           description: get device and session details by device name
           schema:
-            schema: object
+            type: object
               properties: 
                 device : 
                   type: object
