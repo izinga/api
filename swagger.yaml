@@ -28,15 +28,15 @@ paths:
           description: get device and session details by device name
           schema:
             type: object
-              properties: 
-                device : 
-                  type: object
-                  $ref: '#/definitions/device'
-                session : 
-                  type: object
-                  $ref: '#/definitions/testsession'
-                liveScreen : 
-                  type: string
+            properties: 
+              device : 
+                type: object
+                $ref: '#/definitions/device'
+              session : 
+                type: object
+                $ref: '#/definitions/testsession'
+              liveScreen : 
+                type: string
   /v3/device?accesskey={access_key}&name={device_name}:
     delete:
       summary: free device by device name
