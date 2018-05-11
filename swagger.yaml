@@ -868,6 +868,255 @@ definitions:
         type: string
       created_by: 
         type: string
+  device:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      serial: 
+        type: "string"
+      key: 
+        type: "string"
+      uiid: 
+        type: "string"
+      host: 
+        type: "string"
+      name: 
+        type: "string"
+      brand: 
+        type: "string"
+      model: 
+        type: "string"
+      model_id: 
+        type: "string"
+      manufacturer: 
+        type: "string"
+      clientidbase: 
+        type: "string"
+      countryCode: 
+        type: "string"
+      ram: 
+        type: "string"
+      fingerprint: 
+        type: "string"
+      version: 
+        type: "string"
+      isConnected: 
+        type: "boolean"
+      testSession: 
+        type: "string"
+      simOperator: 
+        type: "string"
+      timezone: 
+        type: "string"
+      resolution: 
+        type: "string"
+      lcdDensity: 
+        type: "string"
+      screensize: 
+        type: "string"
+      img: 
+        type: "string"
+      numbers: 
+        type: "array"
+        items: 
+          type: "undefined"
+      useType: 
+        type: "array"
+        items: 
+          type: "string"
+      projects: 
+        type: "array"
+        items: 
+          type: "undefined"
+      user: 
+        type: "string"
+      os: 
+        type: "string"
+      port: 
+        type: "number"
+      screenmode: 
+        type: "string"
+      ratio: 
+        type: "number"
+      menubar: 
+        type: "boolean"
+      status: 
+        type: "boolean"
+      state: 
+        type: "number"
+      automate: 
+        type: "boolean"
+      browsers: 
+        type: "array"
+        items: 
+          type: "object"
+          properties: 
+            name: 
+              type: "string"
+            component: 
+              type: "string"
+      apps: 
+        type: "array"
+        items: 
+          type: "string"
+      display: 
+        required: 
+          - "width"
+          - "height"
+          - "xdpi"
+          - "ydpi"
+          - "size"
+          - "density"
+          - "fps"
+          - "secure"
+          - "rotation"
+        properties: 
+          width: 
+            type: "number"
+          height: 
+            type: "number"
+          xdpi: 
+            type: "number"
+          ydpi: 
+            type: "number"
+          size: 
+            type: "number"
+          density: 
+            type: "number"
+          fps: 
+            type: "number"
+          secure: 
+            type: "boolean"
+          rotation: 
+            type: "number"
+        type: "object"
+      imei: 
+        type: "string"
+      imsi: 
+        type: "string"
+      iccid: 
+        type: "string"
+      phoneNumber: 
+        type: "string"
+      network: 
+        type: "string"
+      reserveKey: 
+        type: "string"
+      usage: 
+        required: []
+        properties: {}
+        type: "object"
+      oldHost: 
+        type: "string"
+      node: 
+        required: 
+          - "name"
+          - "ip"
+          - "devices"
+          - "location"
+          - "status"
+          - "version"
+          - "os"
+          - "serial"
+          - "macAddress"
+          - "snapshot"
+          - "contacts"
+          - "lastConnected"
+          - "created"
+          - "updated"
+          - "last"
+        properties: 
+          name: 
+            type: "string"
+          ip: 
+            type: "string"
+          devices: 
+            type: "array"
+            items: 
+              type: "undefined"
+          location: 
+            type: "string"
+          status: 
+            type: "boolean"
+          version: 
+            type: "boolean"
+          os: 
+            type: "string"
+          serial: 
+            type: "string"
+          macAddress: 
+            type: "string"
+          snapshot: 
+            type: "string"
+          contacts: 
+            type: "array"
+            items: 
+              type: "undefined"
+          lastConnected: 
+            type: "string"
+          created: 
+            type: "string"
+          updated: 
+            type: "string"
+          last: 
+            type: "number"
+        type: "object"
+      other: 
+        type: "string"
+      minicap: 
+        required: 
+          - "state"
+        properties: 
+          state: 
+            type: "number"
+        type: "object"
+      minitouch: 
+        required: 
+          - "state"
+        properties: 
+          state: 
+            type: "number"
+        type: "object"
+      service: 
+        required: 
+          - "state"
+        properties: 
+          state: 
+            type: "number"
+        type: "object"
+      agent: 
+        required: 
+          - "state"
+        properties: 
+          state: 
+            type: "number"
+        type: "object"
+      nizedha: 
+        required: 
+          - "state"
+        properties: 
+          state: 
+            type: "number"
+        type: "object"
+      vnc: 
+        required: 
+          - "state"
+        properties: 
+          state: 
+            type: "number"
+        type: "object"
+      isActive: 
+        type: "boolean"
+      lastConnected: 
+        type: "string"
+      last: 
+        type: "number"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+
   testsession:
     type: object
     properties: 
