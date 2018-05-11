@@ -18,14 +18,45 @@ produces:
 
 
 paths:
-  /v3/device?accesskey={access_key}&name={device_name}:
+  /v3/devices?accesskey={access_key}:
     get:
-      summary: get device, session and live screen url by device name
-      description: get device, session and live screen url by device name
+      summary: get all devices
+      description: get all devices
       operationId: device
       responses:
         '200':    # status code
-          description: get device, session and live screen url by device name
+          description: get all devices
+          schema:
+            type: object
+            properties: 
+              available : 
+                type: array
+                items: 
+                  type : object
+                  $ref: '#/definitions/device'
+              busy : 
+                type: array
+                items: 
+                  type : object
+                  $ref: '#/definitions/device'
+              offline : 
+                type: array
+                items: 
+                  type : object
+                  $ref: '#/definitions/device'
+              reserved : 
+                type: array
+                items: 
+                  type : object
+                  $ref: '#/definitions/device'
+  /v3/device/{device_id}?accesskey={access_key}:
+    get:
+      summary: get device, session and live screen url by device id
+      description: get device, session and live screen url by device id
+      operationId: device
+      responses:
+        '200':    # status code
+          description: get device, session and live screen url by device id
           schema:
             type: object
             properties: 
@@ -37,10 +68,10 @@ paths:
                 $ref: '#/definitions/testsession'
               liveScreen : 
                 type: string
-  /v3/device/free?accesskey={access_key}&name={device_name}:
+  /v3/device/free/{device_id}?accesskey={access_key}:
     delete:
-      summary: free device by device name
-      description: free device by device name
+      summary: free device by device id
+      description: free device by device id
       operationId: device
       responses:
         '200':    # status code
