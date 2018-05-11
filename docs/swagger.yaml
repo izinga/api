@@ -36,7 +36,7 @@ paths:
                 type: object
                 $ref: '#/definitions/testsession'
               liveScreen : 
-                type: "string"
+                type: string
   /v3/device?accesskey={access_key}&name={device_name}:
     delete:
       summary: free device by device name
