@@ -18,6 +18,16 @@ produces:
 
 
 paths:
+  /v3/device/free?accesskey={access_key}&name={device_name}:
+    delete:
+      summary: free device by device name
+      description: free device by device name
+      operationId: device
+      responses:
+        '200':    # status code
+          description: device
+          schema:
+            $ref: '#/definitions/device'
   /v3/session/live:
     get:
       summary: get all live page for logged in user
