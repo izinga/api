@@ -20,12 +20,12 @@ produces:
 paths:
   /v3/device?accesskey={access_key}&name={device_name}:
     get:
-      summary: get device and session details by device name
-      description: get device and session details by device name
+      summary: get device, session and live screen url by device name
+      description: get device, session and live screen url by device name
       operationId: device
       responses:
         '200':    # status code
-          description: get device and session details by device name
+          description: get device, session and live screen url by device name
           schema:
             type: object
             properties: 
