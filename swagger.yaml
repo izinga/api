@@ -837,6 +837,10 @@ definitions:
           type: "array"
           items: 
             type: "string"
+        accessedOrder: 
+          type: "array"
+          items: 
+            type: "string"
         isActivated: 
           type: "boolean"
         created: 
