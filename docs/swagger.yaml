@@ -1,8 +1,8 @@
 swagger: 2.0
 info:
   version: 1.0.0
-  title: RobusTest Api
-  description: RobusTest Apis
+  title: RobusTest API
+  description: RobusTest API
   termsOfService: http://robustest.com/terms/
   license:
     name: Apache 2.0
@@ -68,7 +68,7 @@ paths:
                 $ref: '#/definitions/testsession'
               liveScreen : 
                 type: string
-  /v3/device/free/{device_id}?accesskey={access_key}:
+  /v3/device/{device_id}/free?accesskey={access_key}:
     delete:
       summary: free device by device id
       description: free device by device id
