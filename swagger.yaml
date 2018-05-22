@@ -133,7 +133,7 @@ paths:
     put:
       summary: update tags for project
       description: update tags for project
-      operationId: contact
+      operationId: project
       parameters:
         - description: update payload
         - name: payload
@@ -151,7 +151,7 @@ paths:
     put:
       summary: update build for project
       description: update build for project
-      operationId: contact
+      operationId: build
       parameters:
         - description: update payload
         - name: payload
@@ -548,6 +548,7 @@ definitions:
       - "email"
       - "location"
       - "role"
+      - "dept"
       - "secondaryPhone"
       - "primaryPhone"
     properties: 
