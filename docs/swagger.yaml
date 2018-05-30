@@ -91,6 +91,31 @@ paths:
             items: 
               type : object
               $ref: '#/definitions/testsession'
+
+  /v3/notifications?page=pagenumber:
+    get:
+      summary: get 20 notifications for user
+      description: get 20 notifications for user
+      operationId: notification
+      responses:
+        '200':    # status code
+          description: notification
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/notification'
+
+  /v3/notifications/{notification_id}:
+    delete:
+      summary: mark notification as read
+      description: mark notification as read
+      operationId: notification
+      responses:
+        '200':    # status code
+          description: notification
+          schema:
+            $ref: '#/definitions/notification'
   /v3/automate:
     post:
       summary: start automate recording 
@@ -1171,7 +1196,35 @@ definitions:
         type: "string"
       updated: 
         type: "string"
-
+  notification:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      category: 
+        type: "string"
+      subcategory: 
+        type: "string"
+      creator: 
+        type: "string"
+      user: 
+        type: "string"
+      action: 
+        type: "string"
+      desc: 
+        type: "string"
+      objectID: 
+        type: "string"
+      objectType: 
+        type: "string"
+      link: 
+        type: "string"
+      isSeen: 
+        type: "boolean"
+      created: 
+        type: "string"
+      updated: 
+      type: "string"
   testsession:
     type: object
     properties: 
