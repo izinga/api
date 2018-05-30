@@ -104,7 +104,7 @@ paths:
             type: array
             items: 
               type : object
-              $ref: '#/definitions/notification'
+              $ref: '#/definitions/automateResponse'
 
   /v3/notifications/{notification_id}:
     delete:
@@ -114,8 +114,8 @@ paths:
       responses:
         '200':    # status code
           description: notification
-          schema:
-            $ref: '#/definitions/notification'
+          schema: 
+            $ref: '#/definitions/automateResponse'
   /v3/automate:
     post:
       summary: start automate recording 
@@ -470,6 +470,7 @@ definitions:
         type: "string"
       device: 
         type: "string"
+        
   automateResponse:
     type: object
     properties: 
