@@ -116,6 +116,24 @@ paths:
           description: notification
           schema:
             $ref: '#/definitions/notification'
+
+  /v3/run:
+    post:
+      summary: start run on multiple devices
+      description: start run on multiple devices
+      operationId: run
+      parameters:
+        - description: start run on multiple devices
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/runPayload'
+      responses:
+        '200':    # status code
+          description: run response
+          schema:
+            $ref: '#/definitions/runResponse'
   /v3/automate:
     post:
       summary: start automate recording 
@@ -470,6 +488,8 @@ definitions:
         type: "string"
       device: 
         type: "string"
+      settings:
+        type: "object"
   automateResponse:
     type: object
     properties: 
@@ -1266,7 +1286,100 @@ definitions:
         type: "string"
       updated: 
         type: "string"
-
+  runPayload: 
+    type: object
+    properties: 
+      testsuite: 
+        type: "string"
+      project: 
+        type: "string"
+      build: 
+        type: "string"
+      SendOnFail: 
+        type: "boolean"
+      SendOnPass: 
+        type: "boolean"
+      recipient: 
+        type: "array"
+        items: 
+          type: "string"
+      settings: 
+        required: 
+          - "key"
+        properties: 
+          key: 
+            type: "string"
+        type: "object"
+      instancesData: 
+        type: "array"
+        items: 
+          type: "object"
+          properties: 
+            device: 
+              type: "string"
+            datasetID: 
+              type: "string"
+            testscriptsData: 
+              type: "array"
+              items: 
+                type: "object"
+                properties: 
+                  testscript: 
+                    type: "string"
+                  name: 
+                    type: "string"
+                  userData: 
+                    type: "array"
+                    items: 
+                      type: "undefined"
+  runResponse:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      project: 
+        type: "string"
+      testsuite: 
+        type: "string"
+      build: 
+        type: "string"
+      instances: 
+        type: "array"
+        items: 
+          type: "undefined"
+      settings: 
+        required: []
+        properties: {}
+        type: "object"
+      isPublic: 
+        type: "boolean"
+      isCompleted: 
+        type: "boolean"
+      resultCount: 
+        type: "number"
+      sendOnFail: 
+        type: "boolean"
+      sendOnPass: 
+        type: "boolean"
+      email: 
+        type: "boolean"
+      recipient: 
+        type: "array"
+        items: 
+          type: "string"
+      ps: 
+        type: "number"
+      fl: 
+        type: "number"
+      er: 
+        type: "number"
+      createdBy: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+                    
   notification:
     type: object
     properties: 
