@@ -619,6 +619,12 @@ definitions:
         type: "string"
       role: 
         type: "string"
+      node: 
+        type: "boolean"
+      device: 
+        type: "boolean"
+      automate: 
+        type: "boolean"
       secondaryPhone: 
         type: "string"
       primaryPhone: 
@@ -640,6 +646,12 @@ definitions:
         type: "string"
       secondaryPhone: 
         type: "string"
+      node: 
+        type: "boolean"
+      device: 
+        type: "boolean"
+      automate: 
+        type: "boolean"
       updated: 
         type: "string"
       created: 
