@@ -217,6 +217,20 @@ paths:
           schema: 
             $ref: '#/definitions/build'
 
+
+  /v3/user:
+    get:
+      summary: get user detail
+      description:  get user detail
+      operationId: user
+      responses:
+        '200':    # status code
+          description: users list
+          schema: 
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/userDetail'
   /v3/users:
     get:
       summary: get all users
@@ -925,6 +939,79 @@ definitions:
           type: "string"
         secondaryPhone: 
           type: "string"
+  userDetail:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      name: 
+        type: "string"
+      email: 
+        type: "string"
+      active: 
+        type: "boolean"
+      projects: 
+        type: "array"
+        items: 
+          type: "string"
+      activeProjects: 
+        type: "array"
+        items: 
+          type: "object"
+          properties: 
+            _id: 
+              type: "string"
+            name: 
+              type: "string"
+            org: 
+              type: "string"
+            os: 
+              type: "string"
+            icon64: 
+              type: "string"
+            type: 
+              type: "string"
+            url: 
+              type: "string"
+            packageName: 
+              type: "string"
+            activityClass: 
+              type: "string"
+            bugProject: 
+              type: "string"
+            test_c: 
+              type: "number"
+            active: 
+              type: "boolean"
+            is_universal: 
+              type: "boolean"
+            last: 
+              type: "string"
+            created: 
+              type: "string"
+            updated: 
+              type: "string"
+            update_by: 
+              type: "string"
+            created_by: 
+              type: "string"
+      isActivated: 
+        type: "boolean"
+      accessLevel: 
+        type: "array"
+        items: 
+          type: "string"
+      accessKey: 
+        type: "string"
+      accessedOrder: 
+        type: "array"
+        items: 
+          type: "string"
+      roles: 
+        type: "array"
+        items: 
+          type: "string"
+
   project:
     type: object
     properties: 
