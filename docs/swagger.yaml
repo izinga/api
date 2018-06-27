@@ -116,6 +116,23 @@ paths:
           description: notification
           schema:
             $ref: '#/definitions/notification'
+  /v3/project/{project_id}/build/createWeb:
+    post:
+      summary: create web build
+      description: create web build
+      operationId: build
+      parameters:
+        - description: create web build
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/webBuildPayload'
+      responses:
+        '200':    # status code
+          description: run response
+          schema:
+            $ref: '#/definitions/build'
 
   /v3/run:
     post:
@@ -1478,7 +1495,18 @@ definitions:
         type: "string"
       updated: 
         type: "string"
-                    
+  webBuildPayload:
+    type: object
+    properties: 
+      os: 
+        type: "string"
+      active: 
+        type: "boolean"
+      label: 
+        type: "string"
+      url: 
+        type: "string"
+
   notification:
     type: object
     properties: 
