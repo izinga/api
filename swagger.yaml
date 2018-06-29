@@ -92,6 +92,48 @@ paths:
               type : object
               $ref: '#/definitions/testsession'
 
+
+  /v3/variables/{project_id}:
+    get:
+      summary: get all global variables
+      description: get all global variables
+      operationId: global variables
+      responses:
+        '200':    # status code
+          description: global variables
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/globalVariable'
+  /v3/variable/new:
+    post:
+      summary: get all global variables
+      description: get all global variables
+      operationId: global variables
+      parameters:
+        - description: create global variables
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/webBuildPayload'
+      responses:
+        '200':    # status code
+          description: global variables
+          schema:
+              $ref: '#/definitions/globalVariable'
+  /v3/variable/{id}:
+    get:
+      summary: get global variables
+      description: get global variables
+      operationId: global variables
+      responses:
+        '200':    # status code
+          description: global variables
+          schema:
+              $ref: '#/definitions/globalVariable'
+
   /v3/notifications?page=pagenumber:
     get:
       summary: get 20 notifications for user
@@ -1505,6 +1547,40 @@ definitions:
       label: 
         type: "string"
       url: 
+        type: "string"
+
+  globalVariable:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      project: 
+        type: "string"
+      name: 
+        type: "boolean"
+      desc: 
+        type: "string"
+      data: 
+        type: "string"
+      createdBy: 
+        type: "string"
+      updateBy: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+
+  globalVariablePayload:
+    type: object
+    properties: 
+      project: 
+        type: "string"
+      name: 
+        type: "boolean"
+      desc: 
+        type: "string"
+      data: 
         type: "string"
 
   notification:
