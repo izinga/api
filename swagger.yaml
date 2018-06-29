@@ -1600,6 +1600,15 @@ definitions:
         type: "string"
       data: 
         type: "string"
+  checkPayload:
+    type: object
+    properties: 
+      isCheck: 
+        type: "boolean"
+      checkType: 
+        type: "string"
+      checkMessage: 
+        type: "string"
   testscript:
     type: object
     properties: 
