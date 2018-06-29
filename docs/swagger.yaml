@@ -93,6 +93,24 @@ paths:
               $ref: '#/definitions/testsession'
 
 
+  /v3/testscript/{testscript_id}/check:
+    put:
+      summary: make testscript as check
+      description: make testscript as check
+      operationId: testscript
+      parameters:
+        - description: make testscript as check
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/checkPayload'
+      responses:
+        '200':    # status code
+          description: global variables
+          schema:
+              $ref: '#/definitions/testscript'
+
   /v3/variables/{project_id}:
     get:
       summary: get all global variables
@@ -1581,6 +1599,183 @@ definitions:
       desc: 
         type: "string"
       data: 
+        type: "string"
+  testscript:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      name: 
+        type: "string"
+      desc: 
+        type: "string"
+      project: 
+        type: "string"
+      os: 
+        type: "string"
+      test_c: 
+        type: "number"
+      steps: 
+        type: "array"
+        items: 
+          type: "object"
+          properties: 
+            name: 
+              type: "string"
+            desc: 
+              type: "string"
+            key: 
+              type: "string"
+            step: 
+              type: "string"
+            isMethod: 
+              type: "boolean"
+            xpathKey: 
+              type: "string"
+            codeKey: 
+              type: "string"
+            references: 
+              type: "array"
+              items: 
+                type: "undefined"
+            dependencies: 
+              type: "array"
+              items: 
+                type: "undefined"
+            settings: 
+              required: 
+                - "failType"
+                - "messageOnFail"
+                - "onFail"
+              properties: 
+                failType: 
+                  type: "string"
+                messageOnFail: 
+                  type: "string"
+                onFail: 
+                  type: "string"
+              type: "object"
+            userData: 
+              required: []
+              properties: {}
+              type: "object"
+            returnData: 
+              required: 
+                - "element"
+              properties: 
+                element: 
+                  required: 
+                    - "_text"
+                    - "bound"
+                  properties: 
+                    _text: 
+                      type: "string"
+                    bound: 
+                      required: 
+                        - "bottom"
+                        - "height"
+                        - "left"
+                        - "right"
+                        - "top"
+                        - "width"
+                      properties: 
+                        bottom: 
+                          type: "number"
+                        height: 
+                          type: "number"
+                        left: 
+                          type: "number"
+                        right: 
+                          type: "number"
+                        top: 
+                          type: "number"
+                        width: 
+                          type: "number"
+                      type: "object"
+                  type: "object"
+              type: "object"
+            expose: 
+              type: "boolean"
+            before: 
+              type: "array"
+              items: 
+                type: "undefined"
+            after: 
+              type: "array"
+              items: 
+                type: "undefined"
+            dataMap: 
+              type: "array"
+              items: 
+                type: "undefined"
+            pagesource: 
+              type: "string"
+            afterPagesource: 
+              type: "string"
+            screenshot: 
+              type: "string"
+            afterScreenshot: 
+              type: "string"
+            updated: 
+              type: "number"
+      settings: 
+        required: []
+        properties: {}
+        type: "object"
+      dataMap: 
+        required: []
+        properties: {}
+        type: "object"
+      params: 
+        required: 
+          - "js8v0kccdni"
+        properties: 
+          js8v0kccdni: 
+            type: "string"
+        type: "object"
+      version: 
+        type: "number"
+      cVersion: 
+        type: "string"
+      build: 
+        type: "string"
+      device: 
+        type: "string"
+      functionName: 
+        type: "string"
+      isFunction: 
+        type: "boolean"
+      functionID: 
+        type: "string"
+      functions: 
+        type: "array"
+        items: 
+          type: "undefined"
+      bugs: 
+        type: "array"
+        items: 
+          type: "undefined"
+      tags: 
+        type: "array"
+        items: 
+          type: "undefined"
+      automated: 
+        type: "boolean"
+      active: 
+        type: "boolean"
+      isCheck: 
+        type: "boolean"
+      checkType: 
+        type: "string"
+      checkMessage: 
+        type: "string"
+      createdBy: 
+        type: "string"
+      updatedBy: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
         type: "string"
 
   notification:
