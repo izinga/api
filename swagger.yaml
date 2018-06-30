@@ -93,6 +93,16 @@ paths:
               $ref: '#/definitions/testsession'
 
 
+  /v3/result/{result_id}/logcat:
+    get:
+      summary: get logcat for result
+      description: get logcat for result
+      operationId: result
+      responses:
+        '200':    # status code
+          description: result
+          schema:
+            $ref: '#/definitions/logcat'
   /v3/testscript/{testscript_id}/check:
     put:
       summary: make testscript as check
@@ -1785,6 +1795,17 @@ definitions:
       created: 
         type: "string"
       updated: 
+        type: "string"
+  logcat:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      result: 
+        type: "string"
+      data: 
+        type: "string"
+      created: 
         type: "string"
 
   notification:
