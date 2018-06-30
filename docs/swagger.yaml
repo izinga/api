@@ -103,6 +103,21 @@ paths:
           description: result
           schema:
             $ref: '#/definitions/logcat'
+
+  /v3/testscript/{testscript_id}/checkForDelete:
+    head:
+      summary: get list of all test scripts whiche are depends on testscript
+      description: get list of all test scripts whiche are depends on testscript
+      operationId: testscript
+      responses:
+        '200':    # status code
+          description: testscript
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/testscript'
+  
   /v3/testscript/{testscript_id}/check:
     put:
       summary: make testscript as check
