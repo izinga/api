@@ -104,6 +104,17 @@ paths:
           schema:
             $ref: '#/definitions/logcat'
 
+  /v3/result/{result_id}/perfomance:
+    get:
+      summary: get perfomance for result
+      description: get perfomance for result
+      operationId: result
+      responses:
+        '200':    # status code
+          description: perfomance
+          schema:
+            $ref: '#/definitions/perfomance'
+
   /v3/testscript/{testscript_id}/checkForDelete:
     head:
       summary: get list of all test scripts whiche are depends on testscript
@@ -1812,6 +1823,17 @@ definitions:
       updated: 
         type: "string"
   logcat:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      result: 
+        type: "string"
+      data: 
+        type: "string"
+      created: 
+        type: "string"
+  perfomance:
     type: object
     properties: 
       _id: 
