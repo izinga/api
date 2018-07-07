@@ -128,7 +128,78 @@ paths:
             items: 
               type : object
               $ref: '#/definitions/testscript'
-  
+
+
+  /v3/setting/{id}:
+    post:
+      summary: create setting
+      description: create setting
+      operationId: setting
+      parameters:
+        - description: create setting
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/settingPayload'
+      responses:
+        '200':    # status code
+          description: setting variables
+          schema:
+              $ref: '#/definitions/setting'
+    put:
+      summary: update setting
+      description: update setting
+      operationId: setting
+      parameters:
+        - description: update setting
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/settingPayload'
+      responses:
+        '200':    # status code
+          description: setting variables
+          schema:
+              $ref: '#/definitions/setting'
+    get:
+      summary: get setting
+      description: get setting
+      operationId: setting
+      responses:
+        '200':    # status code
+          description: setting variables
+          schema:
+              $ref: '#/definitions/setting'
+  /v3/settings/{project id}:
+    get:
+      summary: get all setting for project setting
+      description: get all setting for project setting
+      operationId: setting
+      responses:
+        '200':    # status code
+          description: get all setting for project setting
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/setting'
+
+  /v3/settings/{id}/default:
+    put:
+      summary: make setting default
+      description: make setting default
+      operationId: setting
+      responses:
+        '200':    # status code
+          description: make setting default
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/setting'
+
   /v3/testscript/{testscript_id}/check:
     put:
       summary: make testscript as check
@@ -1844,6 +1915,92 @@ definitions:
         type: "string"
       created: 
         type: "string"
+  setting:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      project: 
+        type: "string"
+      name: 
+        type: "string"
+      desc: 
+        type: "string"
+      type: 
+        type: "string"
+      os: 
+        type: "string"
+      isDefault: 
+        type: "boolean"
+      createdBy: 
+        type: "string"
+      updatedBy: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+      data: 
+        required: 
+          - "general"
+          - "appium"
+        properties: 
+          general: 
+            required: 
+              - "key"
+            properties: 
+              key: 
+                type: "string"
+            type: "object"
+          appium: 
+            required: 
+              - "key"
+            properties: 
+              key: 
+                type: "string"
+            type: "object"
+        type: "object"
+
+  settingPayload:
+    type: object
+    required: 
+      - "name"
+      - "desc"
+      - "project"
+      - "type"
+      - "os"
+      - "data"
+    properties: 
+      name: 
+        type: "string"
+      desc: 
+        type: "string"
+      project: 
+        type: "string"
+      type: 
+        type: "string"
+      os: 
+        type: "string"
+      data: 
+        required: 
+          - "general"
+          - "appium"
+        properties: 
+          general: 
+            required: 
+              - "key"
+            properties: 
+              key: 
+                type: "string"
+            type: "object"
+          appium: 
+            required: 
+              - "key"
+            properties: 
+              key: 
+                type: "string"
+            type: "object"
+        type: "object"
 
   notification:
     type: object
