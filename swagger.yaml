@@ -318,6 +318,27 @@ paths:
           description: run response
           schema:
             $ref: '#/definitions/runResponse'
+
+  /v3/runs/{projectID}:
+    get:
+      summary: get all runs for projects
+      description: get all runs for projects
+      operationId: run
+      responses:
+        '200':    # status code
+          description: run response
+          schema:
+            $ref: '#/definitions/runResponse'
+  /v3/runs/{run_id}:
+    get:
+      summary: get run
+      description: get run
+      operationId: run
+      responses:
+        '200':    # status code
+          description: run response
+          schema:
+            $ref: '#/definitions/runResponse'
   /v3/automate:
     post:
       summary: start automate recording 
