@@ -146,6 +146,24 @@ paths:
           description: dataset 
           schema:
               $ref: '#/definitions/dataset'
+    put:
+      summary: update dataset
+      description: update dataset
+      operationId: dataset
+      parameters:
+        - description: update dataset
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/datasetUpdatePayload'
+      responses:
+        '200':    # status code
+          description: dataset 
+          schema:
+              $ref: '#/definitions/dataset'
+
+
     get:
       summary: get dataset
       description: get dataset
@@ -2114,6 +2132,17 @@ definitions:
       isDefault: 
         type: "boolean"
       testsuite: 
+        type: "string"
+      testscriptsData: 
+        required: []
+        properties: {}
+        type: "object"
+  datasetUpdatePayload:
+    type: object
+    properties: 
+      name: 
+        type: "string"
+      desc: 
         type: "string"
       testscriptsData: 
         required: []
