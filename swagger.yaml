@@ -129,7 +129,59 @@ paths:
               type : object
               $ref: '#/definitions/testscript'
 
+  /v3/dataset/{id}:
+    post:
+      summary: create dataset
+      description: create dataset
+      operationId: dataset
+      parameters:
+        - description: create dataset
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/datasetPayload'
+      responses:
+        '200':    # status code
+          description: dataset 
+          schema:
+              $ref: '#/definitions/dataset'
+    get:
+      summary: get dataset
+      description: get dataset
+      operationId: dataset
+      responses:
+        '200':    # status code
+          description: dataset 
+          schema:
+              $ref: '#/definitions/dataset'
 
+  /v3/datasets/project/{project id}:
+    get:
+      summary: get all dataset for project dataset
+      description: get all dataset for project dataset
+      operationId: setting
+      responses:
+        '200':    # status code
+          description: get all dataset for project dataset
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/dataset'
+  /v3/datasets/testsuite/{test suite id}:
+    get:
+      summary: get all dataset for test suite dataset
+      description: get all dataset for test suite dataset
+      operationId: setting
+      responses:
+        '200':    # status code
+          description: get all dataset for test suite dataset
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/dataset'
   /v3/setting/{id}:
     post:
       summary: create setting
@@ -2021,6 +2073,51 @@ definitions:
               key: 
                 type: "string"
             type: "object"
+        type: "object"
+  dataset:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      name: 
+        type: "string"
+      desc: 
+        type: "string"
+      project: 
+        type: "string"
+      isDefault: 
+        type: "boolean"
+      testsuite: 
+        type: "string"
+      testscriptsData: 
+        required: []
+        properties: {}
+        type: "object"
+      createdBy: 
+        type: "string"
+      updatedBy: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+
+  datasetPayload:
+    type: object
+    properties: 
+      name: 
+        type: "string"
+      desc: 
+        type: "string"
+      project: 
+        type: "string"
+      isDefault: 
+        type: "boolean"
+      testsuite: 
+        type: "string"
+      testscriptsData: 
+        required: []
+        properties: {}
         type: "object"
 
   notification:
