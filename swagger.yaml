@@ -242,6 +242,15 @@ paths:
           description: setting variables
           schema:
               $ref: '#/definitions/setting'
+    delete:
+      summary: delete setting
+      description: delete setting
+      operationId: setting
+      responses:
+        '200':    # status code
+          description: delete variables
+          schema:
+              $ref: '#/definitions/setting'
   /v3/settings/{project id}:
     get:
       summary: get all setting for project setting
