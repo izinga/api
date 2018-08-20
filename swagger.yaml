@@ -129,6 +129,26 @@ paths:
               type : object
               $ref: '#/definitions/testscript'
 
+
+
+  /v3/share/new:
+    post:
+      summary: create new share object
+      description: create new share object
+      operationId: share
+      parameters:
+        - description: new share object
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/sharePayload'
+      responses:
+        '200':    # status code
+          description: share 
+          schema:
+              $ref: '#/definitions/sharePayload'
+
   /v3/dataset/{id}:
     post:
       summary: create dataset
@@ -2003,6 +2023,35 @@ definitions:
       data: 
         type: "string"
       created: 
+        type: "string"
+
+
+  share:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      objectID: 
+        type: "string"
+      user: 
+        type: "string"
+      objectType: 
+        type: "string"
+      projectID: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+
+  sharePayload:
+    type: object
+    properties: 
+      objectID: 
+        type: "string"
+      objectType: 
+        type: "string"
+      projectID: 
         type: "string"
   perfomance:
     type: object
