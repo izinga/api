@@ -18,6 +18,16 @@ produces:
 
 
 paths:
+  /v3/run/{run_id}/rerun?accesskey={access_key}:
+    get:
+      summary: Rerun test on same set of devices with same test suite and dataset
+      description: Rerun test on same set of devices with same test suite and dataset
+      operationId: run
+      responses:
+        '200':    # status code
+          description: run
+          schema:
+            $ref: '#/definitions/runResponse'
   /v3/devices?accesskey={access_key}:
     get:
       summary: get all devices
