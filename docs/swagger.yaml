@@ -140,6 +140,66 @@ paths:
               $ref: '#/definitions/testscript'
 
 
+  /v3/contacts/:projectID:
+    get:
+      summary: get all contact for project
+      description: get all contact for project
+      operationId: contact
+      responses:
+        '200':    # status code
+          description: get all contact for project 
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/contactListResponse'
+              
+  /v3/contact/:id:
+    post:
+      summary: create new contact 
+      description: create new contact
+      operationId: contact
+      parameters:
+        - description: new contact
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/contactListPayload'
+      responses:
+        '200':    # status code
+          description: share 
+          schema:
+              $ref: '#/definitions/contactListResponse'
+    put:
+      summary: update contact 
+      description: update contact
+      operationId: contact
+      parameters:
+        - description: update contact
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/contactListPayload'
+    get:
+      summary: get contact 
+      description: get contact
+      operationId: contact
+      responses:
+        '200':    # status code
+          description: contact 
+          schema:
+              $ref: '#/definitions/contactListResponse'
+    delete:
+      summary: delete contact 
+      description: delete contact
+      operationId: contact
+      responses:
+        '200':    # status code
+          description: share 
+          schema:
+              $ref: '#/definitions/contactListResponse'
 
   /v3/share/new:
     post:
@@ -1745,6 +1805,54 @@ definitions:
                     type: "array"
                     items: 
                       type: "undefined"
+
+  contactListPayload:
+    type: object
+    required: 
+      - "project"
+      - "name"
+      - "email"
+      - "phone"
+    properties: 
+      project: 
+        type: "string"
+      name: 
+        type: "string"
+      email: 
+        type: "string"
+      phone: 
+        type: "string"
+  contactListResponse:
+    type: object
+    required: 
+      - "_id"
+      - "name"
+      - "project"
+      - "email"
+      - "phone"
+      - "createdBy"
+      - "updatedBy"
+      - "updated"
+      - "created"
+    properties: 
+      _id: 
+        type: "string"
+      name: 
+        type: "string"
+      project: 
+        type: "string"
+      email: 
+        type: "string"
+      phone: 
+        type: "string"
+      createdBy: 
+        type: "string"
+      updatedBy: 
+        type: "string"
+      updated: 
+        type: "string"
+      created: 
+        type: "string"
   runResponse:
     type: object
     properties: 
