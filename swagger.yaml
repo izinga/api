@@ -18,6 +18,16 @@ produces:
 
 
 paths:
+  /admin/v3/confirm/resend/:userID:
+    get:
+      summary: resend confirmation link
+      description: resend confirmation link
+      operationId: confirm
+      responses:
+        '200':    # status code
+          description: confirm
+
+paths:
   /v3/run/{run_id}/rerun?accesskey={access_key}:
     get:
       summary: Rerun test on same set of devices with same test suite and dataset
