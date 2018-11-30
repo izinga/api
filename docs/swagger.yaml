@@ -496,6 +496,27 @@ paths:
           schema:
             $ref: '#/definitions/runResponse'
 
+
+  /v3/run/:id/archive:
+    put:
+      summary: archive run 
+      description: archive run 
+      operationId: run
+      responses:
+        '200':    # status code
+          description: run response
+          schema:
+            $ref: '#/definitions/runResponse'
+    delete:
+      summary: undo archive run 
+      description: undo archive run 
+      operationId: run
+      responses:
+        '200':    # status code
+          description: run response
+          schema:
+            $ref: '#/definitions/runResponse'
+
   /v3/runs/{projectID}:
     get:
       summary: get all runs for projects
