@@ -532,10 +532,10 @@ paths:
                 type: number
               cursor:
                 type: string
-              runs
+              runs:
                 type : object
                 $ref: '#/definitions/device'
-                
+
   /v3/run/{run_id}:
     get:
       summary: get run
