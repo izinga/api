@@ -526,8 +526,17 @@ paths:
         '200':    # status code
           description: run response
           schema:
-            $ref: '#/definitions/runResponse'
-  /v3/runs/{run_id}:
+            type: object
+            properties: 
+              totalCount:
+                type: number
+              cursor:
+                type: string
+              runs
+                type : object
+                $ref: '#/definitions/device'
+                
+  /v3/run/{run_id}:
     get:
       summary: get run
       description: get run
