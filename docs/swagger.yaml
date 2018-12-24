@@ -546,6 +546,35 @@ paths:
           description: run response
           schema:
             $ref: '#/definitions/runResponse'
+    delete:
+      summary: stop run
+      description: stop run
+      operationId: run
+      responses:
+        '200':    # status code
+          description: run response
+          schema:
+            $ref: '#/definitions/runResponse'
+
+  /v3/instance/{instance_id}:
+    get:
+      summary: get run
+      description: get instance
+      operationId: instance
+      responses:
+        '200':    # status code
+          description: instance response
+          schema:
+            $ref: '#/definitions/runResponse'
+    delete:
+      summary: stop instance
+      description: stop instance
+      operationId: instance
+      responses:
+        '200':    # status code
+          description: instance response
+          schema:
+            $ref: '#/definitions/instancesData'        
   /v3/automate:
     post:
       summary: start automate recording 
