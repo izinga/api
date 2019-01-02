@@ -535,7 +535,7 @@ paths:
               runs:
                 type : object
                 $ref: '#/definitions/runResponse'
-  /v3/runs/testsuite/{testsuite}:
+  /v3/testsuiteRuns/{testsuite}:
     get:
       summary: get all runs for testsuite
       description: get all runs for testsuite
