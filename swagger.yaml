@@ -534,8 +534,25 @@ paths:
                 type: string
               runs:
                 type : object
-                $ref: '#/definitions/device'
-
+                $ref: '#/definitions/runResponse'
+  /v3/runs/testsuite/{testsuite}:
+    get:
+      summary: get all runs for testsuite
+      description: get all runs for testsuite
+      operationId: run
+      responses:
+        '200':    # status code
+          description: run response
+          schema:
+            type: object
+            properties: 
+              totalCount:
+                type: number
+              cursor:
+                type: string
+              runs:
+                type : object
+                $ref: '#/definitions/runResponse'
   /v3/run/{run_id}:
     get:
       summary: get run
