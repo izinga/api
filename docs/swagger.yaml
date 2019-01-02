@@ -582,7 +582,7 @@ paths:
         '200':    # status code
           description: instance response
           schema:
-            $ref: '#/definitions/runResponse'
+            $ref: '#/definitions/instancesData'
     delete:
       summary: stop instance
       description: stop instance
