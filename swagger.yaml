@@ -18,7 +18,7 @@ produces:
 
 
 paths:
-  /admin/v3/confirm/resend/:userID:
+  /admin/v3/confirm/:userID/resend:
     get:
       summary: resend confirmation link
       description: resend confirmation link
