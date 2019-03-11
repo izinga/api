@@ -581,6 +581,7 @@ paths:
               runs:
                 type : object
                 $ref: '#/definitions/runResponse'
+
   /v3/run/{run_id}:
     get:
       summary: get run
@@ -1930,6 +1931,26 @@ definitions:
                     type: "array"
                     items: 
                       type: "undefined"
+  instancesData:
+    type: object
+    properties: 
+      device: 
+        type: "string"
+      datasetID: 
+        type: "string"
+      testscriptsData: 
+        type: "array"
+        items: 
+          type: "object"
+          properties: 
+            testscript: 
+              type: "string"
+            name: 
+              type: "string"
+            userData: 
+              type: "array"
+              items: 
+                type: "undefined"
 
   contactListPayload:
     type: object
