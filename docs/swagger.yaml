@@ -161,7 +161,35 @@ paths:
             items: 
               type : object
               $ref: '#/definitions/contactListResponse'
-              
+  
+  /v3/device/reserve:
+    put:
+      summary: reserve device
+      description: reserve device
+      operationId: device
+      parameters:
+        - description: reserve device
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/DeviceReservePayload'
+      responses:
+        '200':    # status code
+          description: device 
+          schema:
+              $ref: '#/definitions/device' 
+  /device/:device_id/reserveput:
+    delete:
+      summary: unreserve device
+      description: unreserve device
+      operationId: unreserve
+     
+      responses:
+        '200':    # status code
+          description: device 
+          schema:
+              $ref: '#/definitions/device'
   /v3/contact/:id:
     post:
       summary: create new contact 
@@ -1057,6 +1085,16 @@ definitions:
       created: 
         type: "string"
 
+  DeviceReservePayload:
+    type: object
+    required: 
+      - "_id"
+      - "reserveKey"
+    properties: 
+      _id: 
+        type: "string"
+      reserveKey: 
+        type: "string"
 
   ContactPayload:
     type: object
