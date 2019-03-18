@@ -26,6 +26,23 @@ paths:
       responses:
         '200':    # status code
           description: confirm
+
+
+  /v3/testsession/{test_session_id}/screenshot:
+    get:
+      summary: get screenshot from device
+      description: get screenshot from device
+      operationId: screenshot
+      responses:
+        '200':    # status code
+          description: screenshot
+          
+          schema:
+            type: object
+            properties: 
+              base64 : 
+                type: string
+
   /v3/run/{run_id}/rerun?accesskey={access_key}:
     get:
       summary: Rerun test on same set of devices with same test suite and dataset
