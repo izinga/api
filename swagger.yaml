@@ -16,8 +16,31 @@ produces:
   - application/json
 
 
+paths: 
+  /v3/testsession/<testsession_id>/performance?accesskey=<access_key>:
+    post:
+      summary: start performance monitoring
+      description: start performance monitoring
+      operationId: performance
+      parameters:
+        - description: reserve device
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/perfomanceData'
+      responses:
+        '200':    # status code
+          description: performance
+    delete:
+      summary: stop performance monitoring
+      description: stop performance monitoring
+      operationId: performance
+      responses:
+        '200':    # status code
+          description: performance
 
-paths:
+
   /admin/v3/confirm/:userID/resend:
     get:
       summary: resend confirmation link
@@ -2517,4 +2540,36 @@ definitions:
         type: "string"
       updated: 
         type: "string"
+
+  perfomanceData:
+    type: object
+    required: 
+      - "storage"
+      - "database"
+      - "server"
+      - "username"
+      - "password"
+      - "params"
+      - "tags"
+    properties: 
+      storage: 
+        type: "string"
+      database: 
+        type: "string"
+      server: 
+        type: "string"
+      username: 
+        type: "string"
+      password: 
+        type: "string"
+      params: 
+        type: "array"
+        items: 
+          type: "string"
+      tags: 
+        type: "object"
+        properties: 
+          custom: 
+            type: "value"
+
         
