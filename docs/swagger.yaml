@@ -17,6 +17,34 @@ produces:
 
 
 paths: 
+  /admin/v3/config:
+    get:
+      summary: get all config
+      description:  get all config
+      operationId: config
+      responses:
+        '200':    # status code
+          description: run
+          schema:
+            $ref: '#/definitions/config'
+
+  /admin/v3/config/<id>:
+    put:
+      summary: get all config
+      description:  get all config
+      operationId: config
+      parameters:
+        - description: config
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/config'
+      responses:
+        '200':    # status code
+          description: run
+          schema:
+            $ref: '#/definitions/config'
   /v3/testsession/<testsession_id>/performance?accesskey=<access_key>:
     post:
       summary: start performance monitoring
@@ -2540,7 +2568,21 @@ definitions:
         type: "string"
       updated: 
         type: "string"
-
+  config:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      disableDeviceNotification: 
+        type: "boolean"
+      disableNodeNotification: 
+        type: "boolean"
+      updatedBy: 
+        type: "string"
+      updated: 
+        type: "string"
+      created: 
+        type: "string"
   perfomanceData:
     type: object
     required: 
