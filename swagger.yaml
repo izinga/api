@@ -30,8 +30,8 @@ paths:
 
   /admin/v3/config/<id>:
     put:
-      summary: get all config
-      description:  get all config
+      summary: update config
+      description:  update config
       operationId: config
       parameters:
         - description: config
