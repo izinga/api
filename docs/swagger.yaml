@@ -45,6 +45,25 @@ paths:
           description: run
           schema:
             $ref: '#/definitions/config'
+
+
+  /admin/v3/db/clean:
+    delete:
+      summary: delete row from database
+      description:  delete row from database
+      operationId: dbCleanup
+      parameters:
+        - description: dbCleanup
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/dbCleanup'
+      responses:
+        '200':    # status code
+          description: run
+          
+
   /v3/testsession/<testsession_id>/performance?accesskey=<access_key>:
     post:
       summary: start performance monitoring
@@ -2583,6 +2602,27 @@ definitions:
         type: "string"
       created: 
         type: "string"
+
+  dbCleanup:
+    properties: 
+      collectionName: 
+        type: "string"
+      remove: 
+        type: "boolean"
+      conditions: 
+        type: "array"
+        items: 
+          type: "object"
+          properties: 
+            field: 
+              type: "string"
+            fieldType: 
+              type: "string"
+            operator: 
+              type: "string"
+            value: 
+              type: "string"
+
   perfomanceData:
     type: object
     required: 
