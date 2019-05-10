@@ -17,6 +17,32 @@ produces:
 
 
 paths: 
+  /v3/recording/pagesource/<testsession_id>:
+    get:
+      summary: get pagesource
+      description:  get pagesource
+      operationId: pagesource
+      responses:
+        '200':    # status code
+          description: pagesource
+          schema:
+            $ref: '#/definitions/pagesource'
+    put:
+      summary: stop pagesource streaming
+      description:  stop pagesource streaming
+      operationId: pagesource
+      responses:
+        '200':    # status code
+          description: run
+    delete:
+      summary: start pagesource streaming
+      description:  start pagesource streaming
+      operationId: pagesource
+      responses:
+        '200':    # status code
+          description: run
+
+
   /admin/v3/config:
     get:
       summary: get all config
@@ -2622,6 +2648,19 @@ definitions:
               type: "string"
             value: 
               type: "string"
+  pagesource:
+    type:
+      properties: 
+        target: 
+          type: "string"
+        pageSourceXml: 
+          type: "string"
+        activity: 
+          type: "string"
+        screenshot: 
+          type: "string"
+        sessionId: 
+          type: "string"
 
   perfomanceData:
     type: object
