@@ -26,7 +26,7 @@ paths:
         '200':    # status code
           description: espresso-testcase
           schema:
-            $ref: '#/definitions/pagesource'
+            $ref: '#/definitions/espressoTestcase'
 
   /v3/recording/pagesource/<testsession_id>:
     get:
