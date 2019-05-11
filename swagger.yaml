@@ -21,10 +21,10 @@ paths:
     get:
       summary: get last N history of espresso-testcase
       description:  get last N history of espresso-testcase
-      operationId: espresso-testcase
+      operationId: espresso-testcase 
       responses:
         '200':    # status code
-          description: espresso-testcase
+          description: espresso-testcase last N history of espresso-testcase
           schema:
             $ref: '#/definitions/espressoTestcase'
 

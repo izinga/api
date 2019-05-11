@@ -1,4 +1,6 @@
 cp swagger.yaml ./docs/
+git commit -am 'added new api'
+git push
 # swagger-codegen generate -i swagger.yaml  -l python -o client/python
 # swagger-codegen generate -i swagger.yaml  -l java -o client/java
 # swagger-codegen generate -i swagger.yaml  -l ruby -o client/ruby
