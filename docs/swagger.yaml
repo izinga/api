@@ -2660,7 +2660,6 @@ definitions:
             value: 
               type: "string"
   pagesource:
-    type: object
       properties: 
         target: 
           type: "string"
@@ -2672,8 +2671,8 @@ definitions:
           type: "string"
         sessionId: 
           type: "string"
+
   espressoTestcase:
-    type: object
     properties: 
       _id: 
         type: "string"
