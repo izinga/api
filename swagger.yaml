@@ -2660,17 +2660,17 @@ definitions:
             value: 
               type: "string"
   pagesource:
-      properties: 
-        target: 
-          type: "string"
-        pageSourceXml: 
-          type: "string"
-        activity: 
-          type: "string"
-        screenshot: 
-          type: "string"
-        sessionId: 
-          type: "string"
+    properties: 
+      target: 
+        type: "string"
+      pageSourceXml: 
+        type: "string"
+      activity: 
+        type: "string"
+      screenshot: 
+        type: "string"
+      sessionId: 
+        type: "string"
 
   espressoTestcase:
     properties: 
