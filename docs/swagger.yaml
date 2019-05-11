@@ -17,6 +17,17 @@ produces:
 
 
 paths: 
+  /v3/espresso-testcase/5cd71199f131c57092b5272a/history?count=100:
+    get:
+      summary: get last N history of espresso-testcase
+      description:  get last N history of espresso-testcase
+      operationId: espresso-testcase
+      responses:
+        '200':    # status code
+          description: espresso-testcase
+          schema:
+            $ref: '#/definitions/pagesource'
+
   /v3/recording/pagesource/<testsession_id>:
     get:
       summary: get pagesource
@@ -2649,7 +2660,7 @@ definitions:
             value: 
               type: "string"
   pagesource:
-    type:
+    type: object
       properties: 
         target: 
           type: "string"
@@ -2661,7 +2672,77 @@ definitions:
           type: "string"
         sessionId: 
           type: "string"
-
+  espressoTestcase:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      espressoID: 
+        type: "string"
+      title: 
+        type: "string"
+      user: 
+        type: "string"
+      project: 
+        type: "string"
+      apk: 
+        type: "string"
+      testApk: 
+        type: "string"
+      packageName: 
+        type: "string"
+      applicationID: 
+        type: "string"
+      testApplicationID: 
+        type: "string"
+      deviceVersion: 
+        type: "string"
+      device: 
+        type: "string"
+      deviceName: 
+        type: "string"
+      deviceSerial: 
+        type: "string"
+      testsession: 
+        type: "string"
+      host: 
+        type: "string"
+      className: 
+        type: "string"
+      testRunner: 
+        type: "string"
+      method: 
+        type: "string"
+      status: 
+        type: "string"
+      executionTime: 
+        type: "string"
+      isStarted: 
+        type: "boolean"
+      isCompleted: 
+        type: "boolean"
+      rawData: 
+        type: "string"
+      base64: 
+        type: "string"
+      logcat: 
+        type: "string"
+      attempts: 
+        type: "number"
+      retry: 
+        type: "number"
+      retryOnSameDevice: 
+        type: "boolean"
+      isCrashed: 
+        type: "boolean"
+      started: 
+        type: "string"
+      completed: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
   perfomanceData:
     type: object
     required: 
