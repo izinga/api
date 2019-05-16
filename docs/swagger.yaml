@@ -17,6 +17,17 @@ produces:
 
 
 paths: 
+  /device/:id/restart:
+    delete:
+      summary: restart device 
+      description:  restart device 
+      operationId: device
+      responses:
+        '200':    # status code
+          description: restart device 
+          schema:
+            $ref: '#/definitions/device'
+
   /v3/espresso-testcase/<testcase_id>/history?count=100:
     get:
       summary: get last N history of espresso-testcase
