@@ -2640,9 +2640,13 @@ definitions:
     properties: 
       _id: 
         type: "string"
-      disableDeviceNotification: 
+      disableDeviceConnectNotification: 
         type: "boolean"
-      disableNodeNotification: 
+      disableDeviceDisconnetNotification: 
+        type: "boolean"
+      disableNodeConnectNotification: 
+        type: "boolean"
+      disableNodeDisconnectNotification: 
         type: "boolean"
       updatedBy: 
         type: "string"
