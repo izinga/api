@@ -18,7 +18,7 @@ produces:
 
 paths: 
   /v3/device/<device_id>/restart:
-    delete:
+    get:
       summary: restart device 
       description:  restart device 
       operationId: device
