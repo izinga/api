@@ -28,6 +28,18 @@ paths:
           schema:
             $ref: '#/definitions/device'
 
+
+  v3/espresso/result/<result_id>:
+    get:
+      summary: espresso test result
+      description:  espresso test result
+      operationId: espresso
+      responses:
+        '200':    # status code
+          description: espresso test result
+          schema:
+            $ref: '#/definitions/espressoTestResult'
+
   /v3/espresso-testcase/<testcase_id>/history?count=100:
     get:
       summary: get last N history of espresso-testcase
@@ -2686,6 +2698,34 @@ definitions:
         type: "string"
       sessionId: 
         type: "string"
+
+  espressoTestResult:
+    properties: 
+      _id: 
+        type: "string"
+      testcase: 
+        type: "string"
+      device: 
+        type: "string"
+      deviceName: 
+        type: "string"
+      deviceVersion: 
+        type: "string"
+      isCrashed: 
+        type: "boolean"
+      status: 
+        type: "string"
+      rawData: 
+        type: "string"
+      base64: 
+        type: "string"
+      logcat: 
+        type: "string"
+      started: 
+        type: "string"
+      completed: 
+        type: "string"
+
 
   espressoTestcase:
     properties: 
