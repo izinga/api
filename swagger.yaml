@@ -52,7 +52,7 @@ paths:
           in: body
           required: true
           schema:
-              $ref: '#/definitions/config'
+              $ref: '#/definitions/espressoSkipTest'
       responses:
         '200':    # status code
           description: create  marked espresso skipped test cases
@@ -68,7 +68,7 @@ paths:
           in: body
           required: true
           schema:
-              $ref: '#/definitions/config'
+              $ref: '#/definitions/espressoSkipTest'
       responses:
         '200':    # status code
           description: create  marked espresso skipped test cases
