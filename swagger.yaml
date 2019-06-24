@@ -32,6 +32,34 @@ paths:
               type : object
               $ref: '#/definitions/atcProfile'
 
+  /v3/atc/profile/<testsession_id> :
+    post:
+      summary: shape atc traffic
+      description:  shape atc traffic
+      operationId: atc
+      parameters:
+        - description:  atc
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/atcProfile'
+      responses:
+        '200':    # status code
+          description: shape atc traffic
+          schema:
+            $ref: '#/definitions/atcProfile'
+
+    delete:
+      summary: un shape atc traffic
+      description:  shape atc traffic
+      operationId: atc
+      responses:
+        '200':    # status code
+          description: shape atc traffic
+          schema:
+            $ref: '#/definitions/atcProfile'
+
   /v3/espresso/skiptest/<project_id>/all:
     get:
       summary: get all marked espresso skipped test cases
