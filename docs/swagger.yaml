@@ -18,6 +18,20 @@ produces:
 
 paths:
 
+  /v3/atc/profile:
+    get:
+      summary: get all atc profile
+      description:  get all atc profile
+      operationId: atc
+      responses:
+        '200':    # status code
+          description: get all atc profile
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/atcProfile'
+
   /v3/espresso/skiptest/<project_id>/all:
     get:
       summary: get all marked espresso skipped test cases
@@ -2920,5 +2934,147 @@ definitions:
         properties: 
           custom: 
             type: "value"
+  atcProfile:
+    type: object
+    required: 
+      - "id"
+      - "name"
+      - "Content"
+    properties: 
+      id: 
+        type: "number"
+      name: 
+        type: "string"
+      Content: 
+        required: 
+          - "down"
+          - "up"
+        properties: 
+          down: 
+            required: 
+              - "corruption"
+              - "delay"
+              - "iptables_options"
+              - "loss"
+              - "rate"
+              - "reorder"
+            properties: 
+              corruption: 
+                required: 
+                  - "correlation"
+                  - "percentage"
+                properties: 
+                  correlation: 
+                    type: "number"
+                  percentage: 
+                    type: "number"
+                type: "object"
+              delay: 
+                required: 
+                  - "correlation"
+                  - "delay"
+                  - "jitter"
+                properties: 
+                  correlation: 
+                    type: "number"
+                  delay: 
+                    type: "number"
+                  jitter: 
+                    type: "number"
+                type: "object"
+              iptables_options: 
+                type: "array"
+                items: 
+                  type: "undefined"
+              loss: 
+                required: 
+                  - "correlation"
+                  - "percentage"
+                properties: 
+                  correlation: 
+                    type: "number"
+                  percentage: 
+                    type: "number"
+                type: "object"
+              rate: 
+                type: "string"
+              reorder: 
+                required: 
+                  - "correlation"
+                  - "gap"
+                  - "percentage"
+                properties: 
+                  correlation: 
+                    type: "number"
+                  gap: 
+                    type: "number"
+                  percentage: 
+                    type: "number"
+                type: "object"
+            type: "object"
+          up: 
+            required: 
+              - "corruption"
+              - "delay"
+              - "iptables_options"
+              - "loss"
+              - "rate"
+              - "reorder"
+            properties: 
+              corruption: 
+                required: 
+                  - "correlation"
+                  - "percentage"
+                properties: 
+                  correlation: 
+                    type: "number"
+                  percentage: 
+                    type: "number"
+                type: "object"
+              delay: 
+                required: 
+                  - "correlation"
+                  - "delay"
+                  - "jitter"
+                properties: 
+                  correlation: 
+                    type: "number"
+                  delay: 
+                    type: "number"
+                  jitter: 
+                    type: "number"
+                type: "object"
+              iptables_options: 
+                type: "array"
+                items: 
+                  type: "undefined"
+              loss: 
+                required: 
+                  - "correlation"
+                  - "percentage"
+                properties: 
+                  correlation: 
+                    type: "number"
+                  percentage: 
+                    type: "number"
+                type: "object"
+              rate: 
+                type: "string"
+              reorder: 
+                required: 
+                  - "correlation"
+                  - "gap"
+                  - "percentage"
+                properties: 
+                  correlation: 
+                    type: "number"
+                  gap: 
+                    type: "number"
+                  percentage: 
+                    type: "number"
+                type: "object"
+            type: "object"
+        type: "object"
 
-        
+
+          
