@@ -18,7 +18,7 @@ produces:
 
 paths:
 
-  /v3/atc/profile:
+  /v3/atc/profiles:
     get:
       summary: get all atc profile
       description:  get all atc profile
