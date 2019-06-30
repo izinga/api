@@ -17,6 +17,16 @@ produces:
 
 
 paths:
+  /v3/neuron/config:
+    get:
+      summary: get neuron config
+      description:  get neuron config
+      operationId: neuron
+      responses:
+        '200':    # status code
+          description: get neuron config
+          schema:
+            $ref: '#/definitions/neuronConfig'
 
   /v3/atc/profiles:
     get:
@@ -2962,6 +2972,19 @@ definitions:
         properties: 
           custom: 
             type: "value"
+
+  neuronConfig:
+    type: object
+    properties: 
+      appium_log_path: 
+        type: "string"
+      maxdevice: 
+        type: "string"
+      port: 
+        type: "string"
+      startingport: 
+        type: "string"
+        
   atcProfile:
     type: object
     required: 
