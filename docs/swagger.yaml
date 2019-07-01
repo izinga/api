@@ -982,10 +982,27 @@ paths:
         '200':    # status code
           description: users list
           schema: 
-            type: array
-            items: 
-              type : object
-              $ref: '#/definitions/userDetail'
+            $ref: '#/definitions/userDetail'
+    put:
+      summary: update user name 
+      description:  update user name 
+      operationId: user
+      parameters:
+        - description: user payload
+        - name: payload
+          in: body
+          required: true
+          schema:
+            type: object
+            properties: 
+              name : 
+                type: string
+      responses:
+        '200':    # status code
+          description: user
+          schema: 
+            $ref: '#/definitions/userDetail'
+
   /v3/users:
     get:
       summary: get all users
