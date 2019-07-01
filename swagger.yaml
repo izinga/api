@@ -3045,9 +3045,9 @@ definitions:
       identifier: 
         type: "string"
       oldData: 
-        type: "object"
+        type: "json"
       newData: 
-        type: "object": 
+        type: "json": 
       user: 
         type: "string"
       created: 
