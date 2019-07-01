@@ -3025,6 +3025,7 @@ definitions:
       startingport: 
         type: "string"
   activity:
+    type: object
     properties: 
       _id: 
         type: "string"
@@ -3045,9 +3046,9 @@ definitions:
       identifier: 
         type: "string"
       oldData: 
-        type: "string"
+        type: "object"
       newData: 
-        type: "string": 
+        type: "object": 
       user: 
         type: "string"
       created: 
