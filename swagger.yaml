@@ -17,6 +17,29 @@ produces:
 
 
 paths:
+  /admin/v3/activity/<id>:
+    get:
+      summary: get activity details
+      description:  get activity details
+      operationId: activity
+      responses:
+        '200':    # status code
+          description: get activity details
+          schema:
+            $ref: '#/definitions/activity'
+  /admin/v3/activities?count=count&cursor=cur:
+    get:
+      summary: get n activities 
+      description:  get n activities 
+      operationId: activity
+      responses:
+        '200':    # status code
+          description: get activities 
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/atcProfile'
   /v3/neuron/config:
     get:
       summary: get neuron config
@@ -3000,6 +3023,34 @@ definitions:
       port: 
         type: "string"
       startingport: 
+        type: "string"
+  activity:
+    properties: 
+      _id: 
+        type: "string"
+      type: 
+        type: "string"
+      org: 
+        type: "string"
+      project: 
+        type: "string"
+      category: 
+        type: "string"
+      subcategory: 
+        type: "string"
+      action: 
+        type: "string"
+      level: 
+        type: "string"
+      identifier: 
+        type: "string"
+      oldData: 
+        type: "object"
+      newData: 
+        type: "object": 
+      user: 
+        type: "string"
+      created: 
         type: "string"
         
   atcProfile:
