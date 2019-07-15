@@ -17,6 +17,29 @@ produces:
 
 
 paths:
+  /v3/appium/hub/<project_id>?count=5&cursor=<cursor>:
+    get:
+      summary: get all appium hub for a project
+      description:  get all appium hub for a project
+      operationId: appium
+      responses:
+        '200':    # status code
+          description: get all appium hub for a project
+          schema:
+            $ref: '#/definitions/appiumHub'
+  /v3/appium/sessions/<hub_id>:
+    get:
+      summary: get all appium session for a given entry
+      description:  get all appium session for a given entry
+      operationId: appium
+      responses:
+        '200':    # status code
+          description: get all appium session for a given entry
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/appiumSession'
   /admin/v3/activity/<id>:
     get:
       summary: get activity details
@@ -3024,6 +3047,58 @@ definitions:
         type: "string"
       startingport: 
         type: "string"
+  appiumSession:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      hub: 
+        type: "string"
+      testSession: 
+        type: "string"
+      session: 
+        type: "string"
+      build: 
+        type: "string"
+      buildDetail: 
+        type: "string"
+      device: 
+        type: "string"
+      deviceDetail: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+  appiumHub:    
+    type: object
+    properties: 
+      cursor: 
+        type: "string"
+      hubs: 
+        type: "array"
+        items: 
+          type: "object"
+          properties: 
+            _id: 
+              type: "string"
+            identifier: 
+              type: "string"
+            project: 
+              type: "string"
+            user: 
+              type: "string"
+            build: 
+              type: "string"
+            buildDetail: 
+              type: "string"
+            created: 
+              type: "string"
+            updated: 
+              type: "string"
+      totalCount: 
+        type: "number"
+
   activity:
     type: object
     properties: 
