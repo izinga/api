@@ -17,6 +17,24 @@ produces:
 
 
 paths:
+
+
+
+  /v3/testsession/<testsession_id>/changewifi:
+    put:
+      summary: change wifi network
+      description:  change wifi network
+      operationId: wifi
+      parameters:
+        - description:  wifi
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/wifiRequest'
+      responses:
+        '200':    # status code
+          description:  change wifi network
   /v3/appium/hub/<project_id>?count=5&cursor=<cursor>:
     get:
       summary: get all appium hub for a project
@@ -3047,6 +3065,17 @@ definitions:
         type: "string"
       startingport: 
         type: "string"
+  wifiRequest:
+    type: object
+    required: 
+      - "ssid"
+      - "password"
+    properties: 
+      ssid: 
+        type: "string"
+      password: 
+        type: "string"
+
   appiumSession:
     type: object
     properties: 
