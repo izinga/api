@@ -19,7 +19,130 @@ produces:
 paths:
 
 
+  /v3/devicequery/{id}:
+    get:
+      summary: get device query
+      description: get device query
+      operationId: deviceGroup
+      responses:
+        '200':    # status code
+          description: get device query
+          schema:
+            $ref: '#/definitions/deviceQuery'
+    post:
+      summary: create device query
+      description: create device query
+      operationId: deviceGroup
+      parameters:
+        - description:  wifi
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/deviceQuery'
+      responses:
+        '200':    # status code
+          description: create device query
+          schema:
+            $ref: '#/definitions/deviceQuery'
+    put:
+      summary: update device query
+      description: update device query
+      operationId: deviceGroup
+      parameters:
+        - description:  wifi
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/deviceQuery'
+      responses:
+        '200':    # status code
+          description: update device query
+          schema:
+            $ref: '#/definitions/deviceQuery'
+  /v3/devicegroup/{id}:
+    get:
+      summary: get device group
+      description: get device group
+      operationId: deviceGroup
+      responses:
+        '200':    # status code
+          description: get device group
+          schema:
+            $ref: '#/definitions/deviceGroup'
+    post:
+      summary: create device group
+      description: create device group
+      operationId: deviceGroup
+      parameters:
+        - description:  wifi
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/deviceGroup'
+      responses:
+        '200':    # status code
+          description: create device group
+          schema:
+            $ref: '#/definitions/deviceGroup'
+    put:
+      summary: update device group
+      description: update device group
+      operationId: deviceGroup
+      parameters:
+        - description:  deviceGroup
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/deviceGroup'
+      responses:
+        '200':    # status code
+          description: update device group
+          schema:
+            $ref: '#/definitions/deviceGroup'
 
+  /v3/devicequeries/<project_id>:
+    get:
+      summary: get all device query for given project
+      description:  get all device query for given project
+      operationId: deviceGroup
+      responses:
+        '200':    # status code
+          description: get all device query for given project
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/deviceQuery'
+  /v3/devicegroups/<project_id>:
+    get:
+      summary: get all device group for given project
+      description:  get all deive query for given project
+      operationId: deviceGroup
+      responses:
+        '200':    # status code
+          description: get all device group for given project
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/deviceGroup'
+
+  /v3/devicegroup/<id>:
+    get:
+      summary: get device ids for given group
+      description:  get device ids for given group
+      operationId: deviceGroup
+      responses:
+        '200':    # status code
+          description: get device ids for given group
+          schema:
+            type: array
+            items: 
+              type : string
   /v3/testsession/<testsession_id>/changewifi:
     put:
       summary: change wifi network
@@ -3075,7 +3198,88 @@ definitions:
         type: "string"
       password: 
         type: "string"
+  deviceGroup:
+    type: object
+    required: 
+      - "name"
+      - "desc"
+      - "project"
+      - "onlyGroupDevice"
+      - "queries"
+    properties: 
+      _id: 
+        type: "string"
+      name: 
+        type: "string"
+      org: 
+        type: "string"
+      desc: 
+        type: "string"
+      project: 
+        type: "string"
+      onlyGroupDevice: 
+        type: "boolean"
+      queries: 
+        type: "array"
+        items: 
+          type: "object"
+          properties: 
+            deviceQueryID: 
+              type: "string"
+            desc: 
+              type: "string"
+            minDeviceCount: 
+              type: "number"
+            maxDeviceCount: 
+              type: "number"
+      createdBy: 
+        type: "string"
+      updatedBy: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
 
+  deviceQuery:
+    type: object
+    required: 
+      - "name"
+      - "desc"
+      - "project"
+      - "conditions"
+    properties: 
+      _id: 
+        type: "string"
+      name: 
+        type: "string"
+      org: 
+        type: "string"
+      desc: 
+        type: "string"
+      project: 
+        type: "string"
+      conditions: 
+        type: "array"
+        items: 
+          type: "object"
+          properties: 
+            attribute: 
+              type: "string"
+            value: 
+              type: "string"
+            operator: 
+              type: "string"
+            type: 
+              type: "string"
+      createdBy: 
+        type: "string"
+      updatedBy: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
   appiumSession:
     type: object
     properties: 
