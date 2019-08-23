@@ -634,7 +634,6 @@ paths:
           description: device 
           schema:
               $ref: '#/definitions/device' 
-  /device/:device_id/reserveput:
     delete:
       summary: unreserve device
       description: unreserve device
