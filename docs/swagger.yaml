@@ -70,7 +70,7 @@ paths:
           schema:
             $ref: '#/definitions/note'
 
-  /v3/notes/<project_id>:
+  /v3/notes/project/<project_id>:
     get:
       summary: get all notes for given project
       description:  get all notes for given project
