@@ -18,49 +18,86 @@ produces:
 
 paths:
 
-
-  /v3/devicequery/{id}:
+  /v3/note/{id}:
     get:
-      summary: get device query
-      description: get device query
-      operationId: deviceGroup
+      summary: get note
+      description: get note
+      operationId: note
       responses:
         '200':    # status code
-          description: get device query
+          description: get note
           schema:
-            $ref: '#/definitions/deviceQuery'
+            $ref: '#/definitions/note'
     post:
-      summary: create device query
-      description: create device query
-      operationId: deviceGroup
+      summary: create note
+      description: create note
+      operationId: note
       parameters:
-        - description:  wifi
+        - description:  note
         - name: payload
           in: body
           required: true
           schema:
-              $ref: '#/definitions/deviceQuery'
+              $ref: '#/definitions/note'
       responses:
         '200':    # status code
-          description: create device query
+          description: create note
           schema:
-            $ref: '#/definitions/deviceQuery'
+            $ref: '#/definitions/note'
     put:
-      summary: update device query
-      description: update device query
-      operationId: deviceGroup
+      summary: update note
+      description: update note
+      operationId: note
       parameters:
         - description:  wifi
         - name: payload
           in: body
           required: true
           schema:
-              $ref: '#/definitions/deviceQuery'
+              $ref: '#/definitions/note'
       responses:
         '200':    # status code
-          description: update device query
+          description: update note
           schema:
-            $ref: '#/definitions/deviceQuery'
+            $ref: '#/definitions/note'
+    delete:
+      summary: delete note
+      description: delete note
+      operationId: note
+      responses:
+        '200':    # status code
+          description: delete note
+          schema:
+            $ref: '#/definitions/note'
+
+  /v3/notes/<project_id>:
+    get:
+      summary: get all notes for given project
+      description:  get all notes for given project
+      operationId: note
+      responses:
+        '200':    # status code
+          description: get all notes for given project
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/note'
+
+  /v3/notes:
+    get:
+      summary: get all notes for logged in user
+      description:  get all notes for logged in user
+      operationId: note
+      responses:
+        '200':    # status code
+          description: get all notes for logged in user
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/note'
+
   /v3/devicegroup/{id}:
     get:
       summary: get device group
@@ -3330,6 +3367,31 @@ definitions:
               type: "string"
       totalCount: 
         type: "number"
+
+  note:
+    type: object
+    required: 
+      - "project"
+      - "title"
+      - "desc"
+    properties: 
+      _id: 
+        type: "string"
+      project: 
+        type: "string"
+      title: 
+        type: "string"
+      desc: 
+        type: "string"
+      createdBy: 
+        type: "string"
+      updatedBy: 
+        type: "string"
+      updated: 
+        type: "string"
+      created: 
+        type: "string"
+
 
   activity:
     type: object
