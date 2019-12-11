@@ -1,27 +1,40 @@
-swagger: 2.0
+swagger: "2.0"
 info:
-  version: 1.0.0
-  title: RobusTest API
-  description: RobusTest API
-  termsOfService: http://robustest.com/terms/
+  version: "1.0.3"
+  title: "RobusTest API"
+  description: "RobusTest API"
+  termsOfService: "http://robustest.com/terms"
   license:
-    name: Apache 2.0
+    name: "Apache 2.0"
     url: https://www.apache.org/licenses/LICENSE-2.0.html
 host: robustest.com
+host: "petstore.swagger.io"
+basePath: "/v3"
+contact:
+  email: "support@robustest.com"
+tags:
+- name: "note"
+  description: "How to create, update and read note"
+  externalDocs:
+    description: "Find out more"
+    url: "http://docs.robustest.com/"
+- name: "atc"
+  description: "handle argumented traffice controll"
+- name: "espresso"
+  description: "Handle espresso run"
+  externalDocs:
+    description: "Find out more espresso"
+    url: "http://docs.robustest.com/"
 schemes:
-  - http
-consumes:
-  - application/json
-produces:
-  - application/json
-
+  - "https"
+  - "http"
 
 paths:
 
-  /v3/note/{id}:
+  /note/{id}:
     get:
-      summary: get note
-      description: get note
+      summary: get a single note
+      description: get all detail of single note
       operationId: note
       responses:
         '200':    # status code
@@ -29,7 +42,7 @@ paths:
           schema:
             $ref: '#/definitions/note'
     post:
-      summary: create note
+      summary: create a note
       description: create note
       operationId: note
       parameters:
@@ -70,7 +83,7 @@ paths:
           schema:
             $ref: '#/definitions/note'
 
-  /v3/notes/project/<project_id>:
+  /notes/project/<project_id>:
     get:
       summary: get all notes for given project
       description:  get all notes for given project
@@ -84,7 +97,7 @@ paths:
               type : object
               $ref: '#/definitions/note'
 
-  /v3/notes:
+  /notes:
     get:
       summary: get all notes for logged in user
       description:  get all notes for logged in user
@@ -98,7 +111,7 @@ paths:
               type : object
               $ref: '#/definitions/note'
 
-  /v3/devicegroup/{id}:
+  /devicegroup/{id}:
     get:
       summary: get device group
       description: get device group
@@ -141,7 +154,7 @@ paths:
           schema:
             $ref: '#/definitions/deviceGroup'
 
-  /v3/devicequeries/<project_id>:
+  /devicequeries/<project_id>:
     get:
       summary: get all device query for given project
       description:  get all device query for given project
@@ -154,7 +167,7 @@ paths:
             items: 
               type : object
               $ref: '#/definitions/deviceQuery'
-  /v3/devicegroups/<project_id>:
+  /devicegroups/<project_id>:
     get:
       summary: get all device group for given project
       description:  get all deive query for given project
@@ -168,7 +181,7 @@ paths:
               type : object
               $ref: '#/definitions/deviceGroup'
 
-  /v3/devicegroup/<id>:
+  /devicegroup/<id>:
     get:
       summary: get device ids for given group
       description:  get device ids for given group
@@ -180,7 +193,7 @@ paths:
             type: array
             items: 
               type : string
-  /v3/testsession/<testsession_id>/changewifi:
+  /testsession/<testsession_id>/changewifi:
     put:
       summary: change wifi network
       description:  change wifi network
@@ -195,7 +208,7 @@ paths:
       responses:
         '200':    # status code
           description:  change wifi network
-  /v3/appium/hub/<project_id>?count=5&cursor=<cursor>:
+  /appium/hub/<project_id>?count=5&cursor=<cursor>:
     get:
       summary: get all appium hub for a project
       description:  get all appium hub for a project
@@ -205,7 +218,7 @@ paths:
           description: get all appium hub for a project
           schema:
             $ref: '#/definitions/appiumHub'
-  /v3/appium/sessions/<hub_id>:
+  /appium/sessions/<hub_id>:
     get:
       summary: get all appium session for a given entry
       description:  get all appium session for a given entry
@@ -218,7 +231,7 @@ paths:
             items: 
               type : object
               $ref: '#/definitions/appiumSession'
-  /admin/v3/activity/<id>:
+  /admin/activity/<id>:
     get:
       summary: get activity details
       description:  get activity details
@@ -228,7 +241,7 @@ paths:
           description: get activity details
           schema:
             $ref: '#/definitions/activity'
-  /admin/v3/activities?count=count&cursor=cur:
+  /admin/activities?count=count&cursor=cur:
     get:
       summary: get n activities 
       description:  get n activities 
@@ -241,7 +254,7 @@ paths:
             items: 
               type : object
               $ref: '#/definitions/atcProfile'
-  /v3/neuron/config:
+  /neuron/config:
     get:
       summary: get neuron config
       description:  get neuron config
@@ -252,7 +265,7 @@ paths:
           schema:
             $ref: '#/definitions/neuronConfig'
 
-  /v3/atc/profiles:
+  /atc/profiles:
     get:
       summary: get all atc profile
       description:  get all atc profile
@@ -266,7 +279,7 @@ paths:
               type : object
               $ref: '#/definitions/atcProfile'
 
-  /v3/atc/profile/<testsession_id> :
+  /atc/profile/<testsession_id> :
     post:
       summary: shape atc traffic
       description:  shape atc traffic
@@ -294,7 +307,7 @@ paths:
           schema:
             $ref: '#/definitions/atcProfile'
 
-  /v3/espresso/skiptest/<project_id>/all:
+  /espresso/skiptest/<project_id>/all:
     get:
       summary: get all marked espresso skipped test cases
       description:  get all marked espresso skipped test cases
@@ -308,7 +321,7 @@ paths:
               type : object
               $ref: '#/definitions/espressoSkipTest'
 
-  /v3/espresso/skiptest/<id>:
+  /espresso/skiptest/<id>:
     get:
       summary: get  marked espresso skipped test cases
       description:  get  marked espresso skipped test cases
@@ -361,7 +374,7 @@ paths:
             $ref: '#/definitions/espressoSkipTest'
 
 
-  /v3/device/<device_id>/restart:
+  /device/<device_id>/restart:
     get:
       summary: restart device 
       description:  restart device 
@@ -373,7 +386,7 @@ paths:
             $ref: '#/definitions/device'
 
 
-  /v3/espresso/result/<result_id>:
+  /espresso/result/<result_id>:
     get:
       summary: espresso test result
       description:  espresso test result
@@ -385,7 +398,7 @@ paths:
             $ref: '#/definitions/espressoTestResult'
 
 
-  /v3/espresso-testcase/<testcase_id>/history?count=100:
+  /espresso-testcase/<testcase_id>/history?count=100:
     get:
       summary: get last N history of espresso-testcase
       description:  get last N history of espresso-testcase
@@ -396,7 +409,7 @@ paths:
           schema:
             $ref: '#/definitions/espressoTestcase'
 
-  /v3/recording/pagesource/<testsession_id>:
+  /recording/pagesource/<testsession_id>:
     get:
       summary: get pagesource
       description:  get pagesource
@@ -422,7 +435,7 @@ paths:
           description: run
 
 
-  /admin/v3/config:
+  /admin/config:
     get:
       summary: get all config
       description:  get all config
@@ -433,7 +446,7 @@ paths:
           schema:
             $ref: '#/definitions/config'
 
-  /admin/v3/config/<id>:
+  /admin/config/<id>:
     put:
       summary: update config
       description:  update config
@@ -452,7 +465,7 @@ paths:
             $ref: '#/definitions/config'
 
 
-  /admin/v3/db/clean:
+  /admin/db/clean:
     delete:
       summary: delete row from database
       description:  delete row from database
@@ -469,7 +482,7 @@ paths:
           description: run
           
 
-  /v3/testsession/<testsession_id>/performance?accesskey=<access_key>:
+  /testsession/<testsession_id>/performance?accesskey=<access_key>:
     post:
       summary: start performance monitoring
       description: start performance monitoring
@@ -493,7 +506,7 @@ paths:
           description: performance
 
 
-  /admin/v3/confirm/:userID/resend:
+  /admin/confirm/:userID/resend:
     get:
       summary: resend confirmation link
       description: resend confirmation link
@@ -503,7 +516,7 @@ paths:
           description: confirm
 
 
-  /v3/testsession/{test_session_id}/screenshot:
+  /testsession/{test_session_id}/screenshot:
     get:
       summary: get screenshot from device
       description: get screenshot from device
@@ -518,7 +531,7 @@ paths:
               base64 : 
                 type: string
 
-  /v3/run/{run_id}/rerun?accesskey={access_key}:
+  /run/{run_id}/rerun?accesskey={access_key}:
     get:
       summary: Rerun test on same set of devices with same test suite and dataset
       description: Rerun test on same set of devices with same test suite and dataset
@@ -528,7 +541,7 @@ paths:
           description: run
           schema:
             $ref: '#/definitions/runResponse'
-  /v3/devices?accesskey={access_key}:
+  /devices?accesskey={access_key}:
     get:
       summary: get all devices
       description: get all devices
@@ -559,7 +572,7 @@ paths:
                 items: 
                   type : object
                   $ref: '#/definitions/device'
-  /v3/device/{device_id}/detail?accesskey={access_key}:
+  /device/{device_id}/detail?accesskey={access_key}:
     get:
       summary: get device, session and live screen url by device id
       description: get device, session and live screen url by device id
@@ -578,7 +591,7 @@ paths:
                 $ref: '#/definitions/testsession'
               liveScreen : 
                 type: string
-  /v3/device/{device_id}/free?accesskey={access_key}:
+  /device/{device_id}/free?accesskey={access_key}:
     delete:
       summary: free device by device id
       description: free device by device id
@@ -588,7 +601,7 @@ paths:
           description: device
           schema:
             $ref: '#/definitions/device'
-  /v3/session/live:
+  /session/live:
     get:
       summary: get all live page for logged in user
       description: get all live page for logged in user
@@ -603,7 +616,7 @@ paths:
               $ref: '#/definitions/testsession'
 
 
-  /v3/result/{result_id}/logcat:
+  /result/{result_id}/logcat:
     get:
       summary: get logcat for result
       description: get logcat for result
@@ -614,7 +627,7 @@ paths:
           schema:
             $ref: '#/definitions/logcat'
 
-  /v3/result/{result_id}/perfomance:
+  /result/{result_id}/perfomance:
     get:
       summary: get perfomance for result
       description: get perfomance for result
@@ -625,7 +638,7 @@ paths:
           schema:
             $ref: '#/definitions/perfomance'
 
-  /v3/testscript/{testscript_id}/checkForDelete:
+  /testscript/{testscript_id}/checkForDelete:
     head:
       summary: get list of all test scripts whiche are depends on testscript
       description: get list of all test scripts whiche are depends on testscript
@@ -640,7 +653,7 @@ paths:
               $ref: '#/definitions/testscript'
 
 
-  /v3/contacts/:projectID:
+  /contacts/:projectID:
     get:
       summary: get all contact for project
       description: get all contact for project
@@ -654,7 +667,7 @@ paths:
               type : object
               $ref: '#/definitions/contactListResponse'
   
-  /v3/device/reserve:
+  /device/reserve:
     put:
       summary: reserve device
       description: reserve device
@@ -681,7 +694,7 @@ paths:
           description: device 
           schema:
               $ref: '#/definitions/device'
-  /v3/contact/:id:
+  /contact/:id:
     post:
       summary: create new contact 
       description: create new contact
@@ -728,7 +741,7 @@ paths:
           schema:
               $ref: '#/definitions/contactListResponse'
 
-  /v3/share/new:
+  /share/new:
     post:
       summary: create new share object
       description: create new share object
@@ -746,7 +759,7 @@ paths:
           schema:
               $ref: '#/definitions/sharePayload'
 
-  /v3/dataset/{id}:
+  /dataset/{id}:
     post:
       summary: create dataset
       description: create dataset
@@ -791,7 +804,7 @@ paths:
           schema:
               $ref: '#/definitions/dataset'
 
-  /v3/datasets/project/{project id}:
+  /datasets/project/{project id}:
     get:
       summary: get all dataset for project dataset
       description: get all dataset for project dataset
@@ -804,7 +817,7 @@ paths:
             items: 
               type : object
               $ref: '#/definitions/dataset'
-  /v3/datasets/testsuite/{test suite id}:
+  /datasets/testsuite/{test suite id}:
     get:
       summary: get all dataset for test suite dataset
       description: get all dataset for test suite dataset
@@ -817,7 +830,7 @@ paths:
             items: 
               type : object
               $ref: '#/definitions/dataset'
-  /v3/setting/{id}:
+  /setting/{id}:
     post:
       summary: create setting
       description: create setting
@@ -868,7 +881,7 @@ paths:
           description: delete variables
           schema:
               $ref: '#/definitions/setting'
-  /v3/settings/{project id}:
+  /settings/{project id}:
     get:
       summary: get all setting for project setting
       description: get all setting for project setting
@@ -882,7 +895,7 @@ paths:
               type : object
               $ref: '#/definitions/setting'
 
-  /v3/settings/{id}/default:
+  /settings/{id}/default:
     put:
       summary: make setting default
       description: make setting default
@@ -896,7 +909,7 @@ paths:
               type : object
               $ref: '#/definitions/setting'
 
-  /v3/testscript/{testscript_id}/check:
+  /testscript/{testscript_id}/check:
     put:
       summary: make testscript as check
       description: make testscript as check
@@ -914,7 +927,7 @@ paths:
           schema:
               $ref: '#/definitions/testscript'
 
-  /v3/variables/{project_id}:
+  /variables/{project_id}:
     get:
       summary: get all global variables
       description: get all global variables
@@ -927,7 +940,7 @@ paths:
             items: 
               type : object
               $ref: '#/definitions/globalVariable'
-  /v3/variable/new:
+  /variable/new:
     post:
       summary: get all global variables
       description: get all global variables
@@ -944,7 +957,7 @@ paths:
           description: global variables
           schema:
               $ref: '#/definitions/globalVariable'
-  /v3/variable/{id}:
+  /variable/{id}:
     get:
       summary: get global variables
       description: get global variables
@@ -955,7 +968,7 @@ paths:
           schema:
               $ref: '#/definitions/globalVariable'
 
-  /v3/notifications?page=pagenumber:
+  /notifications?page=pagenumber:
     get:
       summary: get 20 notifications for user
       description: get 20 notifications for user
@@ -969,7 +982,7 @@ paths:
               type : object
               $ref: '#/definitions/notification'
 
-  /v3/notifications/{notification_id}:
+  /notifications/{notification_id}:
     delete:
       summary: mark notification as read
       description: mark notification as read
@@ -979,7 +992,7 @@ paths:
           description: notification
           schema:
             $ref: '#/definitions/notification'
-  /v3/project/{project_id}/build/createWeb:
+  /project/{project_id}/build/createWeb:
     post:
       summary: create web build
       description: create web build
@@ -997,7 +1010,7 @@ paths:
           schema:
             $ref: '#/definitions/build'
 
-  /v3/run:
+  /run:
     post:
       summary: start run on multiple devices
       description: start run on multiple devices
@@ -1016,7 +1029,7 @@ paths:
             $ref: '#/definitions/runResponse'
 
 
-  /v3/run/:id/archive:
+  /run/:id/archive:
     put:
       summary: archive run 
       description: archive run 
@@ -1036,7 +1049,7 @@ paths:
           schema:
             $ref: '#/definitions/runResponse'
 
-  /v3/runs/{projectID}:
+  /runs/{projectID}:
     get:
       summary: get all runs for projects
       description: get all runs for projects
@@ -1054,7 +1067,7 @@ paths:
               runs:
                 type : object
                 $ref: '#/definitions/runResponse'
-  /v3/testsuiteRuns/{testsuite}:
+  /testsuiteRuns/{testsuite}:
     get:
       summary: get all runs for testsuite
       description: get all runs for testsuite
@@ -1073,7 +1086,7 @@ paths:
                 type : object
                 $ref: '#/definitions/runResponse'
 
-  /v3/run/{run_id}:
+  /run/{run_id}:
     get:
       summary: get run
       description: get run
@@ -1093,7 +1106,7 @@ paths:
           schema:
             $ref: '#/definitions/runResponse'
 
-  /v3/instance/{instance_id}:
+  /instance/{instance_id}:
     get:
       summary: get run
       description: get instance
@@ -1112,7 +1125,7 @@ paths:
           description: instance response
           schema:
             $ref: '#/definitions/instancesData'        
-  /v3/automate:
+  /automate:
     post:
       summary: start automate recording 
       description: start automate recording 
@@ -1130,7 +1143,7 @@ paths:
           schema: 
             $ref: '#/definitions/automateResponse'
 
-  /v3/device/{device_id}/usages:
+  /device/{device_id}/usages:
     get:
       summary: get device current usages
       description: get device current usages
@@ -1141,7 +1154,7 @@ paths:
           schema: 
             $ref: '#/definitions/deviceUsagse'
 
-  /v3/project/{project_id}/tags:
+  /project/{project_id}/tags:
     get:
       summary: get tags for project
       description: get tags for project
@@ -1168,7 +1181,7 @@ paths:
           schema: 
             $ref: '#/definitions/tag'
 
-  /v3/build/{build id}:
+  /build/{build id}:
     put:
       summary: update build for project
       description: update build for project
@@ -1196,7 +1209,7 @@ paths:
             $ref: '#/definitions/build'
 
 
-  /v3/user:
+  /user:
     get:
       summary: get user detail
       description:  get user detail
@@ -1226,7 +1239,7 @@ paths:
           schema: 
             $ref: '#/definitions/userDetail'
 
-  /v3/users:
+  /users:
     get:
       summary: get all users
       description: get all users
@@ -1252,7 +1265,7 @@ paths:
             $ref: '#/definitions/deviceStatus'
 
 
-  /admin/v3/contacts:
+  /admin/contacts:
     get:
       summary: get contact
       description: get contact
@@ -1266,7 +1279,7 @@ paths:
               type : object
               $ref: '#/definitions/Contact'
 
-  /admin/v3/contact/{id}:
+  /admin/contact/{id}:
     get:
       summary: get contact
       description: get contact
@@ -1317,7 +1330,7 @@ paths:
           description: contact
           schema: 
             type: string
-  /admin/v3/node/{ip}:
+  /admin/node/{ip}:
     put:
       summary: update node 
       description: update node 
@@ -1334,7 +1347,7 @@ paths:
           description: node
           schema: 
             $ref: '#/definitions/Node'
-  /admin/v3/bug/trackerlist:
+  /admin/bug/trackerlist:
     get:
       summary: get list for all supported bug trakers
       description: get list for all supported bug trakers
@@ -1346,7 +1359,7 @@ paths:
             type: array
             items: 
               type: string
-  /admin/v3/bug/config/jira:
+  /admin/bug/config/jira:
     post:
       summary: create a jira config
       description: create a jira config
@@ -1378,7 +1391,7 @@ paths:
               type : object
               $ref: '#/definitions/JiraConfig'
 
-  /admin/v3/bug/config/jira/{jira_config_id}:
+  /admin/bug/config/jira/{jira_config_id}:
     put:
       summary: update a jira config
       description: update a jira config
@@ -1414,7 +1427,7 @@ paths:
         '200':    # status code
           schema: 
             type: string
-  /admin/v3/bug/config/jira/projects:
+  /admin/bug/config/jira/projects:
     get:
       summary : get all jira project 
       description: get all jira project
@@ -1427,7 +1440,7 @@ paths:
             items: 
               type : object
               $ref: '#/definitions/JiraProject'
-  /admin/v3/bug/config/jira/config/{congfig_id}/projects:
+  /admin/bug/config/jira/config/{congfig_id}/projects:
     get:
       summary : get all jira project for given config
       description: get all jira project for given config
@@ -1440,7 +1453,7 @@ paths:
             items: 
               type : object
               $ref: '#/definitions/JiraProject'
-  /admin/v3/bug/config/jira/project/{jira_project_id}:
+  /admin/bug/config/jira/project/{jira_project_id}:
     get:
       summary : get a jira project  details
       description: get a jira project details
@@ -1451,7 +1464,7 @@ paths:
           schema: 
             type: object
             $ref: '#/definitions/JiraProject'
-  /v3/bug/jira/{jira_project_id}/create:
+  /bug/jira/{jira_project_id}/create:
     post:
       summary: create a jira issue
       description: create a jira issue
@@ -1469,7 +1482,7 @@ paths:
           schema: 
             type: object
             $ref: '#/definitions/jiraIssueResponse'
-  /v3/project/{project_id}:
+  /project/{project_id}:
     put:
       summary: Update Project 
       description: Update Project from user interface
