@@ -6,9 +6,8 @@ info:
   termsOfService: "http://robustest.com/terms"
   license:
     name: "Apache 2.0"
-    url: https://www.apache.org/licenses/LICENSE-2.0.html
-host: robustest.com
-host: "petstore.swagger.io"
+    url: "https://www.apache.org/licenses/LICENSE-2.0.html"
+host: "robustest.com"
 basePath: "/v3"
 contact:
   email: "support@robustest.com"
