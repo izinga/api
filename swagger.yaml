@@ -258,9 +258,11 @@ paths:
             type: array
             items: 
               type : object
-              $ref: '#/definitions/atcProfile'
+              $ref: '#/definitions/activity'
   /neuron/config:
     get:
+      tags:
+      - "atc"
       summary: get neuron config
       description:  get neuron config
       operationId: neuron
@@ -272,6 +274,8 @@ paths:
 
   /atc/profiles:
     get:
+      tags:
+      - "atc"
       summary: get all atc profile
       description:  get all atc profile
       operationId: atc
@@ -286,6 +290,8 @@ paths:
 
   /atc/profile/<testsession_id> :
     post:
+      tags:
+      - "atc"
       summary: shape atc traffic
       description:  shape atc traffic
       operationId: atc
@@ -303,6 +309,8 @@ paths:
             $ref: '#/definitions/atcProfile'
 
     delete:
+      tags:
+      - "atc"
       summary: un shape atc traffic
       description:  shape atc traffic
       operationId: atc
