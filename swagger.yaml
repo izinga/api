@@ -14,16 +14,10 @@ contact:
 tags:
 - name: "note"
   description: "How to create, update and read note"
-  externalDocs:
-    description: "Find out more"
-    url: "http://docs.robustest.com/"
 - name: "atc"
   description: "handle argumented traffice controll"
 - name: "espresso"
   description: "Handle espresso run"
-  externalDocs:
-    description: "Find out more espresso"
-    url: "http://docs.robustest.com/"
 schemes:
   - "https"
   - "http"
