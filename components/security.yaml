@@ -1,6 +1,0 @@
-securityDefinitions:
-  apikey:
-    type: apiKey
-    name: accesskey
-    in: query
-    
