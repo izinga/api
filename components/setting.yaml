@@ -1,0 +1,46 @@
+Setting:
+  required:
+   - appium
+   - general
+  properties:
+   appium:
+    type: object
+    required:
+     - automationName
+     - cssSelectorsEnabled
+     - disableAndroidWatchers
+     - forceEspressoRebuild
+     - fullReset
+     - ignoreUnimportantViews
+     - nativeEvents
+     - noReset
+     - noSign
+     - xcodeOrgId
+     - xcodeSigningId
+    properties:
+     automationName:
+      type: string
+     nativeEvents:
+      type: string
+     xcodeSigningId:
+      type: string
+     xcodeOrgId:
+      type: string
+     noReset:
+      type: string
+     forceEspressoRebuild:
+      type: string
+     noSign:
+      type: string
+     disableAndroidWatchers:
+      type: string
+     cssSelectorsEnabled:
+      type: string
+     fullReset:
+      type: string
+     ignoreUnimportantViews:
+      type: string
+   general:
+    type: object
+    required: []
+    properties: {}

@@ -1,0 +1,363 @@
+Job:
+  required:
+    - Integrations
+    - _id
+    - accessLevel
+    - assumptionFailure
+    - attempts
+    - build
+    - closedBy
+    - completed
+    - created
+    - data
+    - desc
+    - devices
+    - duration
+    - err
+    - error
+    - fail
+    - framework
+    - gitHook
+    - identifier
+    - ignore
+    - isCompleted
+    - isPaused
+    - isStarted
+    - message
+    - nerveHost
+    - pass
+    - pausedAt
+    - pausedBy
+    - pending
+    - priority
+    - project
+    - rerunAt
+    - rerunBy
+    - runID
+    - runMode
+    - runNow
+    - runSetting
+    - skipped
+    - started
+    - state
+    - status
+    - statusCode
+    - tagsStats
+    - total
+    - tried
+    - type
+    - updated
+    - user
+    - waitTime
+  properties:
+    statusCode:
+     type: number
+    duration:
+     type: number
+    isCompleted:
+     type: boolean
+    fail:
+     type: number
+    desc:
+     type: string
+    priority:
+     type: number
+    attempts:
+     type: number
+    runNow:
+     type: boolean
+    waitTime:
+     type: number
+    state:
+     type: string
+    identifier:
+     type: string
+    setting:
+     type: object
+     $ref: "setting.yaml#/Setting"
+     properties:
+      desc:
+       type: string
+      name:
+       type: string
+      project:
+       type: string
+      data: {}
+      os:
+       type: string
+      job:
+       type: object
+       required:
+        - addMoreDevices
+        - analysis
+        - firstRetryOnSameDevice
+        - limitToMaxDevice
+        - maxJobAttempts
+        - maxTestCaseAttempts
+        - queueTimeout
+        - retryOnSameDevice
+        - runTimeout
+        - tags
+        - testcaseTimeOut
+       properties:
+        maxJobAttempts:
+         type: number
+        retryOnSameDevice:
+         type: boolean
+        tags: {}
+        maxTestCaseAttempts:
+         type: number
+        addMoreDevices:
+         type: boolean
+        analysis: {}
+        queueTimeout:
+         type: number
+        testcaseTimeOut:
+         type: number
+        runTimeout:
+         type: number
+        limitToMaxDevice:
+         type: boolean
+        firstRetryOnSameDevice:
+         type: boolean
+      appium: {}
+      key:
+       type: string
+      uninstallApps: {}
+      version:
+       type: string
+      general:
+       type: object
+       required:
+        - checkElementIsVisible
+        - deviceReset
+        - enterTextMethod
+        - handleAndroidPermissionPopup
+        - pagesourceTimeout
+        - recordingMode
+        - streamPagesource
+        - uninstallAppAfterRun
+        - uninstallAppBeforeRun
+        - waitforElement
+       properties:
+        enterTextMethod:
+         type: string
+        recordingMode:
+         type: string
+        waitforElement:
+         type: number
+        uninstallAppAfterRun:
+         type: boolean
+        handleAndroidPermissionPopup:
+         type: string
+        checkElementIsVisible:
+         type: boolean
+        streamPagesource:
+         type: boolean
+        uninstallAppBeforeRun:
+         type: boolean
+        pagesourceTimeout:
+         type: number
+        deviceReset:
+         type: boolean
+      updated:
+       type: string
+      createdBy:
+       type: string
+      hooks:
+       type: object
+       required:
+        - email
+        - influxDB
+        - rest
+       properties:
+        email:
+         type: object
+         required:
+          - onComplete
+          - onFail
+          - onSuccess
+         properties:
+          onComplete: {}
+          onFail: {}
+          onSuccess: {}
+        influxDB:
+         type: object
+         required:
+          - database
+          - host
+          - password
+          - username
+         properties:
+          database:
+           type: string
+          host:
+           type: string
+          password:
+           type: string
+          username:
+           type: string
+        rest:
+         type: object
+         required:
+          - authToken
+          - method
+          - url
+         properties:
+          authToken:
+           type: string
+          method:
+           type: string
+          url:
+           type: string
+      type:
+       type: string
+      org:
+       type: string
+      updatedBy:
+       type: string
+      performance:
+       type: object
+       required:
+        - monitor
+        - params
+        - saveData
+       properties:
+        monitor:
+         type: boolean
+        params: {}
+        saveData:
+         type: boolean
+      isDefault:
+       type: boolean
+      projectType:
+       type: string
+      created:
+       type: string
+    project:
+     type: string
+    _id:
+     type: string
+    accessLevel:
+     type: string
+    data: {}
+    closedBy:
+     type: string
+    runSetting:
+     type: string
+    nerveHost:
+     type: string
+    assumptionFailure:
+     type: number
+    build:
+     type: object
+     required:
+      - aut
+      - test
+     properties:
+      aut:
+       type: string
+      test:
+       type: string
+    skipped:
+     type: number
+    isStarted:
+     type: boolean
+    runMode:
+     type: string
+    total:
+     type: number
+    framework: {}
+    gitHook:
+     type: object
+     required:
+      - commit
+      - pr
+     properties:
+      commit:
+       type: object
+       required:
+        - authToken
+        - commitID
+        - url
+       properties:
+        authToken:
+         type: string
+        commitID:
+         type: string
+        url:
+         type: string
+      pr:
+       type: object
+       required:
+        - authToken
+        - context
+        - description
+        - url
+       properties:
+        authToken:
+         type: string
+        context:
+         type: string
+        description:
+         type: string
+        url:
+         type: string
+    runID:
+     type: string
+    updated:
+     type: string
+    error:
+     type: string
+    completed:
+     type: string
+    Integrations: {}
+    status:
+     type: string
+    pass:
+     type: number
+    tried:
+     type: number
+    message:
+     type: string
+    err:
+     type: number
+    tagsStats: {}
+    type:
+     type: string
+    started:
+     type: string
+    pending:
+     type: number
+    ignore:
+     type: number
+    user:
+     type: string
+    rerunBy:
+     type: string
+    pausedBy:
+     type: string
+    devices:
+     type: object
+     required:
+      - deviceQueries
+      - ids
+      - onlyGroupDevice
+     properties:
+      deviceQueries:
+       type: array
+       items: {}
+      ids:
+       type: array
+       items:
+        type: string
+      onlyGroupDevice:
+       type: boolean
+    isPaused:
+     type: boolean
+    created:
+     type: string
+    pausedAt:
+     type: string
+    rerunAt:
+     type: string
