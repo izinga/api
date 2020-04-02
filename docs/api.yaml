@@ -3,7 +3,7 @@ info:
   title: RobusTest Api
   description: RobusTest Api documentation
   x-logo:
-    url: "https://redocly.github.io/redoc/petstore-logo.png"
+    url: "https://izinga.github.io/api/logo.png"
     backgroundColor: "#FFFFFF"
     altText: "RobusTest"
   version: 0.1.9
