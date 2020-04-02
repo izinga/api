@@ -2,6 +2,10 @@ openapi: 3.0.0
 info:
   title: RobusTest Api
   description: RobusTest Api documentation
+  x-logo:
+    url: "https://redocly.github.io/redoc/petstore-logo.png"
+    backgroundColor: "#FFFFFF"
+    altText: "RobusTest"
   version: 0.1.9
 servers:
   - url: http://devicelab.robustest.com
