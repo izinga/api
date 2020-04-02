@@ -1,0 +1,21 @@
+Log:
+  required:
+   - _id
+   - created
+   - data
+   - instanceID
+   - resultID
+   - type
+  properties:
+   resultID:
+    type: string
+   _id:
+    type: string
+   data:
+    type: string
+   instanceID:
+    type: string
+   type:
+    type: string
+   created:
+    type: string

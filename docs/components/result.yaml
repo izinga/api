@@ -1,0 +1,155 @@
+Result:
+ required:
+  - _id
+  - completed
+  - device
+  - deviceName
+  - deviceVersion
+  - duration
+  - error
+  - framework
+  - instanceID
+  - isCompleted
+  - isStarted
+  - jobID
+  - linkID
+  - links
+  - message
+  - name
+  - runID
+  - setting
+  - started
+  - state
+  - status
+  - tags
+  - testcaseID
+  - testsession
+  - updated
+ properties:
+  deviceName:
+   type: string
+  linkID:
+   type: string
+  duration:
+   type: number
+  isCompleted:
+   type: boolean
+  name:
+   type: string
+  deviceVersion:
+   type: string
+  state:
+   type: string
+  testsession:
+   type: string
+  setting:
+   type: object
+   required: []
+   properties:
+    appium:
+     type: object
+     required:
+      - automationName
+      - cssSelectorsEnabled
+      - disableAndroidWatchers
+      - forceEspressoRebuild
+      - fullReset
+      - ignoreUnimportantViews
+      - nativeEvents
+      - noReset
+      - noSign
+      - xcodeOrgId
+      - xcodeSigningId
+     properties:
+      automationName:
+       type: string
+      nativeEvents:
+       type: string
+      xcodeSigningId:
+       type: string
+      xcodeOrgId:
+       type: string
+      noReset:
+       type: string
+      forceEspressoRebuild:
+       type: string
+      noSign:
+       type: string
+      disableAndroidWatchers:
+       type: string
+      cssSelectorsEnabled:
+       type: string
+      fullReset:
+       type: string
+      ignoreUnimportantViews:
+       type: string
+    general:
+     type: object
+     required: []
+     properties: {}
+  _id:
+   type: string
+  tags:
+   type: object
+   required: []
+   properties: {}
+  isStarted:
+   type: boolean
+  instanceID:
+   type: string
+  framework:
+   type: object
+   required: []
+   properties:
+    method:
+     type: string
+    INSTRUMENTATION_STATUS_CODE:
+     type: string
+    lastActivity:
+     type: string
+    testscriptID:
+     type: string
+    methodMap:
+     type: object
+     required: []
+     properties: {}
+    version:
+     type: number
+    className:
+     type: string
+    testsuite:
+     type: string
+    lastStep:
+     type: string
+    steps:
+     type: array
+     items:
+      type: string
+    testsuiteID:
+     type: string
+    type:
+     type: string
+  links:
+   type: object
+   required: []
+   properties: {}
+  runID:
+   type: string
+  updated:
+   type: string
+  error:
+   type: string
+  completed:
+   type: string
+  jobID:
+   type: string
+  status:
+   type: string
+  message:
+   type: string
+  testcaseID:
+   type: string
+  started:
+   type: string
+  device:
+   type: string

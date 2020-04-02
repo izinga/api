@@ -1,0 +1,331 @@
+Testcase:
+  required:
+   - _id
+   - attempts
+   - build
+   - completed
+   - created
+   - device
+   - deviceName
+   - deviceVersion
+   - devices
+   - duration
+   - error
+   - framework
+   - instanceID
+   - isCompleted
+   - isStarted
+   - jobID
+   - key
+   - linkID
+   - maxRetry
+   - message
+   - name
+   - project
+   - rerunAt
+   - retry
+   - runHistories
+   - runID
+   - runMode
+   - started
+   - state
+   - status
+   - tags
+   - testsession
+   - tried
+   - type
+   - updated
+   - usedDevices
+   - version
+   - waitTime
+  properties:
+   deviceName:
+    type: string
+   linkID:
+    type: string
+   duration:
+    type: number
+   isCompleted:
+    type: boolean
+   name:
+    type: string
+   deviceVersion:
+    type: string
+   attempts:
+    type: number
+   waitTime:
+    type: number
+   state:
+    type: string
+   testsession:
+    type: string
+   maxRetry:
+    type: number
+   setting:
+    type: object
+    required:
+     - appium
+     - general
+    properties:
+     appium:
+      type: object
+      required:
+       - automationName
+       - cssSelectorsEnabled
+       - disableAndroidWatchers
+       - forceEspressoRebuild
+       - fullReset
+       - ignoreUnimportantViews
+       - nativeEvents
+       - noReset
+       - noSign
+       - xcodeOrgId
+       - xcodeSigningId
+      properties:
+       automationName:
+        type: string
+       nativeEvents:
+        type: string
+       xcodeSigningId:
+        type: string
+       xcodeOrgId:
+        type: string
+       noReset:
+        type: string
+       forceEspressoRebuild:
+        type: string
+       noSign:
+        type: string
+       disableAndroidWatchers:
+        type: string
+       cssSelectorsEnabled:
+        type: string
+       fullReset:
+        type: string
+       ignoreUnimportantViews:
+        type: string
+     general:
+      type: object
+      required: []
+      properties: {}
+   project:
+    type: string
+   _id:
+    type: string
+   usedDevices:
+    type: array
+    items:
+     type: string
+   tags:
+    type: object
+    required: []
+    properties: {}
+   build:
+    type: string
+   isStarted:
+    type: boolean
+   instanceID:
+    type: string
+   runMode:
+    type: string
+   framework:
+    type: object
+    required:
+     - steps
+     - testscriptID
+     - testsuite
+     - testsuiteID
+     - type
+     - version
+    properties:
+     testscriptID:
+      type: string
+     version:
+      type: number
+     testsuite:
+      type: string
+     steps:
+      type: array
+      items:
+       type: object
+       required:
+        - after
+        - afterPagesource
+        - afterScreenshot
+        - base64
+        - before
+        - codeKey
+        - dataMap
+        - dependencies
+        - desc
+        - expose
+        - exposeMap
+        - isMethod
+        - key
+        - name
+        - org
+        - oriScreenshot
+        - pagesource
+        - rawElement
+        - references
+        - returnData
+        - screenshot
+        - settings
+        - skip
+        - step
+        - updated
+        - userData
+        - xPathMap
+        - xpathKey
+       properties:
+        dataMap:
+         type: array
+         items: {}
+        desc:
+         type: string
+        name:
+         type: string
+        isMethod:
+         type: boolean
+        step:
+         type: string
+        base64:
+         type: string
+        exposeMap:
+         type: object
+         required: []
+         properties:
+          inputText:
+           type: string
+        afterScreenshot:
+         type: string
+        xpathKey:
+         type: string
+        before:
+         type: array
+         items: {}
+        userData:
+         type: object
+         required:
+          - xpath
+         properties:
+          inputText:
+           type: string
+          xpath:
+           type: string
+        oriScreenshot:
+         type: string
+        xPathMap:
+         type: object
+         required:
+          - desc
+          - regexStr
+          - sAttribute
+          - source
+         properties:
+          desc:
+           type: string
+          regexStr:
+           type: string
+          sAttribute:
+           type: string
+          source: {}
+        skip:
+         type: boolean
+        returnData:
+         type: object
+         required: []
+         properties: {}
+        key:
+         type: string
+        references:
+         type: array
+         items: {}
+        afterPagesource:
+         type: string
+        updated:
+         type: number
+        after:
+         type: array
+         items: {}
+        rawElement:
+         type: string
+        screenshot:
+         type: string
+        expose:
+         type: boolean
+        pagesource:
+         type: string
+        codeKey:
+         type: string
+        org:
+         type: string
+        dependencies:
+         type: array
+         items: {}
+        settings:
+         type: object
+         required:
+          - failType
+          - messageOnFail
+          - onFail
+          - strategy
+          - waitforElement
+         properties:
+          onFail:
+           type: string
+          waitforElement:
+           type: string
+          failType: {}
+          hideKeyboard:
+           type: string
+          messageOnFail: {}
+          strategy:
+           type: string
+          mode:
+           type: string
+     testsuiteID:
+      type: string
+     type:
+      type: string
+   key:
+    type: string
+   version:
+    type: string
+   runID:
+    type: string
+   updated:
+    type: string
+   error:
+    type: string
+   runHistories:
+    type: array
+    items: {}
+   completed:
+    type: string
+   jobID:
+    type: string
+   testsessions:
+    type: array
+    items: {}
+   status:
+    type: string
+   tried:
+    type: number
+   message:
+    type: string
+   type:
+    type: string
+   started:
+    type: string
+   retry:
+    type: number
+   device:
+    type: string
+   devices:
+    type: array
+    items: {}
+   created:
+    type: string
+   rerunAt:
+    type: string

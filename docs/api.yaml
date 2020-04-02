@@ -90,7 +90,7 @@ paths:
             type: string
       responses:
         '200':
-          description: Expected response to a valid request
+          description: job
           content:
             application/json:
 
@@ -100,7 +100,7 @@ paths:
 
   /job/{jobID}/runs:
     get:
-      summary: Get all run for given job 
+      summary: Get all runs for given job 
       operationId: getRunsJobByID
       tags:
         - job
@@ -113,13 +113,168 @@ paths:
             type: string
       responses:
         '200':
-          description: Expected response to a valid request
+          description: list of runs
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: "components/run.yaml#/Run"
+
+  /job/{jobID}/instances:
+    get:
+      summary: Get all instances for given job 
+      operationId: getInstancesJobByID
+      tags:
+        - job
+      parameters:
+        - name: jobID
+          in: path
+          required: true
+          description: The id of the job to retrieve
+          schema:
+            type: string
+      responses:
+        '200':
+          description: list of instances
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "components/instance.yaml#/Instance"
+
+  /job/{jobID}/testcases:
+    get:
+      summary: Get all testcases for given job 
+      operationId: gettTestcasesJobByID
+      tags:
+        - job
+      parameters:
+        - name: jobID
+          in: path
+          required: true
+          description: The id of the job to retrieve
+          schema:
+            type: string
+      responses:
+        '200':
+          description: list of testcases
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "components/testcase.yaml#/Testcase"
+
+  /testcase/{testcaseID}:
+    get:
+      summary: Info for a specific testcase
+      operationId: gettTestcaseByID
+      tags:
+        - job
+      parameters:
+        - name: testcaseID
+          in: path
+          required: true
+          description: The id of the testcase to retrieve
+          schema:
+            type: string
+      responses:
+        '200':
+          description: testcase
+          content:
+            application/json:
+              schema:
+                $ref: "components/testcase.yaml#/Testcase"
+
+  /testcase/{testcaseID}/results:
+    get:
+      summary: Get all results for given testcase 
+      operationId: gettResultByTestcaseID
+      tags:
+        - job
+      parameters:
+        - name: testcaseID
+          in: path
+          required: true
+          description: The id of the testcase to retrieve
+          schema:
+            type: string
+      responses:
+        '200':
+          description: list of results
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: "components/result.yaml#/Result"
+
+
+  /result/{resultID}:
+    get:
+      summary: Info for a specific result
+      operationId: gettResultByID
+      tags:
+        - job
+      parameters:
+        - name: resultID
+          in: path
+          required: true
+          description: The id of the result to retrieve
+          schema:
+            type: string
+      responses:
+        '200':
+          description: result
+          content:
+            application/json:
+              schema:
+                $ref: "components/result.yaml#/Result"
+
+
+  /log/{resultID}/result:
+    get:
+      summary: get test framework log for specific result
+      operationId: gettFrameworlLogByResultID
+      tags:
+        - job
+      parameters:
+        - name: resultID
+          in: path
+          required: true
+          description: The id of the result 
+          schema:
+            type: string
+      responses:
+        '200':
+          description: log
+          content:
+            application/json:
+              schema:
+                $ref: "components/log.yaml#/Log"
+
+  /log/{resultID}/device:
+    get:
+      summary: get test device log for specific result
+      operationId: gettDeviceLogByResultID
+      tags:
+        - job
+      parameters:
+        - name: resultID
+          in: path
+          required: true
+          description: The id of the result 
+          schema:
+            type: string
+      responses:
+        '200':
+          description: log
+          content:
+            application/json:
+              schema:
+                $ref: "components/log.yaml#/Log"
 
 
 components:

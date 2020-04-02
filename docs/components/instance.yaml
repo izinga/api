@@ -1,0 +1,110 @@
+Instance:
+  required:
+    - _id
+    - assumptionFailure
+    - completed
+    - created
+    - device
+    - deviceName
+    - deviceVersion
+    - duration
+    - err
+    - fail
+    - framework
+    - ignore
+    - isCompleted
+    - isStarted
+    - jobID
+    - jobType
+    - message
+    - pass
+    - pending
+    - project
+    - runID
+    - runMode
+    - skipped
+    - started
+    - state
+    - status
+    - testsession
+    - total
+    - updated
+  properties:
+    deviceName:
+     type: string
+    duration:
+     type: number
+    isCompleted:
+     type: boolean
+    fail:
+     type: number
+    deviceVersion:
+     type: string
+    state:
+     type: string
+    testsession:
+     type: string
+    project:
+     type: string
+    _id:
+     type: string
+    assumptionFailure:
+     type: number
+    skipped:
+     type: number
+    isStarted:
+     type: boolean
+    runMode:
+     type: string
+    total:
+     type: number
+    framework:
+     type: object
+     required: []
+     properties:
+      params:
+       type: object
+       required:
+        - css
+        - ss
+       properties:
+        css:
+         type: string
+        ss:
+         type: string
+      codeCoverage:
+       type: string
+      packageName:
+       type: string
+      testRunner:
+       type: string
+      className:
+       type: string
+    jobType:
+     type: string
+    runID:
+     type: string
+    updated:
+     type: string
+    completed:
+     type: string
+    jobID:
+     type: string
+    status:
+     type: string
+    pass:
+     type: number
+    message:
+     type: string
+    err:
+     type: number
+    started:
+     type: string
+    pending:
+     type: number
+    ignore:
+     type: number
+    device:
+     type: string
+    created:
+     type: string
