@@ -22,11 +22,6 @@ securityDefinitions:
 
 security:
   - accesskey: [] 
-tags:
-  - name: job
-    description: Job methods provide access to job
-  - name: setting
-    description: Store methods provide access to setting.
 
 tags:
   - name: job
