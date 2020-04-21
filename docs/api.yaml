@@ -27,6 +27,16 @@ tags:
     description: Job methods provide access to job
   - name: setting
     description: Store methods provide access to setting.
+
+tags:
+  - name: job
+    description: Job methods provide access to job
+  - name: setting
+    description: Store methods provide access to setting.
+  - name: device 
+    description: device related apis 
+
+
 paths:
   /jobs/{projectID}:
     get:
@@ -275,6 +285,44 @@ paths:
             application/json:
               schema:
                 $ref: "components/log.yaml#/Log"
+
+
+  /device/{device_ID}/reserve:
+    put:
+      summary: reserve device 
+      operationId: reserveDevice
+      tags:
+        - device
+      parameters:
+        - name: device_ID
+          in: path
+          required: true
+          description: The id of the device 
+          schema:
+            type: string
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: 'components/device/reserve.yaml#/Reserve'
+      responses:
+        '200':
+          description: device
+          content:
+            application/json:
+              schema:
+                $ref: "components/device/device.yaml#/Device"
+
+    delete:
+      summary: unreserve device
+      description: unreserve device
+      operationId: unreserveDevice
+     
+      responses:
+        '200':    # status code
+          description: device 
+          schema:
+              $ref: "components/device/device.yaml#/Device"
 
 
 components:

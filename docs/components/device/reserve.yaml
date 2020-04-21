@@ -1,0 +1,5 @@
+ReservePayload:
+  type: object
+  properties: 
+    reserveKey: 
+      type: "string"
