@@ -299,7 +299,7 @@ paths:
           in: body
           required: true
           schema:
-              $ref: 'components/device/reserve.yaml#/Reserve'
+              $ref: 'components/device/reserve.yaml#/ReservePayload'
       responses:
         '200':
           description: device
