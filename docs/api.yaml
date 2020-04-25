@@ -11,10 +11,7 @@ servers:
   - url: http://devicelab.robustest.com
     description: api documentation server
 
-host: http://devicelab.robustest.com
 basePath: /v3
-schemes:
-  - http
 
 securityDefinitions:
   accesskey:
