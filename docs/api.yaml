@@ -1,7 +1,7 @@
 openapi: 3.0.0
 info:
-  title: RobusTest Api
-  description: RobusTest Api documentation
+  title: RobusTest API
+  description: RobusTest API documentation
   x-logo:
     url: "https://izinga.github.io/api/logo.png"
     backgroundColor: "#FFFFFF"
@@ -11,8 +11,10 @@ servers:
   - url: http://devicelab.robustest.com
     description: api documentation server
 
+host: http://devicelab.robustest.com
 basePath: /v3
-
+schemes:
+  - http
 
 securityDefinitions:
   accesskey:
