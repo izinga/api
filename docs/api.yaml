@@ -8,10 +8,8 @@ info:
     altText: "RobusTest"
   version: 0.1.9
 servers:
-  - url: http://devicelab.robustest.com
+  - url: http://devicelab.robustest.com/v3
     description: api documentation server
-
-basePath: /v3
 
 securityDefinitions:
   accesskey:
