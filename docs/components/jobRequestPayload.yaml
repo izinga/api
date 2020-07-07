@@ -3,5 +3,5 @@ jobRequestPayload:
   required:
   - project
   properties:
-    project
+    project:
       type: string
