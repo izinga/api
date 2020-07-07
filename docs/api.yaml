@@ -191,9 +191,8 @@ paths:
         - create
       requestBody:
         required: true
-        content: application/json
-            schema:
-              type: object
+        content: 
+          application/json
       parameters:
         - name: project 
           in: header
