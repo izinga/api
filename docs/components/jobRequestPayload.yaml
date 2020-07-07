@@ -24,6 +24,21 @@ JobRequestPayload:
         - espresso
         - xcuitest
         - automator
+    runMode:
+      type: string
+      enum:
+       - parallel
+       - distributed
+    runSetting:
+      type: string
+    devices:
+      $ref: "jobRequestPayload.yaml#/Devices"
+    attributes:
+      type: object
+    framework:
+      $ref: "jobRequestPayload.yaml#/Framework"
+    gitHook:
+      $ref: "jobRequestPayload.yaml#/GitHook"
 
 Build:
   type: object
@@ -34,3 +49,41 @@ Build:
       type: string
     test:
       type: string 
+
+Devices:
+
+
+Framework:
+
+GitHook:
+  type: object
+    properties:
+      pr:
+        $ref: "jobRequestPayload.yaml#/PullRequest"
+      commit:
+        $ref: "jobRequestPayload.yaml#/Commit"
+
+Commit:
+  type: object
+  properties:
+    url:
+      type: string
+    authToken:
+      type: string
+    commitID:
+      type: string
+
+PullRequest:
+  type: object
+  properties:
+    url:
+      type: string
+    authToken:
+      type: string
+    context:
+      type: string
+    description:
+      type: string
+
+
+
