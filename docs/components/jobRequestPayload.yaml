@@ -57,7 +57,7 @@ Framework:
 
 GitHook:
   type: object
-    properties:
+  properties:
       pr:
         $ref: "jobRequestPayload.yaml#/PullRequest"
       commit:
@@ -84,6 +84,3 @@ PullRequest:
       type: string
     description:
       type: string
-
-
-
