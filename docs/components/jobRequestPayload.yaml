@@ -52,13 +52,15 @@ Build:
 
 Devices:
   type: object
-  required:
-  - aut
   properties:
-    aut:
+    onlyGroupDevice:
       type: string
-    test:
-      type: string 
+    deviceQueries:
+      $ref: "jobRequestPayload.yaml#/DeviceQueries"
+    ids:
+      type: array
+      items:
+        type: string   
 
 Framework:
   type: object
@@ -156,6 +158,36 @@ XCUITestParams:
     app_under_test_env_vas:
       type: object
     app_under_test_ags:
+      type: array
+      items:
+        type: string
+
+DeviceQueries:
+  type: array
+  items:
+    type: object
+    properties:
+      _id:
+        type: string
+      name:
+        type: string
+      desc:
+        type: string
+      minDeviceCount
+        type: int
+      maxDeviceCount
+        type: int
+      conditions
+        $ref: "jobRequestPayload.yaml#/DeviceConditions"
+
+DeviceConditions:
+  type: array
+  properties:
+    attribute:
+      type: string
+    operator:
+      type: string
+    value:
       type: array
       items:
         type: string
