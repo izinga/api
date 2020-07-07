@@ -5,10 +5,7 @@ jobRequestPayload:
   properties:
     project:
       type: string
-    build:
-      type: object
-        properties:
-          aut:
-            type: string
-          test:
-            type: string
+    identifier:
+      type: string
+    desc:
+      type: string
