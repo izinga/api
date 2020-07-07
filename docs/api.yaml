@@ -186,10 +186,15 @@ paths:
   /job/new
     post:
       summary: Create a new job on RobusTest. One API to rule them all.
-      operationID: asdad
       tags:
         - job
         - create
+      requestBody:
+        required: true
+        content:
+          application/json
+            schema:
+              type: object
       parameters:
         - name: project 
           in: header
