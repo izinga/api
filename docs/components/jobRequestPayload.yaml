@@ -8,9 +8,22 @@ JobRequestPayload:
     identifier:
       type: string
     desc:
-      type: strings
+      type: string
     build:
       $ref: "jobRequestPayload.yaml#/Build"
+    accessLevel:
+      type: string
+      enum:
+        - private
+        - public
+    priority:
+      type: int32
+    type:
+      type: string
+      enum:
+        - espresso
+        - xcuitest
+        - automator
 
 Build:
   type: object
