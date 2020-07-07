@@ -12,8 +12,8 @@ info:
     altText: "RobusTest"
   version: 0.1.9
 servers:
-  url: http://devicelab.robustest.com/v3
-  description: sample api documentation server
+  - url: http://devicelab.robustest.com/v3
+    description: sample api documentation server
 security:
   accesskey: []
 components:
