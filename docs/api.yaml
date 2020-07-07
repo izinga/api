@@ -191,8 +191,7 @@ paths:
         - create
       requestBody:
         required: true
-        content:
-          application/json
+        content: application/json
             schema:
               type: object
       parameters:
