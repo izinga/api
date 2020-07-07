@@ -1,1 +1,7 @@
 jobRequestPayload:
+  type: object
+  required:
+  - project
+  properties:
+    project
+      type: string
