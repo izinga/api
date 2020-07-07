@@ -64,39 +64,51 @@ Framework:
   type: object
   properties:
     xcuitest_params:
-      type: string
+      $ref: "jobRequestPayload.yaml#/XCUITestParams"
     runOnlyClasses:
-          type: string
+      type: array
+      items:
+        type: string
     runOnlyTestCases:
-          type: string
+      type: array
+      items:
+        type: string
     ignoreClasses:
-          type: string
+      type: array
+      items:
+        type: string
     ignoreTestCases:
-          type: string
+      type: array
+      items:
+        type: string
     testsuite:
-          type: string
+      type: string
     datasetID:
-          type: string
+      type: string
     datasetMode:
-          type: string
+      type: string
     className:
-          type: string
+      type: string
     packageName:
-          type: string
+      type: string
     testRunner:
-          type: string
+      type: string
     applicationID:
-          type: string
+      type: string
     testPackageName:
-          type: string
+      type: string
     testApplicationID:
-          type: string
+      type: string
     codeCoverage:
-          type: string
+      type: boolean
     annotations:
-          type: string
+      type: array
+      items:
+        type: string
     beforeRunShellCommands:
-          type: string
+      type: array
+      items:
+        type: string
     params:
           type: object
     signing_identity:
@@ -131,3 +143,19 @@ PullRequest:
       type: string
     description:
       type: string
+
+XCUITestParams:
+  type: object
+  properties:
+    env_vars:
+      type: object
+    args:
+      type: array
+      items:
+        type: string
+    app_under_test_env_vas:
+      type: object
+    app_under_test_ags:
+      type: array
+      items:
+        type: string
