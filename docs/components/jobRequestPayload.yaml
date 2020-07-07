@@ -8,7 +8,9 @@ JobRequestPayload:
     identifier:
       type: string
     desc:
-      type: strings 
+      type: strings
+    build:
+      $ref: "jobRequestPayload.yaml#/JobRequestPayload"
 
 Build:
   type: object
