@@ -10,7 +10,7 @@ JobRequestPayload:
     desc:
       type: strings
     build:
-      $ref: "jobRequestPayload.yaml#/JobRequestPayload"
+      $ref: "jobRequestPayload.yaml#/Build"
 
 Build:
   type: object
