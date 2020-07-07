@@ -173,11 +173,11 @@ DeviceQueries:
         type: string
       desc:
         type: string
-      minDeviceCount
+      minDeviceCount:
         type: int
-      maxDeviceCount
+      maxDeviceCount:
         type: int
-      conditions
+      conditions:
         $ref: "jobRequestPayload.yaml#/DeviceConditions"
 
 DeviceConditions:
