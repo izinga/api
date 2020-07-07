@@ -15,7 +15,7 @@ tags:
 - name: "note"
   description: "How to create, update and read note"
 - name: "atc"
-  description: "handle argumented traffice controll"
+  description: "handle argumented traffic control"
 - name: "espresso"
   description: "Handle espresso run"
 schemes:

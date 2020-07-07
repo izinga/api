@@ -1,0 +1,187 @@
+Session:
+  required: 
+    - "_id"
+    - "org"
+    - "project"
+    - "user"
+    - "closedBy"
+    - "os"
+    - "device"
+    - "deviceIP"
+    - "serial"
+    - "machineID"
+    - "host"
+    - "port"
+    - "vnc"
+    - "build"
+    - "websocket"
+    - "appium"
+    - "sessionID"
+    - "address"
+    - "selenium"
+    - "browser"
+    - "browserID"
+    - "url"
+    - "packageName"
+    - "activityClass"
+    - "type"
+    - "sessionType"
+    - "state"
+    - "screenmode"
+    - "reason"
+    - "closeAPI"
+    - "started"
+    - "completed"
+    - "version"
+    - "isPaused"
+    - "isDistributed"
+    - "isResumed"
+    - "pausedAt"
+    - "resumedAt"
+    - "jobID"
+    - "jobType"
+    - "instanceID"
+    - "identifierID"
+    - "identifierType"
+    - "display"
+    - "setting"
+    - "timeOut"
+    - "ratio"
+    - "isWebrtc"
+    - "websockets"
+    - "created"
+    - "updated"
+  properties: 
+    _id: 
+      type: "string"
+    org: 
+      type: "string"
+    project: 
+      type: "string"
+    user: 
+      type: "string"
+    closedBy: 
+      type: "string"
+    os: 
+      type: "string"
+    device: 
+      type: "string"
+    deviceIP: 
+      type: "string"
+    serial: 
+      type: "string"
+    machineID: 
+      type: "string"
+    host: 
+      type: "string"
+    port: 
+      type: "number"
+    vnc: 
+      type: "string"
+    build: 
+      type: "string"
+    websocket: 
+      type: "string"
+    appium: 
+      type: "string"
+    sessionID: 
+      type: "string"
+    address: 
+      type: "string"
+    selenium: 
+      type: "string"
+    browser: 
+      type: "string"
+    browserID: 
+      type: "string"
+    url: 
+      type: "string"
+    packageName: 
+      type: "string"
+    activityClass: 
+      type: "string"
+    type: 
+      type: "number"
+    sessionType: 
+      type: "string"
+    state: 
+      type: "number"
+    screenmode: 
+      type: "string"
+    reason: 
+      type: "string"
+    closeAPI: 
+      type: "string"
+    started: 
+      type: "boolean"
+    completed: 
+      type: "boolean"
+    version: 
+      type: "string"
+    isPaused: 
+      type: "boolean"
+    isDistributed: 
+      type: "boolean"
+    isResumed: 
+      type: "boolean"
+    pausedAt: 
+      type: "string"
+    resumedAt: 
+      type: "string"
+    jobID: 
+      type: "string"
+    jobType: 
+      type: "string"
+    instanceID: 
+      type: "string"
+    identifierID: 
+      type: "string"
+    identifierType: 
+      type: "string"
+    display: 
+      required: 
+        - "width"
+        - "height"
+        - "xdpi"
+        - "ydpi"
+        - "size"
+        - "density"
+        - "fps"
+        - "secure"
+        - "rotation"
+      properties: 
+        width: 
+          type: "number"
+        height: 
+          type: "number"
+        xdpi: 
+          type: "number"
+        ydpi: 
+          type: "number"
+        size: 
+          type: "number"
+        density: 
+          type: "number"
+        fps: 
+          type: "number"
+        secure: 
+          type: "boolean"
+        rotation: 
+          type: "number"
+      type: "object"
+    setting: 
+      type: "string"
+    timeOut: 
+      type: "number"
+    ratio: 
+      type: "number"
+    isWebrtc: 
+      type: "boolean"
+    websockets: 
+      type: "array"
+      items: 
+        type: "undefined"
+    created: 
+      type: "string"
+    updated: 
+      type: "string"
