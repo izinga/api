@@ -51,9 +51,56 @@ Build:
       type: string 
 
 Devices:
-
+  type: object
+  required:
+  - aut
+  properties:
+    aut:
+      type: string
+    test:
+      type: string 
 
 Framework:
+  type: object
+  properties:
+    xcuitest_params:
+      type: string
+    runOnlyClasses:
+          type: string
+    runOnlyTestCases:
+          type: string
+    ignoreClasses:
+          type: string
+    ignoreTestCases:
+          type: string
+    testsuite:
+          type: string
+    datasetID:
+          type: string
+    datasetMode:
+          type: string
+    className:
+          type: string
+    packageName:
+          type: string
+    testRunner:
+          type: string
+    applicationID:
+          type: string
+    testPackageName:
+          type: string
+    testApplicationID:
+          type: string
+    codeCoverage:
+          type: string
+    annotations:
+          type: string
+    beforeRunShellCommands:
+          type: string
+    params:
+          type: object
+    signing_identity:
+          type: string
 
 GitHook:
   type: object
