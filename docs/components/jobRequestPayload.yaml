@@ -1,4 +1,4 @@
-jobRequestPayload:
+JobRequestPayload:
   type: object
   required:
   - project
@@ -9,3 +9,15 @@ jobRequestPayload:
       type: string
     desc:
       type: string
+    build:
+      $ref: "components/JobRequestPayload.yaml#/Build"
+
+Build:
+  type: object
+  required:
+  - aut
+  properties:
+    aut:
+      type: string
+    test:
+      type: string 
