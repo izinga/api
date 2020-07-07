@@ -8,7 +8,7 @@ JobRequestPayload:
     identifier:
       type: string
     desc:
-      type: string
+      type: strings 
 
 Build:
   type: object
