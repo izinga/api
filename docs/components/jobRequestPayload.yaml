@@ -9,8 +9,6 @@ JobRequestPayload:
       type: string
     desc:
       type: string
-    build:
-      $ref: "/JobRequestPayload.yaml#/Build"
 
 Build:
   type: object
