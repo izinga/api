@@ -195,7 +195,7 @@ paths:
         content: 
           'application/json':
             schema:
-              $ref: "components/jobRequestPayload.yaml#/JobRequestPay"
+              $ref: "components/jobRequestPayload.yaml#/JobRequestPayload"
       responses:
         '200':
           description: details of the job in case of successful invocation
