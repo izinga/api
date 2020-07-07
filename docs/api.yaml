@@ -14,8 +14,11 @@ info:
 servers:
   - url: http://devicelab.robustest.com/v3
     description: sample api documentation server
-security:
-  accesskey: []
+securityDefinitions:
+  accesskey:
+    type: apiKey
+    name: accesskey
+    in: query
 components:
   securitySchemes:
     accesskey:
@@ -23,6 +26,8 @@ components:
       description: unique access key generated for each user by RobusTest
       name: accesskey
       in: query
+security:
+  - accesskey: []
 tags:
   - name: job
     description: Job methods provide access to job
