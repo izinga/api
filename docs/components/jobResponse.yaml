@@ -16,7 +16,7 @@ ResponseList:
           items:
             $ref: "jobResponse.yaml#/JobResponseFailure"
   '403':
-    description: job not created successfully because user is not auhorized
+    description: job not created successfully because user is not authorized
     content:
       application/json:
         schema:
