@@ -2,7 +2,6 @@ JobRequestPayload:
   type: object
   required:
   - project
-  - 
   properties:
     project:
       type: string
@@ -48,7 +47,6 @@ Build:
   properties:
     aut:
       type: string
-      required: true
     test:
       type: string 
 
