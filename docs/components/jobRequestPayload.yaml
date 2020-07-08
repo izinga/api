@@ -9,11 +9,13 @@ JobRequestPayload:
   properties:
     project:
       type: string
-      description: the unique RobusTest generated ID for the project
+      description: Project ID for the project under which this test is being run
     identifier:
       type: string
+      description: Name for the job
     desc:
       type: string
+      description: Description for the job
     build:
       $ref: "jobRequestPayload.yaml#/Build"
     accessLevel:
@@ -21,6 +23,7 @@ JobRequestPayload:
       enum:
         - private
         - public
+      description: Control visibility of the job to other users
     priority:
       type: int32
     type:
@@ -53,8 +56,10 @@ Build:
     aut:
       type: string
       required: true
+      description: Build ID for the application under test
     test:
       type: string 
+      description: Build ID for the tests binary
 
 Devices:
   type: object
