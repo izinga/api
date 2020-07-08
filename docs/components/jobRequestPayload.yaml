@@ -2,7 +2,10 @@ JobRequestPayload:
   type: object
   required:
   - project
-  - 
+  - type
+  - runSetting
+  - devices
+  - build
   properties:
     project:
       type: string
