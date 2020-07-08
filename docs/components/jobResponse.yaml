@@ -7,8 +7,35 @@ ResponseList:
           type: object
           items:
             $ref: "jobResponse.yaml#/JobResponseSuccess"
+  '400':
+    description: job not created successfully because of issues in the payload
+    content:
+      application/json:
+        schema:
+          type: object
+          items:
+            $ref: "jobResponse.yaml#/JobResponseFailure"
+  '403':
+    description: job not created successfully because user is not auhorized
+    content:
+      application/json:
+        schema:
+          type: object
+          items:
+            $ref: "jobResponse.yaml#/JobResponseUnauthorized"
 
 JobResponseSuccess:
+  description: JSON object containing details of the input to the API and some other data
+  content:
+    application/json
+
+
+JobResponseFailure:
+  description: JSON object containing details of the input to the API and some other data
+  content:
+    application/json
+
+JobResponseUnauthorized:
   description: JSON object containing details of the input to the API and some other data
   content:
     application/json
