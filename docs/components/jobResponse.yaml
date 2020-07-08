@@ -6,6 +6,15 @@ ResponseList:
         schema:
           type: object
           items:
-            $ref: "jobResponse.yaml#/JobResponse200"
+            $ref: "jobResponse.yaml#/JobResponseSuccess"
 
-JobResponse200:
+JobResponseSuccess:
+  description: JSON object containing details of the input to the API and some other data
+  content:
+    application/json
+    schema:
+      type: object
+      items:
+        hello:
+          type: string
+
