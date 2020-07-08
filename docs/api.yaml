@@ -188,9 +188,9 @@ paths:
       tags:
         - job
         - create
-      description: Unified API used for creating an automation job on RobusTest.
+      description: Unified API used for creating an automation job on RobusTest. Whatever be your job type - this is the API to kickstart it
       requestBody:
-        description: The payload that is to be sent when creating a job
+        description: The payload to be sent
         required: true
         content: 
           'application/json':
@@ -204,7 +204,8 @@ paths:
               schema:
                 type: object
                 items:
-                  $ref: "components/testcase.yaml#/Testcase"
+                  $ref: "components/jobResponse.yaml#/JobResponse"
+
   /testcase/{testcaseID}:
     get:
       summary: Info for a specific testcase

@@ -1,3 +1,16 @@
+ResponseList:
+  '200':
+    description: details of the job in case of successful invocation
+    content:
+      application/json:
+        schema:
+          type: object
+          items:
+            $ref: "components/jobResponse.yaml#/JobResponse200"
+
+JobResponse200:
+
+
 JobRequestPayload:
   type: object
   required:
