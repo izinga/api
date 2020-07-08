@@ -14,7 +14,3 @@ JobResponseSuccess:
     application/json
       schema:
         type: object
-        items:
-          hello:
-            type: string
-
