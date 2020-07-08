@@ -197,14 +197,14 @@ paths:
             schema:
               $ref: "components/jobRequestPayload.yaml#/JobRequestPayload"
       responses:
-        '200':
-          description: details of the job in case of successful invocation
-          content:
-            application/json:
-              schema:
-                type: object
-                items:
-                  $ref: "components/jobResponse.yaml#/JobResponse"
+          '200':
+            description: details of the job in case of successful invocation
+            content:
+              application/json:
+                schema:
+                  type: object
+                  items:
+                    $ref: "components/jobResponse.yaml#/JobResponseSuccess"
 
   /testcase/{testcaseID}:
     get:
