@@ -37,6 +37,10 @@ tags:
     description: device related apis 
   - name: session
     description: session related apis
+  - name: build
+    description: build related apis
+  - name: upload
+    description: upload related apis
 paths:
   /project/{projectID}/build:
     put:
