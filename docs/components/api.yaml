@@ -53,7 +53,9 @@ paths:
           description: The id of the project to which we need to upload build
           schema:
             type: string
-
+      responses:
+        '200':
+          description: Successfully upload build
   /jobs/{projectID}:
     get:
       summary: List all job
