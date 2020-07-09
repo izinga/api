@@ -38,6 +38,22 @@ tags:
   - name: session
     description: session related apis
 paths:
+  /project/{projectID}/build:
+    put:
+      summary: upload build to RobusTest
+      content:
+        multipart/form-data
+      tags:
+        - build
+        - upload
+      parameters:
+        - name: projectID
+          in: path
+          required: true
+          description: The id of the project to which we need to upload build
+          schema:
+            type: string
+
   /jobs/{projectID}:
     get:
       summary: List all job

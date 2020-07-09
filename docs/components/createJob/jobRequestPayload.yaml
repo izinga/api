@@ -25,7 +25,7 @@ JobRequestPayload:
         - public
       description: Control visibility of the job to other users
     priority:
-      type: int32
+      type: integer
     type:
       type: string
       enum:
@@ -50,6 +50,7 @@ JobRequestPayload:
 
 Build:
   type: object
+  description: build object to specify build related details
   required:
   - aut
   properties:
@@ -65,7 +66,7 @@ Devices:
   type: object
   properties:
     onlyGroupDevice:
-      type: string
+      type: boolean
     deviceQueries:
       $ref: "jobRequestPayload.yaml#/DeviceQueries"
     ids:
