@@ -58,12 +58,13 @@ paths:
       requestBody:
         content:
           multipart/form-data:
-            type: object
-            properties:
-              build:
-                type: string
-                format: binary
-                description: build path
+            schema:  
+              type: object
+              properties:
+                build:
+                  type: string
+                  format: binary
+                  description: build path
       responses:
         '200':
           description: Successfully upload build
