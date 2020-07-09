@@ -1,0 +1,202 @@
+JobRequestPayload:
+  type: object
+  required:
+  - project
+  - type
+  - runSetting
+  - devices
+  - build
+  properties:
+    project:
+      type: string
+      description: Project ID for the project under which this test is being run
+    identifier:
+      type: string
+      description: Name for the job
+    desc:
+      type: string
+      description: Description for the job
+    build:
+      $ref: "jobRequestPayload.yaml#/Build"
+    accessLevel:
+      type: string
+      enum:
+        - private
+        - public
+      description: Control visibility of the job to other users
+    priority:
+      type: int32
+    type:
+      type: string
+      enum:
+        - espresso
+        - xcuitest
+        - automator
+    runMode:
+      type: string
+      enum:
+       - parallel
+       - distributed
+    runSetting:
+      type: string
+    devices:
+      $ref: "jobRequestPayload.yaml#/Devices"
+    attributes:
+      type: object
+    framework:
+      $ref: "jobRequestPayload.yaml#/Framework"
+    gitHook:
+      $ref: "jobRequestPayload.yaml#/GitHook"
+
+Build:
+  type: object
+  required:
+  - aut
+  properties:
+    aut:
+      type: string
+      required: true
+      description: Build ID for the application under test
+    test:
+      type: string 
+      description: Build ID for the tests binary
+
+Devices:
+  type: object
+  properties:
+    onlyGroupDevice:
+      type: string
+    deviceQueries:
+      $ref: "jobRequestPayload.yaml#/DeviceQueries"
+    ids:
+      type: array
+      items:
+        type: string   
+
+Framework:
+  type: object
+  properties:
+    xcuitest_params:
+      $ref: "jobRequestPayload.yaml#/XCUITestParams"
+    runOnlyClasses:
+      type: array
+      items:
+        type: string
+    runOnlyTestCases:
+      type: array
+      items:
+        type: string
+    ignoreClasses:
+      type: array
+      items:
+        type: string
+    ignoreTestCases:
+      type: array
+      items:
+        type: string
+    testsuite:
+      type: string
+    datasetID:
+      type: string
+    datasetMode:
+      type: string
+    className:
+      type: string
+    packageName:
+      type: string
+    testRunner:
+      type: string
+    applicationID:
+      type: string
+    testPackageName:
+      type: string
+    testApplicationID:
+      type: string
+    codeCoverage:
+      type: boolean
+    annotations:
+      type: array
+      items:
+        type: string
+    beforeRunShellCommands:
+      type: array
+      items:
+        type: string
+    params:
+          type: object
+    signing_identity:
+          type: string
+
+GitHook:
+  type: object
+  properties:
+      pr:
+        $ref: "jobRequestPayload.yaml#/PullRequest"
+      commit:
+        $ref: "jobRequestPayload.yaml#/Commit"
+
+Commit:
+  type: object
+  properties:
+    url:
+      type: string
+    authToken:
+      type: string
+    commitID:
+      type: string
+
+PullRequest:
+  type: object
+  properties:
+    url:
+      type: string
+    authToken:
+      type: string
+    context:
+      type: string
+    description:
+      type: string
+
+XCUITestParams:
+  type: object
+  properties:
+    env_vars:
+      type: object
+    args:
+      type: array
+      items:
+        type: string
+    app_under_test_env_vas:
+      type: object
+    app_under_test_ags:
+      type: array
+      items:
+        type: string
+
+DeviceQueries:
+  type: array
+  items:
+    type: object
+    properties:
+      _id:
+        type: string
+      name:
+        type: string
+      desc:
+        type: string
+      minDeviceCount:
+        type: int
+      maxDeviceCount:
+        type: int
+      conditions:
+        $ref: "jobRequestPayload.yaml#/DeviceConditions"
+
+DeviceConditions:
+  type: array
+  properties:
+    attribute:
+      type: string
+    operator:
+      type: string
+    value:
+      type: string
