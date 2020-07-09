@@ -10,7 +10,7 @@ info:
     url: "https://izinga.github.io/api/logo.png"
     backgroundColor: "#FFFFFF"
     altText: "RobusTest"
-  version: 1.1.9
+  version: 0.1.9
 servers:
   - url: http://devicelab.robustest.com/v3
     description: sample api documentation server
@@ -37,7 +37,37 @@ tags:
     description: device related apis 
   - name: session
     description: session related apis
+  - name: build
+    description: build related apis
+  - name: upload
+    description: upload related apis
 paths:
+  /project/{projectID}/build:
+    put:
+      summary: upload build to RobusTest
+      tags:
+        - build
+        - upload
+      parameters:
+        - name: projectID
+          in: path
+          required: true
+          description: The id of the project to which we need to upload build
+          schema:
+            type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            type: object
+            properties:
+              build:
+                type: string
+                format: binary
+                description: build path
+      responses:
+        '200':
+          description: Successfully upload build
+
   /jobs/{projectID}:
     get:
       summary: List all job
