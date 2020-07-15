@@ -377,6 +377,8 @@ paths:
       summary: unreserve device
       description: unreserve device
       operationId: unreserveDevice
+      tags:
+        - device
      
       responses:
         '200':    # status code
