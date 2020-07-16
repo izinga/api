@@ -44,7 +44,7 @@ tags:
   - name: appium hub 2.0
     description: APIs for Appium Hub
 paths:
-  /hub/sessionIdentifier/{robustestSessionIdentifer}
+  /hub/sessionIdentifier/{robustestSessionIdentifer}:
     get:
       summary: get the RobusTest session ID matching the robustestSessionIdentifer
       tags:
@@ -60,21 +60,21 @@ paths:
         '200':
           description: RobusTest session ID is returned
 
-    /hub/sessionIdentifier/{AppiumSessionID}
-      get:
-        summary: get the RobusTest session ID matching the Appium/Selenium Session ID
-        tags:
-          - appium hub 2.0
-        parameters:
-          - name: AppiumSessionID
-            in: path
-            required: true
-            description: the sessionID for the Appium session created
-            schema:
-              type: string
-        responses:
-          '200':
-            description: RobusTest session ID is returned
+  /hub/sessionIdentifier/{AppiumSessionID}:
+    get:
+      summary: get the RobusTest session ID matching the Appium/Selenium Session ID
+      tags:
+        - appium hub 2.0
+      parameters:
+        - name: AppiumSessionID
+          in: path
+          required: true
+          description: the sessionID for the Appium session created
+          schema:
+            type: string
+      responses:
+        '200':
+          description: RobusTest session ID is returned
 
   /project/{projectID}/build:
     put:
