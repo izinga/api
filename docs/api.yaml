@@ -11,7 +11,6 @@ info:
     backgroundColor: "#FFFFFF"
     altText: "RobusTest"
   version: 0.1.9
-
 servers:
   - url: http://devicelab.robustest.com/v3
     description: sample api documentation server
@@ -49,7 +48,7 @@ paths:
     get:
       summary: get the RobusTest session ID matching the robustestSessionIdentifer
       tags:
-        - appium hub 2.0
+        - appium hub
       parameters:
         - name: robustestSessionIdentifer
           in: path
@@ -65,7 +64,7 @@ paths:
     get:
       summary: get the RobusTest session ID matching the Appium/Selenium Session ID
       tags:
-        - appium hub 2.0
+        - appium hub
       parameters:
         - name: AppiumSessionID
           in: path
