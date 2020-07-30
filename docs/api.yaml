@@ -384,10 +384,10 @@ paths:
                 $ref: "components/log.yaml#/Log"
   /device/{device_ID}/reserve:
     put:
-      summary: reserve device 
-      operationId: reserveDevice
+      summary: reserve device
       tags:
         - device
+      description: reserve a device so that it is kept for you
       parameters:
         - name: device_ID
           in: path
@@ -395,10 +395,12 @@ paths:
           description: The id of the device 
           schema:
             type: string
-        - name: payload
-          in: body
-          required: true
-          schema:
+      requestBody:
+        description: the payload for reserve API
+        required: true
+        content:
+          'application/json'
+            schema:
               $ref: "components/device/reserve.yaml#/ReservePayload"
       responses:
         '200':
