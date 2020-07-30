@@ -1,5 +1,6 @@
 ReservePayload:
-  type: object
+  required:
+    - project
   properties: 
     reserveKey: 
       type: "string"
