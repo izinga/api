@@ -1,14 +1,14 @@
 Hub_SessionIdentifer_Get:
   summary: get the RobusTest session ID matching the robustestSessionIdentifer
-    tags:
-      - appium hub
-    parameters:
-      - name: robustestSessionIdentifer
-        in: path
-        required: true
-        description: the unique identifier provided by user for the appium session
-        schema:
-          type: string
-    responses:
-      '200':
-        description: RobusTest session ID is returned
+  tags:
+    - appium hub
+  parameters:
+    - name: robustestSessionIdentifer
+      in: path
+      required: true
+      description: the unique identifier provided by user for the appium session
+      schema:
+        type: string
+  responses:
+    '200':
+      description: RobusTest session ID is returned
