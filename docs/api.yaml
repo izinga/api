@@ -400,8 +400,8 @@ paths:
         required: true
         content:
           'application/json'
-            schema:
-              $ref: "components/device/reserve.yaml#/ReservePayload"
+          schema:
+            $ref: "components/device/reserve.yaml#/ReservePayload"
       responses:
         '200':
           description: device
