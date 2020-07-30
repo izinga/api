@@ -3,3 +3,5 @@ ReservePayload:
   properties: 
     reserveKey: 
       type: "string"
+    project:
+      type: "string"
