@@ -274,7 +274,7 @@ paths:
         description: The payload to be sent
         required: true
         content: 
-          'application/json':
+          application/json:
             schema:
               $ref: "components/createJob/jobRequestPayload.yaml#/JobRequestPayload"
       responses:
@@ -399,9 +399,9 @@ paths:
         description: the payload for reserve API
         required: true
         content:
-          'application/json'
-          schema:
-            $ref: "components/device/reserve.yaml#/ReservePayload"
+          application/json:
+            schema:
+              $ref: "components/device/reserve.yaml#/ReservePayload"
       responses:
         '200':
           description: device
