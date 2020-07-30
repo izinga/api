@@ -1,7 +1,15 @@
-Hub_SessionIdentifer_Get_Parameters:
+Hub_robustestSessionIdentifer_Get_Parameters:
   - name: robustestSessionIdentifer
     in: path
     required: true
     description: the unique identifier provided by user for the appium session
+    schema:
+      type: string
+
+Hub_AppiumSessionID_Get_Parameters:
+  - name: AppiumSessionID
+    in: path
+    required: true
+    description: the sessionID for the Appium session created
     schema:
       type: string
