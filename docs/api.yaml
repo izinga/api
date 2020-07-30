@@ -46,19 +46,7 @@ tags:
 paths:
   /hub/sessionIdentifier/{robustestSessionIdentifer}:
     get:
-      summary: get the RobusTest session ID matching the robustestSessionIdentifer
-      tags:
-        - appium hub
-      parameters:
-        - name: robustestSessionIdentifer
-          in: path
-          required: true
-          description: the unique identifier provided by user for the appium session
-          schema:
-            type: string
-      responses:
-        '200':
-          description: RobusTest session ID is returned
+      $ref: "components/hub/hub.yaml#/Hub_SessionIdentifer_Get"
 
   /hub/sessionIdentifier/{AppiumSessionID}:
     get:
