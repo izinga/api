@@ -3,12 +3,7 @@ Hub_SessionIdentifer_Get:
   tags:
     - appium hub
   parameters:
-    - name: robustestSessionIdentifer
-      in: path
-      required: true
-      description: the unique identifier provided by user for the appium session
-      schema:
-        type: string
+    $ref: "hubRequest.yaml#/Hub_SessionIdentifer_Get_Parameters"
   responses:
     '200':
       description: RobusTest session ID is returned
