@@ -406,14 +406,13 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "components/device/device.yaml/Device"
+                $ref: "components/device/device.yaml#/Device"
     delete:
       summary: unreserve device
       description: unreserve device
       operationId: unreserveDevice
       tags:
         - device
-     
       responses:
         '200':    # status code
           description: device 
