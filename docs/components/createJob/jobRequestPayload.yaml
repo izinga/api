@@ -119,7 +119,27 @@ Framework:
       type: array
       items:
         type: string
-    beforeRunShellCommands:
+    beforeJobShellCommands:
+      type: array
+      items:
+        type: string
+    afterJobShellCommands:
+      type: array
+      items:
+        type: string
+    beforeTestcaseShellCommands:
+      type: array
+      items:
+        type: string
+    afterTestcaseShellCommands:
+      type: array
+      items:
+        type: string
+    beforeDevicePrepShellCommands:
+      type: array
+      items:
+        type: string
+    afterDevicePrepShellCommands:
       type: array
       items:
         type: string
