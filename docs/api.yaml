@@ -44,6 +44,14 @@ tags:
   - name: appium hub 2.0
     description: APIs for Appium Hub
 paths:
+  /grid/browsers:
+    get:
+      $ref: "components/hub/grid.yaml#/Grid_browsers_Get"
+
+  /grid/nodes:
+    get:
+      $ref: "components/hub/grid.yaml#/Grid_nodes_Get"
+
   /hub/sessionIdentifier/{robustestSessionIdentifier}:
     get:
       $ref: "components/hub/hub.yaml#/Hub_robustestSessionIdentifer_Get"

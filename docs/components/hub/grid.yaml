@@ -1,0 +1,17 @@
+Grid_browsers_Get:
+  summary: get details about the desktop browsers available on the RobusTest grid
+  tags:
+    - appium hub 2.0
+  responses:
+    '200':
+      description: valid list of desktop browsers
+
+Grid_nodes_Get:
+  summary: get details about the selenium nodes registered with the RobusTest grid
+  tags:
+    - appium hub 2.0
+  parameters:
+    $ref: "hubRequest.yaml#/Hub_AppiumSessionID_Get_Parameters"
+  responses:
+    '200':
+      description: valid list of selenium nodes
