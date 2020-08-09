@@ -81,7 +81,7 @@ Framework:
       $ref: "jobRequestPayload.yaml#/XCUITestParams"
     runOnlyClasses:
       type: string
-    runOnlyTestCases:
+    runOnlyTestcases:
       type: string
     ignoreClasses:
       type: string
