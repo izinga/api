@@ -80,21 +80,13 @@ Framework:
     xcuitest_params:
       $ref: "jobRequestPayload.yaml#/XCUITestParams"
     runOnlyClasses:
-      type: array
-      items:
-        type: string
+      type: string
     runOnlyTestCases:
-      type: array
-      items:
-        type: string
+      type: string
     ignoreClasses:
-      type: array
-      items:
-        type: string
-    ignoreTestCases:
-      type: array
-      items:
-        type: string
+      type: string
+    ignoreTestcases:
+      type: string
     testsuite:
       type: string
     datasetID:
