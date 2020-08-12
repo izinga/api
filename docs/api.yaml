@@ -83,6 +83,14 @@ paths:
                   type: string
                   format: binary
                   description: build path
+                buildInfo:
+                  type: object
+                  description: build info
+                  properties:
+                    desc:
+                      type: string
+                    remoteBuildUrl:
+                      type: string
       responses:
         '200':
           description: Successfully upload build
