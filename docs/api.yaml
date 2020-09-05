@@ -41,9 +41,18 @@ tags:
     description: build related apis
   - name: upload
     description: upload related apis
-  - name: appium hub 2.0
+  - name: appium hub
     description: APIs for Appium Hub
+  - name: administration
+    description: APIs for performing adminstrative tasks
+  - name: maintenance
+    description: APIs related to device maintenance
 paths:
+
+  /admin/v3/maintenance/{Maintenance_Profile_ID}/run:
+    get:
+      $ref: "components/admin/maintenance/maintenance.yaml#/Maintenance_Profile_Get"
+
   /grid/browsers:
     get:
       $ref: "components/hub/grid.yaml#/Grid_browsers_Get"

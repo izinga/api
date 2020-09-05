@@ -1,0 +1,10 @@
+Maintenance_Profile_Get:
+  summary: run the maintenance profile
+  tags:
+    - administration
+    - maintenance
+  parameters:
+    $ref: "maintenanceRequest.yaml#/Maintenance_Run_Get_Parameters"
+  responses:
+    '200':
+      description: the maintenance profile has been run successfully

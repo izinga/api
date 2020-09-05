@@ -1,0 +1,7 @@
+Maintenance_Run_Get_Parameters:
+  - name: Maintenance_Profile_ID
+    in: path
+    required: true
+    description: the unique maintenance profile ID
+    schema:
+      type: string
