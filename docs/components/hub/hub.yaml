@@ -1,7 +1,7 @@
 Hub_robustestSessionIdentifer_Get:
   summary: get the RobusTest session ID matching the robustestSessionIdentifer
   tags:
-    - appium hub 2.0
+    - hub - appium
   parameters:
     $ref: "hubRequest.yaml#/Hub_robustestSessionIdentifer_Get_Parameters"
   responses:
@@ -11,7 +11,7 @@ Hub_robustestSessionIdentifer_Get:
 Hub_AppiumSessionID_Get:
   summary: get the RobusTest session ID matching the Appium/Selenium Session ID
   tags:
-    - appium hub 2.0
+    - hub - appium
   parameters:
     $ref: "hubRequest.yaml#/Hub_AppiumSessionID_Get_Parameters"
   responses:

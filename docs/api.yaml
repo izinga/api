@@ -41,8 +41,10 @@ tags:
     description: build related apis
   - name: upload
     description: upload related apis
-  - name: appium hub 2.0
+  - name: hub - appium
     description: APIs for Appium Hub
+  - name: hub - selenium
+    description: APIs for Selenium Hub
 paths:
   /grid/browsers:
     get:
@@ -89,7 +91,7 @@ paths:
                   properties:
                     desc:
                       type: string
-                    remoteBuildUrl:
+                    remoteBuildUrl:nMACHINE1,NERVE|NEURON|HUB,192.168.199.5,izingasoftware,/Users/izingasoftware/robustest
                       type: string
       responses:
         '200':
