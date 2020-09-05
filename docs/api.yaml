@@ -41,12 +41,14 @@ tags:
     description: build related apis
   - name: upload
     description: upload related apis
-  - name: appium hub
-    description: APIs for Appium Hub
   - name: administration
     description: APIs for performing adminstrative tasks
   - name: maintenance
     description: APIs related to device maintenance
+  - name: hub - appium
+    description: APIs for Appium Hub
+  - name: hub - selenium
+    description: APIs for Selenium Hub
 paths:
 
   /admin/v3/maintenance/{Maintenance_Profile_ID}/run:
@@ -92,6 +94,14 @@ paths:
                   type: string
                   format: binary
                   description: build path
+                buildInfo:
+                  type: object
+                  description: build info
+                  properties:
+                    desc:
+                      type: string
+                    remoteBuildUrl:nMACHINE1,NERVE|NEURON|HUB,192.168.199.5,izingasoftware,/Users/izingasoftware/robustest
+                      type: string
       responses:
         '200':
           description: Successfully upload build
