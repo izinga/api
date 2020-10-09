@@ -70,11 +70,11 @@ paths:
     get:
       $ref: "components/hub/hub.yaml#/Hub_AppiumSessionID_Get"
 
-  v3/devices:
+  /v3/devices:
     get:
       $ref: "components/device/device.yaml#/Devices_Get"
 
-  v3/device/{deviceID}:
+  /v3/device/{deviceID}:
     get:
       $ref: "components/device/device.yaml#/Device_Get"
 
@@ -203,7 +203,7 @@ paths:
           description: ID of the job that you want to stop
           schema:
             type: string
-      responses:w
+      responses:
         '200':
           description: job closed successfully
 

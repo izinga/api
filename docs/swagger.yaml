@@ -1,0 +1,3609 @@
+swagger: "2.0"
+info:
+  version: "1.0.3"
+  title: "RobusTest API"
+  description: "RobusTest API"
+  termsOfService: "http://robustest.com/terms"
+  license:
+    name: "Apache 2.0"
+    url: "https://www.apache.org/licenses/LICENSE-2.0.html"
+host: "robustest.com"
+basePath: "/v3"
+contact:
+  email: "support@robustest.com"
+tags:
+- name: "note"
+  description: "How to create, update and read note"
+- name: "atc"
+  description: "handle argumented traffic control"
+- name: "espresso"
+  description: "Handle espresso run"
+schemes:
+  - "https"
+  - "http"
+
+paths:
+
+  /note/{id}:
+    get:
+      tags:
+      - "note"
+      summary: get a single note
+      description: get all detail of single note
+      operationId: note
+      responses:
+        '200':    # status code
+          description: get note
+          schema:
+            $ref: '#/definitions/note'
+    post:
+      tags:
+      - "note"
+      summary: create a note
+      description: create note
+      operationId: note
+      parameters:
+        - description:  note
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/note'
+      responses:
+        '200':    # status code
+          description: create note
+          schema:
+            $ref: '#/definitions/note'
+    put:
+      tags:
+      - "note"
+      summary: update note
+      description: update note
+      operationId: note
+      parameters:
+        - description:  wifi
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/note'
+      responses:
+        '200':    # status code
+          description: update note
+          schema:
+            $ref: '#/definitions/note'
+    delete:
+      tags:
+      - "note"
+      summary: delete note
+      description: delete note
+      operationId: note
+      responses:
+        '200':    # status code
+          description: delete note
+          schema:
+            $ref: '#/definitions/note'
+
+  /notes/project/<project_id>:
+    get:
+      tags:
+      - "note"
+      summary: get all notes for given project
+      description:  get all notes for given project
+      operationId: note
+      responses:
+        '200':    # status code
+          description: get all notes for given project
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/note'
+
+  /notes:
+    get:
+      tags:
+      - "note"
+      summary: get all notes for logged in user
+      description:  get all notes for logged in user
+      operationId: note
+      responses:
+        '200':    # status code
+          description: get all notes for logged in user
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/note'
+
+  /devicegroup/{id}:
+    get:
+      summary: get device group
+      description: get device group
+      operationId: deviceGroup
+      responses:
+        '200':    # status code
+          description: get device group
+          schema:
+            $ref: '#/definitions/deviceGroup'
+    post:
+      summary: create device group
+      description: create device group
+      operationId: deviceGroup
+      parameters:
+        - description:  wifi
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/deviceGroup'
+      responses:
+        '200':    # status code
+          description: create device group
+          schema:
+            $ref: '#/definitions/deviceGroup'
+    put:
+      summary: update device group
+      description: update device group
+      operationId: deviceGroup
+      parameters:
+        - description:  deviceGroup
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/deviceGroup'
+      responses:
+        '200':    # status code
+          description: update device group
+          schema:
+            $ref: '#/definitions/deviceGroup'
+
+  /devicequeries/<project_id>:
+    get:
+      summary: get all device query for given project
+      description:  get all device query for given project
+      operationId: deviceGroup
+      responses:
+        '200':    # status code
+          description: get all device query for given project
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/deviceQuery'
+  /devicegroups/<project_id>:
+    get:
+      summary: get all device group for given project
+      description:  get all deive query for given project
+      operationId: deviceGroup
+      responses:
+        '200':    # status code
+          description: get all device group for given project
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/deviceGroup'
+
+  /devicegroup/<id>:
+    get:
+      summary: get device ids for given group
+      description:  get device ids for given group
+      operationId: deviceGroup
+      responses:
+        '200':    # status code
+          description: get device ids for given group
+          schema:
+            type: array
+            items: 
+              type : string
+  /testsession/<testsession_id>/changewifi:
+    put:
+      summary: change wifi network
+      description:  change wifi network
+      operationId: wifi
+      parameters:
+        - description:  wifi
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/wifiRequest'
+      responses:
+        '200':    # status code
+          description:  change wifi network
+  /appium/hub/<project_id>?count=5&cursor=<cursor>:
+    get:
+      summary: get all appium hub for a project
+      description:  get all appium hub for a project
+      operationId: appium
+      responses:
+        '200':    # status code
+          description: get all appium hub for a project
+          schema:
+            $ref: '#/definitions/appiumHub'
+  /appium/sessions/<hub_id>:
+    get:
+      summary: get all appium session for a given entry
+      description:  get all appium session for a given entry
+      operationId: appium
+      responses:
+        '200':    # status code
+          description: get all appium session for a given entry
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/appiumSession'
+  /admin/activity/<id>:
+    get:
+      summary: get activity details
+      description:  get activity details
+      operationId: activity
+      responses:
+        '200':    # status code
+          description: get activity details
+          schema:
+            $ref: '#/definitions/activity'
+  /admin/activities?count=count&cursor=cur:
+    get:
+      summary: get n activities 
+      description:  get n activities 
+      operationId: activity
+      responses:
+        '200':    # status code
+          description: get activities 
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/activity'
+  /neuron/config:
+    get:
+      tags:
+      - "atc"
+      summary: get neuron config
+      description:  get neuron config
+      operationId: neuron
+      responses:
+        '200':    # status code
+          description: get neuron config
+          schema:
+            $ref: '#/definitions/neuronConfig'
+
+  /atc/profiles:
+    get:
+      tags:
+      - "atc"
+      summary: get all atc profile
+      description:  get all atc profile
+      operationId: atc
+      responses:
+        '200':    # status code
+          description: get all atc profile
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/atcProfile'
+
+  /atc/profile/<testsession_id> :
+    post:
+      tags:
+      - "atc"
+      summary: shape atc traffic
+      description:  shape atc traffic
+      operationId: atc
+      parameters:
+        - description:  atc
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/atcProfile'
+      responses:
+        '200':    # status code
+          description: shape atc traffic
+          schema:
+            $ref: '#/definitions/atcProfile'
+
+    delete:
+      tags:
+      - "atc"
+      summary: un shape atc traffic
+      description:  shape atc traffic
+      operationId: atc
+      responses:
+        '200':    # status code
+          description: shape atc traffic
+          schema:
+            $ref: '#/definitions/atcProfile'
+
+  /espresso/skiptest/<project_id>/all:
+    get:
+      tags:
+      - "espresso"
+      summary: get all marked espresso skipped test cases
+      description:  get all marked espresso skipped test cases
+      operationId: espresso
+      responses:
+        '200':    # status code
+          description: get all marked espresso skipped test cases
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/espressoSkipTest'
+
+  /espresso/skiptest/<id>:
+    get:
+      tags:
+      - "espresso"
+      summary: get  marked espresso skipped test cases
+      description:  get  marked espresso skipped test cases
+      operationId: espresso
+      responses:
+        '200':    # status code
+          description: get  marked espresso skipped test cases
+          schema:
+            $ref: '#/definitions/espressoSkipTest'
+    post:
+      tags:
+      - "espresso"
+      summary: create  marked espresso skipped test cases
+      description:  create  marked espresso skipped test cases
+      operationId: espresso
+      parameters:
+        - description:  espresso
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/espressoSkipTest'
+      responses:
+        '200':    # status code
+          description: create  marked espresso skipped test cases
+          schema:
+            $ref: '#/definitions/espressoSkipTest'
+    put:
+      tags:
+      - "espresso"
+      summary: update  marked espresso skipped test cases
+      description:  update  marked espresso skipped test cases
+      operationId: espresso
+      parameters:
+        - description:  espresso
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/espressoSkipTest'
+      responses:
+        '200':    # status code
+          description: create  marked espresso skipped test cases
+          schema:
+            $ref: '#/definitions/espressoSkipTest'
+    delete:
+      tags:
+      - "espresso"
+      summary: delete  marked espresso skipped test cases
+      description:  delete  marked espresso skipped test cases
+      operationId: espresso
+      responses:
+        '200':    # status code
+          description: delete  marked espresso skipped test cases
+          schema:
+            $ref: '#/definitions/espressoSkipTest'
+
+
+  /device/<device_id>/restart:
+    get:
+      summary: restart device 
+      description:  restart device 
+      operationId: device
+      responses:
+        '200':    # status code
+          description: restart device 
+          schema:
+            $ref: '#/definitions/device'
+
+
+  /espresso/result/<result_id>:
+    get:
+      tags:
+      - "espresso"
+      summary: espresso test result
+      description:  espresso test result
+      operationId: espresso
+      responses:
+        '200':    # status code
+          description: espresso test result
+          schema:
+            $ref: '#/definitions/espressoTestResult'
+
+
+  /espresso-testcase/<testcase_id>/history?count=100:
+    get:
+      tags:
+      - "espresso"
+      summary: get last N history of espresso-testcase
+      description:  get last N history of espresso-testcase
+      operationId: espresso-testcase 
+      responses:
+        '200':    # status code
+          description: espresso-testcase last N history of espresso-testcase
+          schema:
+            $ref: '#/definitions/espressoTestcase'
+
+  /recording/pagesource/<testsession_id>:
+    get:
+      summary: get pagesource
+      description:  get pagesource
+      operationId: pagesource
+      responses:
+        '200':    # status code
+          description: pagesource
+          schema:
+            $ref: '#/definitions/pagesource'
+    put:
+      summary: stop pagesource streaming
+      description:  stop pagesource streaming
+      operationId: pagesource
+      responses:
+        '200':    # status code
+          description: run
+    delete:
+      summary: start pagesource streaming
+      description:  start pagesource streaming
+      operationId: pagesource
+      responses:
+        '200':    # status code
+          description: run
+
+
+  /admin/config:
+    get:
+      summary: get all config
+      description:  get all config
+      operationId: config
+      responses:
+        '200':    # status code
+          description: run
+          schema:
+            $ref: '#/definitions/config'
+
+  /admin/config/<id>:
+    put:
+      summary: update config
+      description:  update config
+      operationId: config
+      parameters:
+        - description: config
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/config'
+      responses:
+        '200':    # status code
+          description: run
+          schema:
+            $ref: '#/definitions/config'
+
+
+  /admin/db/clean:
+    delete:
+      summary: delete row from database
+      description:  delete row from database
+      operationId: dbCleanup
+      parameters:
+        - description: dbCleanup
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/dbCleanup'
+      responses:
+        '200':    # status code
+          description: run
+          
+
+  /testsession/<testsession_id>/performance?accesskey=<access_key>:
+    post:
+      summary: start performance monitoring
+      description: start performance monitoring
+      operationId: performance
+      parameters:
+        - description: reserve device
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/perfomanceData'
+      responses:
+        '200':    # status code
+          description: performance
+    delete:
+      summary: stop performance monitoring
+      description: stop performance monitoring
+      operationId: performance
+      responses:
+        '200':    # status code
+          description: performance
+
+
+  /admin/confirm/:userID/resend:
+    get:
+      summary: resend confirmation link
+      description: resend confirmation link
+      operationId: confirm
+      responses:
+        '200':    # status code
+          description: confirm
+
+
+  /testsession/{test_session_id}/screenshot:
+    get:
+      summary: get screenshot from device
+      description: get screenshot from device
+      operationId: screenshot
+      responses:
+        '200':    # status code
+          description: screenshot
+          
+          schema:
+            type: object
+            properties: 
+              base64 : 
+                type: string
+
+  /run/{run_id}/rerun?accesskey={access_key}:
+    get:
+      summary: Rerun test on same set of devices with same test suite and dataset
+      description: Rerun test on same set of devices with same test suite and dataset
+      operationId: run
+      responses:
+        '200':    # status code
+          description: run
+          schema:
+            $ref: '#/definitions/runResponse'
+  /devices?accesskey={access_key}:
+    get:
+      summary: get all devices
+      description: get all devices
+      operationId: device
+      responses:
+        '200':    # status code
+          description: get all devices
+          schema:
+            type: object
+            properties: 
+              available : 
+                type: array
+                items: 
+                  type : object
+                  $ref: '#/definitions/device'
+              busy : 
+                type: array
+                items: 
+                  type : object
+                  $ref: '#/definitions/device'
+              offline : 
+                type: array
+                items: 
+                  type : object
+                  $ref: '#/definitions/device'
+              reserved : 
+                type: array
+                items: 
+                  type : object
+                  $ref: '#/definitions/device'
+  /device/{device_id}/detail?accesskey={access_key}:
+    get:
+      summary: get device, session and live screen url by device id
+      description: get device, session and live screen url by device id
+      operationId: device
+      responses:
+        '200':    # status code
+          description: get device, session and live screen url by device id
+          schema:
+            type: object
+            properties: 
+              device : 
+                type: object
+                $ref: '#/definitions/device'
+              session : 
+                type: object
+                $ref: '#/definitions/testsession'
+              liveScreen : 
+                type: string
+  /device/{device_id}/free?accesskey={access_key}:
+    delete:
+      summary: free device by device id
+      description: free device by device id
+      operationId: device
+      responses:
+        '200':    # status code
+          description: device
+          schema:
+            $ref: '#/definitions/device'
+  /session/live:
+    get:
+      summary: get all live page for logged in user
+      description: get all live page for logged in user
+      operationId: session
+      responses:
+        '200':    # status code
+          description: testsession
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/testsession'
+
+
+  /result/{result_id}/logcat:
+    get:
+      summary: get logcat for result
+      description: get logcat for result
+      operationId: result
+      responses:
+        '200':    # status code
+          description: result
+          schema:
+            $ref: '#/definitions/logcat'
+
+  /result/{result_id}/perfomance:
+    get:
+      summary: get perfomance for result
+      description: get perfomance for result
+      operationId: result
+      responses:
+        '200':    # status code
+          description: perfomance
+          schema:
+            $ref: '#/definitions/perfomance'
+
+  /testscript/{testscript_id}/checkForDelete:
+    head:
+      summary: get list of all test scripts whiche are depends on testscript
+      description: get list of all test scripts whiche are depends on testscript
+      operationId: testscript
+      responses:
+        '200':    # status code
+          description: testscript
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/testscript'
+
+
+  /contacts/:projectID:
+    get:
+      summary: get all contact for project
+      description: get all contact for project
+      operationId: contact
+      responses:
+        '200':    # status code
+          description: get all contact for project 
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/contactListResponse'
+  
+  /device/reserve:
+    put:
+      summary: reserve device
+      description: reserve device
+      operationId: device
+      parameters:
+        - description: reserve device
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/DeviceReservePayload'
+      responses:
+        '200':    # status code
+          description: device 
+          schema:
+              $ref: '#/definitions/device' 
+    delete:
+      summary: unreserve device
+      description: unreserve device
+      operationId: unreserve
+     
+      responses:
+        '200':    # status code
+          description: device 
+          schema:
+              $ref: '#/definitions/device'
+  /contact/:id:
+    post:
+      summary: create new contact 
+      description: create new contact
+      operationId: contact
+      parameters:
+        - description: new contact
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/contactListPayload'
+      responses:
+        '200':    # status code
+          description: share 
+          schema:
+              $ref: '#/definitions/contactListResponse'
+    put:
+      summary: update contact 
+      description: update contact
+      operationId: contact
+      parameters:
+        - description: update contact
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/contactListPayload'
+    get:
+      summary: get contact 
+      description: get contact
+      operationId: contact
+      responses:
+        '200':    # status code
+          description: contact 
+          schema:
+              $ref: '#/definitions/contactListResponse'
+    delete:
+      summary: delete contact 
+      description: delete contact
+      operationId: contact
+      responses:
+        '200':    # status code
+          description: share 
+          schema:
+              $ref: '#/definitions/contactListResponse'
+
+  /share/new:
+    post:
+      summary: create new share object
+      description: create new share object
+      operationId: share
+      parameters:
+        - description: new share object
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/sharePayload'
+      responses:
+        '200':    # status code
+          description: share 
+          schema:
+              $ref: '#/definitions/sharePayload'
+
+  /dataset/{id}:
+    post:
+      summary: create dataset
+      description: create dataset
+      operationId: dataset
+      parameters:
+        - description: create dataset
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/datasetPayload'
+      responses:
+        '200':    # status code
+          description: dataset 
+          schema:
+              $ref: '#/definitions/dataset'
+    put:
+      summary: update dataset
+      description: update dataset
+      operationId: dataset
+      parameters:
+        - description: update dataset
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/datasetUpdatePayload'
+      responses:
+        '200':    # status code
+          description: dataset 
+          schema:
+              $ref: '#/definitions/dataset'
+
+
+    get:
+      summary: get dataset
+      description: get dataset
+      operationId: dataset
+      responses:
+        '200':    # status code
+          description: dataset 
+          schema:
+              $ref: '#/definitions/dataset'
+
+  /datasets/project/{project id}:
+    get:
+      summary: get all dataset for project dataset
+      description: get all dataset for project dataset
+      operationId: setting
+      responses:
+        '200':    # status code
+          description: get all dataset for project dataset
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/dataset'
+  /datasets/testsuite/{test suite id}:
+    get:
+      summary: get all dataset for test suite dataset
+      description: get all dataset for test suite dataset
+      operationId: setting
+      responses:
+        '200':    # status code
+          description: get all dataset for test suite dataset
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/dataset'
+  /setting/{id}:
+    post:
+      summary: create setting
+      description: create setting
+      operationId: setting
+      parameters:
+        - description: create setting
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/settingPayload'
+      responses:
+        '200':    # status code
+          description: setting variables
+          schema:
+              $ref: '#/definitions/setting'
+    put:
+      summary: update setting
+      description: update setting
+      operationId: setting
+      parameters:
+        - description: update setting
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/settingPayload'
+      responses:
+        '200':    # status code
+          description: setting variables
+          schema:
+              $ref: '#/definitions/setting'
+    get:
+      summary: get setting
+      description: get setting
+      operationId: setting
+      responses:
+        '200':    # status code
+          description: setting variables
+          schema:
+              $ref: '#/definitions/setting'
+    delete:
+      summary: delete setting
+      description: delete setting
+      operationId: setting
+      responses:
+        '200':    # status code
+          description: delete variables
+          schema:
+              $ref: '#/definitions/setting'
+  /settings/{project id}:
+    get:
+      summary: get all setting for project setting
+      description: get all setting for project setting
+      operationId: setting
+      responses:
+        '200':    # status code
+          description: get all setting for project setting
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/setting'
+
+  /settings/{id}/default:
+    put:
+      summary: make setting default
+      description: make setting default
+      operationId: setting
+      responses:
+        '200':    # status code
+          description: make setting default
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/setting'
+
+  /testscript/{testscript_id}/check:
+    put:
+      summary: make testscript as check
+      description: make testscript as check
+      operationId: testscript
+      parameters:
+        - description: make testscript as check
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/checkPayload'
+      responses:
+        '200':    # status code
+          description: global variables
+          schema:
+              $ref: '#/definitions/testscript'
+
+  /variables/{project_id}:
+    get:
+      summary: get all global variables
+      description: get all global variables
+      operationId: global variables
+      responses:
+        '200':    # status code
+          description: global variables
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/globalVariable'
+  /variable/new:
+    post:
+      summary: get all global variables
+      description: get all global variables
+      operationId: global variables
+      parameters:
+        - description: create global variables
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/webBuildPayload'
+      responses:
+        '200':    # status code
+          description: global variables
+          schema:
+              $ref: '#/definitions/globalVariable'
+  /variable/{id}:
+    get:
+      summary: get global variables
+      description: get global variables
+      operationId: global variables
+      responses:
+        '200':    # status code
+          description: global variables
+          schema:
+              $ref: '#/definitions/globalVariable'
+
+  /notifications?page=pagenumber:
+    get:
+      summary: get 20 notifications for user
+      description: get 20 notifications for user
+      operationId: notification
+      responses:
+        '200':    # status code
+          description: notification
+          schema:
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/notification'
+
+  /notifications/{notification_id}:
+    delete:
+      summary: mark notification as read
+      description: mark notification as read
+      operationId: notification
+      responses:
+        '200':    # status code
+          description: notification
+          schema:
+            $ref: '#/definitions/notification'
+  /project/{project_id}/build/createWeb:
+    post:
+      summary: create web build
+      description: create web build
+      operationId: build
+      parameters:
+        - description: create web build
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/webBuildPayload'
+      responses:
+        '200':    # status code
+          description: run response
+          schema:
+            $ref: '#/definitions/build'
+
+  /run:
+    post:
+      summary: start run on multiple devices
+      description: start run on multiple devices
+      operationId: run
+      parameters:
+        - description: start run on multiple devices
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/runPayload'
+      responses:
+        '200':    # status code
+          description: run response
+          schema:
+            $ref: '#/definitions/runResponse'
+
+
+  /run/:id/archive:
+    put:
+      summary: archive run 
+      description: archive run 
+      operationId: run
+      responses:
+        '200':    # status code
+          description: run response
+          schema:
+            $ref: '#/definitions/runResponse'
+    delete:
+      summary: undo archive run 
+      description: undo archive run 
+      operationId: run
+      responses:
+        '200':    # status code
+          description: run response
+          schema:
+            $ref: '#/definitions/runResponse'
+
+  /runs/{projectID}:
+    get:
+      summary: get all runs for projects
+      description: get all runs for projects
+      operationId: run
+      responses:
+        '200':    # status code
+          description: run response
+          schema:
+            type: object
+            properties: 
+              totalCount:
+                type: number
+              cursor:
+                type: string
+              runs:
+                type : object
+                $ref: '#/definitions/runResponse'
+  /testsuiteRuns/{testsuite}:
+    get:
+      summary: get all runs for testsuite
+      description: get all runs for testsuite
+      operationId: run
+      responses:
+        '200':    # status code
+          description: run response
+          schema:
+            type: object
+            properties: 
+              totalCount:
+                type: number
+              cursor:
+                type: string
+              runs:
+                type : object
+                $ref: '#/definitions/runResponse'
+
+  /run/{run_id}:
+    get:
+      summary: get run
+      description: get run
+      operationId: run
+      responses:
+        '200':    # status code
+          description: run response
+          schema:
+            $ref: '#/definitions/runResponse'
+    delete:
+      summary: stop run
+      description: stop run
+      operationId: run
+      responses:
+        '200':    # status code
+          description: run response
+          schema:
+            $ref: '#/definitions/runResponse'
+
+  /instance/{instance_id}:
+    get:
+      summary: get run
+      description: get instance
+      operationId: instance
+      responses:
+        '200':    # status code
+          description: instance response
+          schema:
+            $ref: '#/definitions/instancesData'
+    delete:
+      summary: stop instance
+      description: stop instance
+      operationId: instance
+      responses:
+        '200':    # status code
+          description: instance response
+          schema:
+            $ref: '#/definitions/instancesData'        
+  /automate:
+    post:
+      summary: start automate recording 
+      description: start automate recording 
+      operationId: automate
+      parameters:
+        - description: start automate recording 
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/testPayload'
+      responses:
+        '200':    # status code
+          description: automate response
+          schema: 
+            $ref: '#/definitions/automateResponse'
+
+  /device/{device_id}/usages:
+    get:
+      summary: get device current usages
+      description: get device current usages
+      operationId: device
+      responses:
+        '200':    # status code
+          description: tag
+          schema: 
+            $ref: '#/definitions/deviceUsagse'
+
+  /project/{project_id}/tags:
+    get:
+      summary: get tags for project
+      description: get tags for project
+      operationId: tag
+      responses:
+        '200':    # status code
+          description: tag
+          schema: 
+            $ref: '#/definitions/tag'
+    put:
+      summary: update tags for project
+      description: update tags for project
+      operationId: project
+      parameters:
+        - description: update payload
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/tagPayload'
+      responses:
+        '200':    # status code
+          description: tags for project
+          schema: 
+            $ref: '#/definitions/tag'
+
+  /build/{build id}:
+    put:
+      summary: update build for project
+      description: update build for project
+      operationId: build
+      parameters:
+        - description: update payload
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/buildUpdatePayload'
+      responses:
+        '200':    # status code
+          description: build 
+          schema: 
+            $ref: '#/definitions/build'
+    delete:
+      summary: delete  build
+      description: delete  build
+      operationId: build
+      responses:
+        '200':    # status code
+          description: build
+          schema: 
+            $ref: '#/definitions/build'
+
+
+  /user:
+    get:
+      summary: get user detail
+      description:  get user detail
+      operationId: user
+      responses:
+        '200':    # status code
+          description: users list
+          schema: 
+            $ref: '#/definitions/userDetail'
+    put:
+      summary: update user name 
+      description:  update user name 
+      operationId: user
+      parameters:
+        - description: user payload
+        - name: payload
+          in: body
+          required: true
+          schema:
+            type: object
+            properties: 
+              name : 
+                type: string
+      responses:
+        '200':    # status code
+          description: user
+          schema: 
+            $ref: '#/definitions/userDetail'
+
+  /users:
+    get:
+      summary: get all users
+      description: get all users
+      operationId: user
+      responses:
+        '200':    # status code
+          description: users list
+          schema: 
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/user'
+
+  /node_ip:8080/v2/status:
+    get:
+      summary: get devices status, in progress, allready added
+      description: get devices status, in progress, allready added
+      operationId: neuron
+      responses:
+        '200':    # status code
+          description: device list
+          schema: 
+            $ref: '#/definitions/deviceStatus'
+
+
+  /admin/contacts:
+    get:
+      summary: get contact
+      description: get contact
+      operationId: contact
+      responses:
+        '200':    # status code
+          description: contact
+          schema: 
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/Contact'
+
+  /admin/contact/{id}:
+    get:
+      summary: get contact
+      description: get contact
+      operationId: contact
+      responses:
+        '200':    # status code
+          description: contact
+          schema: 
+            $ref: '#/definitions/Contact'
+    post:
+      summary: create new contact
+      description: create new contact
+      operationId: contact
+      parameters:
+        - description: create payload
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/ContactPayload'
+      responses:
+        '200':    # status code
+          description: Contact
+          schema: 
+            $ref: '#/definitions/Contact'
+    put:
+      summary: update new contact
+      description: update new contact
+      operationId: contact
+      parameters:
+        - description: update payload
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/ContactPayload'
+      responses:
+        '200':    # status code
+          description: Contact
+          schema: 
+            $ref: '#/definitions/Contact'
+    delete:
+      summary: delete contact
+      description: delete contact
+      operationId: contact
+      responses:
+        '200':    # status code
+          description: contact
+          schema: 
+            type: string
+  /admin/node/{ip}:
+    put:
+      summary: update node 
+      description: update node 
+      operationId: node
+      parameters:
+        - description: node  payload
+        - name: body
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/NodePayload'
+      responses:
+        '200':    # status code
+          description: node
+          schema: 
+            $ref: '#/definitions/Node'
+  /admin/bug/trackerlist:
+    get:
+      summary: get list for all supported bug trakers
+      description: get list for all supported bug trakers
+      operationId: bug
+      responses:
+        '200':    # status code
+          description: A JSON array of supported bug tracker name
+          schema: 
+            type: array
+            items: 
+              type: string
+  /admin/bug/config/jira:
+    post:
+      summary: create a jira config
+      description: create a jira config
+      operationId: jiraConfig
+      parameters:
+        - description: jira config payload
+        - name: body
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/JiraConfigPayload'
+      responses:
+        '200':    # status code
+          description: A JSON array of jira project names
+          schema: 
+            type: array
+            items: 
+              type: string
+    get:
+      summary : get all jira config 
+      description: get all jira config
+      operationId: jira
+      responses:
+        '200':    # status code
+          description: get list of jira config
+          schema: 
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/JiraConfig'
+
+  /admin/bug/config/jira/{jira_config_id}:
+    put:
+      summary: update a jira config
+      description: update a jira config
+      operationId: jiraConfig
+      parameters:
+        - description: jira config payload
+        - name: payload
+          in: body
+          required: true
+          schema:
+              $ref: '#/definitions/JiraConfigPayload'
+      responses:
+        '200':    # status code
+          description: jira config
+          schema: 
+            $ref: '#/definitions/JiraConfig'
+    patch:
+      summary: update all projects for a jira config
+      description: update all projects for a jira config
+      operationId: jiraConfig
+      responses:
+        '200':    # status code
+          description: A JSON array of jira project names
+          schema: 
+            type: array
+            items: 
+              type: string
+    delete:
+      summary: delete jira config and all associated jira project
+      description: update all projects for a jira config
+      operationId: jiraConfig
+      responses:
+        '200':    # status code
+          schema: 
+            type: string
+  /admin/bug/config/jira/projects:
+    get:
+      summary : get all jira project 
+      description: get all jira project
+      operationId: jira
+      responses:
+        '200':    # status code
+          description: get list of jira project
+          schema: 
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/JiraProject'
+  /admin/bug/config/jira/config/{congfig_id}/projects:
+    get:
+      summary : get all jira project for given config
+      description: get all jira project for given config
+      operationId: jira
+      responses:
+        '200':    # status code
+          description: get list of jira project for given config
+          schema: 
+            type: array
+            items: 
+              type : object
+              $ref: '#/definitions/JiraProject'
+  /admin/bug/config/jira/project/{jira_project_id}:
+    get:
+      summary : get a jira project  details
+      description: get a jira project details
+      operationId: jira
+      responses:
+        '200':    # status code
+          description: get a jira project details
+          schema: 
+            type: object
+            $ref: '#/definitions/JiraProject'
+  /bug/jira/{jira_project_id}/create:
+    post:
+      summary: create a jira issue
+      description: create a jira issue
+      operationId: jiraIssue
+      parameters:
+        - description: jira issue payload
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/jiraIssuePayload'
+      responses:
+        '200':    # status code
+          description: A JSON array of jira project names
+          schema: 
+            type: object
+            $ref: '#/definitions/jiraIssueResponse'
+  /project/{project_id}:
+    put:
+      summary: Update Project 
+      description: Update Project from user interface
+      operationId: project
+      parameters:
+        - description: project update payload
+        - name: body
+          in: body
+          required: true
+          schema:
+            $ref: '#/definitions/projectUpdatePayload'
+      responses:
+        '200':    # status code
+          description: A JSON array of jira project names
+          schema: 
+            type: object
+            $ref: '#/definitions/project'
+definitions:
+  testPayload:
+    type: object
+    properties: 
+      project: 
+        type: "string"
+      build: 
+        type: "string"
+      device: 
+        type: "string"
+      settings:
+        type: "object"
+  automateResponse:
+    type: object
+    properties: 
+      status: 
+        type: "string"
+      msg: 
+        type: "string"
+      session: 
+        type: "string"
+
+  deviceUsagse:
+    type: object
+    properties: 
+      UserEmail: 
+        type: "string"
+      UserID: 
+        type: "string"
+      UserName: 
+        type: "string"
+      project: 
+        type: "string"
+      type: 
+        type: "string"
+  tag:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      project: 
+        type: "string"
+      tags: 
+        type: "array"
+        items: 
+          type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+      updateBy: 
+        type: "string"
+      createdBy: 
+        type: "string"
+  tagPayload:
+    type: object
+    properties: 
+      tags: 
+        type: "array"
+        items: 
+          type: "string"  
+  buildUpdatePayload:
+    type: object
+    properties: 
+      label: 
+        type: "string"
+      desc: 
+        type: "string"
+      activityClass: 
+        type: "string"
+
+  build:
+    type: object
+    properties:
+      _id: 
+        type: "string"
+      label: 
+        type: "string"
+      desc: 
+        type: "string"
+      os: 
+        type: "string"
+      icon64: 
+        type: "string"
+      packageName: 
+        type: "string"
+      activityClass: 
+        type: "string"
+      versionName: 
+        type: "string"
+      versionCode: 
+        type: "string"
+      user: 
+        type: "string"
+      project: 
+        type: "string"
+      url: 
+        type: "string"
+      test_c: 
+        type: "number"
+      active: 
+        type: "boolean"
+      last: 
+        type: "string"
+      created: 
+        type: "string"
+
+  DeviceReservePayload:
+    type: object
+    required: 
+      - "_id"
+      - "reserveKey"
+    properties: 
+      _id: 
+        type: "string"
+      reserveKey: 
+        type: "string"
+
+  ContactPayload:
+    type: object
+    required: 
+      - "name"
+      - "email"
+      - "location"
+      - "role"
+      - "dept"
+      - "secondaryPhone"
+      - "primaryPhone"
+    properties: 
+      name: 
+        type: "string"
+      email: 
+        type: "string"
+      location: 
+        type: "string"
+      role: 
+        type: "string"
+      node: 
+        type: "boolean"
+      device: 
+        type: "boolean"
+      automate: 
+        type: "boolean"
+      secondaryPhone: 
+        type: "string"
+      primaryPhone: 
+        type: "string"
+  Contact:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      name: 
+        type: "string"
+      email: 
+        type: "string"
+      role: 
+        type: "string"
+      location: 
+        type: "string"
+      primaryPhone: 
+        type: "string"
+      secondaryPhone: 
+        type: "string"
+      node: 
+        type: "boolean"
+      device: 
+        type: "boolean"
+      automate: 
+        type: "boolean"
+      updated: 
+        type: "string"
+      created: 
+        type: "string"
+
+  NodePayload:
+    type : object
+    properties:
+      name: 
+        type: string
+      location: 
+        type: string
+      macAddress:  
+        type: string
+      serial: 
+        type: string
+      contacts: 
+        type: "array"
+        items: 
+          type: "string"
+  Node:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      name: 
+        type: "string"
+      ip: 
+        type: "string"
+      devices: 
+        type: "array"
+        items: 
+          type: "undefined"
+      location: 
+        type: "string"
+      status: 
+        type: "boolean"
+      version: 
+        type: "boolean"
+      os: 
+        type: "string"
+      serial: 
+        type: "string"
+      macAddress: 
+        type: "string"
+      snapshot: 
+        type: "string"
+      contacts: 
+        type: "array"
+        items: 
+          type: "string"
+      lastConnected: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+      last: 
+        type: "number"
+
+  deviceStatus:
+    type: object
+    properties: 
+      addedDevices: 
+        type: "array"
+        items: 
+          type: "string"
+      inProgressDevices: 
+        type: "array"
+        items: 
+          type: "string"
+      notAddedDevices: 
+        type: "array"
+        items: 
+          type: "string"
+      triedAttempted: 
+        type: "array"
+        items: 
+          type: "string"
+  JiraConfig:
+    type: object
+    properties: 
+      _id: 
+        type: string
+      source: 
+        type: string
+      type: 
+        type: string
+      url: 
+        type: string
+      name: 
+        type: string
+      user: 
+        type: string
+      password: 
+        type: string
+      createdBy: 
+        type: string
+      updated: 
+        type: string
+      created: 
+        type: string
+
+  JiraConfigPayload:
+    type : object
+    required: 
+      - url
+      - name
+      - user
+      - password
+    properties: 
+      url: 
+        type: string
+      name: 
+        type: string
+      user: 
+        type: string
+      password: 
+        type: string
+  JiraProject:
+    type: object
+    properties: 
+      _id: 
+        type: string
+      source: 
+        type: string
+      key: 
+        type: string
+      id: 
+        type: string
+      name: 
+        type: string
+      desc: 
+        type: string
+      users: 
+        type: array
+        items: 
+          type: object
+          properties: 
+            key: 
+              type: string
+            name: 
+              type: string
+            email: 
+              type: string
+            avatarUrl: 
+              type: string
+            displayName: 
+              type: string
+      type: 
+        type: string
+      component: 
+        type: array
+        items: 
+          type: object
+          properties: 
+            id: 
+              type: string
+            name: 
+              type: string
+      updated: 
+        type: string
+      created: 
+        type: string
+  jiraIssueResponse:
+    type: object
+    properties: 
+      id: 
+        type: string
+      self: 
+        type: string
+      key: 
+        type: string
+  jiraIssuePayload:
+    type: object
+    required: 
+      - projectKey
+      - assingeeName
+      - assingeeKey
+      - reporterName
+      - reporterKey
+      - description
+      - summary
+      - type
+      - attachements
+    properties: 
+      projectKey: 
+        type: string
+      assingeeName: 
+        type: string
+      assingeeKey: 
+        type: string
+      reporterName: 
+        type: string
+      reporterKey: 
+        type: string
+      description: 
+        type: string
+      summary: 
+        type: string
+      type: 
+        type: string
+      attachements: 
+        type: array
+        items: 
+          type: object
+          properties: 
+            type: 
+              type: string
+              description: valid type ['text', 'png', 'jpeg']
+            name: 
+              type: string
+            data: 
+              type: string
+  projectUpdatePayload:
+    type: object
+    required: 
+      - active
+      - bugProject
+      - users
+      - admin
+      - sendMailOnBuildUpload
+    properties:
+      active: 
+        type: boolean
+      sendMailOnBuildUpload: 
+        type: boolean
+      bugProject:
+        type: string
+      users:
+        type: array
+        items: 
+          type: string
+      admin:
+        type: array
+        items: 
+          type: string
+  user:
+    type: object
+    properties: 
+        _id: 
+          type: "string"
+        name: 
+          type: "string"
+        email: 
+          type: "string"
+        secrete: 
+          type: "string"
+        password: 
+          type: "string"
+        access_key: 
+          type: "string"
+        active: 
+          type: "boolean"
+        profile: 
+          type: "string"
+        projects: 
+          type: "array"
+          items: 
+            type: "string"
+        accessedOrder: 
+          type: "array"
+          items: 
+            type: "string"
+        isActivated: 
+          type: "boolean"
+        created: 
+          type: "string"
+        updated: 
+          type: "string"
+        confirmed_at: 
+          type: "string"
+        oauth2Uid: 
+          type: "string"
+        oauth2Provider: 
+          type: "string"
+        oauth2Token: 
+          type: "string"
+        oauth2Refresh: 
+          type: "string"
+        oauth2Expiry: 
+          type: "string"
+        confirmToken: 
+          type: "string"
+        confirmed: 
+          type: "boolean"
+        recoverToken: 
+          type: "string"
+        RecoverTokenExpiry: 
+          type: "string"
+        attemptNumber: 
+          type: "number"
+        attemptTime: 
+          type: "string"
+        locked: 
+          type: "string"
+        location: 
+          type: "string"
+        primaryPhone: 
+          type: "string"
+        secondaryPhone: 
+          type: "string"
+  userDetail:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      name: 
+        type: "string"
+      email: 
+        type: "string"
+      active: 
+        type: "boolean"
+      projects: 
+        type: "array"
+        items: 
+          type: "string"
+      activeProjects: 
+        type: "array"
+        items: 
+          type: "object"
+          properties: 
+            _id: 
+              type: "string"
+            name: 
+              type: "string"
+            org: 
+              type: "string"
+            os: 
+              type: "string"
+            icon64: 
+              type: "string"
+            type: 
+              type: "string"
+            url: 
+              type: "string"
+            packageName: 
+              type: "string"
+            activityClass: 
+              type: "string"
+            bugProject: 
+              type: "string"
+            test_c: 
+              type: "number"
+            active: 
+              type: "boolean"
+            is_universal: 
+              type: "boolean"
+            last: 
+              type: "string"
+            created: 
+              type: "string"
+            updated: 
+              type: "string"
+            update_by: 
+              type: "string"
+            created_by: 
+              type: "string"
+      isActivated: 
+        type: "boolean"
+      accessLevel: 
+        type: "array"
+        items: 
+          type: "string"
+      accessKey: 
+        type: "string"
+      accessedOrder: 
+        type: "array"
+        items: 
+          type: "string"
+      roles: 
+        type: "array"
+        items: 
+          type: "string"
+
+  project:
+    type: object
+    properties: 
+      _id: 
+        type: string
+      name: 
+        type: string
+      org: 
+        type: string
+      os: 
+        type: string
+      icon64: 
+        type: string
+      type: 
+        type: string
+      url: 
+        type: string
+      bugProject: 
+        type: string
+      admin: 
+        type: array
+        items: 
+          type: string
+      users: 
+        type: array
+        items: 
+          type: string
+      test_c: 
+        type: number
+      active: 
+        type: boolean
+      is_universal: 
+        type: boolean
+      last: 
+        type: string
+      created: 
+        type: string
+      updated: 
+        type: string
+      update_by: 
+        type: string
+      created_by: 
+        type: string
+  device:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      serial: 
+        type: "string"
+      key: 
+        type: "string"
+      uiid: 
+        type: "string"
+      host: 
+        type: "string"
+      name: 
+        type: "string"
+      brand: 
+        type: "string"
+      model: 
+        type: "string"
+      model_id: 
+        type: "string"
+      manufacturer: 
+        type: "string"
+      clientidbase: 
+        type: "string"
+      countryCode: 
+        type: "string"
+      ram: 
+        type: "string"
+      fingerprint: 
+        type: "string"
+      version: 
+        type: "string"
+      isConnected: 
+        type: "boolean"
+      testSession: 
+        type: "string"
+      simOperator: 
+        type: "string"
+      timezone: 
+        type: "string"
+      resolution: 
+        type: "string"
+      lcdDensity: 
+        type: "string"
+      screensize: 
+        type: "string"
+      img: 
+        type: "string"
+      numbers: 
+        type: "array"
+        items: 
+          type: "undefined"
+      useType: 
+        type: "array"
+        items: 
+          type: "string"
+      projects: 
+        type: "array"
+        items: 
+          type: "undefined"
+      user: 
+        type: "string"
+      os: 
+        type: "string"
+      port: 
+        type: "number"
+      screenmode: 
+        type: "string"
+      ratio: 
+        type: "number"
+      menubar: 
+        type: "boolean"
+      status: 
+        type: "boolean"
+      state: 
+        type: "number"
+      automate: 
+        type: "boolean"
+      browsers: 
+        type: "array"
+        items: 
+          type: "object"
+          properties: 
+            name: 
+              type: "string"
+            component: 
+              type: "string"
+      apps: 
+        type: "array"
+        items: 
+          type: "string"
+      display: 
+        required: 
+          - "width"
+          - "height"
+          - "xdpi"
+          - "ydpi"
+          - "size"
+          - "density"
+          - "fps"
+          - "secure"
+          - "rotation"
+        properties: 
+          width: 
+            type: "number"
+          height: 
+            type: "number"
+          xdpi: 
+            type: "number"
+          ydpi: 
+            type: "number"
+          size: 
+            type: "number"
+          density: 
+            type: "number"
+          fps: 
+            type: "number"
+          secure: 
+            type: "boolean"
+          rotation: 
+            type: "number"
+        type: "object"
+      imei: 
+        type: "string"
+      imsi: 
+        type: "string"
+      iccid: 
+        type: "string"
+      phoneNumber: 
+        type: "string"
+      network: 
+        type: "string"
+      reserveKey: 
+        type: "string"
+      usage: 
+        required: []
+        properties: {}
+        type: "object"
+      oldHost: 
+        type: "string"
+      node: 
+        required: 
+          - "name"
+          - "ip"
+          - "devices"
+          - "location"
+          - "status"
+          - "version"
+          - "os"
+          - "serial"
+          - "macAddress"
+          - "snapshot"
+          - "contacts"
+          - "lastConnected"
+          - "created"
+          - "updated"
+          - "last"
+        properties: 
+          name: 
+            type: "string"
+          ip: 
+            type: "string"
+          devices: 
+            type: "array"
+            items: 
+              type: "undefined"
+          location: 
+            type: "string"
+          status: 
+            type: "boolean"
+          version: 
+            type: "boolean"
+          os: 
+            type: "string"
+          serial: 
+            type: "string"
+          macAddress: 
+            type: "string"
+          snapshot: 
+            type: "string"
+          contacts: 
+            type: "array"
+            items: 
+              type: "undefined"
+          lastConnected: 
+            type: "string"
+          created: 
+            type: "string"
+          updated: 
+            type: "string"
+          last: 
+            type: "number"
+        type: "object"
+      other: 
+        type: "string"
+      minicap: 
+        required: 
+          - "state"
+        properties: 
+          state: 
+            type: "number"
+        type: "object"
+      minitouch: 
+        required: 
+          - "state"
+        properties: 
+          state: 
+            type: "number"
+        type: "object"
+      service: 
+        required: 
+          - "state"
+        properties: 
+          state: 
+            type: "number"
+        type: "object"
+      agent: 
+        required: 
+          - "state"
+        properties: 
+          state: 
+            type: "number"
+        type: "object"
+      nizedha: 
+        required: 
+          - "state"
+        properties: 
+          state: 
+            type: "number"
+        type: "object"
+      vnc: 
+        required: 
+          - "state"
+        properties: 
+          state: 
+            type: "number"
+        type: "object"
+      isActive: 
+        type: "boolean"
+      lastConnected: 
+        type: "string"
+      last: 
+        type: "number"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+
+  testsession:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      org: 
+        type: "string"
+      project: 
+        type: "string"
+      user: 
+        type: "string"
+      os: 
+        type: "string"
+      device: 
+        type: "string"
+      serial: 
+        type: "string"
+      host: 
+        type: "string"
+      port: 
+        type: "number"
+      vnc: 
+        type: "string"
+      build: 
+        type: "string"
+      websocket: 
+        type: "string"
+      appium: 
+        type: "string"
+      browser: 
+        type: "string"
+      url: 
+        type: "string"
+      packageName: 
+        type: "string"
+      activityClass: 
+        type: "string"
+      type: 
+        type: "number"
+      state: 
+        type: "number"
+      screenmode: 
+        type: "string"
+      reason: 
+        type: "string"
+      started: 
+        type: "boolean"
+      completed: 
+        type: "boolean"
+      start: 
+        type: "number"
+      last: 
+        type: "number"
+      isPaused: 
+        type: "boolean"
+      isDistributed: 
+        type: "boolean"
+      isResumed: 
+        type: "boolean"
+      pausedAt: 
+        type: "string"
+      resumedAt: 
+        type: "string"
+      ratio: 
+        type: "number"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+  runPayload: 
+    type: object
+    properties: 
+      testsuite: 
+        type: "string"
+      project: 
+        type: "string"
+      build: 
+        type: "string"
+      SendOnFail: 
+        type: "boolean"
+      SendOnPass: 
+        type: "boolean"
+      recipient: 
+        type: "array"
+        items: 
+          type: "string"
+      settings: 
+        required: 
+          - "key"
+        properties: 
+          key: 
+            type: "string"
+        type: "object"
+      instancesData: 
+        type: "array"
+        items: 
+          type: "object"
+          properties: 
+            device: 
+              type: "string"
+            datasetID: 
+              type: "string"
+            testscriptsData: 
+              type: "array"
+              items: 
+                type: "object"
+                properties: 
+                  testscript: 
+                    type: "string"
+                  name: 
+                    type: "string"
+                  userData: 
+                    type: "array"
+                    items: 
+                      type: "undefined"
+  instancesData:
+    type: object
+    properties: 
+      device: 
+        type: "string"
+      datasetID: 
+        type: "string"
+      testscriptsData: 
+        type: "array"
+        items: 
+          type: "object"
+          properties: 
+            testscript: 
+              type: "string"
+            name: 
+              type: "string"
+            userData: 
+              type: "array"
+              items: 
+                type: "undefined"
+
+  contactListPayload:
+    type: object
+    required: 
+      - "project"
+      - "name"
+      - "email"
+      - "phone"
+    properties: 
+      project: 
+        type: "string"
+      name: 
+        type: "string"
+      email: 
+        type: "string"
+      phone: 
+        type: "string"
+  contactListResponse:
+    type: object
+    required: 
+      - "_id"
+      - "name"
+      - "project"
+      - "email"
+      - "phone"
+      - "createdBy"
+      - "updatedBy"
+      - "updated"
+      - "created"
+    properties: 
+      _id: 
+        type: "string"
+      name: 
+        type: "string"
+      project: 
+        type: "string"
+      email: 
+        type: "string"
+      phone: 
+        type: "string"
+      createdBy: 
+        type: "string"
+      updatedBy: 
+        type: "string"
+      updated: 
+        type: "string"
+      created: 
+        type: "string"
+  runResponse:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      project: 
+        type: "string"
+      testsuite: 
+        type: "string"
+      build: 
+        type: "string"
+      instances: 
+        type: "array"
+        items: 
+          type: "undefined"
+      settings: 
+        required: []
+        properties: {}
+        type: "object"
+      isPublic: 
+        type: "boolean"
+      isCompleted: 
+        type: "boolean"
+      resultCount: 
+        type: "number"
+      sendOnFail: 
+        type: "boolean"
+      sendOnPass: 
+        type: "boolean"
+      email: 
+        type: "boolean"
+      recipient: 
+        type: "array"
+        items: 
+          type: "string"
+      ps: 
+        type: "number"
+      fl: 
+        type: "number"
+      er: 
+        type: "number"
+      createdBy: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+  webBuildPayload:
+    type: object
+    properties: 
+      os: 
+        type: "string"
+      active: 
+        type: "boolean"
+      label: 
+        type: "string"
+      url: 
+        type: "string"
+
+  globalVariable:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      project: 
+        type: "string"
+      name: 
+        type: "boolean"
+      desc: 
+        type: "string"
+      data: 
+        type: "string"
+      createdBy: 
+        type: "string"
+      updateBy: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+
+  globalVariablePayload:
+    type: object
+    properties: 
+      project: 
+        type: "string"
+      name: 
+        type: "boolean"
+      desc: 
+        type: "string"
+      data: 
+        type: "string"
+  checkPayload:
+    type: object
+    properties: 
+      isCheck: 
+        type: "boolean"
+      checkType: 
+        type: "string"
+      checkMessage: 
+        type: "string"
+  testscript:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      name: 
+        type: "string"
+      desc: 
+        type: "string"
+      project: 
+        type: "string"
+      os: 
+        type: "string"
+      test_c: 
+        type: "number"
+      steps: 
+        type: "array"
+        items: 
+          type: "object"
+          properties: 
+            name: 
+              type: "string"
+            desc: 
+              type: "string"
+            key: 
+              type: "string"
+            step: 
+              type: "string"
+            isMethod: 
+              type: "boolean"
+            xpathKey: 
+              type: "string"
+            codeKey: 
+              type: "string"
+            references: 
+              type: "array"
+              items: 
+                type: "undefined"
+            dependencies: 
+              type: "array"
+              items: 
+                type: "undefined"
+            settings: 
+              required: 
+                - "failType"
+                - "messageOnFail"
+                - "onFail"
+              properties: 
+                failType: 
+                  type: "string"
+                messageOnFail: 
+                  type: "string"
+                onFail: 
+                  type: "string"
+              type: "object"
+            userData: 
+              required: []
+              properties: {}
+              type: "object"
+            returnData: 
+              required: 
+                - "element"
+              properties: 
+                element: 
+                  required: 
+                    - "_text"
+                    - "bound"
+                  properties: 
+                    _text: 
+                      type: "string"
+                    bound: 
+                      required: 
+                        - "bottom"
+                        - "height"
+                        - "left"
+                        - "right"
+                        - "top"
+                        - "width"
+                      properties: 
+                        bottom: 
+                          type: "number"
+                        height: 
+                          type: "number"
+                        left: 
+                          type: "number"
+                        right: 
+                          type: "number"
+                        top: 
+                          type: "number"
+                        width: 
+                          type: "number"
+                      type: "object"
+                  type: "object"
+              type: "object"
+            expose: 
+              type: "boolean"
+            before: 
+              type: "array"
+              items: 
+                type: "undefined"
+            after: 
+              type: "array"
+              items: 
+                type: "undefined"
+            dataMap: 
+              type: "array"
+              items: 
+                type: "undefined"
+            pagesource: 
+              type: "string"
+            afterPagesource: 
+              type: "string"
+            screenshot: 
+              type: "string"
+            afterScreenshot: 
+              type: "string"
+            updated: 
+              type: "number"
+      settings: 
+        required: []
+        properties: {}
+        type: "object"
+      dataMap: 
+        required: []
+        properties: {}
+        type: "object"
+      params: 
+        required: 
+          - "js8v0kccdni"
+        properties: 
+          js8v0kccdni: 
+            type: "string"
+        type: "object"
+      version: 
+        type: "number"
+      cVersion: 
+        type: "string"
+      build: 
+        type: "string"
+      device: 
+        type: "string"
+      functionName: 
+        type: "string"
+      isFunction: 
+        type: "boolean"
+      functionID: 
+        type: "string"
+      functions: 
+        type: "array"
+        items: 
+          type: "undefined"
+      bugs: 
+        type: "array"
+        items: 
+          type: "undefined"
+      tags: 
+        type: "array"
+        items: 
+          type: "undefined"
+      automated: 
+        type: "boolean"
+      active: 
+        type: "boolean"
+      isCheck: 
+        type: "boolean"
+      checkType: 
+        type: "string"
+      checkMessage: 
+        type: "string"
+      createdBy: 
+        type: "string"
+      updatedBy: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+  logcat:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      result: 
+        type: "string"
+      data: 
+        type: "string"
+      created: 
+        type: "string"
+
+
+  share:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      objectID: 
+        type: "string"
+      user: 
+        type: "string"
+      objectType: 
+        type: "string"
+      projectID: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+
+  sharePayload:
+    type: object
+    properties: 
+      objectID: 
+        type: "string"
+      objectType: 
+        type: "string"
+      projectID: 
+        type: "string"
+  perfomance:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      result: 
+        type: "string"
+      data: 
+        type: "string"
+      created: 
+        type: "string"
+  setting:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      project: 
+        type: "string"
+      name: 
+        type: "string"
+      desc: 
+        type: "string"
+      type: 
+        type: "string"
+      os: 
+        type: "string"
+      isDefault: 
+        type: "boolean"
+      createdBy: 
+        type: "string"
+      updatedBy: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+      data: 
+        required: 
+          - "general"
+          - "appium"
+        properties: 
+          general: 
+            required: 
+              - "key"
+            properties: 
+              key: 
+                type: "string"
+            type: "object"
+          appium: 
+            required: 
+              - "key"
+            properties: 
+              key: 
+                type: "string"
+            type: "object"
+        type: "object"
+
+  settingPayload:
+    type: object
+    required: 
+      - "name"
+      - "desc"
+      - "project"
+      - "type"
+      - "os"
+      - "data"
+    properties: 
+      name: 
+        type: "string"
+      desc: 
+        type: "string"
+      project: 
+        type: "string"
+      type: 
+        type: "string"
+      os: 
+        type: "string"
+      data: 
+        required: 
+          - "general"
+          - "appium"
+        properties: 
+          general: 
+            required: 
+              - "key"
+            properties: 
+              key: 
+                type: "string"
+            type: "object"
+          appium: 
+            required: 
+              - "key"
+            properties: 
+              key: 
+                type: "string"
+            type: "object"
+        type: "object"
+  dataset:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      name: 
+        type: "string"
+      desc: 
+        type: "string"
+      project: 
+        type: "string"
+      isDefault: 
+        type: "boolean"
+      testsuite: 
+        type: "string"
+      testscriptsData: 
+        required: []
+        properties: {}
+        type: "object"
+      createdBy: 
+        type: "string"
+      updatedBy: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+
+  datasetPayload:
+    type: object
+    properties: 
+      name: 
+        type: "string"
+      desc: 
+        type: "string"
+      project: 
+        type: "string"
+      isDefault: 
+        type: "boolean"
+      testsuite: 
+        type: "string"
+      testscriptsData: 
+        required: []
+        properties: {}
+        type: "object"
+  datasetUpdatePayload:
+    type: object
+    properties: 
+      name: 
+        type: "string"
+      desc: 
+        type: "string"
+      testscriptsData: 
+        required: []
+        properties: {}
+        type: "object"
+
+  notification:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      category: 
+        type: "string"
+      subcategory: 
+        type: "string"
+      creator: 
+        type: "string"
+      user: 
+        type: "string"
+      action: 
+        type: "string"
+      desc: 
+        type: "string"
+      objectID: 
+        type: "string"
+      objectType: 
+        type: "string"
+      link: 
+        type: "string"
+      isSeen: 
+        type: "boolean"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+  config:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      disableDeviceConnectNotification: 
+        type: "boolean"
+      disableDeviceDisconnetNotification: 
+        type: "boolean"
+      disableNodeConnectNotification: 
+        type: "boolean"
+      disableNodeDisconnectNotification: 
+        type: "boolean"
+      updatedBy: 
+        type: "string"
+      updated: 
+        type: "string"
+      created: 
+        type: "string"
+
+  dbCleanup:
+    properties: 
+      collectionName: 
+        type: "string"
+      remove: 
+        type: "boolean"
+      conditions: 
+        type: "array"
+        items: 
+          type: "object"
+          properties: 
+            field: 
+              type: "string"
+            fieldType: 
+              type: "string"
+            operator: 
+              type: "string"
+            value: 
+              type: "string"
+  pagesource:
+    properties: 
+      target: 
+        type: "string"
+      pageSourceXml: 
+        type: "string"
+      activity: 
+        type: "string"
+      screenshot: 
+        type: "string"
+      sessionId: 
+        type: "string"
+
+  espressoSkipTest:
+    properties: 
+      _id: 
+        type: "string"
+      key: 
+        type: "string"
+      user: 
+        type: "string"
+      updatedBy: 
+        type: "string"
+      project: 
+        type: "string"
+      className: 
+        type: "string"
+      method: 
+        type: "string"
+      isSkip: 
+        type: "boolean"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+
+
+  espressoTestResult:
+    properties: 
+      _id: 
+        type: "string"
+      testcase: 
+        type: "string"
+      device: 
+        type: "string"
+      deviceName: 
+        type: "string"
+      deviceVersion: 
+        type: "string"
+      isCrashed: 
+        type: "boolean"
+      status: 
+        type: "string"
+      rawData: 
+        type: "string"
+      base64: 
+        type: "string"
+      logcat: 
+        type: "string"
+      started: 
+        type: "string"
+      completed: 
+        type: "string"
+
+
+  espressoTestcase:
+    properties: 
+      _id: 
+        type: "string"
+      espressoID: 
+        type: "string"
+      title: 
+        type: "string"
+      user: 
+        type: "string"
+      project: 
+        type: "string"
+      apk: 
+        type: "string"
+      testApk: 
+        type: "string"
+      packageName: 
+        type: "string"
+      applicationID: 
+        type: "string"
+      testApplicationID: 
+        type: "string"
+      deviceVersion: 
+        type: "string"
+      device: 
+        type: "string"
+      deviceName: 
+        type: "string"
+      deviceSerial: 
+        type: "string"
+      testsession: 
+        type: "string"
+      host: 
+        type: "string"
+      className: 
+        type: "string"
+      testRunner: 
+        type: "string"
+      method: 
+        type: "string"
+      status: 
+        type: "string"
+      executionTime: 
+        type: "string"
+      isStarted: 
+        type: "boolean"
+      isCompleted: 
+        type: "boolean"
+      rawData: 
+        type: "string"
+      base64: 
+        type: "string"
+      logcat: 
+        type: "string"
+      attempts: 
+        type: "number"
+      retry: 
+        type: "number"
+      retryOnSameDevice: 
+        type: "boolean"
+      isCrashed: 
+        type: "boolean"
+      started: 
+        type: "string"
+      completed: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+  perfomanceData:
+    type: object
+    required: 
+      - "storage"
+      - "database"
+      - "server"
+      - "username"
+      - "password"
+      - "params"
+      - "tags"
+    properties: 
+      storage: 
+        type: "string"
+      database: 
+        type: "string"
+      server: 
+        type: "string"
+      username: 
+        type: "string"
+      password: 
+        type: "string"
+      params: 
+        type: "array"
+        items: 
+          type: "string"
+      tags: 
+        type: "object"
+        properties: 
+          custom: 
+            type: "value"
+
+  neuronConfig:
+    type: object
+    properties: 
+      appium_log_path: 
+        type: "string"
+      maxdevice: 
+        type: "string"
+      port: 
+        type: "string"
+      startingport: 
+        type: "string"
+  wifiRequest:
+    type: object
+    required: 
+      - "ssid"
+      - "password"
+    properties: 
+      ssid: 
+        type: "string"
+      password: 
+        type: "string"
+  deviceGroup:
+    type: object
+    required: 
+      - "name"
+      - "desc"
+      - "project"
+      - "onlyGroupDevice"
+      - "queries"
+    properties: 
+      _id: 
+        type: "string"
+      name: 
+        type: "string"
+      org: 
+        type: "string"
+      desc: 
+        type: "string"
+      project: 
+        type: "string"
+      onlyGroupDevice: 
+        type: "boolean"
+      queries: 
+        type: "array"
+        items: 
+          type: "object"
+          properties: 
+            deviceQueryID: 
+              type: "string"
+            desc: 
+              type: "string"
+            minDeviceCount: 
+              type: "number"
+            maxDeviceCount: 
+              type: "number"
+      createdBy: 
+        type: "string"
+      updatedBy: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+
+  deviceQuery:
+    type: object
+    required: 
+      - "name"
+      - "desc"
+      - "project"
+      - "conditions"
+    properties: 
+      _id: 
+        type: "string"
+      name: 
+        type: "string"
+      org: 
+        type: "string"
+      desc: 
+        type: "string"
+      project: 
+        type: "string"
+      conditions: 
+        type: "array"
+        items: 
+          type: "object"
+          properties: 
+            attribute: 
+              type: "string"
+            value: 
+              type: "string"
+            operator: 
+              type: "string"
+            type: 
+              type: "string"
+      createdBy: 
+        type: "string"
+      updatedBy: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+  appiumSession:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      hub: 
+        type: "string"
+      testSession: 
+        type: "string"
+      session: 
+        type: "string"
+      build: 
+        type: "string"
+      buildDetail: 
+        type: "string"
+      device: 
+        type: "string"
+      deviceDetail: 
+        type: "string"
+      created: 
+        type: "string"
+      updated: 
+        type: "string"
+  appiumHub:    
+    type: object
+    properties: 
+      cursor: 
+        type: "string"
+      hubs: 
+        type: "array"
+        items: 
+          type: "object"
+          properties: 
+            _id: 
+              type: "string"
+            identifier: 
+              type: "string"
+            project: 
+              type: "string"
+            user: 
+              type: "string"
+            build: 
+              type: "string"
+            buildDetail: 
+              type: "string"
+            created: 
+              type: "string"
+            updated: 
+              type: "string"
+      totalCount: 
+        type: "number"
+
+  note:
+    type: object
+    required: 
+      - "project"
+      - "title"
+      - "desc"
+    properties: 
+      _id: 
+        type: "string"
+      project: 
+        type: "string"
+      title: 
+        type: "string"
+      desc: 
+        type: "string"
+      createdBy: 
+        type: "string"
+      updatedBy: 
+        type: "string"
+      updated: 
+        type: "string"
+      created: 
+        type: "string"
+
+
+  activity:
+    type: object
+    properties: 
+      _id: 
+        type: "string"
+      type: 
+        type: "string"
+      org: 
+        type: "string"
+      project: 
+        type: "string"
+      category: 
+        type: "string"
+      subcategory: 
+        type: "string"
+      action: 
+        type: "string"
+      level: 
+        type: "string"
+      identifier: 
+        type: "string"
+      # oldData: 
+      #   type: "json"
+      # newData: 
+      #   type: "json": 
+      user: 
+        type: "string"
+      created: 
+        type: "string"
+        
+  atcProfile:
+    type: object
+    required: 
+      - "id"
+      - "name"
+      - "Content"
+    properties: 
+      id: 
+        type: "number"
+      name: 
+        type: "string"
+      Content: 
+        required: 
+          - "down"
+          - "up"
+        properties: 
+          down: 
+            required: 
+              - "corruption"
+              - "delay"
+              - "iptables_options"
+              - "loss"
+              - "rate"
+              - "reorder"
+            properties: 
+              corruption: 
+                required: 
+                  - "correlation"
+                  - "percentage"
+                properties: 
+                  correlation: 
+                    type: "number"
+                  percentage: 
+                    type: "number"
+                type: "object"
+              delay: 
+                required: 
+                  - "correlation"
+                  - "delay"
+                  - "jitter"
+                properties: 
+                  correlation: 
+                    type: "number"
+                  delay: 
+                    type: "number"
+                  jitter: 
+                    type: "number"
+                type: "object"
+              iptables_options: 
+                type: "array"
+                items: 
+                  type: "undefined"
+              loss: 
+                required: 
+                  - "correlation"
+                  - "percentage"
+                properties: 
+                  correlation: 
+                    type: "number"
+                  percentage: 
+                    type: "number"
+                type: "object"
+              rate: 
+                type: "string"
+              reorder: 
+                required: 
+                  - "correlation"
+                  - "gap"
+                  - "percentage"
+                properties: 
+                  correlation: 
+                    type: "number"
+                  gap: 
+                    type: "number"
+                  percentage: 
+                    type: "number"
+                type: "object"
+            type: "object"
+          up: 
+            required: 
+              - "corruption"
+              - "delay"
+              - "iptables_options"
+              - "loss"
+              - "rate"
+              - "reorder"
+            properties: 
+              corruption: 
+                required: 
+                  - "correlation"
+                  - "percentage"
+                properties: 
+                  correlation: 
+                    type: "number"
+                  percentage: 
+                    type: "number"
+                type: "object"
+              delay: 
+                required: 
+                  - "correlation"
+                  - "delay"
+                  - "jitter"
+                properties: 
+                  correlation: 
+                    type: "number"
+                  delay: 
+                    type: "number"
+                  jitter: 
+                    type: "number"
+                type: "object"
+              iptables_options: 
+                type: "array"
+                items: 
+                  type: "undefined"
+              loss: 
+                required: 
+                  - "correlation"
+                  - "percentage"
+                properties: 
+                  correlation: 
+                    type: "number"
+                  percentage: 
+                    type: "number"
+                type: "object"
+              rate: 
+                type: "string"
+              reorder: 
+                required: 
+                  - "correlation"
+                  - "gap"
+                  - "percentage"
+                properties: 
+                  correlation: 
+                    type: "number"
+                  gap: 
+                    type: "number"
+                  percentage: 
+                    type: "number"
+                type: "object"
+            type: "object"
+        type: "object"
+
+
+          
