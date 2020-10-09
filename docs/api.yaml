@@ -50,7 +50,6 @@ tags:
   - name: hub - selenium
     description: APIs for Selenium Hub
 paths:
-
   /admin/v3/maintenance/{Maintenance_Profile_ID}/run:
     get:
       $ref: "components/admin/maintenance/maintenance.yaml#/Maintenance_Profile_Get"
@@ -70,6 +69,14 @@ paths:
   /hub/sessionIdentifier/{AppiumSessionID}:
     get:
       $ref: "components/hub/hub.yaml#/Hub_AppiumSessionID_Get"
+
+  v3/devices:
+    get:
+      $ref: "components/device/device.yaml#/Devices_Get"
+
+  v3/device/{deviceID}:
+    get:
+      $ref: "components/device/device.yaml#/Device_Get"
 
   /project/{projectID}/build:
     put:
@@ -100,7 +107,7 @@ paths:
                   properties:
                     desc:
                       type: string
-                    remoteBuildUrl:nMACHINE1,NERVE|NEURON|HUB,192.168.199.5,izingasoftware,/Users/izingasoftware/robustest
+                    remoteBuildUrl: string
                       type: string
       responses:
         '200':
@@ -196,7 +203,7 @@ paths:
           description: ID of the job that you want to stop
           schema:
             type: string
-      responses:
+      responses:w
         '200':
           description: job closed successfully
 

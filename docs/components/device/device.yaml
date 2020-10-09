@@ -246,3 +246,32 @@ Device:
       type: "string"
     updated: 
       type: "string"
+
+Devices_Get:
+  summary: Get details for all devices connected to device lab
+      tags:
+        - device
+      responses:
+        '200':
+          description: details related to all the devices
+          content:
+            application/json:
+              schema:
+
+Device_Get:
+   summary: Get details for a specific device connected to device lab
+      tags:
+        - device
+      parameters:
+        - name: deviceID
+          in: path
+          required: true
+          description: The id of the device to retrieve
+          schema:
+            type: string
+      responses:
+        '200':
+          description: details related to the device
+          content:
+            application/json:
+              schema:
