@@ -107,7 +107,7 @@ paths:
                   properties:
                     desc:
                       type: string
-                    remoteBuildUrl: string
+                    remoteBuildUrl:
                       type: string
       responses:
         '200':
