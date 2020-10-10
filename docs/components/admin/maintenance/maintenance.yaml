@@ -1,4 +1,4 @@
-Maintenance_Profile_Get:
+Maintenance_Profile_Post:
   summary: run the maintenance profile
   tags:
     - administration

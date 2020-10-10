@@ -51,8 +51,8 @@ tags:
     description: APIs for Selenium Hub
 paths:
   /admin/v3/maintenance/{Maintenance_Profile_ID}/run:
-    get:
-      $ref: "components/admin/maintenance/maintenance.yaml#/Maintenance_Profile_Get"
+    post:
+      $ref: "components/admin/maintenance/maintenance.yaml#/Maintenance_Profile_Post"
 
   /grid/browsers:
     get:
