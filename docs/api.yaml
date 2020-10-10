@@ -78,6 +78,10 @@ paths:
     get:
       $ref: "components/device/device.yaml#/Device_Get"
 
+  /v3/device/uninstall:
+    post:
+      $ref: "components/device/device.yaml#/Device_Uninstall_Post"
+
   /project/{projectID}/build:
     put:
       summary: upload build to RobusTest

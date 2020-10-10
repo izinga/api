@@ -269,3 +269,31 @@ Device_Get:
   responses:
     '200':
       description: details related to the device
+
+Device_Uninstall_Post:
+  summary: Uninstall specific packages from the device
+  tags:
+    - device
+  requestBody:
+    description: The payload to be sent
+    required: true
+    content: 
+      application/json:
+        schema:
+          $ref: "#/device_uninstall_payload"
+  responses:
+    '200':
+      description: packages uninstalled successfully
+
+device_uninstall_payload:
+  properties: 
+    testsessionID: 
+      type: string
+    deviceID:
+      type: string
+    reserveKey:
+      type: string
+    packages:
+      type: array
+      items:
+        type: string
