@@ -82,7 +82,7 @@ paths:
     post:
       $ref: "components/device/device.yaml#/Device_Uninstall_Post"
 
-  /project/{projectID}/build:
+  /v3/project/{projectID}/build:
     put:
       summary: upload build to RobusTest
       tags:
@@ -117,7 +117,42 @@ paths:
         '200':
           description: Successfully upload build
 
-  /jobs/{projectID}:
+  /v3/build/{buildID}:
+    put:
+      summary: modify build details for a build entry in RobusTest
+      tags:
+        - build
+        - upload
+      parameters:
+        - name: buildID
+          in: path
+          required: true
+          description: The id of the build for which details need to be modified
+          schema:
+            type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:  
+              type: object
+              properties:
+                label:
+                  type: string
+                desc:
+                  type: string
+                remoteBuildUrl:
+                  type: string
+                activityClass:
+                  type: string
+                buildCategories:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Successfully updated build details
+          
+  /v3/jobs/{projectID}:
     get:
       summary: List all job
       operationId: listJobs
