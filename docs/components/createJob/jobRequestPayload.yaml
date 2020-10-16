@@ -18,6 +18,8 @@ JobRequestPayload:
       description: Description for the job
     build:
       $ref: "jobRequestPayload.yaml#/Build"
+    localBuild:
+      $ref: "jobRequestPayload.yaml#/LocalBuild"
     accessLevel:
       type: string
       enum:
@@ -37,6 +39,10 @@ JobRequestPayload:
       enum:
        - parallel
        - distributed
+    jobCategories:
+      type: array
+      items:
+        type: string
     runSetting:
       type: string
     devices:
@@ -61,6 +67,17 @@ Build:
     test:
       type: string 
       description: Build ID for the tests binary
+
+LocalBuild:
+  type: object
+  description: build object to specify build related details for local builds
+  properties:
+    autPath:
+      type: string
+      description: absolute path for build for the application under test
+    testAppPath:
+      type: string 
+      description: absolute path for tests build for the application under test
 
 Devices:
   type: object
