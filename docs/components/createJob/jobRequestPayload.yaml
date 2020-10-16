@@ -77,6 +77,10 @@ Devices:
 Framework:
   type: object
   properties:
+    maxScreenshots:
+      type: integer
+    deleteFiles:
+      type: boolean
     xcuitest_params:
       $ref: "jobRequestPayload.yaml#/XCUITestParams"
     runOnlyClasses:
