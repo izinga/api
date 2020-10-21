@@ -312,7 +312,7 @@ paths:
                 type: array
                 items:
                   $ref: "components/testcase.yaml#/Testcase"  
-  /job/new:
+  /v3/job/new:
     post:
       summary: Create a new job on RobusTest. One API to rule them all.
       tags:
@@ -328,7 +328,27 @@ paths:
               $ref: "components/createJob/jobRequestPayload.yaml#/JobRequestPayload"
       responses:
         $ref: "components/createJob/jobResponse.yaml#/ResponseList"
-
+  
+  /v3/appium/testcase/{appium_session_id}:
+    post:
+      summary: Updating the test case run as part of Appium Hub
+      tags:
+        - hub-appium
+      description: API to update the test case details of Appium test
+      parameters:
+        - name: appium_session_id
+          in: path
+          required: true
+          description: The Appium session ID
+          schema:
+            type: string
+      requestBody:
+        description: Payload for this API
+        required: true
+        content:
+          application/json:
+            schema: 
+              $ref: "components/appium_hub/AppiumHubRequest.yaml#/AppiumHubPayload"     
   /testcase/{testcaseID}:
     get:
       summary: Info for a specific testcase
