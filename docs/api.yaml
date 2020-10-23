@@ -333,7 +333,7 @@ paths:
     post:
       summary: Updating the test case run as part of Appium Hub
       tags:
-        - hub-appium
+        - hub - appium
       description: API to update the test case details of Appium test
       parameters:
         - name: appium_session_id
