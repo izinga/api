@@ -12,7 +12,7 @@ info:
     altText: "RobusTest"
   version: 0.1.9
 servers:
-  - url: http://devicelab.robustest.com/v3
+  - url: http://devicelab.robustest.com
     description: sample api documentation server
 securityDefinitions:
   accesskey:
@@ -54,6 +54,23 @@ tags:
   - name: mitm
     description: mitm related APIs
 paths:
+  /v3/sessions:
+    get:
+      summary: get a list of all the test sessions for a given time period
+      tags:
+        - session
+    parameters:
+      - name: start
+        in: query
+        required: true
+        description: start time for fetching the session list in the format dd/mm/yyyy:hh:mm
+      - name: end
+        in: query
+        required: true
+        description: end time for fetching the session list in the format dd/mm/yyyy:hh:mm
+    responses:
+      '200':
+        description: session details based on duration given
   /v3/mitmproxy/testsession/{testsessionID}:
     get:
       summary: fetch network request details based on test session ID
@@ -309,7 +326,7 @@ paths:
                   items:
                    $ref: "components/job.yaml#/Job"
 
-  /testsession/{testSessionID}:
+  /v3/testsession/{testSessionID}:
     get:
       summary: Get test session details
       tags:
@@ -322,7 +339,7 @@ paths:
           schema:
             type: string
   
-  /job/{jobID}:
+  /v3/job/{jobID}:
     get:
       summary: Info for a specific job
       operationId: getJobByID
@@ -357,7 +374,7 @@ paths:
         '200':
           description: job closed successfully
 
-  /job/{jobID}/runs:
+  /v3/job/{jobID}/runs:
     get:
       summary: Get all runs for given job 
       operationId: getRunsJobByID
@@ -379,7 +396,7 @@ paths:
                 type: array
                 items:
                   $ref: "components/run.yaml#/Run"
-  /job/{jobID}/instances:
+  /v3/job/{jobID}/instances:
     get:
       summary: Get all instances for given job 
       operationId: getInstancesJobByID
@@ -401,7 +418,7 @@ paths:
                 type: array
                 items:
                   $ref: "components/instance.yaml#/Instance"
-  /job/{jobID}/testcases:
+  /v3/job/{jobID}/testcases:
     get:
       summary: Get all testcases for given job 
       operationId: gettTestcasesJobByID
@@ -460,7 +477,7 @@ paths:
           application/json:
             schema: 
               $ref: "components/appium_hub/AppiumHubRequest.yaml#/AppiumHubPayload"     
-  /testcase/{testcaseID}:
+  /v3/testcase/{testcaseID}:
     get:
       summary: Info for a specific testcase
       operationId: gettTestcaseByID
@@ -480,7 +497,7 @@ paths:
             application/json:
               schema:
                 $ref: "components/testcase.yaml#/Testcase"
-  /testcase/{testcaseID}/results:
+  /v3/testcase/{testcaseID}/results:
     get:
       summary: Get all results for given testcase 
       operationId: gettResultByTestcaseID
@@ -502,7 +519,7 @@ paths:
                 type: array
                 items:
                   $ref: "components/result.yaml#/Result"
-  /result/{resultID}:
+  /v3/result/{resultID}:
     get:
       summary: Info for a specific result
       operationId: gettResultByID
@@ -522,7 +539,7 @@ paths:
             application/json:
               schema:
                 $ref: "components/result.yaml#/Result"
-  /log/{resultID}/result:
+  /v3/log/{resultID}/result:
     get:
       summary: get test framework log for specific result
       operationId: gettFrameworlLogByResultID
@@ -542,7 +559,7 @@ paths:
             application/json:
               schema:
                 $ref: "components/log.yaml#/Log"
-  /log/{resultID}/device:
+  /v3/log/{resultID}/device:
     get:
       summary: get test device log for specific result
       operationId: gettDeviceLogByResultID
@@ -562,7 +579,7 @@ paths:
             application/json:
               schema:
                 $ref: "components/log.yaml#/Log"
-  /device/{device_ID}/reserve:
+  /v3/device/{device_ID}/reserve:
     put:
       summary: reserve device
       tags:
