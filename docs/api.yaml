@@ -49,7 +49,59 @@ tags:
     description: APIs for Appium Hub
   - name: hub - selenium
     description: APIs for Selenium Hub
+  - name: proxy
+    description: proxy related APIs
+  - name: mitm
+    description: mitm related APIs
 paths:
+  /v3/mitmproxy/testsession/{testsessionID}:
+    get:
+      summary: fetch network request details based on test session ID
+      tags:
+        - proxy
+        - mitm
+      parameters:
+        - name: testsessionID
+          in: path
+          required: true
+          description: the test session ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: MITM request details
+  /v3/mitmproxy/seleniumSessionID/{appiumid}:
+    get:
+      summary: fetch network request details based on appium or selenium session ID
+      tags:
+        - proxy
+        - mitm
+      parameters:
+        - name: appiumid
+          in: path
+          required: true
+          description: the appium session ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: MITM request details
+  /v3/mitmproxy/result/{resultID):
+    get:
+      summary: fetch network request details based on appium or selenium session ID
+      tags:
+        - proxy
+        - mitm
+      parameters:
+        - name: resultID
+          in: path
+          required: true
+          description: the result ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: MITM request details
   /admin/v3/maintenance/{Maintenance_Profile_ID}/run:
     post:
       $ref: "components/admin/maintenance/maintenance.yaml#/Maintenance_Profile_Post"
