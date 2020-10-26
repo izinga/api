@@ -63,11 +63,11 @@ paths:
       - name: start
         in: query
         required: true
-        description: start time for fetching the session list in the format dd/mm/yyyy:hh:mm
+        description: start time for fetching the session list in the format mm-dd-yyyy:hh:mm:ss
       - name: end
         in: query
         required: true
-        description: end time for fetching the session list in the format dd/mm/yyyy:hh:mm
+        description: end time for fetching the session list in the format mm-dd-yyyy:hh:mm:ss
     responses:
       '200':
         description: session details based on duration given
