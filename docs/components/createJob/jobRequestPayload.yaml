@@ -28,12 +28,10 @@ JobRequestPayload:
       description: Control visibility of the job to other users
     priority:
       type: integer
+      min: 0
     type:
       type: string
-      enum:
-        - espresso
-        - xcuitest
-        - automator
+      enum: [espresso, xcuitest, automator]
     runMode:
       type: string
       enum:
@@ -53,6 +51,7 @@ JobRequestPayload:
       $ref: "jobRequestPayload.yaml#/Framework"
     gitHook:
       $ref: "jobRequestPayload.yaml#/GitHook"
+
 
 Build:
   type: object
@@ -84,6 +83,10 @@ Devices:
   properties:
     onlyGroupDevice:
       type: boolean
+    devicesGroupIDs:
+      type: array
+      items:
+        type: string
     deviceQueries:
       $ref: "jobRequestPayload.yaml#/DeviceQueries"
     ids:

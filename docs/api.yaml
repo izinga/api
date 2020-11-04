@@ -454,6 +454,10 @@ paths:
           application/json:
             schema:
               $ref: "components/createJob/jobRequestPayload.yaml#/JobRequestPayload"
+            examples: 
+              prod:
+                value:
+                  identifier: Prod Build Nightly Test
       responses:
         $ref: "components/createJob/jobResponse.yaml#/ResponseList"
   
