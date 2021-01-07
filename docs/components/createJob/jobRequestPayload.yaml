@@ -80,10 +80,13 @@ LocalBuild:
 
 Devices:
   type: object
+  description: the devices object to set various options for device selection
   properties:
     onlyGroupDevice:
       type: boolean
+      description: Use devicesGroupsIDs instead. Will be ignored if devicesGroupIDs is used
     devicesGroupIDs:
+      description: Use this to specify the ID(s) of the groups you wish the system to pick devices from. Alternatively, provide a blank array if you want the system to use any device or use the value "any" to pick devices from any group that the project belongs to
       type: array
       items:
         type: string

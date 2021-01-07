@@ -119,6 +119,22 @@ paths:
       responses:
         '200':
           description: MITM request details
+  /v3/testsession/{testsessionID}/mitmproxy:
+    get:
+      summary: fetch network request details based on test session ID
+      tags:
+        - proxy
+        - mitm
+      parameters:
+        - name: testsessionID
+          in: path
+          required: true
+          description: the test session ID
+          schema:
+            type: string
+      responses:
+        '200':
+          description: MITM request details
   /admin/v3/maintenance/{Maintenance_Profile_ID}/run:
     post:
       $ref: "components/admin/maintenance/maintenance.yaml#/Maintenance_Profile_Post"
