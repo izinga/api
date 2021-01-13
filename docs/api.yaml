@@ -73,7 +73,7 @@ paths:
         description: session details based on duration given
   /v3/mitmproxy/testsession/{testsessionID}:
     get:
-      summary: [Deprecated] fetch network request details based on test session ID
+      summary: Deprecated - fetch network request details based on test session ID
       tags:
         - proxy
         - mitm
