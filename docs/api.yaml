@@ -121,7 +121,7 @@ paths:
           description: MITM request details
   /v3/appium/{appiumid}/mitmproxy:
     get:
-      summary: Deprecated - fetch network request details based on appium or selenium session ID
+      summary: fetch network request details based on appium or selenium session ID
       tags:
         - proxy
         - mitm
@@ -137,7 +137,7 @@ paths:
           description: MITM request details
   /v3/mitmproxy/result/{resultID):
     get:
-      summary: Deprecated -  fetch network request details based on appium or selenium session ID
+      summary: Deprecated - fetch network request details based on appium or selenium session ID
       tags:
         - proxy
         - mitm
@@ -153,7 +153,7 @@ paths:
           description: MITM request details
   /v3/result/{resultID}/mitmproxy:
     get:
-      summary: Deprecated - fetch network request details based on appium or selenium session ID
+      summary: fetch network request details based on appium or selenium session ID
       tags:
         - proxy
         - mitm
