@@ -57,7 +57,7 @@ tags:
     description: roku related APIs
 paths:
   
-  /roku/v1/device/add:
+  /v3/device/add:
     post:
       $ref: "components/roku/roku.yaml#/Add_Device_Post"
   
