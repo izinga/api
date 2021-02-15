@@ -56,9 +56,11 @@ tags:
   - name: roku
     description: roku related APIs
 paths:
+  
   /roku/v1/device/add:
     post:
       $ref: "components/roku/roku.yaml#/Add_Device_Post"
+  
   /v3/sessions:
     get:
       summary: get a list of all the test sessions for a given time period
@@ -76,6 +78,7 @@ paths:
     responses:
       '200':
         description: session details based on duration given
+        
   /v3/mitmproxy/testsession/{testsessionID}:
     get:
       summary: Deprecated - fetch network request details based on test session ID

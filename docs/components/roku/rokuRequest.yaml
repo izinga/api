@@ -1,4 +1,9 @@
 Roku_Add_Post_Payload:
-  properties: 
-    ip:
-      type: string
+  required: true
+  content: 
+    application/json:
+      schema:
+        type: object
+        properties: 
+          ip:
+            type: string
