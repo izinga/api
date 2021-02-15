@@ -1,0 +1,4 @@
+Roku_Add_Post_Payload:
+  properties: 
+    ip:
+      type: string

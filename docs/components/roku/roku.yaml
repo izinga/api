@@ -1,0 +1,9 @@
+Add_Device_Post:
+  summary: Add a Roku device to RobusTest device lab
+  tags:
+    - roku
+  parameters:
+    $ref: "rokuRequest.yaml#/Roku_Add_Post_Payload"
+  responses:
+    '200':
+      description: the Roku device has been added successfully

@@ -53,7 +53,12 @@ tags:
     description: proxy related APIs
   - name: mitm
     description: mitm related APIs
+  - name: roku
+    description: roku related APIs
 paths:
+  /roku/v1/device/add:
+    post:
+      $ref: "components/roku/roku.yaml#/Add_Device_Post"
   /v3/sessions:
     get:
       summary: get a list of all the test sessions for a given time period
