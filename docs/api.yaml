@@ -15,19 +15,19 @@ servers:
   - url: http://devicelab.robustest.com
     description: sample api documentation server
 securityDefinitions:
-  accesskey:
+  accessKey:
     type: apiKey
-    name: accesskey
+    name: accessKey
     in: query
 components:
   securitySchemes:
     accesskey:
       type: apiKey
       description: unique access key generated for each user by RobusTest
-      name: accesskey
+      name: accessKey
       in: query
 security:
-  - accesskey: []
+  - accessKey: []
 tags:
   - name: job
     description: Job methods provide access to job
