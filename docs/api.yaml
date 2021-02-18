@@ -280,15 +280,18 @@ paths:
           schema:
             type: string
       requestBody:
+        required: true
         content:
           multipart/form-data:
             schema:  
               type: object
+              required: build
               properties:
                 build:
                   type: string
                   format: binary
                   description: build path
+                  required: true
                 buildInfo:
                   type: object
                   description: build info
