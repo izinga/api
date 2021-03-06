@@ -12,3 +12,10 @@ AppiumHubPayload:
       type: string
     message:
       type: string
+AppiumHubEndTestCasePayload:
+  required:
+    - status
+  properties:
+    status:
+      type: string
+      enum: [Pass,Fail,Error,Skipped]
