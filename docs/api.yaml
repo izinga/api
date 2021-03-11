@@ -543,11 +543,11 @@ paths:
               $ref: "components/appium_hub/AppiumHubRequest.yaml#/AppiumHubPayload"     
   /v3/appium/{appium_session_id}/testcase:
     post:
-      summary: Updating the test case run as part of Appium Hub
+      summary: Creating the test case run as part of Appium Hub
       tags:
         - hub 
         - appium
-      description: API to update the test case details of Appium test
+      description: API to create the test case from an Appium test session
       parameters:
         - name: appium_session_id
           in: path
@@ -562,6 +562,26 @@ paths:
           application/json:
             schema: 
               $ref: "components/appium_hub/AppiumHubRequest.yaml#/AppiumHubPayload"
+    put:
+      summary: Updating the test case run as part of Appium Hub
+      tags:
+        - hub 
+        - appium
+      description: API to update or complete the test case details of Appium test
+      parameters:
+        - name: appium_session_id
+          in: path
+          required: true
+          description: The Appium session ID
+          schema:
+            type: string
+      requestBody:
+        description: Payload for this API
+        required: true
+        content:
+          application/json:
+            schema: 
+              $ref: "components/appium_hub/AppiumHubRequest.yaml#/AppiumHubEndTestCasePayload"
   /v3/testcase/{testcaseID}:
     get:
       summary: Info for a specific testcase

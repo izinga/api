@@ -43,6 +43,11 @@ JobRequestPayload:
         type: string
     runSetting:
       type: string
+    triggers:
+      type: array
+      description: one or more trigger IDs specified as an array of strings
+      items:
+        type: string
     devices:
       $ref: "jobRequestPayload.yaml#/Devices"
     attributes:
