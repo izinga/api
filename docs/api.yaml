@@ -563,7 +563,7 @@ paths:
             schema: 
               $ref: "components/appium_hub/AppiumHubRequest.yaml#/AppiumHubPayload"
     put:
-      summary: Updating the test case run as part of Appium Hub
+      summary: Update the Appium test case. If Status value is passed, the test case is considered closed.
       tags:
         - hub 
         - appium
