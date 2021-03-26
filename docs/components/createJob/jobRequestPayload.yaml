@@ -105,8 +105,11 @@ Devices:
 Framework:
   type: object
   properties:
+    runStrategy:
+      type: string
+      enum: ["xcodebuild"]
     maxScreenshots:
-      type: integer
+        type: integer
     deleteFiles:
       type: boolean
     xcuitest_params:

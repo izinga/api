@@ -1,7 +1,6 @@
 AppiumHubPayload:
   required:
     - name
-    - status
   properties:
     name:
       type: string
@@ -12,6 +11,7 @@ AppiumHubPayload:
       type: string
     message:
       type: string
+
 AppiumHubEndTestCasePayload:
   required:
     - status
