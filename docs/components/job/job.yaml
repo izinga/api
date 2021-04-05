@@ -1,0 +1,32 @@
+Stop_Job_Delete:
+  summary: Close jobs on the basis of job identifier
+  tags:
+    - job
+  parameters:
+    - name: job_identifier
+      in: path
+      required: true
+      description: the test session ID
+      schema:
+        type: string
+  requestBody:
+    $ref: "Job_Delete_Payload"
+  responses:
+    '200':
+      description: the jobs have been closed successfully
+
+Job_Delete_Payload:
+  required: true
+  content: 
+    application/json:
+      schema:
+        type: object
+        properties: 
+          projectID:
+            type: string
+          status:
+            type: string
+          statusCode:
+            type: integer
+          message:
+            type: string
