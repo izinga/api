@@ -98,6 +98,7 @@ paths:
       responses:
         '200':
           description: MITM request details
+
   /v3/testsession/{testsessionID}/mitmproxy:
     get:
       summary: fetch network request details based on test session ID
@@ -114,6 +115,7 @@ paths:
       responses:
         '200':
           description: MITM request details
+
   /v3/mitmproxy/seleniumSessionID/{appiumid}:
     get:
       summary: Deprecated - fetch network request details based on appium or selenium session ID
@@ -130,6 +132,7 @@ paths:
       responses:
         '200':
           description: MITM request details
+
   /v3/appium/{appiumid}/mitmproxy:
     get:
       summary: fetch network request details based on appium or selenium session ID
@@ -146,6 +149,7 @@ paths:
       responses:
         '200':
           description: MITM request details
+
   /v3/mitmproxy/result/{resultID):
     get:
       summary: Deprecated - fetch network request details based on appium or selenium session ID
@@ -162,9 +166,10 @@ paths:
       responses:
         '200':
           description: MITM request details
+
   /v3/result/{resultID}/mitmproxy:
     get:
-      summary: fetch network request details based on appium or selenium session ID
+      summary: fetch network request details based on result ID
       tags:
         - proxy
         - mitm
@@ -178,6 +183,7 @@ paths:
       responses:
         '200':
           description: MITM request details
+
   /admin/v3/maintenance/{Maintenance_Profile_ID}/run:
     post:
       $ref: "components/admin/maintenance/maintenance.yaml#/Maintenance_Profile_Post"
@@ -269,78 +275,15 @@ paths:
       responses:
         '200':
           description: RobusTest Session List and Details for a job
+  
   /v3/project/{projectID}/build:
-    put:
-      summary: upload build to RobusTest
-      tags:
-        - build
-        - upload
-      parameters:
-        - name: projectID
-          in: path
-          required: true
-          description: The id of the project to which we need to upload build
-          schema:
-            type: string
-      requestBody:
-        required: true
-        content:
-          multipart/form-data:
-            schema:  
-              type: object
-              required: build
-              properties:
-                build:
-                  type: string
-                  format: binary
-                  description: build path
-                  required: true
-                buildInfo:
-                  type: object
-                  description: build info
-                  properties:
-                    desc:
-                      type: string
-                    remoteBuildUrl:
-                      type: string
-      responses:
-        '200':
-          description: Successfully upload build
+    $ref: "components/build/build.yaml#/build_upload_put"
+
+  /v3/project/{project_ID}/build/ref:
+    $ref: "components/build/build.yaml#/build_upload_ref_post"
 
   /v3/build/{buildID}:
-    put:
-      summary: modify build details for a build entry in RobusTest
-      tags:
-        - build
-        - upload
-      parameters:
-        - name: buildID
-          in: path
-          required: true
-          description: The id of the build for which details need to be modified
-          schema:
-            type: string
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:  
-              type: object
-              properties:
-                label:
-                  type: string
-                desc:
-                  type: string
-                remoteBuildUrl:
-                  type: string
-                activityClass:
-                  type: string
-                buildCategories:
-                  type: array
-                  items:
-                    type: string
-      responses:
-        '200':
-          description: Successfully updated build details
+    $ref: "components/build/build.yaml#/build_modify_put"
           
   /v3/jobs/{projectID}:
     get:
@@ -543,7 +486,8 @@ paths:
         content:
           application/json:
             schema: 
-              $ref: "components/appium_hub/AppiumHubRequest.yaml#/AppiumHubPayload"     
+              $ref: "components/appium_hub/AppiumHubRequest.yaml#/AppiumHubPayload"    
+               
   /v3/appium/{appium_session_id}/testcase:
     post:
       summary: Creating the test case run as part of Appium Hub
