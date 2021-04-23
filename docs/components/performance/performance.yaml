@@ -1,0 +1,14 @@
+performance_get:
+  summary: get the performance metrics
+  tags:
+    - performance
+  parameters:
+    - name: resultID
+      in: path
+      required: true
+      description: the result ID for the test attempt
+      schema:
+        type: string
+  responses:
+    '200':
+      description: performance metrics have been successfully sent

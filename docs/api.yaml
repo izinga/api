@@ -56,6 +56,11 @@ tags:
   - name: roku
     description: roku related APIs
 paths:
+
+  /v3/result/<resultID>/performance:
+    get:
+      $ref: "components/performance/performance.yaml#/performance_get"
+
   /v3/job/{job_identifier}:
     delete:
       $ref: "components/job/job.yaml#/Stop_Job_Delete"
