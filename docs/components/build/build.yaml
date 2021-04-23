@@ -1,0 +1,109 @@
+build_upload_put:
+  put:
+      summary: upload build to RobusTest
+      tags:
+        - build
+        - upload
+      parameters:
+        - name: projectID
+          in: path
+          required: true
+          description: The id of the project to which we need to upload build
+          schema:
+            type: string
+      requestBody:
+        required: true
+        content:
+          multipart/form-data:
+            schema:  
+              type: object
+              required: build
+              properties:
+                build:
+                  type: string
+                  format: binary
+                  description: build path
+                  required: true
+                buildInfo:
+                  type: object
+                  description: build info
+                  properties:
+                    desc:
+                      type: string
+                    remoteBuildUrl:
+                      type: string
+      responses:
+        '200':
+          description: Successfully upload build
+
+build_modify_put:
+  put:
+      summary: modify build details for a build entry in RobusTest
+      tags:
+        - build
+        - upload
+      parameters:
+        - name: buildID
+          in: path
+          required: true
+          description: The id of the build for which details need to be modified
+          schema:
+            type: string
+      requestBody:
+        content:
+          multipart/form-data:
+            schema:  
+              type: object
+              properties:
+                label:
+                  type: string
+                desc:
+                  type: string
+                remoteBuildUrl:
+                  type: string
+                activityClass:
+                  type: string
+                buildCategories:
+                  type: array
+                  items:
+                    type: string
+      responses:
+        '200':
+          description: Successfully updated build details
+
+build_upload_ref_post:
+    post:
+      summary: Creating an entry in Robustest for a dummy build
+      tags:
+        - build
+        - upload
+      description: Creating an entry in Robustest for a dummy build
+      parameters:
+        - name: projectID
+          in: path
+          required: true
+          description: The id of the project to which we need to upload build
+          schema:
+            type: string
+      requestBody:
+        description: Payload for this API
+        required: true
+        content:
+          application/json:
+            schema: 
+              type: object
+              properties:
+                label:
+                  type: string
+                desc:
+                  type: string
+                os:
+                  type: string
+                packageName:
+                  type: string
+                activityClass:
+                  type: string
+                versionName:
+                  type: string
+                versionCode:
+                  type: string

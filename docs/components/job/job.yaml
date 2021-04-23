@@ -26,7 +26,14 @@ Job_Delete_Payload:
             type: string
           status:
             type: string
+            enum:
+              - Pass
+              - Fail
+              - Error
+              - Skipped
           statusCode:
             type: integer
+            enum:
+              - 3
           message:
             type: string
