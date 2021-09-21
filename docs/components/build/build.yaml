@@ -32,6 +32,11 @@ build_upload_put:
                       type: string
                     remoteBuildUrl:
                       type: string
+                    commitID:
+                      type: string
+                    label:
+                      type: string
+                      description: Name of the build
       responses:
         '200':
           description: Successfully upload build
