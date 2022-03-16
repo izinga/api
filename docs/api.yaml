@@ -334,7 +334,7 @@ paths:
                 jobs: 
                   type: array
                   items:
-                   $ref: "components/job.yaml#/Job"
+                   $ref: "components/job/job.yaml#/Job"
 
   /v3/testsession/{testSessionID}:
     get:
