@@ -9,8 +9,6 @@ Stop_Job_Delete:
       description: the test session ID
       schema:
         type: string
-  requestBody:
-    $ref: "#/Job_Delete_Payload"
   responses:
     '200':
       description: the jobs have been closed successfully
