@@ -368,7 +368,7 @@ paths:
           content:
             application/json:
               schema:
-                $ref: "components/job.yaml#/Job"
+                $ref: "components/job/job.yaml#/Job"
     delete:
       summary: Stop a job that is running
       tags:
