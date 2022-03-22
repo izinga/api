@@ -74,7 +74,7 @@ Job:
      type: string
     setting:
      type: object
-     $ref: "setting.yaml#/Setting"
+     $ref: "../setting.yaml#/Setting"
      properties:
       desc:
        type: string
